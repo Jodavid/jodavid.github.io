@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Julia on Jodavid Ferreira</title>
+    <link>/categories/julia/</link>
+    <description>Recent content in Julia on Jodavid Ferreira</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/julia/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Comparison of time efficiency of a same function in R</title>
+      <link>/post/comparison-of-time-efficiency-of-a-same-function-in-r/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/comparison-of-time-efficiency-of-a-same-function-in-r/</guid>
+      <description>Hi guys,
+in this Post it is verified the efficiency in question of time of execution of functions created for Matrix multiplication.
+An array with dimensions \(1000\times1000\) was generated using the rnorm function in R.
+The first function called mult.matrix uses the base function of R for matrix multiplication, for example, consider A as a square matrix, multiplication is obtained by A%*%A. In the second function, the byte code compiler which can increase the speed of some code was used. Using the compiler is an easy way to get improvements in speed. The third function uses the graphical processing unit (GPU) as the processing unit. NVIDIA GPU uses CUDA programming language, however it is integration with software R is possible. Some functions are implemented in the gpuR package, one of them is matrix creation using the GPU, in this way it is possible to realize the multiplication. 4.The fourth function analyzed is using the R and Julia integration. Through the JuliaCall package it is possible to integrate R with Julia, and thus send and return functions and results.  # Required Packages library(tidyverse) ## ── Attaching packages ───────────────────────────────────────────────────────────── tidyverse 1.2.1 ── ## ✔ ggplot2 3.1.0 ✔ purrr 0.3.2 ## ✔ tibble 2.</description>
+    </item>
+    
+  </channel>
+</rss>

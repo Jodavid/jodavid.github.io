@@ -1,0 +1,99 @@
+---
+title: Comparison of time efficiency of a same function in R
+author: ~
+date: '2019-05-28'
+slug: comparison-of-time-efficiency-of-a-same-function-in-r
+categories: ["R","Julia","CUDA"]
+tags: ["R","CUDA", "GPU","Julia","Byte code compilation"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+Hi guys,
+
+in this Post it is verified the efficiency in question of time of execution of functions created for Matrix multiplication.
+
+An array with dimensions $1000\times1000$ was generated using the 
+`rnorm` function in R.
+
+1. The first function called `mult.matrix` uses the base function of R for matrix multiplication, for example, consider A as a square matrix, multiplication is obtained by `A%*%A`.
+2. In the second function, the byte code compiler which can
+increase the speed of some code was used. Using the compiler is an easy way to get improvements in speed.
+3. The third function uses the graphical processing unit (GPU) as the processing unit.
+NVIDIA GPU uses CUDA programming language, however it is
+integration with software R is possible. Some functions are implemented in the `gpuR` package, one of them is matrix creation using the GPU, in this way it is possible to realize the multiplication.
+4.The fourth function analyzed is using the R and Julia integration.
+Through the `JuliaCall` package it is possible to integrate R with Julia, and thus send and return functions and results.
+
+```{r}
+# Required Packages
+library(tidyverse)
+library(microbenchmark)
+library(gpuR) # GPU Package
+library(JuliaCall) # Julia Package for Integration
+
+# Opening the integration of R with Julia 
+julia <- julia_setup()
+
+# Function for matrix multiplication with base function of R
+mult.matrix <- function( x ){
+  matrix(x, nrow=1000) %*%
+    matrix(x, nrow=1000)
+}
+
+# Function for matrix multiplication with Byte code Compilation in base function of R 
+mult.matrix.byte <- compiler::cmpfun(mult.matrix)
+
+
+# Function for matrix multiplication with GPU
+gpu.mult.matrix <- function( x ){
+  vclMatrix(matrix(x, nrow=1000), type="float") %*%
+    vclMatrix(matrix(x, nrow=1000), type="float")
+}
+
+# Function for matrix multiplication with Julia
+mult.matrix.julia <- function(x){
+  
+  # Send Matrix
+  julia_assign("x", matrix(x, nrow=1000)); 
+  # multiplication
+  julia_command("y = x*x;")
+  # return for R
+  res <- julia_eval("y")
+  return(res)
+}
+
+#Create database
+x <- rnorm(1000*1000)
+
+#Using the microbenchmark function
+result <- microbenchmark(
+  mult.matrix(x),
+  mult.matrix.byte(x),
+  gpu.mult.matrix(x),
+  mult.matrix.julia(x)
+)
+
+print(result)
+
+autoplot(result)
+
+```
+
+The results show that the most efficient method are obtained with the function that uses the GPU to calculate the multiplication.
+The basic function of R, such as the byte code compilation, presented results similar, this show that compilation not performance gain in the speed of this specific function.
+Lastly, the less efficient method was the function that  integrate R and Julia. This may have happened, for the time needed to send the data to Julia and in the end get results return.
+
+Although the example is simple, such as matrix multiplication, these calculation alternatives can be applied to other functions and thus gain performance gains in your applications.
+
+
+for more details see:
+
+[NVIDIA CUDA](https://developer.nvidia.com/nvidia-developer-zone)
+
+[Li, Changcheng. "JuliaCall: an R package for seamless integration between R and Julia."](https://www.theoj.org/joss-papers/joss.01284/10.21105.joss.01284.pdf)
+
+[Wickham, Hadley. Advanced r. Chapman and Hall/CRC, 2014.](http://adv-r.had.co.nz/)
+

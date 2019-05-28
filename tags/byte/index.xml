@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BYTE on Jodavid Ferreira</title>
+    <link>/tags/byte/</link>
+    <description>Recent content in BYTE on Jodavid Ferreira</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/byte/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Comparison of time of the same function in R</title>
+      <link>/post/comparison-of-time-of-the-same-function-in-r/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/comparison-of-time-of-the-same-function-in-r/</guid>
+      <description> #Required Packages library(microbenchmark) library(gpuR) #GPU Package ## Number of platforms: 1 ## - platform: NVIDIA Corporation: OpenCL 1.2 CUDA 10.1.152 ## - context device index: 0 ## - GeForce 920M ## checked all devices ## completed initialization ## gpuR 2.0.0 ## ## Attaching package: &amp;#39;gpuR&amp;#39; ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## colnames, pmax, pmin, svd x &amp;lt;- c(1:1000) microbenchmark( mean(x), median(x) ) ## Unit: microseconds ## expr min lq mean median uq max neval cld ## mean(x) 4.153 4.365 5.21019 4.6995 4.8825 27.287 100 a ## median(x) 40.050 41.582 54.02459 42.1795 43.9135 807.199 100 b </description>
+    </item>
+    
+  </channel>
+</rss>
