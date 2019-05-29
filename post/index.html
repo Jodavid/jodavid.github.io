@@ -415,7 +415,7 @@
     
         
           <li class="middot"></li>
-          <li>14 minutes read</li>
+          <li>2 minutes read</li>
         
       </ul>
     </div>
@@ -425,7 +425,8 @@
       Hi guys,
 in this post will be presented an efficient algorithm and one of the most basic in the area of statistical classification, this algorithm is the \(k\)-NN (\(k\) Nearest Neighbors).
 The k-Nearest Neighbors algorithm was proposed by Cover e Hart and is considered as a non-parametric classifier. Given a test sample where the class is unknown, the method finds the nearest \(k\) in the training set for each observation of the test sample over a distance and assigns a class to the observation according to the majority vote of the classes of these neighbors.
-The algorithm \(k\)-NN estimates the probability of an observation belonging to each group based on the nearest neighbor \(k\) information defined as follows. Consider \(G\) non-empty partitions, which are \(C_1,C_2, \ldots,C_G\), such that, \(C_j \subset \mathbb{R}^p\) is a subset of size \(n_j\), for \(j = 1, \ldots,g\), \(n = \sum_{j=1}^{n} n_j\), \(C_i\cap C_j = \emptyset\) for all \(i \neq j.\) Let \(\bm{y} \in \mathbb{R}^p\) an observation to be classified and \(\{\bm{x}_{i_1},\bm{x}_{i_2},\ldots,\bm{x}_{i_k} \}\) the set of \(k\) neighbors, such that, \(k\leq n\) and \(\{{i_1},{i_2},\ldots,{i_k} \} \subset \{1,2,\ldots,n\}\). So for \(j = 1, \ldots,G\), the classification rule of the \(k\)-NN is defined as:......
+The algorithm \(k\)-NN estimates the probability of an observation belonging to each group based on the nearest neighbor \(k\) information defined as follows. Consider \(G\) non-empty partitions, which are \(C_1,C_2, \ldots,C_G\), such that, \(C_j \subset \mathbb{R}^p\) is a subset of size \(n_j\), for \(j = 1, \ldots,g\), \(n = \sum_{j=1}^{n} n_j\), \(C_i\cap C_j = \emptyset\) for all \(i \neq j.\) Let \(\bm{y} \in \mathbb{R}^p\) an observation to be classified and \(\{\bm{x}_{i_1},\bm{x}_{i_2},\ldots,\bm{x}_{i_k} \}\) the set of \(k\) neighbors, such that, \(k\leq n\) and \(\{i_1, i_2,\ldots, i_k \} \subset \{1,2,\ldots,n\}\). So for \(j = 1, \ldots,G\), the classification rule of the \(k\)-NN is defined as:
+\[ \widehat{c}_{_{kNN}} = \mathop{\text{ arg max}}_{c} \widehat{P}_k(G=c), \]......
     
   </a>
 

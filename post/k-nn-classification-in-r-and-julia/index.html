@@ -10,13 +10,15 @@
   <meta name="description" content="Hi guys,
 in this post will be presented an efficient algorithm and one of the most basic in the area of statistical classification, this algorithm is the \(k\)-NN (\(k\) Nearest Neighbors).
 The k-Nearest Neighbors algorithm was proposed by Cover e Hart and is considered as a non-parametric classifier. Given a test sample where the class is unknown, the method finds the nearest \(k\) in the training set for each observation of the test sample over a distance and assigns a class to the observation according to the majority vote of the classes of these neighbors.
-The algorithm \(k\)-NN estimates the probability of an observation belonging to each group based on the nearest neighbor \(k\) information defined as follows. Consider \(G\) non-empty partitions, which are \(C_1,C_2, \ldots,C_G\), such that, \(C_j \subset \mathbb{R}^p\) is a subset of size \(n_j\), for \(j = 1, \ldots,g\), \(n = \sum_{j=1}^{n} n_j\), \(C_i\cap C_j = \emptyset\) for all \(i \neq j.\) Let \(\bm{y} \in \mathbb{R}^p\) an observation to be classified and \(\{\bm{x}_{i_1},\bm{x}_{i_2},\ldots,\bm{x}_{i_k} \}\) the set of \(k\) neighbors, such that, \(k\leq n\) and \(\{{i_1},{i_2},\ldots,{i_k} \} \subset \{1,2,\ldots,n\}\). So for \(j = 1, \ldots,G\), the classification rule of the \(k\)-NN is defined as:">
+The algorithm \(k\)-NN estimates the probability of an observation belonging to each group based on the nearest neighbor \(k\) information defined as follows. Consider \(G\) non-empty partitions, which are \(C_1,C_2, \ldots,C_G\), such that, \(C_j \subset \mathbb{R}^p\) is a subset of size \(n_j\), for \(j = 1, \ldots,g\), \(n = \sum_{j=1}^{n} n_j\), \(C_i\cap C_j = \emptyset\) for all \(i \neq j.\) Let \(\bm{y} \in \mathbb{R}^p\) an observation to be classified and \(\{\bm{x}_{i_1},\bm{x}_{i_2},\ldots,\bm{x}_{i_k} \}\) the set of \(k\) neighbors, such that, \(k\leq n\) and \(\{i_1, i_2,\ldots, i_k \} \subset \{1,2,\ldots,n\}\). So for \(j = 1, \ldots,G\), the classification rule of the \(k\)-NN is defined as:
+\[ \widehat{c}_{_{kNN}} = \mathop{\text{ arg max}}_{c} \widehat{P}_k(G=c), \]">
   
   <meta property="og:title" content="k-NN classification in R and Julia" />
 <meta property="og:description" content="Hi guys,
 in this post will be presented an efficient algorithm and one of the most basic in the area of statistical classification, this algorithm is the \(k\)-NN (\(k\) Nearest Neighbors).
 The k-Nearest Neighbors algorithm was proposed by Cover e Hart and is considered as a non-parametric classifier. Given a test sample where the class is unknown, the method finds the nearest \(k\) in the training set for each observation of the test sample over a distance and assigns a class to the observation according to the majority vote of the classes of these neighbors.
-The algorithm \(k\)-NN estimates the probability of an observation belonging to each group based on the nearest neighbor \(k\) information defined as follows. Consider \(G\) non-empty partitions, which are \(C_1,C_2, \ldots,C_G\), such that, \(C_j \subset \mathbb{R}^p\) is a subset of size \(n_j\), for \(j = 1, \ldots,g\), \(n = \sum_{j=1}^{n} n_j\), \(C_i\cap C_j = \emptyset\) for all \(i \neq j.\) Let \(\bm{y} \in \mathbb{R}^p\) an observation to be classified and \(\{\bm{x}_{i_1},\bm{x}_{i_2},\ldots,\bm{x}_{i_k} \}\) the set of \(k\) neighbors, such that, \(k\leq n\) and \(\{{i_1},{i_2},\ldots,{i_k} \} \subset \{1,2,\ldots,n\}\). So for \(j = 1, \ldots,G\), the classification rule of the \(k\)-NN is defined as:" />
+The algorithm \(k\)-NN estimates the probability of an observation belonging to each group based on the nearest neighbor \(k\) information defined as follows. Consider \(G\) non-empty partitions, which are \(C_1,C_2, \ldots,C_G\), such that, \(C_j \subset \mathbb{R}^p\) is a subset of size \(n_j\), for \(j = 1, \ldots,g\), \(n = \sum_{j=1}^{n} n_j\), \(C_i\cap C_j = \emptyset\) for all \(i \neq j.\) Let \(\bm{y} \in \mathbb{R}^p\) an observation to be classified and \(\{\bm{x}_{i_1},\bm{x}_{i_2},\ldots,\bm{x}_{i_k} \}\) the set of \(k\) neighbors, such that, \(k\leq n\) and \(\{i_1, i_2,\ldots, i_k \} \subset \{1,2,\ldots,n\}\). So for \(j = 1, \ldots,G\), the classification rule of the \(k\)-NN is defined as:
+\[ \widehat{c}_{_{kNN}} = \mathop{\text{ arg max}}_{c} \widehat{P}_k(G=c), \]" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/k-nn-classification-in-r-and-julia/" />
 <meta property="article:published_time" content="2019-05-29T00:00:00&#43;00:00"/>
@@ -278,7 +280,7 @@ The algorithm \(k\)-NN estimates the probability of an observation belonging to 
 
     
       <li class="middot"></li>
-      <li>14 minutes read</li>
+      <li>2 minutes read</li>
     
   </ul>
   
@@ -288,14 +290,6 @@ The algorithm \(k\)-NN estimates the probability of an observation belonging to 
 
           <div class="post-content markdown">
             
-<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
-<script src="/rmarkdown-libs/plotly-binding/plotly.js"></script>
-<script src="/rmarkdown-libs/typedarray/typedarray.min.js"></script>
-<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
-<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
-<link href="/rmarkdown-libs/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/plotly-main/plotly-latest.min.js"></script>
 
 
 <p>Hi guys,</p>
@@ -328,7 +322,7 @@ Let <span class="math inline">\(\bm{y} \in \mathbb{R}^p\)</span>
 an observation to be classified and
 <span class="math inline">\(\{\bm{x}_{i_1},\bm{x}_{i_2},\ldots,\bm{x}_{i_k} \}\)</span> the set of <span class="math inline">\(k\)</span> neighbors, such that,
 <span class="math inline">\(k\leq n\)</span> and
-<span class="math inline">\(\{{i_1},{i_2},\ldots,{i_k} \} \subset \{1,2,\ldots,n\}\)</span>.
+<span class="math inline">\(\{i_1, i_2,\ldots, i_k \} \subset \{1,2,\ldots,n\}\)</span>.
 So for <span class="math inline">\(j = 1, \ldots,G\)</span>,
 the classification rule of the <span class="math inline">\(k\)</span>-NN
 is defined as:</p>
@@ -342,312 +336,7 @@ is defined as:</p>
 0,&amp; \text{if } \mathbf{x}_{i_\nu} \notin C_j.
 \end{array}
 \right.
-\]</span>
-To illustrate our example we will use the ‘Iris’ database. Below is a graph of two variables of the ‘Iris’ database, this base contains 4 variables that we will use in the classification and the fifth variable is the ‘true class’ of the observations.</p>
-<pre class="r"><code>library(plotly)</code></pre>
-<pre><code>## Carregando pacotes exigidos: ggplot2</code></pre>
-<pre><code>## 
-## Attaching package: &#39;plotly&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
-## 
-##     last_plot</code></pre>
-<pre><code>## The following object is masked from &#39;package:stats&#39;:
-## 
-##     filter</code></pre>
-<pre><code>## The following object is masked from &#39;package:graphics&#39;:
-## 
-##     layout</code></pre>
-<pre class="r"><code>p &lt;- ggplot(iris,aes(Sepal.Length,Petal.Length,colour=Species)) +
-  geom_point()
-
-ggplotly(p)</code></pre>
-<div id="htmlwidget-1" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1">{"x":{"data":[{"x":[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5],"y":[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5,1.7,1.5,1,1.7,1.9,1.6,1.6,1.5,1.4,1.6,1.6,1.5,1.5,1.4,1.5,1.2,1.3,1.4,1.3,1.5,1.3,1.3,1.3,1.6,1.9,1.4,1.6,1.4,1.5,1.4],"text":["Sepal.Length: 5.1<br />Petal.Length: 1.4<br />Species: setosa","Sepal.Length: 4.9<br />Petal.Length: 1.4<br />Species: setosa","Sepal.Length: 4.7<br />Petal.Length: 1.3<br />Species: setosa","Sepal.Length: 4.6<br />Petal.Length: 1.5<br />Species: setosa","Sepal.Length: 5.0<br />Petal.Length: 1.4<br />Species: setosa","Sepal.Length: 5.4<br />Petal.Length: 1.7<br />Species: setosa","Sepal.Length: 4.6<br />Petal.Length: 1.4<br />Species: setosa","Sepal.Length: 5.0<br />Petal.Length: 1.5<br />Species: setosa","Sepal.Length: 4.4<br />Petal.Length: 1.4<br />Species: setosa","Sepal.Length: 4.9<br />Petal.Length: 1.5<br />Species: setosa","Sepal.Length: 5.4<br />Petal.Length: 1.5<br />Species: setosa","Sepal.Length: 4.8<br />Petal.Length: 1.6<br />Species: setosa","Sepal.Length: 4.8<br />Petal.Length: 1.4<br />Species: setosa","Sepal.Length: 4.3<br />Petal.Length: 1.1<br />Species: setosa","Sepal.Length: 5.8<br />Petal.Length: 1.2<br />Species: setosa","Sepal.Length: 5.7<br />Petal.Length: 1.5<br />Species: setosa","Sepal.Length: 5.4<br />Petal.Length: 1.3<br />Species: setosa","Sepal.Length: 5.1<br />Petal.Length: 1.4<br />Species: setosa","Sepal.Length: 5.7<br />Petal.Length: 1.7<br />Species: setosa","Sepal.Length: 5.1<br />Petal.Length: 1.5<br />Species: setosa","Sepal.Length: 5.4<br />Petal.Length: 1.7<br />Species: setosa","Sepal.Length: 5.1<br />Petal.Length: 1.5<br />Species: setosa","Sepal.Length: 4.6<br />Petal.Length: 1.0<br />Species: setosa","Sepal.Length: 5.1<br />Petal.Length: 1.7<br />Species: setosa","Sepal.Length: 4.8<br />Petal.Length: 1.9<br />Species: setosa","Sepal.Length: 5.0<br />Petal.Length: 1.6<br />Species: setosa","Sepal.Length: 5.0<br />Petal.Length: 1.6<br />Species: setosa","Sepal.Length: 5.2<br />Petal.Length: 1.5<br />Species: setosa","Sepal.Length: 5.2<br />Petal.Length: 1.4<br />Species: setosa","Sepal.Length: 4.7<br />Petal.Length: 1.6<br />Species: setosa","Sepal.Length: 4.8<br />Petal.Length: 1.6<br />Species: setosa","Sepal.Length: 5.4<br />Petal.Length: 1.5<br />Species: setosa","Sepal.Length: 5.2<br />Petal.Length: 1.5<br />Species: setosa","Sepal.Length: 5.5<br />Petal.Length: 1.4<br />Species: setosa","Sepal.Length: 4.9<br />Petal.Length: 1.5<br />Species: setosa","Sepal.Length: 5.0<br />Petal.Length: 1.2<br />Species: setosa","Sepal.Length: 5.5<br />Petal.Length: 1.3<br />Species: setosa","Sepal.Length: 4.9<br />Petal.Length: 1.4<br />Species: setosa","Sepal.Length: 4.4<br />Petal.Length: 1.3<br />Species: setosa","Sepal.Length: 5.1<br />Petal.Length: 1.5<br />Species: setosa","Sepal.Length: 5.0<br />Petal.Length: 1.3<br />Species: setosa","Sepal.Length: 4.5<br />Petal.Length: 1.3<br />Species: setosa","Sepal.Length: 4.4<br />Petal.Length: 1.3<br />Species: setosa","Sepal.Length: 5.0<br />Petal.Length: 1.6<br />Species: setosa","Sepal.Length: 5.1<br />Petal.Length: 1.9<br />Species: setosa","Sepal.Length: 4.8<br />Petal.Length: 1.4<br />Species: setosa","Sepal.Length: 5.1<br />Petal.Length: 1.6<br />Species: setosa","Sepal.Length: 4.6<br />Petal.Length: 1.4<br />Species: setosa","Sepal.Length: 5.3<br />Petal.Length: 1.5<br />Species: setosa","Sepal.Length: 5.0<br />Petal.Length: 1.4<br />Species: setosa"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"setosa","legendgroup":"setosa","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7],"y":[4.7,4.5,4.9,4,4.6,4.5,4.7,3.3,4.6,3.9,3.5,4.2,4,4.7,3.6,4.4,4.5,4.1,4.5,3.9,4.8,4,4.9,4.7,4.3,4.4,4.8,5,4.5,3.5,3.8,3.7,3.9,5.1,4.5,4.5,4.7,4.4,4.1,4,4.4,4.6,4,3.3,4.2,4.2,4.2,4.3,3,4.1],"text":["Sepal.Length: 7.0<br />Petal.Length: 4.7<br />Species: versicolor","Sepal.Length: 6.4<br />Petal.Length: 4.5<br />Species: versicolor","Sepal.Length: 6.9<br />Petal.Length: 4.9<br />Species: versicolor","Sepal.Length: 5.5<br />Petal.Length: 4.0<br />Species: versicolor","Sepal.Length: 6.5<br />Petal.Length: 4.6<br />Species: versicolor","Sepal.Length: 5.7<br />Petal.Length: 4.5<br />Species: versicolor","Sepal.Length: 6.3<br />Petal.Length: 4.7<br />Species: versicolor","Sepal.Length: 4.9<br />Petal.Length: 3.3<br />Species: versicolor","Sepal.Length: 6.6<br />Petal.Length: 4.6<br />Species: versicolor","Sepal.Length: 5.2<br />Petal.Length: 3.9<br />Species: versicolor","Sepal.Length: 5.0<br />Petal.Length: 3.5<br />Species: versicolor","Sepal.Length: 5.9<br />Petal.Length: 4.2<br />Species: versicolor","Sepal.Length: 6.0<br />Petal.Length: 4.0<br />Species: versicolor","Sepal.Length: 6.1<br />Petal.Length: 4.7<br />Species: versicolor","Sepal.Length: 5.6<br />Petal.Length: 3.6<br />Species: versicolor","Sepal.Length: 6.7<br />Petal.Length: 4.4<br />Species: versicolor","Sepal.Length: 5.6<br />Petal.Length: 4.5<br />Species: versicolor","Sepal.Length: 5.8<br />Petal.Length: 4.1<br />Species: versicolor","Sepal.Length: 6.2<br />Petal.Length: 4.5<br />Species: versicolor","Sepal.Length: 5.6<br />Petal.Length: 3.9<br />Species: versicolor","Sepal.Length: 5.9<br />Petal.Length: 4.8<br />Species: versicolor","Sepal.Length: 6.1<br />Petal.Length: 4.0<br />Species: versicolor","Sepal.Length: 6.3<br />Petal.Length: 4.9<br />Species: versicolor","Sepal.Length: 6.1<br />Petal.Length: 4.7<br />Species: versicolor","Sepal.Length: 6.4<br />Petal.Length: 4.3<br />Species: versicolor","Sepal.Length: 6.6<br />Petal.Length: 4.4<br />Species: versicolor","Sepal.Length: 6.8<br />Petal.Length: 4.8<br />Species: versicolor","Sepal.Length: 6.7<br />Petal.Length: 5.0<br />Species: versicolor","Sepal.Length: 6.0<br />Petal.Length: 4.5<br />Species: versicolor","Sepal.Length: 5.7<br />Petal.Length: 3.5<br />Species: versicolor","Sepal.Length: 5.5<br />Petal.Length: 3.8<br />Species: versicolor","Sepal.Length: 5.5<br />Petal.Length: 3.7<br />Species: versicolor","Sepal.Length: 5.8<br />Petal.Length: 3.9<br />Species: versicolor","Sepal.Length: 6.0<br />Petal.Length: 5.1<br />Species: versicolor","Sepal.Length: 5.4<br />Petal.Length: 4.5<br />Species: versicolor","Sepal.Length: 6.0<br />Petal.Length: 4.5<br />Species: versicolor","Sepal.Length: 6.7<br />Petal.Length: 4.7<br />Species: versicolor","Sepal.Length: 6.3<br />Petal.Length: 4.4<br />Species: versicolor","Sepal.Length: 5.6<br />Petal.Length: 4.1<br />Species: versicolor","Sepal.Length: 5.5<br />Petal.Length: 4.0<br />Species: versicolor","Sepal.Length: 5.5<br />Petal.Length: 4.4<br />Species: versicolor","Sepal.Length: 6.1<br />Petal.Length: 4.6<br />Species: versicolor","Sepal.Length: 5.8<br />Petal.Length: 4.0<br />Species: versicolor","Sepal.Length: 5.0<br />Petal.Length: 3.3<br />Species: versicolor","Sepal.Length: 5.6<br />Petal.Length: 4.2<br />Species: versicolor","Sepal.Length: 5.7<br />Petal.Length: 4.2<br />Species: versicolor","Sepal.Length: 5.7<br />Petal.Length: 4.2<br />Species: versicolor","Sepal.Length: 6.2<br />Petal.Length: 4.3<br />Species: versicolor","Sepal.Length: 5.1<br />Petal.Length: 3.0<br />Species: versicolor","Sepal.Length: 5.7<br />Petal.Length: 4.1<br />Species: versicolor"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,186,56,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,186,56,1)"}},"hoveron":"points","name":"versicolor","legendgroup":"versicolor","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],"y":[6,5.1,5.9,5.6,5.8,6.6,4.5,6.3,5.8,6.1,5.1,5.3,5.5,5,5.1,5.3,5.5,6.7,6.9,5,5.7,4.9,6.7,4.9,5.7,6,4.8,4.9,5.6,5.8,6.1,6.4,5.6,5.1,5.6,6.1,5.6,5.5,4.8,5.4,5.6,5.1,5.1,5.9,5.7,5.2,5,5.2,5.4,5.1],"text":["Sepal.Length: 6.3<br />Petal.Length: 6.0<br />Species: virginica","Sepal.Length: 5.8<br />Petal.Length: 5.1<br />Species: virginica","Sepal.Length: 7.1<br />Petal.Length: 5.9<br />Species: virginica","Sepal.Length: 6.3<br />Petal.Length: 5.6<br />Species: virginica","Sepal.Length: 6.5<br />Petal.Length: 5.8<br />Species: virginica","Sepal.Length: 7.6<br />Petal.Length: 6.6<br />Species: virginica","Sepal.Length: 4.9<br />Petal.Length: 4.5<br />Species: virginica","Sepal.Length: 7.3<br />Petal.Length: 6.3<br />Species: virginica","Sepal.Length: 6.7<br />Petal.Length: 5.8<br />Species: virginica","Sepal.Length: 7.2<br />Petal.Length: 6.1<br />Species: virginica","Sepal.Length: 6.5<br />Petal.Length: 5.1<br />Species: virginica","Sepal.Length: 6.4<br />Petal.Length: 5.3<br />Species: virginica","Sepal.Length: 6.8<br />Petal.Length: 5.5<br />Species: virginica","Sepal.Length: 5.7<br />Petal.Length: 5.0<br />Species: virginica","Sepal.Length: 5.8<br />Petal.Length: 5.1<br />Species: virginica","Sepal.Length: 6.4<br />Petal.Length: 5.3<br />Species: virginica","Sepal.Length: 6.5<br />Petal.Length: 5.5<br />Species: virginica","Sepal.Length: 7.7<br />Petal.Length: 6.7<br />Species: virginica","Sepal.Length: 7.7<br />Petal.Length: 6.9<br />Species: virginica","Sepal.Length: 6.0<br />Petal.Length: 5.0<br />Species: virginica","Sepal.Length: 6.9<br />Petal.Length: 5.7<br />Species: virginica","Sepal.Length: 5.6<br />Petal.Length: 4.9<br />Species: virginica","Sepal.Length: 7.7<br />Petal.Length: 6.7<br />Species: virginica","Sepal.Length: 6.3<br />Petal.Length: 4.9<br />Species: virginica","Sepal.Length: 6.7<br />Petal.Length: 5.7<br />Species: virginica","Sepal.Length: 7.2<br />Petal.Length: 6.0<br />Species: virginica","Sepal.Length: 6.2<br />Petal.Length: 4.8<br />Species: virginica","Sepal.Length: 6.1<br />Petal.Length: 4.9<br />Species: virginica","Sepal.Length: 6.4<br />Petal.Length: 5.6<br />Species: virginica","Sepal.Length: 7.2<br />Petal.Length: 5.8<br />Species: virginica","Sepal.Length: 7.4<br />Petal.Length: 6.1<br />Species: virginica","Sepal.Length: 7.9<br />Petal.Length: 6.4<br />Species: virginica","Sepal.Length: 6.4<br />Petal.Length: 5.6<br />Species: virginica","Sepal.Length: 6.3<br />Petal.Length: 5.1<br />Species: virginica","Sepal.Length: 6.1<br />Petal.Length: 5.6<br />Species: virginica","Sepal.Length: 7.7<br />Petal.Length: 6.1<br />Species: virginica","Sepal.Length: 6.3<br />Petal.Length: 5.6<br />Species: virginica","Sepal.Length: 6.4<br />Petal.Length: 5.5<br />Species: virginica","Sepal.Length: 6.0<br />Petal.Length: 4.8<br />Species: virginica","Sepal.Length: 6.9<br />Petal.Length: 5.4<br />Species: virginica","Sepal.Length: 6.7<br />Petal.Length: 5.6<br />Species: virginica","Sepal.Length: 6.9<br />Petal.Length: 5.1<br />Species: virginica","Sepal.Length: 5.8<br />Petal.Length: 5.1<br />Species: virginica","Sepal.Length: 6.8<br />Petal.Length: 5.9<br />Species: virginica","Sepal.Length: 6.7<br />Petal.Length: 5.7<br />Species: virginica","Sepal.Length: 6.7<br />Petal.Length: 5.2<br />Species: virginica","Sepal.Length: 6.3<br />Petal.Length: 5.0<br />Species: virginica","Sepal.Length: 6.5<br />Petal.Length: 5.2<br />Species: virginica","Sepal.Length: 6.2<br />Petal.Length: 5.4<br />Species: virginica","Sepal.Length: 5.9<br />Petal.Length: 5.1<br />Species: virginica"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(97,156,255,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(97,156,255,1)"}},"hoveron":"points","name":"virginica","legendgroup":"virginica","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.2283105022831,"r":7.30593607305936,"b":40.1826484018265,"l":31.4155251141553},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[4.12,8.08],"tickmode":"array","ticktext":["5","6","7","8"],"tickvals":[5,6,7,8],"categoryorder":"array","categoryarray":["5","6","7","8"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":"Sepal.Length","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.705,7.195],"tickmode":"array","ticktext":["2","4","6"],"tickvals":[2,4,6],"categoryorder":"array","categoryarray":["2","4","6"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":"Petal.Length","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"y":0.96751968503937},"annotations":[{"text":"Species","x":1.02,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"left","yanchor":"bottom","legendTitle":true}],"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"cloud":false},"source":"A","attrs":{"54481de65562":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"54481de65562","visdat":{"54481de65562":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script>
-<p>Let’s divide our experiment into 3 steps:</p>
-<ol style="list-style-type: decimal">
-<li>Take a random sample from the Iris database to represent our
-training sample;</li>
-<li>The sample not selected for the training will be considered the
-test sample, with this sample we will classifier using the algorithm
-<span class="math inline">\(k\)</span>-NN;</li>
-<li>As we know the true class of the observations of the test sample, it is possible to obtain the classification accuracy and verify the efficiency of the algorithm <span class="math inline">\(k\)</span> -NN.</li>
-</ol>
-<p>Let’s repeat the same steps for the R and Julia languages.</p>
-<div id="in-r" class="section level4">
-<h4>In R:</h4>
-<pre class="r"><code># required packages
-library(class)
-#database
-head(iris)</code></pre>
-<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-## 1          5.1         3.5          1.4         0.2  setosa
-## 2          4.9         3.0          1.4         0.2  setosa
-## 3          4.7         3.2          1.3         0.2  setosa
-## 4          4.6         3.1          1.5         0.2  setosa
-## 5          5.0         3.6          1.4         0.2  setosa
-## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
-<pre class="r"><code># training sample
-set.seed(1) # seed it is necessary for obtained same results
-sample.iris &lt;- sample(1:nrow(iris),50) # 50 observations
-sample.iris</code></pre>
-<pre><code>##  [1]  40  56  85 134  30 131 137  95  90   9  29  25 143  53 105  68  97
-## [18] 132  51 102 122  28  84  16  34  49   2  48 107  42  58  72  59  22
-## [35]  96  77  91  13  82  46 114  71 148  60  57  83   3  50  75  70</code></pre>
-<pre class="r"><code>training &lt;- iris[sample.iris,-ncol(iris)]
-class_training &lt;- iris[sample.iris,ncol(iris)]
-test &lt;- iris[-sample.iris,-ncol(iris)]
-class_test &lt;- iris[-sample.iris,ncol(iris)]
-
-# k-NN with 3 Neighbour
-resul &lt;- knn(training,test,class_training,k=3)
-
-# classification accuracy - R
-mean(resul==class_test)</code></pre>
-<pre><code>## [1] 0.97</code></pre>
-</div>
-<div id="in-julia" class="section level4">
-<h4>In Julia:</h4>
-<pre class="julia"><code>using StatsKit
-using RDatasets
-
-#&lt;&gt; ----------------------------------------- &lt;&gt;#
-# k-NN Functions
-## majority vote
-function maj_vote(yn)
-    ## majority vote
-    cm = countmap(yn)
-    mv = -999
-    lab = nothing
-    tot = 1e-8
-    
-    for (k,v) in cm
-        tot += v
-        
-          if v &gt; mv
-            mv = v
-            lab = k
-          end
-    
-    end
-    
-    prop = /(mv, tot)
-    return [lab, prop]
-end</code></pre>
-<pre><code>## maj_vote (generic function with 1 method)</code></pre>
-<pre class="julia"><code>
-## KNN label prediction
-function knn(x, y, x_new , k)
-    x = convert(Array, x)
-    y = convert(Array, y)
-    x_new = convert(Array, x_new)
-    n,p = size(x)
-    n2,p2 = size(x_new)
-    ynew = DataFrame(Class=String[], 
-        maj=Float64[])
-    for i in 1:n2 ## over new x_new
-        res = zeros(n,2)
-        for j in 1:n ## over x
-            ## euclidean distance between rows - each row is a subject
-            res[j,:] = [j , euclidean(x[j,:], x_new[i,:])]
-        end
-        ## sort rows by distance and index - smallest distances
-        res2 = sortslices(res, dims = 1, by = x -&gt; (x[2], x[1]))
-        ## get indices for the largest k distances
-        ind = convert(Array{Int}, res2[1:k, 1])
-        ## take majority vote for the associated indices
-        res3 = maj_vote(y[ind])
-        ynew = vcat(ynew,DataFrame(Class=res3[1], maj = res3[2] ))
-    end
-    ## return the predicted labels
-    return ynew
-end</code></pre>
-<pre><code>## knn (generic function with 1 method)</code></pre>
-<pre class="julia"><code>
-#&lt;&gt; ----------------------------------------- &lt;&gt;#
-
-iris = dataset(&quot;datasets&quot;, &quot;iris&quot;)</code></pre>
-<pre><code>## 150×5 DataFrame
-## │ Row │ SepalLength │ SepalWidth │ PetalLength │ PetalWidth │ Species      │
-## │     │ Float64     │ Float64    │ Float64     │ Float64    │ Categorical… │
-## ├─────┼─────────────┼────────────┼─────────────┼────────────┼──────────────┤
-## │ 1   │ 5.1         │ 3.5        │ 1.4         │ 0.2        │ setosa       │
-## │ 2   │ 4.9         │ 3.0        │ 1.4         │ 0.2        │ setosa       │
-## │ 3   │ 4.7         │ 3.2        │ 1.3         │ 0.2        │ setosa       │
-## │ 4   │ 4.6         │ 3.1        │ 1.5         │ 0.2        │ setosa       │
-## │ 5   │ 5.0         │ 3.6        │ 1.4         │ 0.2        │ setosa       │
-## │ 6   │ 5.4         │ 3.9        │ 1.7         │ 0.4        │ setosa       │
-## │ 7   │ 4.6         │ 3.4        │ 1.4         │ 0.3        │ setosa       │
-## ⋮
-## │ 143 │ 5.8         │ 2.7        │ 5.1         │ 1.9        │ virginica    │
-## │ 144 │ 6.8         │ 3.2        │ 5.9         │ 2.3        │ virginica    │
-## │ 145 │ 6.7         │ 3.3        │ 5.7         │ 2.5        │ virginica    │
-## │ 146 │ 6.7         │ 3.0        │ 5.2         │ 2.3        │ virginica    │
-## │ 147 │ 6.3         │ 2.5        │ 5.0         │ 1.9        │ virginica    │
-## │ 148 │ 6.5         │ 3.0        │ 5.2         │ 2.0        │ virginica    │
-## │ 149 │ 6.2         │ 3.4        │ 5.4         │ 2.3        │ virginica    │
-## │ 150 │ 5.9         │ 3.0        │ 5.1         │ 1.8        │ virginica    │</code></pre>
-<pre class="julia"><code>sample_iris = [40,56,85,134,30,131,137,95,90,9,29,25,143,53,105,68,97,132,51,102,122,28,84,16,34,49,2,48,107,42,58,72,59,22,96,77,91,13,82,46,114,71,148,60,57,83,3,50,75,70]</code></pre>
-<pre><code>## 50-element Array{Int64,1}:
-##   40
-##   56
-##   85
-##  134
-##   30
-##  131
-##  137
-##   95
-##   90
-##    9
-##    ⋮
-##   71
-##  148
-##   60
-##   57
-##   83
-##    3
-##   50
-##   75
-##   70</code></pre>
-<pre class="julia"><code>training = iris[sample_iris,1:size(iris,2).!=ncol(iris)]</code></pre>
-<pre><code>## 50×4 DataFrame
-## │ Row │ SepalLength │ SepalWidth │ PetalLength │ PetalWidth │
-## │     │ Float64     │ Float64    │ Float64     │ Float64    │
-## ├─────┼─────────────┼────────────┼─────────────┼────────────┤
-## │ 1   │ 5.1         │ 3.4        │ 1.5         │ 0.2        │
-## │ 2   │ 5.7         │ 2.8        │ 4.5         │ 1.3        │
-## │ 3   │ 5.4         │ 3.0        │ 4.5         │ 1.5        │
-## │ 4   │ 6.3         │ 2.8        │ 5.1         │ 1.5        │
-## │ 5   │ 4.7         │ 3.2        │ 1.6         │ 0.2        │
-## │ 6   │ 7.4         │ 2.8        │ 6.1         │ 1.9        │
-## │ 7   │ 6.3         │ 3.4        │ 5.6         │ 2.4        │
-## ⋮
-## │ 43  │ 6.5         │ 3.0        │ 5.2         │ 2.0        │
-## │ 44  │ 5.2         │ 2.7        │ 3.9         │ 1.4        │
-## │ 45  │ 6.3         │ 3.3        │ 4.7         │ 1.6        │
-## │ 46  │ 5.8         │ 2.7        │ 3.9         │ 1.2        │
-## │ 47  │ 4.7         │ 3.2        │ 1.3         │ 0.2        │
-## │ 48  │ 5.0         │ 3.3        │ 1.4         │ 0.2        │
-## │ 49  │ 6.4         │ 2.9        │ 4.3         │ 1.3        │
-## │ 50  │ 5.6         │ 2.5        │ 3.9         │ 1.1        │</code></pre>
-<pre class="julia"><code>class_training = iris[sample_iris,ncol(iris)]</code></pre>
-<pre><code>## 50-element CategoricalArray{String,1,UInt8}:
-##  &quot;setosa&quot;    
-##  &quot;versicolor&quot;
-##  &quot;versicolor&quot;
-##  &quot;virginica&quot; 
-##  &quot;setosa&quot;    
-##  &quot;virginica&quot; 
-##  &quot;virginica&quot; 
-##  &quot;versicolor&quot;
-##  &quot;versicolor&quot;
-##  &quot;setosa&quot;    
-##  ⋮           
-##  &quot;versicolor&quot;
-##  &quot;virginica&quot; 
-##  &quot;versicolor&quot;
-##  &quot;versicolor&quot;
-##  &quot;versicolor&quot;
-##  &quot;setosa&quot;    
-##  &quot;setosa&quot;    
-##  &quot;versicolor&quot;
-##  &quot;versicolor&quot;</code></pre>
-<pre class="julia"><code>sample_test_iris = [1,4,5,6,7,8,10,11,12,14,15,17,18,19,20,21,23,24,26,27,31,32,33,35,36,37,38,39,41,43,44,45,47,52,54,55,61,62,63,64,65,66,67,69,73,74,76,78,79,80,81,86,87,88,89,92,93,94,98,99,100,101,103,104,106,108,109,110,111,112,113,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,133,135,136,138,139,140,141,142,144,145,146,147,149,150]</code></pre>
-<pre><code>## 100-element Array{Int64,1}:
-##    1
-##    4
-##    5
-##    6
-##    7
-##    8
-##   10
-##   11
-##   12
-##   14
-##    ⋮
-##  140
-##  141
-##  142
-##  144
-##  145
-##  146
-##  147
-##  149
-##  150</code></pre>
-<pre class="julia"><code>test = iris[sample_test_iris,1:size(iris,2).!=ncol(iris)]</code></pre>
-<pre><code>## 100×4 DataFrame
-## │ Row │ SepalLength │ SepalWidth │ PetalLength │ PetalWidth │
-## │     │ Float64     │ Float64    │ Float64     │ Float64    │
-## ├─────┼─────────────┼────────────┼─────────────┼────────────┤
-## │ 1   │ 5.1         │ 3.5        │ 1.4         │ 0.2        │
-## │ 2   │ 4.6         │ 3.1        │ 1.5         │ 0.2        │
-## │ 3   │ 5.0         │ 3.6        │ 1.4         │ 0.2        │
-## │ 4   │ 5.4         │ 3.9        │ 1.7         │ 0.4        │
-## │ 5   │ 4.6         │ 3.4        │ 1.4         │ 0.3        │
-## │ 6   │ 5.0         │ 3.4        │ 1.5         │ 0.2        │
-## │ 7   │ 4.9         │ 3.1        │ 1.5         │ 0.1        │
-## ⋮
-## │ 93  │ 6.7         │ 3.1        │ 5.6         │ 2.4        │
-## │ 94  │ 6.9         │ 3.1        │ 5.1         │ 2.3        │
-## │ 95  │ 6.8         │ 3.2        │ 5.9         │ 2.3        │
-## │ 96  │ 6.7         │ 3.3        │ 5.7         │ 2.5        │
-## │ 97  │ 6.7         │ 3.0        │ 5.2         │ 2.3        │
-## │ 98  │ 6.3         │ 2.5        │ 5.0         │ 1.9        │
-## │ 99  │ 6.2         │ 3.4        │ 5.4         │ 2.3        │
-## │ 100 │ 5.9         │ 3.0        │ 5.1         │ 1.8        │</code></pre>
-<pre class="julia"><code>class_test = iris[sample_test_iris,ncol(iris)]</code></pre>
-<pre><code>## 100-element CategoricalArray{String,1,UInt8}:
-##  &quot;setosa&quot;   
-##  &quot;setosa&quot;   
-##  &quot;setosa&quot;   
-##  &quot;setosa&quot;   
-##  &quot;setosa&quot;   
-##  &quot;setosa&quot;   
-##  &quot;setosa&quot;   
-##  &quot;setosa&quot;   
-##  &quot;setosa&quot;   
-##  &quot;setosa&quot;   
-##  ⋮          
-##  &quot;virginica&quot;
-##  &quot;virginica&quot;
-##  &quot;virginica&quot;
-##  &quot;virginica&quot;
-##  &quot;virginica&quot;
-##  &quot;virginica&quot;
-##  &quot;virginica&quot;
-##  &quot;virginica&quot;
-##  &quot;virginica&quot;</code></pre>
-<pre class="julia"><code>
-# k-NN with 3 Neighbour
-predict_k3 = knn(training,class_training,test,3)</code></pre>
-<pre><code>## 100×2 DataFrame
-## │ Row │ Class     │ maj      │
-## │     │ String    │ Float64  │
-## ├─────┼───────────┼──────────┤
-## │ 1   │ setosa    │ 1.0      │
-## │ 2   │ setosa    │ 1.0      │
-## │ 3   │ setosa    │ 1.0      │
-## │ 4   │ setosa    │ 1.0      │
-## │ 5   │ setosa    │ 1.0      │
-## │ 6   │ setosa    │ 1.0      │
-## │ 7   │ setosa    │ 1.0      │
-## ⋮
-## │ 93  │ virginica │ 1.0      │
-## │ 94  │ virginica │ 0.666667 │
-## │ 95  │ virginica │ 1.0      │
-## │ 96  │ virginica │ 1.0      │
-## │ 97  │ virginica │ 1.0      │
-## │ 98  │ virginica │ 0.666667 │
-## │ 99  │ virginica │ 1.0      │
-## │ 100 │ virginica │ 0.666667 │</code></pre>
-<pre class="julia"><code>
-# classification accuracy - Julia
-class_accuracy = mean(predict_k3[:,1] .== class_test)</code></pre>
-<pre><code>## 0.97</code></pre>
-<p>The experiment was performed using a training sample with 50 observations and a test sample with 100 observations.
-In the R software, the <span class="math inline">\(k\)</span>-NN algorithm is in the <code>class</code> library, in Julia it was necessary to write the <span class="math inline">\(k\)</span>-NN code, since it was not found nothing library with the method.
-As was to be expected, using the same observations for the
-training sample and test sample, the R and the Julia obtained the same results, that was 97% accuracy.</p>
-</div>
+\]</span></p>
 
           </div>
 
