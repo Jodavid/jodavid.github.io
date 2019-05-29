@@ -59,3 +59,131 @@ $$
 \end{array}
 \right.
 $$
+To illustrate our example we will use the 'Iris' database. Below is a graph of two variables of the 'Iris' database, this base contains 4 variables that we will use in the classification and the fifth variable is the 'true class' of the observations.
+
+```{r}
+library(plotly)
+
+p <- ggplot(iris,aes(Sepal.Length,Petal.Length,colour=Species)) +
+  geom_point()
+
+ggplotly(p)
+
+```
+
+
+Let's divide our experiment into 3 steps:
+
+1. Take a random sample from the Iris database to represent our 
+training sample;
+2. The sample not selected for the training will be considered the
+test sample, with this sample we will classifier using the algorithm 
+$k$-NN;
+3. As we know the true class of the observations of the test sample, it is possible to obtain the classification accuracy and verify the efficiency of the algorithm $k$ -NN.
+
+Let's repeat the same steps for the R and Julia languages.
+
+#### In R:
+
+```{r}
+# required packages
+library(class)
+#database
+head(iris)
+
+# training sample
+set.seed(1) # seed it is necessary for obtained same results
+sample.iris <- sample(1:nrow(iris),50) # 50 observations
+sample.iris
+training <- iris[sample.iris,-ncol(iris)]
+class_training <- iris[sample.iris,ncol(iris)]
+test <- iris[-sample.iris,-ncol(iris)]
+class_test <- iris[-sample.iris,ncol(iris)]
+
+# k-NN with 3 Neighbour
+resul <- knn(training,test,class_training,k=3)
+
+# classification accuracy - R
+mean(resul==class_test)
+```
+
+
+
+#### In Julia:
+
+```{julia}
+using StatsKit
+using RDatasets
+
+#<> ----------------------------------------- <>#
+# k-NN Functions
+## majority vote
+function maj_vote(yn)
+    ## majority vote
+    cm = countmap(yn)
+    mv = -999
+    lab = nothing
+    tot = 1e-8
+    
+    for (k,v) in cm
+        tot += v
+        
+          if v > mv
+            mv = v
+            lab = k
+          end
+    
+    end
+    
+    prop = /(mv, tot)
+    return [lab, prop]
+end
+
+## KNN label prediction
+function knn(x, y, x_new , k)
+    x = convert(Array, x)
+    y = convert(Array, y)
+    x_new = convert(Array, x_new)
+    n,p = size(x)
+    n2,p2 = size(x_new)
+    ynew = DataFrame(Class=String[], 
+        maj=Float64[])
+    for i in 1:n2 ## over new x_new
+        res = zeros(n,2)
+        for j in 1:n ## over x
+            ## euclidean distance between rows - each row is a subject
+            res[j,:] = [j , euclidean(x[j,:], x_new[i,:])]
+        end
+        ## sort rows by distance and index - smallest distances
+        res2 = sortslices(res, dims = 1, by = x -> (x[2], x[1]))
+        ## get indices for the largest k distances
+        ind = convert(Array{Int}, res2[1:k, 1])
+        ## take majority vote for the associated indices
+        res3 = maj_vote(y[ind])
+        ynew = vcat(ynew,DataFrame(Class=res3[1], maj = res3[2] ))
+    end
+    ## return the predicted labels
+    return ynew
+end
+
+#<> ----------------------------------------- <>#
+
+iris = dataset("datasets", "iris")
+sample_iris = [40,56,85,134,30,131,137,95,90,9,29,25,143,53,105,68,97,132,51,102,122,28,84,16,34,49,2,48,107,42,58,72,59,22,96,77,91,13,82,46,114,71,148,60,57,83,3,50,75,70]
+training = iris[sample_iris,1:size(iris,2).!=ncol(iris)]
+class_training = iris[sample_iris,ncol(iris)]
+sample_test_iris = [1,4,5,6,7,8,10,11,12,14,15,17,18,19,20,21,23,24,26,27,31,32,33,35,36,37,38,39,41,43,44,45,47,52,54,55,61,62,63,64,65,66,67,69,73,74,76,78,79,80,81,86,87,88,89,92,93,94,98,99,100,101,103,104,106,108,109,110,111,112,113,115,116,117,118,119,120,121,123,124,125,126,127,128,129,130,133,135,136,138,139,140,141,142,144,145,146,147,149,150]
+test = iris[sample_test_iris,1:size(iris,2).!=ncol(iris)]
+class_test = iris[sample_test_iris,ncol(iris)]
+
+# k-NN with 3 Neighbour
+predict_k3 = knn(training,class_training,test,3)
+
+# classification accuracy - Julia
+class_accuracy = mean(predict_k3[:,1] .== class_test)
+```
+
+The experiment was performed using a training sample with 50 observations and a test sample with 100 observations.
+In the R software, the $k$-NN algorithm is in the `class` library, in Julia it was necessary to write the $k$-NN code, since it was not found  nothing library with the method.
+As was to be expected, using the same observations for the
+training sample and test sample, the R and the Julia obtained the same results, that was 97% accuracy.
