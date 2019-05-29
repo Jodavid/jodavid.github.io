@@ -6,24 +6,24 @@
     <description>Recent content in Categories on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>CUDA</title>
-      <link>/categories/cuda/</link>
-      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      <title>Classification</title>
+      <link>/categories/classification/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/cuda/</guid>
+      <guid>/categories/classification/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Julia</title>
       <link>/categories/julia/</link>
-      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/categories/julia/</guid>
       <description></description>
@@ -32,9 +32,18 @@
     <item>
       <title>R</title>
       <link>/categories/r/</link>
-      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CUDA</title>
+      <link>/categories/cuda/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/cuda/</guid>
       <description></description>
     </item>
     

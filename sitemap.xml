@@ -3,13 +3,71 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/tags/byte-code-compilation/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <loc>/categories/</loc>
+    <lastmod>2019-05-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/cuda/</loc>
+    <loc>/categories/classification/</loc>
+    <lastmod>2019-05-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-05-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/julia/</loc>
+    <lastmod>2019-05-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/julia/</loc>
+    <lastmod>2019-05-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-05-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/r/</loc>
+    <lastmod>2019-05-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2019-05-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-05-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/classification/</loc>
+    <lastmod>2019-05-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/k-nn-classification-in-r-and-julia/</loc>
+    <lastmod>2019-05-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/byte-code-compilation/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -21,7 +79,7 @@
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/tags/cuda/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -33,47 +91,6 @@
   
   <url>
     <loc>/tags/gpu/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/julia/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/julia/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
