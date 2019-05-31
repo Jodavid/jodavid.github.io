@@ -62,12 +62,10 @@ $$
 To illustrate our example we will use the 'Iris' database. Below is a graph of two variables of the 'Iris' database, this base contains 4 variables that we will use in the classification and the fifth variable is the 'true class' of the observations.
 
 ```{r}
-library(plotly)
+library(ggplot2)
 
-p <- ggplot(iris,aes(Sepal.Length,Petal.Length,colour=Species)) +
+ggplot(iris,aes(Sepal.Length,Petal.Length,colour=Species)) +
   geom_point()
-
-ggplotly(p)
 
 ```
 
