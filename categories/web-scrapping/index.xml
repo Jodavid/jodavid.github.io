@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Scrapping on Jodavid Ferreira</title>
+    <link>/categories/web-scrapping/</link>
+    <description>Recent content in Web Scrapping on Jodavid Ferreira</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/web-scrapping/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Web Scrapping introduction with R</title>
+      <link>/post/web-scrapping-introduction-with-r/</link>
+      <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/web-scrapping-introduction-with-r/</guid>
+      <description>Hi, in this post I’ll talk about Web Scraping with R.
+The Project “SERENATA DE AMOR” https://serenata.ai/ is an open project that uses data science - the same technologies used by giants like Google, Facebook and Netflix - for the purpose of monitoring public spending and sharing information in a way accessible to everyone.
+The project has already reported 629 suspicious reimbursement to the Chamber of Deputies involving 216 different congresspeople and more than 378k BRL.
+This amount corresponds to 371% of what was raised through our crowdfunding campaign (~US$ 25,000.00)
+Do you want to know how the report system works? You can read more in this post (in Portuguese).
+The purpose of this Post is to collect information on websites (in this case in the Jarbas ) and do analyzes with the data in R. Here was just made a chart, with some deputies and the reimbursement amounts requested by them.
+Step 1: Reading the URL.
+To read the html page, we will use the “read_html” of the package rvest.
+library(rvest) ## Carregando pacotes exigidos: xml2 url &amp;lt;- &amp;quot;https://jarbas.serenata.ai/dashboard/chamber_of_deputies/reimbursement/&amp;quot; jarbas_webpage &amp;lt;- read_html(url) Step 2: Now, the best part of the rvest library is that you can extract the data from html nodes, what that means is you can straightaway select the nodes with their id’s or css classes and extract the text from the html tags.</description>
+    </item>
+    
+  </channel>
+</rss>
