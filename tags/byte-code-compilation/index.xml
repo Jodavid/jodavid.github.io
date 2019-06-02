@@ -20,7 +20,7 @@
       <description>Hi guys,
 in this Post it is verified the efficiency in question of time of execution of functions created for Matrix multiplication.
 An array with dimensions \(1000\times1000\) was generated using the rnorm function in R.
-The first function called mult.matrix uses the base function of R for matrix multiplication, for example, consider A as a square matrix, multiplication is obtained by A%*%A. In the second function, the byte code compiler which can increase the speed of some code was used. Using the compiler is an easy way to get improvements in speed. The third function uses the graphical processing unit (GPU) as the processing unit. NVIDIA GPU uses CUDA programming language, however it is integration with software R is possible. Some functions are implemented in the gpuR package, one of them is matrix creation using the GPU, in this way it is possible to realize the multiplication. 4.The fourth function analyzed is using the R and Julia integration. Through the JuliaCall package it is possible to integrate R with Julia, and thus send and return functions and results.  # Required Packages library(tidyverse) ## ── Attaching packages ───────────────────────────────────────────────────────────── tidyverse 1.2.1 ── ## ✔ ggplot2 3.1.0 ✔ purrr 0.3.2 ## ✔ tibble 2.</description>
+The first function called mult.matrix uses the base function of R for matrix multiplication, for example, consider A as a square matrix, multiplication is obtained by A%*%A.</description>
     </item>
     
   </channel>

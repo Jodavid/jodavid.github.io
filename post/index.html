@@ -163,6 +163,25 @@
         
       
     
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('/img/header-slides//712cd661356955.5a6b8679a39e72.gif'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
 
   
   </div>
@@ -427,14 +446,7 @@
 
     
       Hi, in this post I’ll talk about Web Scraping with R.
-The Project “SERENATA DE AMOR” https://serenata.ai/ is an open project that uses data science - the same technologies used by giants like Google, Facebook and Netflix - for the purpose of monitoring public spending and sharing information in a way accessible to everyone.
-The project has already reported 629 suspicious reimbursement to the Chamber of Deputies involving 216 different congresspeople and more than 378k BRL.
-This amount corresponds to 371% of what was raised through our crowdfunding campaign (~US$ 25,000.00)
-Do you want to know how the report system works? You can read more in this post (in Portuguese).
-The purpose of this Post is to collect information on websites (in this case in the Jarbas ) and do analyzes with the data in R. Here was just made a chart, with some deputies and the reimbursement amounts requested by them.
-Step 1: Reading the URL.
-To read the html page, we will use the “read_html” of the package rvest.
-library(rvest) ## Carregando pacotes exigidos: xml2 url &lt;- &#34;https://jarbas.serenata.ai/dashboard/chamber_of_deputies/reimbursement/&#34; jarbas_webpage &lt;- read_html(url) Step 2: Now, the best part of the rvest library is that you can extract the data from html nodes, what that means is you can straightaway select the nodes with their id’s or css classes and extract the text from the html tags.......
+The Project “SERENATA DE AMOR” https://serenata.ai/ is an open project that uses data science - the same technologies used by giants like Google, Facebook and Netflix - for the purpose of monitoring public spending and sharing information in a way accessible to everyone.......
     
   </a>
 
@@ -495,9 +507,7 @@ library(rvest) ## Carregando pacotes exigidos: xml2 url &lt;- &#34;https://jarba
     
       Hi guys,
 in this post will be presented an efficient algorithm and one of the most basic in the area of statistical classification, this algorithm is the \(k\)-NN (\(k\) Nearest Neighbors).
-The k-Nearest Neighbors algorithm was proposed by Cover e Hart and is considered as a non-parametric classifier. Given a test sample where the class is unknown, the method finds the nearest \(k\) in the training set for each observation of the test sample over a distance and assigns a class to the observation according to the majority vote of the classes of these neighbors.
-The algorithm \(k\)-NN estimates the probability of an observation belonging to each group based on the nearest neighbor \(k\) information defined as follows. Consider \(G\) non-empty partitions, which are \(C_1,C_2, \ldots,C_G\), such that, \(C_j \subset \mathbb{R}^p\) is a subset of size \(n_j\), for \(j = 1, \ldots,g\), \(n = \sum_{j=1}^{n} n_j\), \(C_i\cap C_j = \emptyset\) for all \(i \neq j.\) Let \(\bm{y} \in \mathbb{R}^p\) an observation to be classified and \(\{\bm{x}_{i_1},\bm{x}_{i_2},\ldots,\bm{x}_{i_k} \}\) the set of \(k\) neighbors, such that, \(k\leq n\) and \(\{i_1, i_2,\ldots, i_k \} \subset \{1,2,\ldots,n\}\). So for \(j = 1, \ldots,G\), the classification rule of the \(k\)-NN is defined as:
-\[ \widehat{c}_{_{kNN}} = \mathop{\text{ arg max}}_{c} \widehat{P}_k(G=c), \]......
+The k-Nearest Neighbors algorithm was proposed by Cover e Hart and is considered as a non-parametric classifier. Given a test sample where the class is unknown, the method finds the nearest \(k\) in the training set for each observation of the test sample over a distance and assigns a class to the observation according to the majority vote of the classes of these neighbors.......
     
   </a>
 
@@ -564,7 +574,7 @@ The algorithm \(k\)-NN estimates the probability of an observation belonging to 
       Hi guys,
 in this Post it is verified the efficiency in question of time of execution of functions created for Matrix multiplication.
 An array with dimensions \(1000\times1000\) was generated using the rnorm function in R.
-The first function called mult.matrix uses the base function of R for matrix multiplication, for example, consider A as a square matrix, multiplication is obtained by A%*%A. In the second function, the byte code compiler which can increase the speed of some code was used. Using the compiler is an easy way to get improvements in speed. The third function uses the graphical processing unit (GPU) as the processing unit. NVIDIA GPU uses CUDA programming language, however it is integration with software R is possible. Some functions are implemented in the gpuR package, one of them is matrix creation using the GPU, in this way it is possible to realize the multiplication. 4.The fourth function analyzed is using the R and Julia integration. Through the JuliaCall package it is possible to integrate R with Julia, and thus send and return functions and results.  # Required Packages library(tidyverse) ## ── Attaching packages ───────────────────────────────────────────────────────────── tidyverse 1.2.1 ── ## ✔ ggplot2 3.1.0 ✔ purrr 0.3.2 ## ✔ tibble 2.......
+The first function called mult.matrix uses the base function of R for matrix multiplication, for example, consider A as a square matrix, multiplication is obtained by A%*%A.......
     
   </a>
 

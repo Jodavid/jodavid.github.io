@@ -576,8 +576,8 @@ Avatar
   width: 30vmin;
 }
 
-/* 竖屏时宽度小于等于758px 767px*/
-@media (max-width: 480px) and (orientation : portrait) {
+/* 竖屏时宽度小于等于758px */
+@media (max-width: 767px) and (orientation : portrait) {
   .avatar-lg {
     width: 100px;
     float: none!important;
@@ -598,21 +598,6 @@ Avatar
   .carousel-content div {
     font-size: 1rem!important;
   }
- 
-  .post-heading {
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-    font-size: 100%;
-    font-weight: 500;
-	} 
-
-.single-post .post-heading {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  font-size: 200%;
-  font-weight: 500;
-}
- 
 
 }
 
