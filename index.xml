@@ -48,10 +48,12 @@ The first function called mult.matrix uses the base function of R for matrix mul
     <item>
       <title>About</title>
       <link>/about/</link>
-      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      <pubDate>Fri, 04 Jan 2019 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
+      <description>I’m Jodavid Ferreira,
+free and open-source software (FOSS) enthusiast and I have fun with news in R, Julia and python languages….
+I received the B.Sc. degree in Statistics from the Universidade Federal da Paraı́ba (UFPB), Brazil, in 2015. My M.Sc. degree was in Statistics from the Universidade federal de Pernambuco (2017), Brazil. I am currently a doctoral student and my research interests are computational statistics, multivariate analysis, statistical information theory and inference on random matrices (with emphasis for applications on PolSAR imagery).</description>
     </item>
     
   </channel>
