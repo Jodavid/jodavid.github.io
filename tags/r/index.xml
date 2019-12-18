@@ -5,7 +5,7 @@
     <link>/tags/r/</link>
     <description>Recent content in R on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-US</language>
     <lastBuildDate>Sat, 01 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +18,8 @@
       
       <guid>/post/web-scrapping-introduction-with-r/</guid>
       <description>Hi, in this post I’ll talk about Web Scraping with R.
-The Project “SERENATA DE AMOR” https://serenata.ai/ is an open project that uses data science - the same technologies used by giants like Google, Facebook and Netflix - for the purpose of monitoring public spending and sharing information in a way accessible to everyone.</description>
+The Project “SERENATA DE AMOR” https://serenata.ai/ is an open project that uses data science - the same technologies used by giants like Google, Facebook and Netflix - for the purpose of monitoring public spending and sharing information in a way accessible to everyone.
+The project has already reported 629 suspicious reimbursement to the Chamber of Deputies involving 216 different congresspeople and more than 378k BRL.</description>
     </item>
     
     <item>
@@ -41,7 +42,7 @@ The k-Nearest Neighbors algorithm was proposed by Cover e Hart and is considered
       <description>Hi guys,
 in this Post it is verified the efficiency in question of time of execution of functions created for Matrix multiplication.
 An array with dimensions \(1000\times1000\) was generated using the rnorm function in R.
-The first function called mult.matrix uses the base function of R for matrix multiplication, for example, consider A as a square matrix, multiplication is obtained by A%*%A.</description>
+The first function called mult.matrix uses the base function of R for matrix multiplication, for example, consider A as a square matrix, multiplication is obtained by A%*%A. In the second function, the byte code compiler which can increase the speed of some code was used.</description>
     </item>
     
   </channel>

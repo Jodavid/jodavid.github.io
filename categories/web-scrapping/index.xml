@@ -5,7 +5,7 @@
     <link>/categories/web-scrapping/</link>
     <description>Recent content in Web Scrapping on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-US</language>
     <lastBuildDate>Sat, 01 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/web-scrapping/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +18,8 @@
       
       <guid>/post/web-scrapping-introduction-with-r/</guid>
       <description>Hi, in this post I’ll talk about Web Scraping with R.
-The Project “SERENATA DE AMOR” https://serenata.ai/ is an open project that uses data science - the same technologies used by giants like Google, Facebook and Netflix - for the purpose of monitoring public spending and sharing information in a way accessible to everyone.</description>
+The Project “SERENATA DE AMOR” https://serenata.ai/ is an open project that uses data science - the same technologies used by giants like Google, Facebook and Netflix - for the purpose of monitoring public spending and sharing information in a way accessible to everyone.
+The project has already reported 629 suspicious reimbursement to the Chamber of Deputies involving 216 different congresspeople and more than 378k BRL.</description>
     </item>
     
   </channel>
