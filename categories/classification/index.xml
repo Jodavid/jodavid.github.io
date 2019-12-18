@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Classification on Jodavid Ferreira</title>
@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>k-NN classification in R and Julia</title>
+      <title>k-NN classification in R, Julia and Python</title>
       <link>/post/k-nn-classification-in-r-and-julia/</link>
       <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       

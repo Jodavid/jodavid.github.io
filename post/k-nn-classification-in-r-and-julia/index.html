@@ -11,19 +11,19 @@
 in this post will be presented an efficient algorithm and one of the most basic in the area of statistical classification, this algorithm is the \(k\)-NN (\(k\) Nearest Neighbors).
 The k-Nearest Neighbors algorithm was proposed by Cover e Hart and is considered as a non-parametric classifier. Given a test sample where the class is unknown, the method finds the nearest \(k\) in the training set for each observation of the test sample over a distance and assigns a class to the observation according to the majority vote of the classes of these neighbors.">
   
-  <meta property="og:title" content="k-NN classification in R and Julia" />
+  <meta property="og:title" content="k-NN classification in R, Julia and Python" />
 <meta property="og:description" content="Hi guys,
 in this post will be presented an efficient algorithm and one of the most basic in the area of statistical classification, this algorithm is the \(k\)-NN (\(k\) Nearest Neighbors).
 The k-Nearest Neighbors algorithm was proposed by Cover e Hart and is considered as a non-parametric classifier. Given a test sample where the class is unknown, the method finds the nearest \(k\) in the training set for each observation of the test sample over a distance and assigns a class to the observation according to the majority vote of the classes of these neighbors." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/k-nn-classification-in-r-and-julia/" />
-<meta property="article:published_time" content="2019-05-29T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-29T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2019-05-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-05-29T00:00:00+00:00" />
 
 
   <title>
   
-       k-NN classification in R and Julia | Jodavid Ferreira 
+       k-NN classification in R, Julia and Python | Jodavid Ferreira 
   
   </title>
 
@@ -276,6 +276,8 @@ The k-Nearest Neighbors algorithm was proposed by Cover e Hart and is considered
   <ul class="post-meta li-x">
     
       
+        <li><a href="/categories/machine-learning"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Machine Learning </a></li>
+      
         <li><a href="/categories/classification"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Classification </a></li>
       
         <li><a href="/categories/r"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> R </a></li>
@@ -286,7 +288,7 @@ The k-Nearest Neighbors algorithm was proposed by Cover e Hart and is considered
     
   </ul>
 
-  <div class="px-4 post-heading">k-NN classification in R and Julia</div>
+  <div class="px-4 post-heading">k-NN classification in R, Julia and Python</div>
 
   <ul class="post-meta li-x mt-1">
     
@@ -295,7 +297,7 @@ The k-Nearest Neighbors algorithm was proposed by Cover e Hart and is considered
 
     
       <li class="middot"></li>
-      <li>9 minutes read</li>
+      <li>10 minutes read</li>
     
   </ul>
   
@@ -367,7 +369,7 @@ test sample, with this sample we will classifier using the algorithm
 <span class="math inline">\(k\)</span>-NN;</li>
 <li>As we know the true class of the observations of the test sample, it is possible to obtain the classification accuracy and verify the efficiency of the algorithm <span class="math inline">\(k\)</span> -NN.</li>
 </ol>
-<p>Let’s repeat the same steps for the R and Julia languages.</p>
+<p>Let’s repeat the same steps for the R, Julia and Python languages.</p>
 <div id="in-r" class="section level4">
 <h4>In R:</h4>
 <pre class="r"><code># required packages
@@ -385,9 +387,9 @@ head(iris)</code></pre>
 set.seed(1) # seed it is necessary for obtained same results
 sample.iris &lt;- sample(1:nrow(iris),50) # 50 observations
 sample.iris</code></pre>
-<pre><code>##  [1]  40  56  85 134  30 131 137  95  90   9  29  25 143  53 105  68  97
-## [18] 132  51 102 122  28  84  16  34  49   2  48 107  42  58  72  59  22
-## [35]  96  77  91  13  82  46 114  71 148  60  57  83   3  50  75  70</code></pre>
+<pre><code>##  [1]  68 129  43  14  51  85  21 106  74   7  73  79  37 105 110  34 143
+## [18] 126  89  33  84  70 142  42  38 111  20  28 124  44  87 149  40 121
+## [35]  25 119  39 146 127   6  24  32 147   2  45  18  22  78 102  65</code></pre>
 <pre class="r"><code>training &lt;- iris[sample.iris,-ncol(iris)]
 class_training &lt;- iris[sample.iris,ncol(iris)]
 test &lt;- iris[-sample.iris,-ncol(iris)]
@@ -398,11 +400,15 @@ resul &lt;- knn(training,test,class_training,k=3)
 
 # classification accuracy - R
 mean(resul==class_test)</code></pre>
-<pre><code>## [1] 0.97</code></pre>
+<pre><code>## [1] 0.95</code></pre>
 </div>
 <div id="in-julia" class="section level4">
 <h4>In Julia:</h4>
-<pre class="julia"><code>using StatsKit
+<pre class="julia"><code># using Pkg
+# Pkg.add(&quot;StatsKit&quot;)
+# Pkg.add(&quot;RDatasets&quot;)  
+
+using StatsKit
 using RDatasets
 
 #&lt;&gt; ----------------------------------------- &lt;&gt;#
@@ -638,10 +644,88 @@ predict_k3 = knn(training,class_training,test,3)</code></pre>
 # classification accuracy - Julia
 class_accuracy = mean(predict_k3[:,1] .== class_test)</code></pre>
 <pre><code>## 0.97</code></pre>
+</div>
+<div id="in-python" class="section level4">
+<h4>In Python:</h4>
+<pre class="python"><code>
+# Install
+#pip install numpy
+#pip install matplotlib
+#pip install pandas
+#pip install sklearn
+
+# Libraries
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import random
+
+# Dataset
+url = &quot;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&quot;
+
+# Assign colum names to the dataset
+names = [&#39;sepal-length&#39;, &#39;sepal-width&#39;, &#39;petal-length&#39;, &#39;petal-width&#39;, &#39;Class&#39;]
+
+# Read dataset to pandas dataframe
+dataset = pd.read_csv(url, names=names)
+
+dataset.head()</code></pre>
+<pre><code>##    sepal-length  sepal-width  petal-length  petal-width        Class
+## 0           5.1          3.5           1.4          0.2  Iris-setosa
+## 1           4.9          3.0           1.4          0.2  Iris-setosa
+## 2           4.7          3.2           1.3          0.2  Iris-setosa
+## 3           4.6          3.1           1.5          0.2  Iris-setosa
+## 4           5.0          3.6           1.4          0.2  Iris-setosa</code></pre>
+<pre class="python"><code>X = dataset.iloc[:, :-1].values
+y = dataset.iloc[:, 4].values
+
+# seed
+random.seed(3) 
+
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.66)
+
+
+
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaler.fit(X_train)</code></pre>
+<pre><code>## StandardScaler(copy=True, with_mean=True, with_std=True)</code></pre>
+<pre class="python"><code>X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
+
+# k-NN with 3 Neighbour
+from sklearn.neighbors import KNeighborsClassifier
+classifier = KNeighborsClassifier(n_neighbors=3)
+classifier.fit(X_train, y_train)</code></pre>
+<pre><code>## KNeighborsClassifier(algorithm=&#39;auto&#39;, leaf_size=30, metric=&#39;minkowski&#39;,
+##                      metric_params=None, n_jobs=None, n_neighbors=3, p=2,
+##                      weights=&#39;uniform&#39;)</code></pre>
+<pre class="python"><code>y_pred = classifier.predict(X_test)
+
+# classification accuracy - Python
+from sklearn.metrics import classification_report, confusion_matrix
+print(confusion_matrix(y_test, y_pred))</code></pre>
+<pre><code>## [[36  0  0]
+##  [ 0 33  0]
+##  [ 0  4 26]]</code></pre>
+<pre class="python"><code>print(classification_report(y_test, y_pred))</code></pre>
+<pre><code>##                  precision    recall  f1-score   support
+## 
+##     Iris-setosa       1.00      1.00      1.00        36
+## Iris-versicolor       0.89      1.00      0.94        33
+##  Iris-virginica       1.00      0.87      0.93        30
+## 
+##        accuracy                           0.96        99
+##       macro avg       0.96      0.96      0.96        99
+##    weighted avg       0.96      0.96      0.96        99</code></pre>
 <p>The experiment was performed using a training sample with 50 observations and a test sample with 100 observations.
 In the R software, the <span class="math inline">\(k\)</span>-NN algorithm is in the <code>class</code> library, in Julia it was necessary to write the <span class="math inline">\(k\)</span>-NN code, since it was not found nothing library with the method.
+In Python as with R, there are already libraries available, with precompiled functions.
 As was to be expected, using the same observations for the
-training sample and test sample, the R and the Julia obtained the same results, that was 97% accuracy.</p>
+training sample and test sample, the R and Julia obtained the same results, that was 97% accuracy and python got results approximately too.</p>
 </div>
 
           </div>
