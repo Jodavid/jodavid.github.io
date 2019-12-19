@@ -31,6 +31,12 @@
 
 
 
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -105,9 +111,9 @@ of size <span class="math inline">\(n_j\)</span>, for
 <span class="math inline">\(n = \sum_{j=1}^{n} n_j\)</span>,
 <span class="math inline">\(C_i\cap C_j = \emptyset\)</span> for all
 <span class="math inline">\(i \neq j.\)</span>
-Let <span class="math inline">\(\bm{y} \in \mathbb{R}^p\)</span>
+Let <span class="math inline">\(\mathbf{y} \in \mathbb{R}^p\)</span>
 an observation to be classified and
-<span class="math inline">\(\{\bm{x}_{i_1},\bm{x}_{i_2},\ldots,\bm{x}_{i_k} \}\)</span> the set of <span class="math inline">\(k\)</span> neighbors, such that,
+<span class="math inline">\(\{\mathbf{x}_{i_1},\mathbf{x}_{i_2},\ldots,\mathbf{x}_{i_k} \}\)</span> the set of <span class="math inline">\(k\)</span> neighbors, such that,
 <span class="math inline">\(k\leq n\)</span> and
 <span class="math inline">\(\{i_1, i_2,\ldots, i_k \} \subset \{1,2,\ldots,n\}\)</span>.
 So for <span class="math inline">\(j = 1, \ldots,G\)</span>,
@@ -116,7 +122,7 @@ is defined as:</p>
 <p><span class="math display">\[
 \widehat{c}_{_{kNN}} = \mathop{\text{ arg max}}_{c} \widehat{P}_k(G=c),
 \]</span></p>
-<p>where <span class="math inline">\(\widehat{P}_k(G=c) = k^{-1}\sum_{\nu=1}^{k}\mathbb{I}_c(\bm{x}_{i_\nu})\)</span> and</p>
+<p>where <span class="math inline">\(\widehat{P}_k(G=c) = k^{-1}\sum_{\nu=1}^{k}\mathbb{I}_c(\mathbf{x}_{i_\nu})\)</span> and</p>
 <p><span class="math display">\[
 \mathbb{I}_c(\mathbf{x} _{i_\nu}) = \left\lbrace \begin{array}{rl}
 1,&amp;\text{if } \mathbf{x}_{i_\nu} \in C_j,\\
@@ -478,19 +484,19 @@ classifier.fit(X_train, y_train)</code></pre>
 # classification accuracy - Python
 from sklearn.metrics import classification_report, confusion_matrix
 print(confusion_matrix(y_test, y_pred))</code></pre>
-<pre><code>## [[36  0  0]
-##  [ 0 33  0]
-##  [ 0  4 26]]</code></pre>
+<pre><code>## [[32  1  0]
+##  [ 0 30  3]
+##  [ 0  4 29]]</code></pre>
 <pre class="python"><code>print(classification_report(y_test, y_pred))</code></pre>
 <pre><code>##                  precision    recall  f1-score   support
 ## 
-##     Iris-setosa       1.00      1.00      1.00        36
-## Iris-versicolor       0.89      1.00      0.94        33
-##  Iris-virginica       1.00      0.87      0.93        30
+##     Iris-setosa       1.00      0.97      0.98        33
+## Iris-versicolor       0.86      0.91      0.88        33
+##  Iris-virginica       0.91      0.88      0.89        33
 ## 
-##        accuracy                           0.96        99
-##       macro avg       0.96      0.96      0.96        99
-##    weighted avg       0.96      0.96      0.96        99</code></pre>
+##        accuracy                           0.92        99
+##       macro avg       0.92      0.92      0.92        99
+##    weighted avg       0.92      0.92      0.92        99</code></pre>
 <p>The experiment was performed using a training sample with 50 observations and a test sample with 100 observations.
 In the R software, the <span class="math inline">\(k\)</span>-NN algorithm is in the <code>class</code> library, in Julia it was necessary to write the <span class="math inline">\(k\)</span>-NN code, since it was not found nothing library with the method.
 In Python as with R, there are already libraries available, with precompiled functions.
