@@ -6,10 +6,23 @@
     <description>Recent content on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 04 Jan 2019 21:48:51 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 15 May 2020 21:48:51 -0700</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Expert Advisors</title>
+      <link>/expert-advisors/</link>
+      <pubDate>Fri, 15 May 2020 21:48:51 -0700</pubDate>
+      
+      <guid>/expert-advisors/</guid>
+      <description>Segue abaixo os link para os EA (Expert Advisor):
+ Índice:  1.1 Estratégia HiLo Índice (Conta Real) - Download aqui
+1.2 Estratégia HiLo Índice (Conta Demo) - Download aqui
+ Dólar:  1.1 Estratégia HiLo Dólar (Conta Real) - Download aqui
+1.2 Estratégia HiLo Dólar (Conta Demo) - Download aqui</description>
+    </item>
     
     <item>
       <title>Web Scrapping introduction with R</title>
