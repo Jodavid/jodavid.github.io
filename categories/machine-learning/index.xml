@@ -5,12 +5,8 @@
     <link>/categories/machine-learning/</link>
     <description>Recent content in Machine Learning on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>pt-BR</language>
+    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>k-NN classification in R, Julia and Python</title>
       <link>/post/k-nn-classification-in-r-and-julia/</link>

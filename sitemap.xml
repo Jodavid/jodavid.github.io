@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/about/</loc>
+    <lastmod>2020-12-26T21:48:51-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/expert-advisors/</loc>
     <lastmod>2020-05-15T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2020-05-15T21:48:51-07:00</lastmod>
+    <loc>/categories/</loc>
+    <lastmod>2019-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/</loc>
     <lastmod>2019-06-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -105,11 +110,6 @@
   <url>
     <loc>/tags/gpu/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/about/</loc>
-    <lastmod>2019-01-04T21:48:51-07:00</lastmod>
   </url>
   
 </urlset>
