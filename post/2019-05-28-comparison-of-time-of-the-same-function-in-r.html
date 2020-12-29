@@ -1,0 +1,102 @@
+---
+title: Comparação da eficiência de tempo de uma mesma função no R
+author: ~
+date: '2019-05-28'
+slug: comparison-of-time-efficiency-of-a-same-function-in-r
+categories: ["R","Julia","CUDA"]
+tags: ["R","CUDA", "GPU","Julia","Byte code compilation"]
+---
+
+
+
+<p>Olá,</p>
+<p>in this Post it is verified the efficiency in question of time of execution of functions created for Matrix multiplication.</p>
+<p>An array with dimensions <span class="math inline">\(1000\times1000\)</span> was generated using the
+<code>rnorm</code> function in R.</p>
+<ol style="list-style-type: decimal">
+<li>The first function called <code>mult.matrix</code> uses the base function of R for matrix multiplication, for example, consider A as a square matrix, multiplication is obtained by <code>A%*%A</code>.</li>
+<li>In the second function, the byte code compiler which can
+increase the speed of some code was used. Using the compiler is an easy way to get improvements in speed.</li>
+<li>The third function uses the graphical processing unit (GPU) as the processing unit.
+NVIDIA GPU uses CUDA programming language, however it is
+integration with software R is possible. Some functions are implemented in the <code>gpuR</code> package, one of them is matrix creation using the GPU, in this way it is possible to realize the multiplication.
+4.The fourth function analyzed is using the R and Julia integration.
+Through the <code>JuliaCall</code> package it is possible to integrate R with Julia, and thus send and return functions and results.</li>
+</ol>
+<pre class="r"><code># pacotes Requeridos
+library(tidyverse)
+## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
+## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.0
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+library(microbenchmark)
+library(gpuR) # Pacote do GPU
+## Number of platforms: 1
+## - platform: NVIDIA Corporation: OpenCL 1.2 CUDA 11.2.66
+##   - context device index: 0
+##     - GeForce 920M
+## checked all devices
+## completed initialization
+## gpuR 2.0.3
+## 
+## Attaching package: &#39;gpuR&#39;
+## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     slice
+## The following objects are masked from &#39;package:base&#39;:
+## 
+##     colnames, pmax, pmin, svd
+
+# Function for matrix multiplication with base function of R
+mult.matrix &lt;- function( x ){
+  matrix(x, nrow=1000) %*%
+    matrix(x, nrow=1000)
+}
+
+# Function for matrix multiplication with Byte code Compilation in base function of R 
+mult.matrix.byte &lt;- compiler::cmpfun(mult.matrix)
+
+
+# Function for matrix multiplication with GPU
+gpu.mult.matrix &lt;- function( x ){
+  vclMatrix(matrix(x, nrow=1000), type=&quot;float&quot;) %*%
+    vclMatrix(matrix(x, nrow=1000), type=&quot;float&quot;)
+}
+
+
+#Create database
+x &lt;- rnorm(1000*1000)
+
+#Using the microbenchmark function
+result &lt;- microbenchmark(
+  mult.matrix(x),
+  mult.matrix.byte(x),
+  gpu.mult.matrix(x)
+)
+
+print(result)
+## Unit: milliseconds
+##                 expr      min       lq     mean   median       uq      max
+##       mult.matrix(x) 60.86524 69.42302 85.83819 76.22481 90.48213 191.0783
+##  mult.matrix.byte(x) 60.24925 66.99734 88.15935 74.49475 93.07771 247.1145
+##   gpu.mult.matrix(x) 43.86064 50.73361 59.74978 55.14505 61.89688 166.7066
+##  neval
+##    100
+##    100
+##    100
+
+autoplot(result)
+## Coordinate system already present. Adding new coordinate system, which will replace the existing one.</code></pre>
+<p><img src="/post/2019-05-28-comparison-of-time-of-the-same-function-in-r_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>The results show that the most efficient method are obtained with the function that uses the GPU to calculate the multiplication.
+The basic function of R, such as the byte code compilation, presented results similar, this show that compilation not performance gain in the speed of this specific function.
+Lastly, the less efficient method was the function that integrate R and Julia. This may have happened, for the time needed to send the data to Julia and in the end get results return.</p>
+<p>Although the example is simple, such as matrix multiplication, these calculation alternatives can be applied to other functions and thus gain performance gains in your applications.</p>
+<p>for more details see:</p>
+<p><a href="https://developer.nvidia.com/nvidia-developer-zone">NVIDIA CUDA</a></p>
+<p><a href="https://www.theoj.org/joss-papers/joss.01284/10.21105.joss.01284.pdf">Li, Changcheng. “JuliaCall: an R package for seamless integration between R and Julia.”</a></p>
+<p><a href="http://adv-r.had.co.nz/">Wickham, Hadley. Advanced r. Chapman and Hall/CRC, 2014.</a></p>
