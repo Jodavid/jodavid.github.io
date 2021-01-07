@@ -1,21 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web Scrapping on Jodavid Ferreira</title>
-    <link>/tags/web-scrapping/</link>
+    <link>https://jodavid.github.io/tags/web-scrapping/</link>
     <description>Recent content in Web Scrapping on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>pt-BR</language>
-    <lastBuildDate>Sat, 01 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/web-scrapping/index.xml" rel="self" type="application/rss+xml" />
+    <language>pt-br</language>
+    <lastBuildDate>Tue, 29 Dec 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jodavid.github.io/tags/web-scrapping/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
-      <title>Web Scrapping introduction with R</title>
-      <link>/post/web-scrapping-introduction-with-r/</link>
-      <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
+      <title>Introdução a Web Scrapping com R</title>
+      <link>https://jodavid.github.io/post/2020-12-29-introducao-web-scrapping-com-r/web-scrapping-introduction-with-r/</link>
+      <pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/web-scrapping-introduction-with-r/</guid>
-      <description>Hi, in this post I’ll talk about Web Scraping with R.
-The Project “SERENATA DE AMOR” https://serenata.ai/ is an open project that uses data science - the same technologies used by giants like Google, Facebook and Netflix - for the purpose of monitoring public spending and sharing information in a way accessible to everyone.
-The project has already reported 629 suspicious reimbursement to the Chamber of Deputies involving 216 different congresspeople and more than 378k BRL.</description>
+      <guid>https://jodavid.github.io/post/2020-12-29-introducao-web-scrapping-com-r/web-scrapping-introduction-with-r/</guid>
+      <description>Olá, nesse post vou falar sobre Web Scraping com R.
+Para iniciar vou falar sobre o projeto &amp;ldquo;SERENATA DE AMOR&amp;rdquo; https://serenata.ai/ que é um projeto aberto no qual usa data science (ciência de dados) - a mesma tecnolgia usada por gigantes como Google, Facebook e Netflix - com o objetivo de monitorar os gastos públicos e compartilhar informações de forma acessível a todos.
+Até a data de hoje 29.12.2020, o projeto já reportou 8.</description>
     </item>
     
   </channel>

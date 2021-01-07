@@ -1,18 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Classification on Jodavid Ferreira</title>
-    <link>/categories/classification/</link>
+    <link>https://jodavid.github.io/categories/classification/</link>
     <description>Recent content in Classification on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>pt-BR</language>
-    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="/categories/classification/index.xml" rel="self" type="application/rss+xml" />
+    <language>pt-br</language>
+    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jodavid.github.io/categories/classification/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>k-NN classification in R, Julia and Python</title>
-      <link>/post/k-nn-classification-in-r-and-julia/</link>
+      <link>https://jodavid.github.io/post/k-nn-classification-in-r-and-julia/</link>
       <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/k-nn-classification-in-r-and-julia/</guid>
+      <guid>https://jodavid.github.io/post/k-nn-classification-in-r-and-julia/</guid>
       <description>Hi guys,
 in this post will be presented an efficient algorithm and one of the most basic in the area of statistical classification, this algorithm is the \(k\)-NN (\(k\) Nearest Neighbors).
 The k-Nearest Neighbors algorithm was proposed by Cover e Hart and is considered as a non-parametric classifier. Given a test sample where the class is unknown, the method finds the nearest \(k\) in the training set for each observation of the test sample over a distance and assigns a class to the observation according to the majority vote of the classes of these neighbors.</description>

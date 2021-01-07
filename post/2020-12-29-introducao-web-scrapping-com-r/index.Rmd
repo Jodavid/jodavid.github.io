@@ -1,7 +1,7 @@
 ---
 title: Introdução a Web Scrapping com R
 author: ~
-date: '2020-12-29'
+date: '2020-12-31'
 slug: web-scrapping-introduction-with-r
 categories: ["R","Web Scrapping"]
 tags: ["R","Web Scrapping"]

@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Julia on Jodavid Ferreira</title>
-    <link>https://jodavid.github.io/categories/julia/</link>
-    <description>Recent content in Julia on Jodavid Ferreira</description>
+    <title>Posts on Jodavid Ferreira</title>
+    <link>https://jodavid.github.io/post/</link>
+    <description>Recent content in Posts on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Dec 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jodavid.github.io/categories/julia/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jodavid.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Introdução a Web Scrapping com R</title>
+      <link>https://jodavid.github.io/post/2020-12-29-introducao-web-scrapping-com-r/web-scrapping-introduction-with-r/</link>
+      <pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/post/2020-12-29-introducao-web-scrapping-com-r/web-scrapping-introduction-with-r/</guid>
+      <description>Olá, nesse post vou falar sobre Web Scraping com R.
+Para iniciar vou falar sobre o projeto &amp;ldquo;SERENATA DE AMOR&amp;rdquo; https://serenata.ai/ que é um projeto aberto no qual usa data science (ciência de dados) - a mesma tecnolgia usada por gigantes como Google, Facebook e Netflix - com o objetivo de monitorar os gastos públicos e compartilhar informações de forma acessível a todos.
+Até a data de hoje 29.12.2020, o projeto já reportou 8.</description>
+    </item>
     
     <item>
       <title>k-NN classification in R, Julia and Python</title>

@@ -1,72 +1,76 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Jodavid Ferreira</title>
-    <link>/tags/</link>
+    <link>https://jodavid.github.io/tags/</link>
     <description>Recent content in Tags on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>pt-BR</language>
-    <lastBuildDate>Sat, 01 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>pt-br</language>
+    <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jodavid.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
-      <title>R</title>
-      <link>/tags/r/</link>
-      <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
+      <title>Byte Code Compilation</title>
+      <link>https://jodavid.github.io/tags/byte-code-compilation/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/r/</guid>
+      <guid>https://jodavid.github.io/tags/byte-code-compilation/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Web Scrapping</title>
-      <link>/tags/web-scrapping/</link>
-      <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/web-scrapping/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>classification</title>
-      <link>/tags/classification/</link>
+      <title>Classification</title>
+      <link>https://jodavid.github.io/tags/classification/</link>
       <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/classification/</guid>
+      <guid>https://jodavid.github.io/tags/classification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cuda</title>
+      <link>https://jodavid.github.io/tags/cuda/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/tags/cuda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gpu</title>
+      <link>https://jodavid.github.io/tags/gpu/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/tags/gpu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Julia</title>
-      <link>/tags/julia/</link>
+      <link>https://jodavid.github.io/tags/julia/</link>
       <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/julia/</guid>
+      <guid>https://jodavid.github.io/tags/julia/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Byte code compilation</title>
-      <link>/tags/byte-code-compilation/</link>
-      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      <title>R</title>
+      <link>https://jodavid.github.io/tags/r/</link>
+      <pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/byte-code-compilation/</guid>
+      <guid>https://jodavid.github.io/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>CUDA</title>
-      <link>/tags/cuda/</link>
-      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      <title>Web Scrapping</title>
+      <link>https://jodavid.github.io/tags/web-scrapping/</link>
+      <pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/cuda/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GPU</title>
-      <link>/tags/gpu/</link>
-      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/gpu/</guid>
+      <guid>https://jodavid.github.io/tags/web-scrapping/</guid>
       <description></description>
     </item>
     
