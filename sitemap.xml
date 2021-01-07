@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jodavid.github.io/post/comparison-of-time-efficiency-of-a-same-function-in-r/</loc>
+    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jodavid.github.io/post/2020-12-29-introducao-web-scrapping-com-r/web-scrapping-introduction-with-r/</loc>
     <lastmod>2020-12-29T00:00:00+00:00</lastmod>
   </url>
@@ -23,13 +28,8 @@
   </url>
   
   <url>
-    <loc>https://jodavid.github.io/post/comparison-of-time-efficiency-of-a-same-function-in-r/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://jodavid.github.io/tags/byte-code-compilation/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -52,25 +52,25 @@
   
   <url>
     <loc>https://jodavid.github.io/tags/cuda/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jodavid.github.io/categories/cuda/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jodavid.github.io/tags/gpu/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jodavid.github.io/</loc>
-    <lastmod>2020-12-29T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -94,25 +94,25 @@
   
   <url>
     <loc>https://jodavid.github.io/post/</loc>
-    <lastmod>2020-12-29T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jodavid.github.io/tags/r/</loc>
-    <lastmod>2020-12-29T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jodavid.github.io/categories/r/</loc>
-    <lastmod>2020-12-29T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jodavid.github.io/tags/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

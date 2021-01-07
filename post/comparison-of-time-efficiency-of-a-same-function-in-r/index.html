@@ -56,7 +56,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
   
   <div class="col-md-12">
     <h6 class="text-left meta">
-        PUBLISHED ON 28 DE MAY DE 2019 
+        PUBLISHED ON 2 DE JAN DE 2021 
       
       
       
@@ -64,8 +64,6 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
       
       
       <a class="meta" href="https://jodavid.github.io/categories/cuda">CUDA</a>, 
-      
-      <a class="meta" href="https://jodavid.github.io/categories/julia">JULIA</a>, 
       
       <a class="meta" href="https://jodavid.github.io/categories/r">R</a>
       
@@ -155,9 +153,9 @@ result &lt;- microbenchmark(
 print(result)
 ## Unit: milliseconds
 ##                 expr      min       lq     mean   median       uq      max
-##       mult.matrix(x) 54.40861 58.80480 65.89650 61.66791 67.59592 158.2200
-##  mult.matrix.byte(x) 48.49948 57.10132 66.13732 59.74770 64.63431 168.8663
-##   gpu.mult.matrix(x) 37.37684 45.70718 52.94216 49.66113 54.15546 166.3776
+##       mult.matrix(x) 57.29782 65.48712 78.86731 73.70001 82.51375 141.2302
+##  mult.matrix.byte(x) 56.56361 67.38842 87.88828 77.50550 93.78091 247.5564
+##   gpu.mult.matrix(x) 44.54855 52.37960 63.14009 60.00194 67.76913 153.8968
 ##  neval
 ##    100
 ##    100
@@ -172,7 +170,8 @@ Lastly, the less efficient method was the function that integrate R and Julia. T
 <p>Although the example is simple, such as matrix multiplication, these calculation alternatives can be applied to other functions and thus gain performance gains in your applications.</p>
 <p>for more details see:</p>
 <p><a href="https://developer.nvidia.com/nvidia-developer-zone">NVIDIA CUDA</a></p>
-<p><a href="https://www.theoj.org/joss-papers/joss.01284/10.21105.joss.01284.pdf">Li, Changcheng. “JuliaCall: an R package for seamless integration between R and Julia.”</a></p>
+<!--[Li, Changcheng. "JuliaCall: an R package for seamless integration between R and Julia."](https://www.theoj.org/joss-papers/joss.01284/10.21105.joss.01284.pdf)
+-->
 <p><a href="http://adv-r.had.co.nz/">Wickham, Hadley. Advanced r. Chapman and Hall/CRC, 2014.</a></p>
 
   </div>
@@ -193,8 +192,6 @@ Lastly, the less efficient method was the function that integrate R and Julia. T
       
       <a class="meta" href="https://jodavid.github.io/tags/gpu">GPU</a>, 
       
-      <a class="meta" href="https://jodavid.github.io/tags/julia">JULIA</a>, 
-      
       <a class="meta" href="https://jodavid.github.io/tags/r">R</a>
       
       
@@ -214,11 +211,11 @@ Lastly, the less efficient method was the function that integrate R and Julia. T
 <section id="menu-pane" class="row menu text-center">
   
   
+  <span><a class="menu-item" href="https://jodavid.github.io/post/2020-12-29-introducao-web-scrapping-com-r/web-scrapping-introduction-with-r/">&lt; prev | </a></span>
+  
   
   <span><a class="menu-item" href="https://jodavid.github.io/post">post</a></span>
   
-  
-  <span><a class="menu-item" href="https://jodavid.github.io/post/k-nn-classification-in-r-and-julia/"> | next &gt;</a></span>
   
   
   <h4 class="text-center"><a class="menu-item" href="https://jodavid.github.io">home</a></h4>
