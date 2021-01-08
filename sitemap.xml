@@ -39,25 +39,25 @@
   </url>
   
   <url>
-    <loc>https://jodavid.github.io/tags/classification/</loc>
-    <lastmod>2019-05-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jodavid.github.io/categories/classification/</loc>
     <lastmod>2019-05-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jodavid.github.io/tags/cuda/</loc>
-    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
+    <loc>https://jodavid.github.io/tags/classification/</loc>
+    <lastmod>2019-05-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jodavid.github.io/categories/cuda/</loc>
+    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jodavid.github.io/tags/cuda/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -75,13 +75,13 @@
   </url>
   
   <url>
-    <loc>https://jodavid.github.io/tags/julia/</loc>
+    <loc>https://jodavid.github.io/categories/julia/</loc>
     <lastmod>2019-05-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jodavid.github.io/categories/julia/</loc>
+    <loc>https://jodavid.github.io/tags/julia/</loc>
     <lastmod>2019-05-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -99,13 +99,13 @@
   </url>
   
   <url>
-    <loc>https://jodavid.github.io/tags/r/</loc>
+    <loc>https://jodavid.github.io/categories/r/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jodavid.github.io/categories/r/</loc>
+    <loc>https://jodavid.github.io/tags/r/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -117,13 +117,13 @@
   </url>
   
   <url>
-    <loc>https://jodavid.github.io/tags/web-scrapping/</loc>
+    <loc>https://jodavid.github.io/categories/web-scrapping/</loc>
     <lastmod>2020-12-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jodavid.github.io/categories/web-scrapping/</loc>
+    <loc>https://jodavid.github.io/tags/web-scrapping/</loc>
     <lastmod>2020-12-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
