@@ -6,10 +6,21 @@
     <description>Recent content in Web Scrapping on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 29 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jodavid.github.io/categories/web-scrapping/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Introdução a Web Scrapping com R</title>
+      <link>https://jodavid.github.io/post/2021-01-09-introdu%C3%A7%C3%A3o-a-web-scrapping-com-r/web-scrapping-introduction-with-r/</link>
+      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/post/2021-01-09-introdu%C3%A7%C3%A3o-a-web-scrapping-com-r/web-scrapping-introduction-with-r/</guid>
+      <description>Venho mostrar nesse post, uma introdução sobre Web Scraping com R.
+Para iniciar vou falar sobre o projeto “SERENATA DE AMOR” https://serenata.ai/ que é um projeto aberto no qual usa data science (ciência de dados) - a mesma tecnolgia usada por gigantes como Google, Facebook e Netflix - com o objetivo de monitorar os gastos públicos e compartilhar informações de forma acessível a todos.
+Até a data de hoje 29.</description>
+    </item>
     
     <item>
       <title>Introdução a Web Scrapping com R</title>
