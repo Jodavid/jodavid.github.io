@@ -13,10 +13,10 @@
     
     <item>
       <title>Introdução a Web Scrapping com R</title>
-      <link>https://jodavid.github.io/post/2021-01-09-introdu%C3%A7%C3%A3o-a-web-scrapping-com-r/web-scrapping-introduction-with-r/</link>
+      <link>https://jodavid.github.io/post/web-scrapping-introduction-with-r/</link>
       <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://jodavid.github.io/post/2021-01-09-introdu%C3%A7%C3%A3o-a-web-scrapping-com-r/web-scrapping-introduction-with-r/</guid>
+      <guid>https://jodavid.github.io/post/web-scrapping-introduction-with-r/</guid>
       <description>Venho mostrar nesse post, uma introdução sobre Web Scraping com R.
 Para iniciar vou falar sobre o projeto “SERENATA DE AMOR” https://serenata.ai/ que é um projeto aberto no qual usa data science (ciência de dados) - a mesma tecnolgia usada por gigantes como Google, Facebook e Netflix - com o objetivo de monitorar os gastos públicos e compartilhar informações de forma acessível a todos.
 Até a data de hoje 29.</description>
@@ -40,17 +40,6 @@ O algoritmo \(k\)-Nearest Neighbors foi proposto por Cover e Hart e é considera
       <guid>https://jodavid.github.io/post/comparison-of-time-efficiency-of-a-same-function-in-r/</guid>
       <description>Atualmente considerando tantas tarefas diárias que temos que fazer, está cada vez mais difícil gerenciar nosso tempo. E com os métodos de análises de dados esse processo também é uma parte fundamental, pois nos influência diretamente no tempo de finalização da análise. Quanto mais as ferramentas utilzadas demoram em sua execução, mais tempo será necessário para conclusão do estudo.
 Levando isso em consideração, neste post serão verificados tempos de execução de funções programadas de três formas diferentes para execução da mesma tafera.</description>
-    </item>
-    
-    <item>
-      <title>Introdução a Web Scrapping com R</title>
-      <link>https://jodavid.github.io/post/2020-12-29-introducao-web-scrapping-com-r/web-scrapping-introduction-with-r/</link>
-      <pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jodavid.github.io/post/2020-12-29-introducao-web-scrapping-com-r/web-scrapping-introduction-with-r/</guid>
-      <description>Venho mostrar nesse post, uma introdução sobre Web Scraping com R.
-Para iniciar vou falar sobre o projeto “SERENATA DE AMOR” https://serenata.ai/ que é um projeto aberto no qual usa data science (ciência de dados) - a mesma tecnolgia usada por gigantes como Google, Facebook e Netflix - com o objetivo de monitorar os gastos públicos e compartilhar informações de forma acessível a todos.
-Até a data de hoje 29.</description>
     </item>
     
     <item>
