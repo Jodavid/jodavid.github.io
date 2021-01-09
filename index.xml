@@ -37,9 +37,9 @@ Levando isso em consideração, neste post serão verificados tempos de execuç�
       <pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://jodavid.github.io/post/2020-12-29-introducao-web-scrapping-com-r/web-scrapping-introduction-with-r/</guid>
-      <description>Olá, nesse post vou falar sobre Web Scraping com R.
-Para iniciar vou falar sobre o projeto &amp;ldquo;SERENATA DE AMOR&amp;rdquo; https://serenata.ai/ que é um projeto aberto no qual usa data science (ciência de dados) - a mesma tecnolgia usada por gigantes como Google, Facebook e Netflix - com o objetivo de monitorar os gastos públicos e compartilhar informações de forma acessível a todos.
-Até a data de hoje 29.12.2020, o projeto já reportou 8.</description>
+      <description>Venho mostrar nesse post, uma introdução sobre Web Scraping com R.
+Para iniciar vou falar sobre o projeto “SERENATA DE AMOR” https://serenata.ai/ que é um projeto aberto no qual usa data science (ciência de dados) - a mesma tecnolgia usada por gigantes como Google, Facebook e Netflix - com o objetivo de monitorar os gastos públicos e compartilhar informações de forma acessível a todos.
+Até a data de hoje 29.</description>
     </item>
     
     <item>

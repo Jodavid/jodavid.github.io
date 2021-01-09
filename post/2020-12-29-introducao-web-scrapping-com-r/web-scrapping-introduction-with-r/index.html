@@ -78,16 +78,15 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
     
     
     
-    <p>Olá,
-nesse post vou falar sobre Web Scraping com R.</p>
+    
 
-<p>Para iniciar vou falar sobre o projeto &ldquo;SERENATA DE AMOR&rdquo; <a href="https://serenata.ai/">https://serenata.ai/</a>
+
+<p>Venho mostrar
+nesse post, uma introdução sobre Web Scraping com R.</p>
+<p>Para iniciar vou falar sobre o projeto “SERENATA DE AMOR” <a href="https://serenata.ai/">https://serenata.ai/</a>
 que é um projeto aberto no qual usa data science (ciência de dados) - a mesma tecnolgia usada por gigantes como Google, Facebook e Netflix - com o objetivo de monitorar os gastos públicos e compartilhar informações de forma acessível a todos.</p>
-
 <p>Até a data de hoje 29.12.2020, o projeto já reportou 8.276 ressarcimentos suspeitos à Câmara dos Deputados envolvendo 735 parlamentares diferentes e mais de R$ 3,6 mi.</p>
-
 <p>Quer saber como funciona o sistema de relatórios? <a href="https://medium.com/data-science-brigade/como-est%C3%A1-acontecendo-a-hackaton-de-den%C3%BAncias-da-opera%C3%A7%C3%A3o-serenata-de-amor-a8bd193e0c76">Você pode ler mais neste post - clicando aqui!</a>.</p>
-
 <p>Explicado o projeto Serenata, voltamos ao Web Scrapping, que neste caso
 vamos utilizar o
 <a href="https://jarbas.serenata.ai/dashboard/chamber_of_deputies/reimbursement/">Jarbas</a> )
@@ -97,63 +96,66 @@ Com o intuito de mostrar que é possível analisar os dados
 da forma que desejar para tomada de decisões,
 um gráfico será gerado com os dados coletados
 de alguns deputados e os valores de reembolso solicitados por eles.</p>
-
 <p>Passo 1: Lendo a URL.</p>
-
-<p>Para ler a página em html, será utilizado a função &ldquo;read_html&rdquo; do pacote <em>rvest</em>.</p>
-
-<pre><code class="language-r">library(rvest)
-url &lt;- &quot;https://jarbas.serenata.ai/dashboard/chamber_of_deputies/reimbursement/&quot;
-jarbas_webpage &lt;- read_html(url)
-</code></pre>
-
-<p>Passo 2: Agora, a melhor parte da biblioteca rvest é que você pode extrair os dados de html em forma de nós, o que significa que você pode selecionar imediatamente quais os nós através dos ids ou classes css e extrair o texto das tags do html. Então eu fui para o meu url e abri o &ldquo;*firebug <em>&rdquo; no navegador e percebi que os nomes dos deputados foram encapsulados na classe css &ldquo;</em>.field-congressperson_name *&ldquo;, usando esta classe css que posso extrair todos os nomes dos deputados na página da web.</p>
-
+<p>Para ler a página em html, será utilizado a função “read_html” do pacote <em>rvest</em>.</p>
+<pre class="r"><code>library(rvest)</code></pre>
+<pre><code>## Carregando pacotes exigidos: xml2</code></pre>
+<pre class="r"><code>url &lt;- &quot;https://jarbas.serenata.ai/dashboard/chamber_of_deputies/reimbursement/&quot;
+jarbas_webpage &lt;- read_html(url)</code></pre>
+<p>Passo 2: Agora, a melhor parte da biblioteca rvest é que você pode extrair os dados de html em forma de nós, o que significa que você pode selecionar imediatamente quais os nós através dos ids ou classes css e extrair o texto das tags do html. Então eu fui para o meu url e abri o “<em>firebug </em>” no navegador e percebi que os nomes dos deputados foram encapsulados na classe css “<em>.field-congressperson_name </em>”, usando esta classe css que posso extrair todos os nomes dos deputados na página da web.</p>
 <p>Existem 2 funções que usaremos aqui:</p>
-
-<ol>
-<li>html_nodes: Use esta função para extrair os nós que desejamos (neste caso nós com &ldquo;.field-congressperson_name&rdquo; como classe css</li>
+<ol style="list-style-type: decimal">
+<li>html_nodes: Use esta função para extrair os nós que desejamos (neste caso nós com “.field-congressperson_name” como classe css</li>
 <li>html_text: Use esta função para extrair o texto entre dos nós html (neste caso, os nomes de nossos representantes)</li>
 </ol>
-
-<pre><code class="language-r">#Scraping  usando classe css ‘field-congressperson_name’
-jarbas_names_html &lt;-html_nodes(jarbas_webpage, '.field-congressperson_name')
+<pre class="r"><code>#Scraping  usando classe css ‘field-congressperson_name’
+jarbas_names_html &lt;-html_nodes(jarbas_webpage, &#39;.field-congressperson_name&#39;)
 jarbas_names &lt;- html_text(jarbas_names_html)
-head(jarbas_names)
-</code></pre>
-
+head(jarbas_names)</code></pre>
+<pre><code>## [1] &quot;Valmir Assunção&quot; &quot;Hélio Leite&quot;     &quot;Hélio Leite&quot;     &quot;Hélio Leite&quot;    
+## [5] &quot;Bacelar&quot;         &quot;Hélio Leite&quot;</code></pre>
 <p>Da mesma forma, agora farei isso para todos os outros atributos: SUBQUOTA TRANSLATED, FORNECEDOR. Cada um desses atributos tem suas próprias classes css: field-subquota_translated, field-supplier_info.</p>
-
-<pre><code class="language-r">#SUBQUOTA TRANSLATED
-jarbas_subquota_html &lt;-html_nodes(jarbas_webpage, '.field-subquota_translated')
+<pre class="r"><code>#SUBQUOTA TRANSLATED
+jarbas_subquota_html &lt;-html_nodes(jarbas_webpage, &#39;.field-subquota_translated&#39;)
 jarbas_subquota &lt;- html_text(jarbas_subquota_html)
-head(jarbas_subquota)
-
-#Fornecedor
-jarbas_provider_html &lt;-html_nodes(jarbas_webpage, '.field-supplier_info')
+head(jarbas_subquota)</code></pre>
+<pre><code>## [1] &quot;Combustíveis e lubrificantes&quot;                
+## [2] &quot;Divulgação da atividade parlamentar&quot;         
+## [3] &quot;Divulgação da atividade parlamentar&quot;         
+## [4] &quot;Combustíveis e lubrificantes&quot;                
+## [5] &quot;Consultorias, pesquisas e trabalhos técnicos&quot;
+## [6] &quot;Combustíveis e lubrificantes&quot;</code></pre>
+<pre class="r"><code>#Fornecedor
+jarbas_provider_html &lt;-html_nodes(jarbas_webpage, &#39;.field-supplier_info&#39;)
 jarbas_provider &lt;- html_text(jarbas_provider_html)
-head(jarbas_provider)
-</code></pre>
-
+head(jarbas_provider)</code></pre>
+<pre><code>## [1] &quot;POSTO MK 107 NORTE LTDA05.625.571/0001-35&quot;                        
+## [2] &quot;PRISCILLA DE CASSIA PORTELA VINHOTE 7054665724934.314.072/0001-25&quot;
+## [3] &quot;M SANTOS GUIMARAES EIRELI23.936.281/0001-94&quot;                      
+## [4] &quot;SUPER POSTO PALMEIRA LTDA83.838.839/0001-20&quot;                      
+## [5] &quot;NARCISO COELHO E MATOS ADVOGADOS ASSOCIADOS17.359.366/0001-54&quot;    
+## [6] &quot;Posto de Combustiveis Garantia Ltda72.578.438/0002-43&quot;</code></pre>
 <p>A seguir serão mostrados o valor do reembolso, note que eles são extraídos
-em tipo de variável caracter: Ex: R\$ 139,76, R\$ 40,23.
-Entretanto, como desejamos manipular esses números, precisamos convertê-los para tipo de variável numérica, dessa forma será utilizado a biblioteca: &ldquo;<em>Stringr</em>&rdquo; mais especificamente a função: <code>str_extract</code>. Segue o script para conversão da variável.</p>
-
-<pre><code class="language-r">library(stringr)
+em tipo de variável caracter: Ex: R$ 139,76, R$ 40,23.
+Entretanto, como desejamos manipular esses números, precisamos convertê-los para tipo de variável numérica, dessa forma será utilizado a biblioteca: “<em>Stringr</em>” mais especificamente a função: <code>str_extract</code>. Segue o script para conversão da variável.</p>
+<pre class="r"><code>library(stringr)
 #valores em Real
-jarbas_value_html &lt;-html_nodes(jarbas_webpage, '.field-value')
+jarbas_value_html &lt;-html_nodes(jarbas_webpage, &#39;.field-value&#39;)
 jarbas_value &lt;- html_text(jarbas_value_html)
-head(jarbas_value)
-#R$ 139,76&quot; &quot;R$ 40,23&quot;  &quot;R$ 72,05&quot;  &quot;R$ 72,05&quot;  &quot;R$ 56,39&quot;  &quot;R$ 235,64&quot;  
+head(jarbas_value)</code></pre>
+<pre><code>## [1] &quot;R$ 198,84&quot;   &quot;R$ 900,00&quot;   &quot;R$ 300,00&quot;   &quot;R$ 5022,28&quot;  &quot;R$ 13000,00&quot;
+## [6] &quot;R$ 168,94&quot;</code></pre>
+<pre class="r"><code>#R$ 139,76&quot; &quot;R$ 40,23&quot;  &quot;R$ 72,05&quot;  &quot;R$ 72,05&quot;  &quot;R$ 56,39&quot;  &quot;R$ 235,64&quot;  
 #dados extraídos na forma de caracter, vamos converter para tipo numérico
 jarbas_value &lt;- as.numeric(sub(&quot;,&quot;,&quot;.&quot;,str_extract(jarbas_value,pattern = &quot;\\-*\\d+,\\s{0,}\\d+&quot;)))
-head(jarbas_value,25)
-</code></pre>
-
+head(jarbas_value,25)</code></pre>
+<pre><code>##  [1]   198.84   900.00   300.00  5022.28 13000.00   168.94   600.65   129.17
+##  [9]    88.42    26.54   800.62    64.84   164.00    25.84  1817.62   199.35
+## [17]  1889.55    64.45    60.40  2214.45   139.32    25.65  3000.00  5000.00
+## [25]  1500.00</code></pre>
 <p>Passo 3: Com essas informações disponíveis, vamos gerar um dataframe.
 Para facilitar a visualização, apenas o primeiro nome de cada deputado foi selecionado.</p>
-
-<pre><code class="language-r">#Combinando todas as características obtidas
+<pre class="r"><code>#Combinando todas as características obtidas
 jarbas_names &lt;- str_extract(jarbas_names,pattern = boundary(&quot;word&quot;))
 jarbas_df &lt;- data.frame(
   Name = jarbas_names,
@@ -161,12 +163,14 @@ jarbas_df &lt;- data.frame(
   Provider = jarbas_provider,
   Value = jarbas_value
   )
-str(jarbas_df)
-</code></pre>
-
-<p>Passo 4:  Numa primeira análise, podemos utilizar gráfico entre o valor do reembolso e o nome dos deputados. Foram utilizados as 50 primeiras linhas do data.frame e uma biblioteca <em>ggplot2</em> para geração do gráfico.</p>
-
-<pre><code class="language-r,">library(ggplot2)
+str(jarbas_df)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    100 obs. of  4 variables:
+##  $ Name    : chr  &quot;Valmir&quot; &quot;Hélio&quot; &quot;Hélio&quot; &quot;Hélio&quot; ...
+##  $ Subquota: chr  &quot;Combustíveis e lubrificantes&quot; &quot;Divulgação da atividade parlamentar&quot; &quot;Divulgação da atividade parlamentar&quot; &quot;Combustíveis e lubrificantes&quot; ...
+##  $ Provider: chr  &quot;POSTO MK 107 NORTE LTDA05.625.571/0001-35&quot; &quot;PRISCILLA DE CASSIA PORTELA VINHOTE 7054665724934.314.072/0001-25&quot; &quot;M SANTOS GUIMARAES EIRELI23.936.281/0001-94&quot; &quot;SUPER POSTO PALMEIRA LTDA83.838.839/0001-20&quot; ...
+##  $ Value   : num  199 900 300 5022 13000 ...</code></pre>
+<p>Passo 4: Numa primeira análise, podemos utilizar gráfico entre o valor do reembolso e o nome dos deputados. Foram utilizados as 50 primeiras linhas do data.frame e uma biblioteca <em>ggplot2</em> para geração do gráfico.</p>
+<pre class="r"><code>library(ggplot2)
 
 jarbas_df &lt;- jarbas_df[1:50,]
 
@@ -174,8 +178,8 @@ ggplot(
   jarbas_df, aes(Value,Name,colour=Subquota)) +
   geom_point() +
   labs(title=&quot;&quot;, x =&quot;pedidos de reembolso (R$)&quot;,
-       y = &quot;deputados&quot;,colour=&quot;SUBQUOTA TRANSLATED&quot;)
-</code></pre>
+       y = &quot;deputados&quot;,colour=&quot;SUBQUOTA TRANSLATED&quot;)</code></pre>
+<p><img src="https://jodavid.github.io/post/2020-12-29-introducao-web-scrapping-com-r/web-scrapping-introduction-with-r/index_files/figure-html/unnamed-chunk-6-1.png" width="768" /></p>
 
   </div>
 </section>
@@ -225,7 +229,7 @@ ggplot(
 <footer class="row text-center footer">
   <hr />
   
-  <h6 class="text-center copyright">© 2020. Jodavid Ferreira. <a href="http://creativecommons.org/licenses/by/3.0/">Some Rights Reserved</a>.</h6>
+  <h6 class="text-center copyright">© 2021. Jodavid Ferreira. <a href="http://creativecommons.org/licenses/by/3.0/">Some Rights Reserved</a>.</h6>
   
   <h6 class="text-center powered">Powered by <a href="https://gohugo.io/">Hugo  v0.54.0</a> &amp; <a href="https://github.com/shenoybr/hugo-goa">Goa</a>.</h6>
   
