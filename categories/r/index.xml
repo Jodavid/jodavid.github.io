@@ -6,10 +6,20 @@
     <description>Recent content in R on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 02 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jodavid.github.io/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>classificação com k-NN em R, Julia e Python</title>
+      <link>https://jodavid.github.io/post/k-nn-classification-in-r-and-julia/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/post/k-nn-classification-in-r-and-julia/</guid>
+      <description>Neste post será apresentado um algoritmo eficiente e um dos mais básicos na área de classificação estatística, e machine learning. O algoritmo é o \(k\)-NN (\(k\) vizinhos mais próximos).
+O algoritmo \(k\)-Nearest Neighbors foi proposto por Cover e Hart e é considerado um classificador não paramétrico. Dada uma amostra de teste onde a classe é desconhecida, o método encontra \(k\) mais próximos no conjunto de treinamento para cada observação da amostra de teste segundo uma determinada distância (geralmente utilizada distância euclideana) e atribui uma classe à observação de acordo com o voto da maioria das classes desses vizinhos.</description>
+    </item>
     
     <item>
       <title>Comparação da eficiência de tempo de uma mesma função no R</title>
@@ -30,17 +40,6 @@ Levando isso em consideração, neste post serão verificados tempos de execuç�
       <description>Olá, nesse post vou falar sobre Web Scraping com R.
 Para iniciar vou falar sobre o projeto &amp;ldquo;SERENATA DE AMOR&amp;rdquo; https://serenata.ai/ que é um projeto aberto no qual usa data science (ciência de dados) - a mesma tecnolgia usada por gigantes como Google, Facebook e Netflix - com o objetivo de monitorar os gastos públicos e compartilhar informações de forma acessível a todos.
 Até a data de hoje 29.12.2020, o projeto já reportou 8.</description>
-    </item>
-    
-    <item>
-      <title>k-NN classification in R, Julia and Python</title>
-      <link>https://jodavid.github.io/post/k-nn-classification-in-r-and-julia/</link>
-      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jodavid.github.io/post/k-nn-classification-in-r-and-julia/</guid>
-      <description>Hi guys,
-in this post will be presented an efficient algorithm and one of the most basic in the area of statistical classification, this algorithm is the \(k\)-NN (\(k\) Nearest Neighbors).
-The k-Nearest Neighbors algorithm was proposed by Cover e Hart and is considered as a non-parametric classifier. Given a test sample where the class is unknown, the method finds the nearest \(k\) in the training set for each observation of the test sample over a distance and assigns a class to the observation according to the majority vote of the classes of these neighbors.</description>
     </item>
     
   </channel>

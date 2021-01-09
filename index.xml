@@ -6,10 +6,20 @@
     <description>Recent content on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 02 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jodavid.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>classificação com k-NN em R, Julia e Python</title>
+      <link>https://jodavid.github.io/post/k-nn-classification-in-r-and-julia/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/post/k-nn-classification-in-r-and-julia/</guid>
+      <description>Neste post será apresentado um algoritmo eficiente e um dos mais básicos na área de classificação estatística, e machine learning. O algoritmo é o \(k\)-NN (\(k\) vizinhos mais próximos).
+O algoritmo \(k\)-Nearest Neighbors foi proposto por Cover e Hart e é considerado um classificador não paramétrico. Dada uma amostra de teste onde a classe é desconhecida, o método encontra \(k\) mais próximos no conjunto de treinamento para cada observação da amostra de teste segundo uma determinada distância (geralmente utilizada distância euclideana) e atribui uma classe à observação de acordo com o voto da maioria das classes desses vizinhos.</description>
+    </item>
     
     <item>
       <title>Comparação da eficiência de tempo de uma mesma função no R</title>
@@ -53,17 +63,6 @@ Sou graduado em Estatística pela Universidade Federal da Paraíba (UFPB), Brasi
 Expert Advisor  Índice:
  Conta DEMO
  Estratégia HiLo (Conta Demo) - Download aqui Estratégia CTV (Conta Demo) - Download aqui Estratégia RA (Conta Demo) - Download aqui Estratégia ENT (Conta Demo) - Download aqui Estratégia BBP (Conta Demo) - Download aqui Estratégia PP (Conta Demo) - Download aqui Estratégia MACD (Conta Demo) - Download aqui Estratégia JJ (Conta Demo) - Download aqui  Conta REAL</description>
-    </item>
-    
-    <item>
-      <title>k-NN classification in R, Julia and Python</title>
-      <link>https://jodavid.github.io/post/k-nn-classification-in-r-and-julia/</link>
-      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://jodavid.github.io/post/k-nn-classification-in-r-and-julia/</guid>
-      <description>Hi guys,
-in this post will be presented an efficient algorithm and one of the most basic in the area of statistical classification, this algorithm is the \(k\)-NN (\(k\) Nearest Neighbors).
-The k-Nearest Neighbors algorithm was proposed by Cover e Hart and is considered as a non-parametric classifier. Given a test sample where the class is unknown, the method finds the nearest \(k\) in the training set for each observation of the test sample over a distance and assigns a class to the observation according to the majority vote of the classes of these neighbors.</description>
     </item>
     
   </channel>

@@ -13,7 +13,7 @@
 <base href="https://jodavid.github.io">
 
 <title>
-  Jodavid Ferreira - k-NN classification in R, Julia and Python 
+  Jodavid Ferreira - classificação com k-NN em R, Julia e Python 
 </title>
 
 <meta name="generator" content="Hugo 0.54.0" />
@@ -50,13 +50,13 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 
 <header class="row text-left title">
-  <h1 class="title">k-NN classification in R, Julia and Python</h1>
+  <h1 class="title">classificação com k-NN em R, Julia e Python</h1>
 </header>
 <section id="category-pane" class="row meta">
   
   <div class="col-md-12">
     <h6 class="text-left meta">
-        PUBLISHED ON 29 DE MAY DE 2019 
+        PUBLISHED ON 8 DE JAN DE 2021 
       
       
       
@@ -85,72 +85,58 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
     
 
 
-<p>Hi guys,</p>
-<p>in this post will be presented an efficient algorithm and one of the
-most basic in the area of statistical classification, this algorithm is the <span class="math inline">\(k\)</span>-NN (<span class="math inline">\(k\)</span> Nearest Neighbors).</p>
-<p>The k-Nearest Neighbors algorithm was proposed by Cover
-e Hart and is considered as a non-parametric classifier.
-Given a test sample where the class is
-unknown, the method finds the nearest <span class="math inline">\(k\)</span> in the training
-set for each observation of the test sample over
-a distance and assigns a class to the observation
-according to the majority vote of the classes of these
-neighbors.</p>
-<p>The algorithm <span class="math inline">\(k\)</span>-NN estimates the
-probability of an observation
-belonging to each group based
-on the nearest neighbor <span class="math inline">\(k\)</span>
-information defined as follows.
-Consider <span class="math inline">\(G\)</span> non-empty
-partitions, which are
-<span class="math inline">\(C_1,C_2, \ldots,C_G\)</span>, such that,
+<p>Neste post
+será apresentado um algoritmo eficiente e um dos
+mais básicos na área de classificação estatística, e <em>machine learning</em>.
+O algoritmo é o <span class="math inline">\(k\)</span>-NN (<span class="math inline">\(k\)</span> vizinhos mais próximos).</p>
+<p>O algoritmo <span class="math inline">\(k\)</span>-Nearest Neighbors foi proposto por Cover e Hart e é considerado um classificador não paramétrico. Dada uma amostra de teste onde a classe é desconhecida, o método encontra <span class="math inline">\(k\)</span> mais próximos no conjunto de treinamento para cada observação da amostra de teste segundo uma determinada distância (geralmente utilizada distância euclideana) e atribui uma classe à observação de acordo com o voto da maioria das classes desses vizinhos.</p>
+<p>O algoritmo estima a probabilidade de uma observação pertencer a cada grupo com base na informação do vizinho mais próximo <span class="math inline">\(k\)</span> definida a seguir. Considere <span class="math inline">\(G\)</span> partições não vazias, que são
+<span class="math inline">\(C_1,C_2, \ldots,C_G\)</span>, tal que,
 <span class="math inline">\(C_j \subset \mathbb{R}^p\)</span>
-is a subset
-of size <span class="math inline">\(n_j\)</span>, for
+é um subconjunto de tamanho <span class="math inline">\(n_j\)</span>, para
 <span class="math inline">\(j = 1, \ldots,g\)</span>,
 <span class="math inline">\(n = \sum_{j=1}^{n} n_j\)</span>,
-<span class="math inline">\(C_i\cap C_j = \emptyset\)</span> for all
+<span class="math inline">\(C_i\cap C_j = \emptyset\)</span> para todo
 <span class="math inline">\(i \neq j.\)</span>
-Let <span class="math inline">\(\mathbf{y} \in \mathbb{R}^p\)</span>
-an observation to be classified and
-<span class="math inline">\(\{\mathbf{x}_{i_1},\mathbf{x}_{i_2},\ldots,\mathbf{x}_{i_k} \}\)</span> the set of <span class="math inline">\(k\)</span> neighbors, such that,
-<span class="math inline">\(k\leq n\)</span> and
+Seja <span class="math inline">\(\mathbf{y} \in \mathbb{R}^p\)</span>
+uma observação a ser classificada e
+<span class="math inline">\(\{\mathbf{x}_{i_1},\mathbf{x}_{i_2},\ldots,\mathbf{x}_{i_k} \}\)</span> o cojunto de <span class="math inline">\(k\)</span> vizinhos, tal que,
+<span class="math inline">\(k\leq n\)</span> e
 <span class="math inline">\(\{i_1, i_2,\ldots, i_k \} \subset \{1,2,\ldots,n\}\)</span>.
-So for <span class="math inline">\(j = 1, \ldots,G\)</span>,
-the classification rule of the <span class="math inline">\(k\)</span>-NN
-is defined as:</p>
-<p><span class="math display">\[
+Assim para <span class="math inline">\(j = 1, \ldots,G\)</span>,
+a regra de classificação de <span class="math inline">\(k\)</span>-NN é definida como:
+<span class="math display">\[
 \widehat{c}_{_{kNN}} = \mathop{\text{ arg max}}_{c} \widehat{P}_k(G=c),
 \]</span></p>
-<p>where <span class="math inline">\(\widehat{P}_k(G=c) = k^{-1}\sum_{\nu=1}^{k}\mathbb{I}_c(\mathbf{x}_{i_\nu})\)</span> and</p>
+<p>em que <span class="math inline">\(\widehat{P}_k(G=c) = k^{-1}\sum_{\nu=1}^{k}\mathbb{I}_c(\mathbf{x}_{i_\nu})\)</span> e</p>
 <p><span class="math display">\[
 \mathbb{I}_c(\mathbf{x} _{i_\nu}) = \left\lbrace \begin{array}{rl}
 1,&amp;\text{if } \mathbf{x}_{i_\nu} \in C_j,\\
 0,&amp; \text{if } \mathbf{x}_{i_\nu} \notin C_j.
 \end{array}
 \right.
-\]</span>
-To illustrate our example we will use the ‘Iris’ database. Below is a graph of two variables of the ‘Iris’ database, this base contains 4 variables that we will use in the classification and the fifth variable is the ‘true class’ of the observations.</p>
-<pre class="r"><code>library(ggplot2)
+\]</span></p>
+<p>Para ilustrar nosso exemplo, usaremos o banco de dados ‘Iris’. Abaixo está um gráfico de duas variáveis da base de dados ‘Iris’, esta base contém 4 variáveis que usaremos na classificação e a quinta variável é a ‘classe verdadeira’ das observações.</p>
+<pre class="r"><code>library(ggplot2) # Pacote necessário para o gráfico
 
+# Função para gerar o gráfico com duas variáveis Sepal.Lenght x Petal.Lenght
 ggplot(iris,aes(Sepal.Length,Petal.Length,colour=Species)) +
   geom_point()</code></pre>
 <p><img src="https://jodavid.github.io/post/2019-05-28-k-nn-classification-in-r-and-julia_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<p>Let’s divide our experiment into 3 steps:</p>
+<p>Vamos dividir nosso experimento em 3 etapas:</p>
 <ol style="list-style-type: decimal">
-<li>Take a random sample from the Iris database to represent our
-training sample;</li>
-<li>The sample not selected for the training will be considered the
-test sample, with this sample we will classifier using the algorithm
-<span class="math inline">\(k\)</span>-NN;</li>
-<li>As we know the true class of the observations of the test sample, it is possible to obtain the classification accuracy and verify the efficiency of the algorithm <span class="math inline">\(k\)</span> -NN.</li>
+<li>Pegar uma amostra aleatória do banco de dados Iris para representar nosso
+amostra de treinamento;</li>
+<li>A amostra não selecionada para o treinamento será considerada a
+amostra de teste, com esta amostra iremos classificar usando o algoritmo <span class="math inline">\(k\)</span>-NN;</li>
+<li>Através da verdaidera classe das observações da amostra de teste, é possível obter a precisão da classificação e verificar a eficiência do algoritmo <span class="math inline">\(k\)</span>-NN.</li>
 </ol>
-<p>Let’s repeat the same steps for the R, Julia and Python languages.</p>
+<p>Vamos repetir os mesmos passos para as linguagens <code>R</code>, <code>Julia</code> e <code>Python</code>.</p>
 <div id="in-r" class="section level4">
 <h4>In R:</h4>
-<pre class="r"><code># required packages
+<pre class="r"><code># Pacotes Necessários
 library(class)
-#database
+# Base de dados
 head(iris)</code></pre>
 <pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 1          5.1         3.5          1.4         0.2  setosa
@@ -159,39 +145,41 @@ head(iris)</code></pre>
 ## 4          4.6         3.1          1.5         0.2  setosa
 ## 5          5.0         3.6          1.4         0.2  setosa
 ## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
-<pre class="r"><code># training sample
-set.seed(1) # seed it is necessary for obtained same results
-sample.iris &lt;- sample(1:nrow(iris),50) # 50 observations
-sample.iris</code></pre>
-<pre><code>##  [1]  68 129  43  14  51  85  21 106  74   7  73  79  37 105 110  34 143
-## [18] 126  89  33  84  70 142  42  38 111  20  28 124  44  87 149  40 121
-## [35]  25 119  39 146 127   6  24  32 147   2  45  18  22  78 102  65</code></pre>
-<pre class="r"><code>training &lt;- iris[sample.iris,-ncol(iris)]
+<pre class="r"><code># Selecionando Amostra de Treinamento
+set.seed(1) # semente para obter sempre os mesmos resultados
+sample.iris &lt;- sample(1:nrow(iris),50) # 50 observações
+training &lt;- iris[sample.iris,-ncol(iris)]
 class_training &lt;- iris[sample.iris,ncol(iris)]
 test &lt;- iris[-sample.iris,-ncol(iris)]
 class_test &lt;- iris[-sample.iris,ncol(iris)]
 
-# k-NN with 3 Neighbour
-resul &lt;- knn(training,test,class_training,k=3)
-
-# classification accuracy - R
-mean(resul==class_test)</code></pre>
-<pre><code>## [1] 0.95</code></pre>
+# k-NN com 3 Vizinhos
+resul &lt;- knn(training,test,class_training,k=3)</code></pre>
 </div>
 <div id="in-julia" class="section level4">
 <h4>In Julia:</h4>
-<pre class="julia"><code># using Pkg
+<pre class="julia"><code>
+# Instalando Pacotes
+# using Pkg
 # Pkg.add(&quot;StatsKit&quot;)
-# Pkg.add(&quot;RDatasets&quot;)  
+# Pkg.add(&quot;RDatasets&quot;)
+# Pkg.add(&quot;Distances&quot;)
+# Pkg.add(&quot;StatsBase&quot;)
+# Pkg.add(&quot;Arpack&quot;)
 
-using StatsKit
-using RDatasets
+
+# Pacotes necessários
+using Pkg
+Pkg.build(&quot;Arpack&quot;)</code></pre>
+<pre><code>##   Building Arpack → `~/.julia/packages/Arpack/zCmTA/deps/build.log`</code></pre>
+<pre class="julia"><code>using RDatasets
+using Distances
+using StatsBase
 
 #&lt;&gt; ----------------------------------------- &lt;&gt;#
-# k-NN Functions
-## majority vote
+# Função k-NN
+## voto marjoritário
 function maj_vote(yn)
-    ## majority vote
     cm = countmap(yn)
     mv = -999
     lab = nothing
@@ -212,7 +200,7 @@ function maj_vote(yn)
 end</code></pre>
 <pre><code>## maj_vote (generic function with 1 method)</code></pre>
 <pre class="julia"><code>
-## KNN label prediction
+## Predição da classe do k-NN
 function knn(x, y, x_new , k)
     x = convert(Array, x)
     y = convert(Array, y)
@@ -221,21 +209,21 @@ function knn(x, y, x_new , k)
     n2,p2 = size(x_new)
     ynew = DataFrame(Class=String[], 
         maj=Float64[])
-    for i in 1:n2 ## over new x_new
+    for i in 1:n2 ## sobre novo x_new
         res = zeros(n,2)
-        for j in 1:n ## over x
-            ## euclidean distance between rows - each row is a subject
+        for j in 1:n ## sibre x
+            ## distância euclidiana entre linhas - cada linha é uma observação
             res[j,:] = [j , euclidean(x[j,:], x_new[i,:])]
         end
-        ## sort rows by distance and index - smallest distances
+        ## ordenando linhas por distância e índice - distâncias menores
         res2 = sortslices(res, dims = 1, by = x -&gt; (x[2], x[1]))
-        ## get indices for the largest k distances
+        ## obter índices para as maiores distâncias k
         ind = convert(Array{Int}, res2[1:k, 1])
-        ## take majority vote for the associated indices
+        ## ter maioria de votos para os índices associados
         res3 = maj_vote(y[ind])
         ynew = vcat(ynew,DataFrame(Class=res3[1], maj = res3[2] ))
     end
-    ## return the predicted labels
+    ## retornar os rótulos previstos
     return ynew
 end</code></pre>
 <pre><code>## knn (generic function with 1 method)</code></pre>
@@ -244,25 +232,25 @@ end</code></pre>
 
 iris = dataset(&quot;datasets&quot;, &quot;iris&quot;)</code></pre>
 <pre><code>## 150×5 DataFrame
-## │ Row │ SepalLength │ SepalWidth │ PetalLength │ PetalWidth │ Species      │
-## │     │ Float64     │ Float64    │ Float64     │ Float64    │ Categorical… │
-## ├─────┼─────────────┼────────────┼─────────────┼────────────┼──────────────┤
-## │ 1   │ 5.1         │ 3.5        │ 1.4         │ 0.2        │ setosa       │
-## │ 2   │ 4.9         │ 3.0        │ 1.4         │ 0.2        │ setosa       │
-## │ 3   │ 4.7         │ 3.2        │ 1.3         │ 0.2        │ setosa       │
-## │ 4   │ 4.6         │ 3.1        │ 1.5         │ 0.2        │ setosa       │
-## │ 5   │ 5.0         │ 3.6        │ 1.4         │ 0.2        │ setosa       │
-## │ 6   │ 5.4         │ 3.9        │ 1.7         │ 0.4        │ setosa       │
-## │ 7   │ 4.6         │ 3.4        │ 1.4         │ 0.3        │ setosa       │
+## │ Row │ SepalLength │ SepalWidth │ PetalLength │ PetalWidth │ Species   │
+## │     │ Float64     │ Float64    │ Float64     │ Float64    │ Cat…      │
+## ├─────┼─────────────┼────────────┼─────────────┼────────────┼───────────┤
+## │ 1   │ 5.1         │ 3.5        │ 1.4         │ 0.2        │ setosa    │
+## │ 2   │ 4.9         │ 3.0        │ 1.4         │ 0.2        │ setosa    │
+## │ 3   │ 4.7         │ 3.2        │ 1.3         │ 0.2        │ setosa    │
+## │ 4   │ 4.6         │ 3.1        │ 1.5         │ 0.2        │ setosa    │
+## │ 5   │ 5.0         │ 3.6        │ 1.4         │ 0.2        │ setosa    │
+## │ 6   │ 5.4         │ 3.9        │ 1.7         │ 0.4        │ setosa    │
+## │ 7   │ 4.6         │ 3.4        │ 1.4         │ 0.3        │ setosa    │
 ## ⋮
-## │ 143 │ 5.8         │ 2.7        │ 5.1         │ 1.9        │ virginica    │
-## │ 144 │ 6.8         │ 3.2        │ 5.9         │ 2.3        │ virginica    │
-## │ 145 │ 6.7         │ 3.3        │ 5.7         │ 2.5        │ virginica    │
-## │ 146 │ 6.7         │ 3.0        │ 5.2         │ 2.3        │ virginica    │
-## │ 147 │ 6.3         │ 2.5        │ 5.0         │ 1.9        │ virginica    │
-## │ 148 │ 6.5         │ 3.0        │ 5.2         │ 2.0        │ virginica    │
-## │ 149 │ 6.2         │ 3.4        │ 5.4         │ 2.3        │ virginica    │
-## │ 150 │ 5.9         │ 3.0        │ 5.1         │ 1.8        │ virginica    │</code></pre>
+## │ 143 │ 5.8         │ 2.7        │ 5.1         │ 1.9        │ virginica │
+## │ 144 │ 6.8         │ 3.2        │ 5.9         │ 2.3        │ virginica │
+## │ 145 │ 6.7         │ 3.3        │ 5.7         │ 2.5        │ virginica │
+## │ 146 │ 6.7         │ 3.0        │ 5.2         │ 2.3        │ virginica │
+## │ 147 │ 6.3         │ 2.5        │ 5.0         │ 1.9        │ virginica │
+## │ 148 │ 6.5         │ 3.0        │ 5.2         │ 2.0        │ virginica │
+## │ 149 │ 6.2         │ 3.4        │ 5.4         │ 2.3        │ virginica │
+## │ 150 │ 5.9         │ 3.0        │ 5.1         │ 1.8        │ virginica │</code></pre>
 <pre class="julia"><code>sample_iris = [40,56,85,134,30,131,137,95,90,9,29,25,143,53,105,68,97,132,51,102,122,28,84,16,34,49,2,48,107,42,58,72,59,22,96,77,91,13,82,46,114,71,148,60,57,83,3,50,75,70]</code></pre>
 <pre><code>## 50-element Array{Int64,1}:
 ##   40
@@ -394,7 +382,7 @@ iris = dataset(&quot;datasets&quot;, &quot;iris&quot;)</code></pre>
 ##  &quot;virginica&quot;
 ##  &quot;virginica&quot;</code></pre>
 <pre class="julia"><code>
-# k-NN with 3 Neighbour
+# k-NN com 3 Vizinhos
 predict_k3 = knn(training,class_training,test,3)</code></pre>
 <pre><code>## 100×2 DataFrame
 ## │ Row │ Class     │ maj      │
@@ -416,48 +404,109 @@ predict_k3 = knn(training,class_training,test,3)</code></pre>
 ## │ 98  │ virginica │ 0.666667 │
 ## │ 99  │ virginica │ 1.0      │
 ## │ 100 │ virginica │ 0.666667 │</code></pre>
-<pre class="julia"><code>
-# classification accuracy - Julia
-class_accuracy = mean(predict_k3[:,1] .== class_test)</code></pre>
-<pre><code>## 0.97</code></pre>
 </div>
 <div id="in-python" class="section level4">
 <h4>In Python:</h4>
+<!--, engine.path="~/anaconda3/bin/python"}-->
 <pre class="python"><code>
-# Install
+# Instalar Pacotes
 #pip install numpy
 #pip install matplotlib
 #pip install pandas
 #pip install sklearn
 
-# Libraries
+# Pacotes Necessários
 
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import random
 
-# Dataset
+# Base de dados
 url = &quot;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&quot;
 
-# Assign colum names to the dataset
+# Atribuir nomes de coluna ao conjunto de dados
 names = [&#39;sepal-length&#39;, &#39;sepal-width&#39;, &#39;petal-length&#39;, &#39;petal-width&#39;, &#39;Class&#39;]
 
-# Read dataset to pandas dataframe
+# Ler o conjunto de dados para o dataframe do pandas
 dataset = pd.read_csv(url, names=names)
 
+# 5 primeias linhas
 dataset.head()</code></pre>
-<pre><code>##    sepal-length  sepal-width  petal-length  petal-width        Class
-## 0           5.1          3.5           1.4          0.2  Iris-setosa
-## 1           4.9          3.0           1.4          0.2  Iris-setosa
-## 2           4.7          3.2           1.3          0.2  Iris-setosa
-## 3           4.6          3.1           1.5          0.2  Iris-setosa
-## 4           5.0          3.6           1.4          0.2  Iris-setosa</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal-length</th>
+      <th>sepal-width</th>
+      <th>petal-length</th>
+      <th>petal-width</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 <pre class="python"><code>X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 4].values
 
-# seed
-random.seed(3) 
+# semente
+random.seed(1) 
 
 
 from sklearn.model_selection import train_test_split
@@ -472,36 +521,47 @@ scaler.fit(X_train)</code></pre>
 <pre class="python"><code>X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)
 
-# k-NN with 3 Neighbour
+# k-NN com 3 Vizinhos
 from sklearn.neighbors import KNeighborsClassifier
 classifier = KNeighborsClassifier(n_neighbors=3)
 classifier.fit(X_train, y_train)</code></pre>
 <pre><code>## KNeighborsClassifier(algorithm=&#39;auto&#39;, leaf_size=30, metric=&#39;minkowski&#39;,
-##                      metric_params=None, n_jobs=None, n_neighbors=3, p=2,
-##                      weights=&#39;uniform&#39;)</code></pre>
+##            metric_params=None, n_jobs=None, n_neighbors=3, p=2,
+##            weights=&#39;uniform&#39;)</code></pre>
 <pre class="python"><code>y_pred = classifier.predict(X_test)
 
 # classification accuracy - Python
-from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.metrics import classification_report, confusion_matrix</code></pre>
+</div>
+<div id="acurácias" class="section level4">
+<h4>Acurácias</h4>
+<pre class="r"><code># Acuária de classificação no R
+mean(resul==class_test)</code></pre>
+<pre><code>## [1] 0.95</code></pre>
+<pre class="julia"><code># Acuária de classificação no Julia
+class_accuracy = mean(predict_k3[:,1] .== class_test)</code></pre>
+<pre><code>## 0.97</code></pre>
+<pre class="python"><code># Acuária de classificação no Python
 print(confusion_matrix(y_test, y_pred))</code></pre>
-<pre><code>## [[32  1  0]
-##  [ 0 30  3]
-##  [ 0  4 29]]</code></pre>
+<pre><code>## [[34  0  0]
+##  [ 0 34  1]
+##  [ 0  1 29]]</code></pre>
 <pre class="python"><code>print(classification_report(y_test, y_pred))</code></pre>
 <pre><code>##                  precision    recall  f1-score   support
 ## 
-##     Iris-setosa       1.00      0.97      0.98        33
-## Iris-versicolor       0.86      0.91      0.88        33
-##  Iris-virginica       0.91      0.88      0.89        33
+##     Iris-setosa       1.00      1.00      1.00        34
+## Iris-versicolor       0.97      0.97      0.97        35
+##  Iris-virginica       0.97      0.97      0.97        30
 ## 
-##        accuracy                           0.92        99
-##       macro avg       0.92      0.92      0.92        99
-##    weighted avg       0.92      0.92      0.92        99</code></pre>
-<p>The experiment was performed using a training sample with 50 observations and a test sample with 100 observations.
-In the R software, the <span class="math inline">\(k\)</span>-NN algorithm is in the <code>class</code> library, in Julia it was necessary to write the <span class="math inline">\(k\)</span>-NN code, since it was not found nothing library with the method.
-In Python as with R, there are already libraries available, with precompiled functions.
-As was to be expected, using the same observations for the
-training sample and test sample, the R and Julia obtained the same results, that was 97% accuracy and python got results approximately too.</p>
+##       micro avg       0.98      0.98      0.98        99
+##       macro avg       0.98      0.98      0.98        99
+##    weighted avg       0.98      0.98      0.98        99</code></pre>
+<p>O experimento foi realizado usando uma amostra de treinamento com 50 observações e uma amostra de teste com 100 observações.</p>
+<p>No <code>R</code>, o algoritmo <span class="math inline">\(k\)</span>-NN está na biblioteca <code>class</code>, em <code>Julia</code> foi necessário escrever o código <span class="math inline">\(k\)</span>-NN, visto que não foi encontrado por mim nenhuma biblioteca com o método.
+No <code>Python</code> também já existem bibliotecas disponíveis, com funções pré-compiladas.</p>
+<p>Como era de se esperar, os resultados foram semelhantes, a difenrença foi ocorrida devido a amostra de treinamento selecionada aleatóriamente.
+Entretanto a ideia aqui é mostrar como executar o mesmo método em trễs diferentes linguagens
+de programação, <code>R</code>,<code>Julia</code> e <code>python</code>.</p>
 </div>
 
   </div>
@@ -539,11 +599,11 @@ training sample and test sample, the R and Julia obtained the same results, that
 <section id="menu-pane" class="row menu text-center">
   
   
+  <span><a class="menu-item" href="https://jodavid.github.io/post/comparison-of-time-efficiency-of-a-same-function-in-r/">&lt; prev | </a></span>
+  
   
   <span><a class="menu-item" href="https://jodavid.github.io/post">post</a></span>
   
-  
-  <span><a class="menu-item" href="https://jodavid.github.io/post/2020-12-29-introducao-web-scrapping-com-r/web-scrapping-introduction-with-r/"> | next &gt;</a></span>
   
   
   <h4 class="text-center"><a class="menu-item" href="https://jodavid.github.io">home</a></h4>
