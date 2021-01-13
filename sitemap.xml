@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jodavid.github.io/post/web-scrapping-introduction-with-r/</loc>
+    <loc>https://jodavid.github.io/post/web-scraping-introduction-with-r/</loc>
     <lastmod>2021-01-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -117,13 +117,13 @@
   </url>
   
   <url>
-    <loc>https://jodavid.github.io/tags/web-scrapping/</loc>
+    <loc>https://jodavid.github.io/tags/web-scraping/</loc>
     <lastmod>2021-01-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jodavid.github.io/categories/web-scrapping/</loc>
+    <loc>https://jodavid.github.io/categories/web-scraping/</loc>
     <lastmod>2021-01-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
