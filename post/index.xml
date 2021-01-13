@@ -6,20 +6,10 @@
     <description>Recent content in Posts on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 12 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jodavid.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>utilizando a linguagem Julia pelo R</title>
-      <link>https://jodavid.github.io/post/2021-01-07-utilizando-a-linguagem-julia-pelo-r/</link>
-      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jodavid.github.io/post/2021-01-07-utilizando-a-linguagem-julia-pelo-r/</guid>
-      <description>Suponha que você esteja com scripts programados na linguagem R e possua um função ou até outra parte do código escrita na linguagem Julia, sendo que essas partes se complementam, ou seja, você precisa do resultado da parte escrita em Julia para continuar a execução do código em R. Então, reprogramar essa parte escrita em Julia necessita um tempo que talvez você não possua.
-Esse post vai mostrar como executar códigos de Julia estando no ambiente R, além disso, utilizando dados gerados no R e continuando execução do código com os resultados obtidos da função em Julia.</description>
-    </item>
     
     <item>
       <title>Introdução a Web Scraping com R</title>
@@ -43,14 +33,24 @@ O algoritmo \(k\)-Nearest Neighbors foi proposto por Cover e Hart e é considera
     </item>
     
     <item>
-      <title>Utilizando a linguagem Pyhton pelo R</title>
+      <title>utilizando a linguagem Pyhton pelo R</title>
       <link>https://jodavid.github.io/post/2021-01-06-utilizando-a-linguagem-pyhton-pelo-r/</link>
       <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jodavid.github.io/post/2021-01-06-utilizando-a-linguagem-pyhton-pelo-r/</guid>
       <description>No post ‘utilizando a linguagem Julia pelo R’ mostramos como integrar R e Julia. Para ficar simples e objetivo, vamos utilizar o mesmo exemplo, entretando nesse caso, vamos integrar python e R.
 Geralmente o python já vem instalado no sistemas operacionais, principalmente no GNU/Linux. Se também utiliza esse sistema operacional, abra um terminal e verifique se o pyhton está instalado:
-python --version ## Python 3.6.10 :: Anaconda, Inc. Eu estou utilizando python através do anaconda, que é um ambiente que já traz vários dos pacotes e funcionalidades que você precisa para trabalhar com python em Ciência de dados.</description>
+python --version ## Python 2.7.16 Eu estou utilizando python através do anaconda, que é um ambiente que já traz vários dos pacotes e funcionalidades que você precisa para trabalhar com python em Ciência de dados.</description>
+    </item>
+    
+    <item>
+      <title>utilizando a linguagem Julia pelo R</title>
+      <link>https://jodavid.github.io/post/2021-01-07-utilizando-a-linguagem-julia-pelo-r/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/post/2021-01-07-utilizando-a-linguagem-julia-pelo-r/</guid>
+      <description>Suponha que você esteja com scripts programados na linguagem R e possua um função ou até outra parte do código escrita na linguagem Julia, sendo que essas partes se complementam, ou seja, você precisa do resultado da parte escrita em Julia para continuar a execução do código em R. Então, reprogramar essa parte escrita em Julia necessita um tempo que talvez você não possua.
+Esse post vai mostrar como executar códigos de Julia estando no ambiente R, além disso, utilizando dados gerados no R e continuando execução do código com os resultados obtidos da função em Julia.</description>
     </item>
     
     <item>

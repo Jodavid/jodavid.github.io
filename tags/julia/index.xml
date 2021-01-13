@@ -6,20 +6,10 @@
     <description>Recent content in Julia on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 12 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jodavid.github.io/tags/julia/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>utilizando a linguagem Julia pelo R</title>
-      <link>https://jodavid.github.io/post/2021-01-07-utilizando-a-linguagem-julia-pelo-r/</link>
-      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://jodavid.github.io/post/2021-01-07-utilizando-a-linguagem-julia-pelo-r/</guid>
-      <description>Suponha que você esteja com scripts programados na linguagem R e possua um função ou até outra parte do código escrita na linguagem Julia, sendo que essas partes se complementam, ou seja, você precisa do resultado da parte escrita em Julia para continuar a execução do código em R. Então, reprogramar essa parte escrita em Julia necessita um tempo que talvez você não possua.
-Esse post vai mostrar como executar códigos de Julia estando no ambiente R, além disso, utilizando dados gerados no R e continuando execução do código com os resultados obtidos da função em Julia.</description>
-    </item>
     
     <item>
       <title>classificação com k-NN em R, Julia e Python</title>
@@ -29,6 +19,16 @@ Esse post vai mostrar como executar códigos de Julia estando no ambiente R, al�
       <guid>https://jodavid.github.io/post/k-nn-classification-in-r-and-julia/</guid>
       <description>Neste post será apresentado um algoritmo eficiente e um dos mais básicos na área de classificação estatística, e machine learning. O algoritmo é o \(k\)-NN (\(k\) vizinhos mais próximos).
 O algoritmo \(k\)-Nearest Neighbors foi proposto por Cover e Hart e é considerado um classificador não paramétrico. Dada uma amostra de teste onde a classe é desconhecida, o método encontra \(k\) mais próximos no conjunto de treinamento para cada observação da amostra de teste segundo uma determinada distância (geralmente utilizada distância euclideana) e atribui uma classe à observação de acordo com o voto da maioria das classes desses vizinhos.</description>
+    </item>
+    
+    <item>
+      <title>utilizando a linguagem Julia pelo R</title>
+      <link>https://jodavid.github.io/post/2021-01-07-utilizando-a-linguagem-julia-pelo-r/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/post/2021-01-07-utilizando-a-linguagem-julia-pelo-r/</guid>
+      <description>Suponha que você esteja com scripts programados na linguagem R e possua um função ou até outra parte do código escrita na linguagem Julia, sendo que essas partes se complementam, ou seja, você precisa do resultado da parte escrita em Julia para continuar a execução do código em R. Então, reprogramar essa parte escrita em Julia necessita um tempo que talvez você não possua.
+Esse post vai mostrar como executar códigos de Julia estando no ambiente R, além disso, utilizando dados gerados no R e continuando execução do código com os resultados obtidos da função em Julia.</description>
     </item>
     
   </channel>
