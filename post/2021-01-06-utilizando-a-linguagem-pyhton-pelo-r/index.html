@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="description" content="Simple minimalist theme">
+<meta name="keywords" content="minimalist,blog,goa,hugo,developer">
+
+<base href="https://jodavid.github.io">
+
+<title>
+  Jodavid Ferreira - Utilizando a linguagem Pyhton pelo R 
+</title>
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,700|Roboto:300,300i,400,400i,500,500i,700,700i">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="https://jodavid.github.io/css/main.css">
+<link rel="stylesheet" href="https://jodavid.github.io/css/custom.css">
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://jodavid.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://jodavid.github.io/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://jodavid.github.io/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="https://jodavid.github.io/manifest.json">
+<link rel="mask-icon" href="https://jodavid.github.io/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+<body lang="pt-br">
+<div class="container">
+
+
+<header class="row text-left title">
+  <h1 class="title">Utilizando a linguagem Pyhton pelo R</h1>
+</header>
+<section id="category-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-left meta">
+        PUBLISHED ON 6 DE JAN DE 2021 
+      
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+<section id="content-pane" class="row">
+  <div class="col-md-12 text-justify content">
+    
+    
+    
+    
+
+
+<p>No post <a href="https://jodavid.github.io/post/2021-01-07-utilizando-a-linguagem-julia-pelo-r/">‘utilizando a linguagem Julia pelo R’</a> mostramos como integrar <code>R</code> e <code>Julia</code>. Para ficar simples e objetivo, vamos utilizar o mesmo exemplo, entretando nesse caso, vamos integrar <code>python</code> e <code>R</code>.</p>
+<p>Geralmente o <code>python</code> já vem instalado no sistemas operacionais, principalmente no <code>GNU/Linux</code>. Se também utiliza esse sistema operacional, abra um terminal e verifique se o <code>pyhton</code> está instalado:</p>
+<pre class="bash"><code>python --version</code></pre>
+<pre><code>## Python 3.6.10 :: Anaconda, Inc.</code></pre>
+<p>Eu estou utilizando <code>python</code> através do anaconda,
+que é um ambiente que já traz vários dos pacotes e funcionalidades que você precisa para trabalhar com <code>python</code> em Ciência de dados.
+Para mais detalhes e ajuda na instalação no Debian, pode usar esse link <a href="https://linuxize.com/post/how-to-install-anaconda-on-debian-10/">https://linuxize.com/post/how-to-install-anaconda-on-debian-10/</a> ou outro que preferir.</p>
+<p>Então como no post anterior, vamos calcular a média amostral e variância amostral com os dados gerados no <code>R</code>e as funções calculadas no <code>python</code>.</p>
+<pre class="r"><code># install.packages(&quot;reticulate&quot;) # Instalar esse pacote para integração com python
+
+library(reticulate) # Pacote de utilização do python no R
+
+# Esse passo só será necessário se você estiver utilizando o python com anaconda
+# Direcionar a utilização do python para onde foi instalado
+use_python(&quot;~/anaconda3/bin/python&quot;)
+
+set.seed(1) # Semente para obter o mesmos resultados
+# Gerando um vetor de tamanho 100,
+# com média = 30 e variância = 16
+vetor &lt;- rnorm(1000,mean=30,sd=4)
+
+# ----------------------- #
+# resultados no R
+print(&quot;Resultado no R&quot;)</code></pre>
+<pre><code>## [1] &quot;Resultado no R&quot;</code></pre>
+<pre class="r"><code>print(c(mean(vetor),var(vetor)))</code></pre>
+<pre><code>## [1] 29.95341 17.13681</code></pre>
+<pre class="r"><code># ----------------------- #
+
+# ----------------------- #
+# resultados em pyhton
+
+# Enviando as funções de Média e Variância
+#Escrevendo um arquivo .py
+write.table(&#39;
+import numpy as np
+
+#Função para média
+def media(x):
+  resultado = sum(x)/len(x)
+  return resultado
+
+# Função para variância amostral  
+def variancia(x):
+  resul_var = sum((np.array(x)-media(x))**2)/(len(x)-1)
+  return resul_var
+&#39;,file=&quot;arquivo.py&quot;,row.names=F, col.names=F, quote = FALSE)
+
+#Lendo o arquivo com as funções em python
+source_python(&quot;arquivo.py&quot;)</code></pre>
+<pre><code>## Warning: Python &#39;/home/jodavid/anaconda3/bin/python&#39; was requested but &#39;/
+## home/jodavid/.local/share/r-miniconda/envs/r-reticulate/bin/python&#39; was loaded
+## instead (see reticulate::py_config() for more information)</code></pre>
+<pre class="r"><code># retorno para R
+media &lt;- py$media(vetor)
+variancia &lt;- py$variancia(vetor)
+
+print(&quot;Resultado no Python&quot;)</code></pre>
+<pre><code>## [1] &quot;Resultado no Python&quot;</code></pre>
+<pre class="r"><code>print(c(media,variancia))</code></pre>
+<pre><code>## [1] 29.95341 17.13681</code></pre>
+<pre class="r"><code># ----------------------- #</code></pre>
+<p>Como pode ser observado, as funções foram escrito em <code>python</code>, entretanto nesse caso é necessário criar um arquivo em <code>python</code> (.py) e fazer a leitura do arquivo para que as funções possam ser carregadas de forma correta.</p>
+<p>Como esperado e utilizando a mesma base de dados, foram obtidos os mesmo valores para a média amostal e a variância amostral.</p>
+<p><br/>
+<br/>
+<br/></p>
+<div id="post-gerado-com-framework-hugo-httpgohugo.io-r-markdown-httprmarkdown.rstudio.com-no-qual-os-resultados-são-gerados-na-geração-da-página." class="section level4">
+<h4>“Post gerado com framework HUGO (<a href="http://gohugo.io/">http://gohugo.io/</a>), R Markdown (<a href="http://rmarkdown.rstudio.com/">http://rmarkdown.rstudio.com/</a>), no qual os resultados são gerados na geração da página.”</h4>
+</div>
+
+  </div>
+</section>
+<section id="tag-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-right meta">
+      
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<section id="menu-pane" class="row menu text-center">
+  
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post/comparison-of-time-efficiency-of-a-same-function-in-r/">&lt; prev | </a></span>
+  
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post">post</a></span>
+  
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post/k-nn-classification-in-r-and-julia/"> | next &gt;</a></span>
+  
+  
+  <h4 class="text-center"><a class="menu-item" href="https://jodavid.github.io">home</a></h4>
+</section>
+
+
+
+<footer class="row text-center footer">
+  <hr />
+  
+  <h6 class="text-center copyright">© 2021. Jodavid Ferreira. <a href="http://creativecommons.org/licenses/by/3.0/">Some Rights Reserved</a>.</h6>
+  
+  <h6 class="text-center powered">Powered by <a href="https://gohugo.io/">Hugo  v0.54.0</a> &amp; <a href="https://github.com/shenoybr/hugo-goa">Goa</a>.</h6>
+  
+      
+      <h6><a href="" aria-label="RSS Feed"><i class="fas fa-rss" aria-hidden="true"></i></a></h6>
+    
+  
+</footer>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-141028971-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
+
+

@@ -6,10 +6,20 @@
     <description>Recent content in Julia on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jodavid.github.io/categories/julia/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>utilizando a linguagem Julia pelo R</title>
+      <link>https://jodavid.github.io/post/2021-01-07-utilizando-a-linguagem-julia-pelo-r/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/post/2021-01-07-utilizando-a-linguagem-julia-pelo-r/</guid>
+      <description>Suponha que você esteja com scripts programados na linguagem R e possua um função ou até outra parte do código escrita na linguagem Julia, sendo que essas partes se complementam, ou seja, você precisa do resultado da parte escrita em Julia para continuar a execução do código em R. Então, reprogramar essa parte escrita em Julia necessita um tempo que talvez você não possua.
+Esse post vai mostrar como executar códigos de Julia estando no ambiente R, além disso, utilizando dados gerados no R e continuando execução do código com os resultados obtidos da função em Julia.</description>
+    </item>
     
     <item>
       <title>classificação com k-NN em R, Julia e Python</title>

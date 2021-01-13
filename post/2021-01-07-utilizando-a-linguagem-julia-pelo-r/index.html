@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="description" content="Simple minimalist theme">
+<meta name="keywords" content="minimalist,blog,goa,hugo,developer">
+
+<base href="https://jodavid.github.io">
+
+<title>
+  Jodavid Ferreira - utilizando a linguagem Julia pelo R 
+</title>
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,700|Roboto:300,300i,400,400i,500,500i,700,700i">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="https://jodavid.github.io/css/main.css">
+<link rel="stylesheet" href="https://jodavid.github.io/css/custom.css">
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://jodavid.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://jodavid.github.io/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://jodavid.github.io/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="https://jodavid.github.io/manifest.json">
+<link rel="mask-icon" href="https://jodavid.github.io/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+<body lang="pt-br">
+<div class="container">
+
+
+<header class="row text-left title">
+  <h1 class="title">utilizando a linguagem Julia pelo R</h1>
+</header>
+<section id="category-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-left meta">
+        PUBLISHED ON 12 DE JAN DE 2021 
+      
+      
+      
+      —
+      
+      
+      <a class="meta" href="https://jodavid.github.io/categories/r">R</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/categories/julia">JULIA</a>
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+<section id="content-pane" class="row">
+  <div class="col-md-12 text-justify content">
+    
+    
+    
+    
+
+
+<p>Suponha que você esteja com <em>scripts</em> programados na linguagem <code>R</code> e possua
+um função ou até outra parte do código escrita na linguagem <code>Julia</code>, sendo que essas partes se complementam, ou seja, você precisa do resultado da parte escrita em <code>Julia</code> para continuar a execução do código em <code>R</code>. Então, reprogramar essa parte escrita em <code>Julia</code> necessita um <em>tempo</em> que talvez você não possua.</p>
+<p>Esse post vai mostrar como executar códigos de <code>Julia</code> estando no ambiente <code>R</code>, além disso, utilizando dados gerados no <code>R</code> e continuando execução do código com os resultados obtidos da função em <code>Julia</code>.</p>
+<div id="instalação-da-linguagem-julia" class="section level2">
+<h2>Instalação da linguagem Julia</h2>
+<p>Na data deste post, estou utilizando o sistema operacional <code>GNU/Linux Debian</code>
+e neste caso foi instalado o <code>Julia</code> pelo terminal com o seguinte comando:</p>
+<pre><code>sudo apt install julia</code></pre>
+<p>após a instalação é possível verificar se foi instalado corretamente, verificando a versão do <code>Julia</code>, no meu caso o resultado foi</p>
+<pre class="bash"><code>julia --v</code></pre>
+<pre><code>## julia version 1.0.3</code></pre>
+<p>Vamos realizar um exemplo simples, entretanto pode ser realizado qualquer código escrito em <code>Julia</code>.</p>
+<p>Vamos a seguir criar um vetor no <code>R</code>e obter como retorno do <code>Julia</code> o valor médio e variância do vetor.</p>
+<pre class="r"><code># install.packages (&quot;JuliaCall&quot;) # Instalar esse pacote para integração com Julia
+
+library(JuliaCall) # Pacote de utilização do Julia no R
+
+# Abrindo a integração do R e Julia
+julia &lt;- julia_setup()</code></pre>
+<pre><code>## Julia version 1.0.3 at location /usr/bin will be used.</code></pre>
+<pre><code>## Loading setup script for JuliaCall...</code></pre>
+<pre><code>## Finish loading setup script for JuliaCall.</code></pre>
+<pre class="r"><code>set.seed(1) # Semente para obter o mesmos resultados
+# Gerando um vetor de tamanho 100,
+# com média = 5 e variância = 4
+vetor &lt;- rnorm(1000,mean=5,sd=2)
+
+# ----------------------- #
+# resultados no R
+print(&quot;Resultado no R&quot;)</code></pre>
+<pre><code>## [1] &quot;Resultado no R&quot;</code></pre>
+<pre class="r"><code>print(c(mean(vetor),var(vetor)))</code></pre>
+<pre><code>## [1] 4.976704 4.284203</code></pre>
+<pre class="r"><code># ----------------------- #
+
+# ----------------------- #
+# resultados em Julia
+
+# Enviando o vetor
+julia_assign(&quot;x&quot;, vetor); 
+# Função para media amostral
+julia_command(&quot;function media(x)
+                  resultado = sum(x)/length(x)
+                  return resultado
+                end&quot;)</code></pre>
+<pre><code>## media (generic function with 1 method)</code></pre>
+<pre class="r"><code># Função para variância amostral
+
+julia_command(&quot;function variancia(x)
+                  resul_var = sum((x.-media(x)).^2)/(length(x)-1)
+                  return resul_var
+                end&quot;)</code></pre>
+<pre><code>## variancia (generic function with 1 method)</code></pre>
+<pre class="r"><code># retorno para R
+media &lt;- julia_eval(&quot;media(x)&quot;)
+variancia &lt;- julia_eval(&quot;variancia(x)&quot;)
+
+print(&quot;Resultado no Julia&quot;)</code></pre>
+<pre><code>## [1] &quot;Resultado no Julia&quot;</code></pre>
+<pre class="r"><code>print(c(media,variancia))</code></pre>
+<pre><code>## [1] 4.976704 4.284203</code></pre>
+<pre class="r"><code># ----------------------- #</code></pre>
+<p>Neste exemplo acima, apesar de ser um exemplo simples, foi mostrado
+como chamar o <code>Julia</code>pelo <code>R</code>, enviar vetor, enviar função, fazer o cálculo no
+<code>Julia</code> e retornar o resultado para o <code>R</code>. E como esperado, foram obtidos
+os mesmos valores para média amostral e variância amostral.</p>
+<p>Se acontece algum problema na instalação ou na leitura do pacote, sugiro acessar o <a href="https://cran.r-project.org/web/packages/JuliaCall/readme/README.html">README do JuliaCall</a> para resolver.</p>
+<!--
+## Erros
+
+Julia is not found
+Make sure the Julia installation is correct. JuliaCall can find Julia on PATH, and there are three ways for JuliaCall to find Julia not on PATH.
+
+Use julia_setup(JULIA_HOME = "the folder that contains julia binary")
+Use options(JULIA_HOME = "the folder that contains julia binary")
+Set JULIA_HOME in command line environment.
+libstdc++.so.6: version `GLIBCXX_3.4.xx’ not found
+Such problems are usually on Linux machines. The cause for the problem is that R cannot find the libstdc++ version needed by Julia. To deal with the problem, users can export “TheFolderContainsJulia/lib/julia” to R_LD_LIBRARY_PATH.
+
+RCall not properly installed
+The issue is usually caused by updates in R, and it can be typically solved by setting rebuild argument to TRUE in julia_setup() as follows.
+
+JuliaCall::julia_setup(rebuild = TRUE)
+ERROR: could not load library "/usr/lib/x86_64-linux-gnu/../bin/../lib/x86_64-linux-gnu/julia/sys.so"
+This error happens when Julia is built/installed with MULTIARCH_INSTALL=1, as it is on e.g. Debian. It is caused by the bindir-locating code in jl_init not being multiarch-aware. To work around it, try setting JULIA_BINDIR=/usr/bin in .Renviron.
+-->
+<p><br/>
+<br/></p>
+<p>Aqui segue uma fonte utilizada:</p>
+<p><a href="https://www.theoj.org/joss-papers/joss.01284/10.21105.joss.01284.pdf">Li, Changcheng. “JuliaCall: an R package for seamless integration between R and Julia.”</a></p>
+<p><br/>
+<br/>
+<br/></p>
+<div id="post-gerado-com-framework-hugo-httpgohugo.io-r-markdown-httprmarkdown.rstudio.com-no-qual-os-resultados-são-gerados-na-geração-da-página." class="section level4">
+<h4>“Post gerado com framework HUGO (<a href="http://gohugo.io/">http://gohugo.io/</a>), R Markdown (<a href="http://rmarkdown.rstudio.com/">http://rmarkdown.rstudio.com/</a>), no qual os resultados são gerados na geração da página.”</h4>
+</div>
+</div>
+
+  </div>
+</section>
+<section id="tag-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-right meta">
+      
+      
+      
+      TAGS:
+      
+      
+      <a class="meta" href="https://jodavid.github.io/tags/r">R</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/tags/julia">JULIA</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/tags/programacao">PROGRAMACAO</a>
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<section id="menu-pane" class="row menu text-center">
+  
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post/web-scraping-introduction-with-r/">&lt; prev | </a></span>
+  
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post">post</a></span>
+  
+  
+  
+  <h4 class="text-center"><a class="menu-item" href="https://jodavid.github.io">home</a></h4>
+</section>
+
+
+
+<footer class="row text-center footer">
+  <hr />
+  
+  <h6 class="text-center copyright">© 2021. Jodavid Ferreira. <a href="http://creativecommons.org/licenses/by/3.0/">Some Rights Reserved</a>.</h6>
+  
+  <h6 class="text-center powered">Powered by <a href="https://gohugo.io/">Hugo  v0.54.0</a> &amp; <a href="https://github.com/shenoybr/hugo-goa">Goa</a>.</h6>
+  
+      
+      <h6><a href="" aria-label="RSS Feed"><i class="fas fa-rss" aria-hidden="true"></i></a></h6>
+    
+  
+</footer>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-141028971-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
+
+
