@@ -18,8 +18,8 @@
       
       <guid>https://jodavid.github.io/post/web-scrapping-introduction-with-r/</guid>
       <description>Venho mostrar nesse post, uma introdução sobre Web Scraping com R.
-Para iniciar vou falar sobre o projeto “SERENATA DE AMOR” https://serenata.ai/ que é um projeto aberto no qual usa data science (ciência de dados) - a mesma tecnolgia usada por gigantes como Google, Facebook e Netflix - com o objetivo de monitorar os gastos públicos e compartilhar informações de forma acessível a todos.
-Até a data de hoje 29.</description>
+O estudo será realizado sobre o projeto “SERENATA DE AMOR” https://serenata.ai/, que é um projeto aberto no qual usa data science (ciência de dados) - a mesma tecnolgia usada por gigantes como Google, Facebook e Netflix - com o objetivo de monitorar os gastos públicos e compartilhar informações de forma acessível a todos.
+Até a data da publicação deste post, o projeto já reportou mais de 8.</description>
     </item>
     
     <item>

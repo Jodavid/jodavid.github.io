@@ -83,15 +83,13 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <p>Venho mostrar
 nesse post, uma introdução sobre Web Scraping com R.</p>
-<p>Para iniciar vou falar sobre o projeto “SERENATA DE AMOR” <a href="https://serenata.ai/">https://serenata.ai/</a>
+<p>O estudo será realizado sobre o projeto “SERENATA DE AMOR” <a href="https://serenata.ai/">https://serenata.ai/</a>,
 que é um projeto aberto no qual usa data science (ciência de dados) - a mesma tecnolgia usada por gigantes como Google, Facebook e Netflix - com o objetivo de monitorar os gastos públicos e compartilhar informações de forma acessível a todos.</p>
-<p>Até a data de hoje 29.12.2020, o projeto já reportou 8.276 ressarcimentos suspeitos à Câmara dos Deputados envolvendo 735 parlamentares diferentes e mais de R$ 3,6 mi.</p>
+<p>Até a data da publicação deste post, o projeto já reportou mais de 8.276 ressarcimentos suspeitos à Câmara dos Deputados envolvendo 735 parlamentares diferentes com valor total superior a R$ 3,6 mi.</p>
 <p>Quer saber como funciona o sistema de relatórios? <a href="https://medium.com/data-science-brigade/como-est%C3%A1-acontecendo-a-hackaton-de-den%C3%BAncias-da-opera%C3%A7%C3%A3o-serenata-de-amor-a8bd193e0c76">Você pode ler mais neste post - clicando aqui!</a>.</p>
-<p>Explicado o projeto Serenata, voltamos ao Web Scrapping, que neste caso
-vamos utilizar o
-<a href="https://jarbas.serenata.ai/dashboard/chamber_of_deputies/reimbursement/">Jarbas</a> )
-que é a plataforma onde ficam armazenados os documentos analisados
-com o objetivo de coletar informações do site.
+<p>Explicado o projeto Serenata, voltamos ao Web Scrapping. A coleta de dados será sobre o
+<a href="https://jarbas.serenata.ai/dashboard/chamber_of_deputies/reimbursement/">Jarbas</a> ),
+que é a plataforma onde ficam armazenados os documentos considerados suspeitos.
 Com o intuito de mostrar que é possível analisar os dados
 da forma que desejar para tomada de decisões,
 um gráfico será gerado com os dados coletados
@@ -180,6 +178,12 @@ ggplot(
   labs(title=&quot;&quot;, x =&quot;pedidos de reembolso (R$)&quot;,
        y = &quot;deputados&quot;,colour=&quot;SUBQUOTA TRANSLATED&quot;)</code></pre>
 <p><img src="https://jodavid.github.io/post/2021-01-09-introdu%C3%A7%C3%A3o-a-web-scrapping-com-r_files/figure-html/unnamed-chunk-6-1.png" width="768" /></p>
+<p><br/>
+<br/>
+<br/></p>
+<div id="post-gerado-com-framework-hugo-httpgohugo.io-r-markdown-httprmarkdown.rstudio.com-no-qual-os-resultados-são-gerados-na-geração-da-página." class="section level4">
+<h4>“Post gerado com framework HUGO (<a href="http://gohugo.io/">http://gohugo.io/</a>), R Markdown (<a href="http://rmarkdown.rstudio.com/">http://rmarkdown.rstudio.com/</a>), no qual os resultados são gerados na geração da página.”</h4>
+</div>
 
   </div>
 </section>
