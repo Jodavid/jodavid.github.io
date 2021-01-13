@@ -543,25 +543,31 @@ class_accuracy = mean(predict_k3[:,1] .== class_test)</code></pre>
 <pre><code>## 0.97</code></pre>
 <pre class="python"><code># Acuária de classificação no Python
 print(confusion_matrix(y_test, y_pred))</code></pre>
-<pre><code>## [[34  0  0]
-##  [ 0 34  1]
-##  [ 0  1 29]]</code></pre>
+<pre><code>## [[33  0  0]
+##  [ 0 32  5]
+##  [ 0  2 27]]</code></pre>
 <pre class="python"><code>print(classification_report(y_test, y_pred))</code></pre>
 <pre><code>##                  precision    recall  f1-score   support
 ## 
-##     Iris-setosa       1.00      1.00      1.00        34
-## Iris-versicolor       0.97      0.97      0.97        35
-##  Iris-virginica       0.97      0.97      0.97        30
+##     Iris-setosa       1.00      1.00      1.00        33
+## Iris-versicolor       0.94      0.86      0.90        37
+##  Iris-virginica       0.84      0.93      0.89        29
 ## 
-##       micro avg       0.98      0.98      0.98        99
-##       macro avg       0.98      0.98      0.98        99
-##    weighted avg       0.98      0.98      0.98        99</code></pre>
+##       micro avg       0.93      0.93      0.93        99
+##       macro avg       0.93      0.93      0.93        99
+##    weighted avg       0.93      0.93      0.93        99</code></pre>
 <p>O experimento foi realizado usando uma amostra de treinamento com 50 observações e uma amostra de teste com 100 observações.</p>
 <p>No <code>R</code>, o algoritmo <span class="math inline">\(k\)</span>-NN está na biblioteca <code>class</code>, em <code>Julia</code> foi necessário escrever o código <span class="math inline">\(k\)</span>-NN, visto que não foi encontrado por mim nenhuma biblioteca com o método.
 No <code>Python</code> também já existem bibliotecas disponíveis, com funções pré-compiladas.</p>
 <p>Como era de se esperar, os resultados foram semelhantes, a difenrença foi ocorrida devido a amostra de treinamento selecionada aleatóriamente.
 Entretanto a ideia aqui é mostrar como executar o mesmo método em trễs diferentes linguagens
 de programação, <code>R</code>,<code>Julia</code> e <code>python</code>.</p>
+<p><br/>
+<br/>
+<br/></p>
+</div>
+<div id="post-gerado-com-framework-hugo-httpgohugo.io-r-markdown-httprmarkdown.rstudio.com-no-qual-os-resultados-são-gerados-na-geração-da-página." class="section level4">
+<h4>“Post gerado com framework HUGO (<a href="http://gohugo.io/">http://gohugo.io/</a>), R Markdown (<a href="http://rmarkdown.rstudio.com/">http://rmarkdown.rstudio.com/</a>), no qual os resultados são gerados na geração da página.”</h4>
 </div>
 
   </div>

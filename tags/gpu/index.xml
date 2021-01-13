@@ -12,13 +12,12 @@
     
     
     <item>
-      <title>Comparação da eficiência de tempo de uma mesma função no R</title>
+      <title>comparação da eficiência de tempo de uma mesma função no R</title>
       <link>https://jodavid.github.io/post/comparison-of-time-efficiency-of-a-same-function-in-r/</link>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://jodavid.github.io/post/comparison-of-time-efficiency-of-a-same-function-in-r/</guid>
-      <description>Atualmente considerando tantas tarefas diárias que temos que fazer, está cada vez mais difícil gerenciar nosso tempo. E com os métodos de análises de dados esse processo também é uma parte fundamental, pois nos influência diretamente no tempo de finalização da análise. Quanto mais as ferramentas utilzadas demoram em sua execução, mais tempo será necessário para conclusão do estudo.
-Levando isso em consideração, neste post serão verificados tempos de execução de funções programadas de três formas diferentes para execução da mesma tafera.</description>
+      <description>Atualmente, com tantas tarefas diárias que temos que realizar, torna-se cada vez mais difícil o gerenciamento de nosso tempo. E o tempo é uma palavra fundamental com quem trabalha com métodos de análises de dados no qual o período de processamento do método é uma parte fundamental, pois influência diretamente no tempo de finalização da análise. Quanto mais as ferramentas utilizadas demoram em sua execução, mais tempo será necessário para conclusão do estudo.</description>
     </item>
     
   </channel>

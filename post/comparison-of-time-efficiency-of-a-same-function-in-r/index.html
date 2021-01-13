@@ -13,7 +13,7 @@
 <base href="https://jodavid.github.io">
 
 <title>
-  Jodavid Ferreira - Comparação da eficiência de tempo de uma mesma função no R 
+  Jodavid Ferreira - comparação da eficiência de tempo de uma mesma função no R 
 </title>
 
 <meta name="generator" content="Hugo 0.54.0" />
@@ -50,7 +50,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 
 <header class="row text-left title">
-  <h1 class="title">Comparação da eficiência de tempo de uma mesma função no R</h1>
+  <h1 class="title">comparação da eficiência de tempo de uma mesma função no R</h1>
 </header>
 <section id="category-pane" class="row meta">
   
@@ -81,10 +81,10 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
     
 
 
-<p>Atualmente considerando tantas tarefas diárias que temos que fazer,
-está cada vez mais difícil gerenciar nosso <em>tempo</em>. E com os métodos de análises
-de dados esse processo também é uma parte fundamental, pois nos influência
-diretamente no <em>tempo</em> de finalização da análise. Quanto mais as ferramentas utilzadas demoram em sua execução, mais <em>tempo</em> será necessário para conclusão do estudo.</p>
+<p>Atualmente, com tantas tarefas diárias que temos que realizar,
+torna-se cada vez mais difícil o gerenciamento de nosso <em>tempo</em>.
+E o <em>tempo</em> é uma palavra fundamental com quem trabalha com métodos de análises
+de dados no qual o período de processamento do método é uma parte fundamental, pois influência diretamente no <em>tempo</em> de finalização da análise. Quanto mais as ferramentas utilizadas demoram em sua execução, mais <em>tempo</em> será necessário para conclusão do estudo.</p>
 <p>Levando isso em consideração, neste post serão verificados <em>tempos de execução</em>
 de funções programadas de três formas diferentes para execução da mesma tafera.
 Foi utilizado funções para
@@ -161,10 +161,10 @@ result &lt;- microbenchmark(
 )</code></pre>
 <pre class="r"><code>print(result)
 ## Unit: milliseconds
-##                 expr      min       lq     mean   median       uq      max
-##       mult.matrix(x) 58.89628 64.39457 71.56416 67.84524 70.79639 169.6612
-##  mult.matrix.byte(x) 59.30220 64.33242 73.77097 67.80033 71.14162 178.6466
-##   gpu.mult.matrix(x) 40.25536 49.24454 62.65912 55.57398 60.31164 178.9974
+##                 expr      min       lq      mean   median       uq      max
+##       mult.matrix(x) 57.89933 71.13624  97.46698 91.91690 117.9549 221.9328
+##  mult.matrix.byte(x) 58.66301 74.08318 101.51403 99.34597 119.3572 234.0451
+##   gpu.mult.matrix(x) 42.83199 53.05076  69.57842 61.80810  72.2088 234.6081
 ##  neval
 ##    100
 ##    100
@@ -184,6 +184,12 @@ mais rapidamente.</p>
 <!--[Li, Changcheng. "JuliaCall: an R package for seamless integration between R and Julia."](https://www.theoj.org/joss-papers/joss.01284/10.21105.joss.01284.pdf)
 -->
 <p><a href="http://adv-r.had.co.nz/">Wickham, Hadley. Advanced r. Chapman and Hall/CRC, 2014.</a></p>
+<p><br/>
+<br/>
+<br/></p>
+<div id="post-gerado-com-framework-hugo-httpgohugo.io-r-markdown-httprmarkdown.rstudio.com-no-qual-os-resultados-são-gerados-na-geração-da-página." class="section level4">
+<h4>“Post gerado com framework HUGO (<a href="http://gohugo.io/">http://gohugo.io/</a>), R Markdown (<a href="http://rmarkdown.rstudio.com/">http://rmarkdown.rstudio.com/</a>), no qual os resultados são gerados na geração da página.”</h4>
+</div>
 
   </div>
 </section>
