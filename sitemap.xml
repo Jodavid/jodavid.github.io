@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jodavid.github.io/post/instala%C3%A7%C3%A3o-de-sql-e-utiliza%C3%A7%C3%A3o-com-r/</loc>
+    <lastmod>2021-01-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jodavid.github.io/post/web-scraping-introduction-with-r/</loc>
     <lastmod>2021-01-09T00:00:00+00:00</lastmod>
   </url>
@@ -80,7 +85,7 @@
   
   <url>
     <loc>https://jodavid.github.io/</loc>
-    <lastmod>2021-01-09T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -103,8 +108,14 @@
   </url>
   
   <url>
+    <loc>https://jodavid.github.io/tags/mariadb/</loc>
+    <lastmod>2021-01-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jodavid.github.io/post/</loc>
-    <lastmod>2021-01-09T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -116,13 +127,25 @@
   
   <url>
     <loc>https://jodavid.github.io/tags/r/</loc>
-    <lastmod>2021-01-09T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jodavid.github.io/categories/r/</loc>
-    <lastmod>2021-01-09T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jodavid.github.io/tags/sql/</loc>
+    <lastmod>2021-01-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jodavid.github.io/categories/sql/</loc>
+    <lastmod>2021-01-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

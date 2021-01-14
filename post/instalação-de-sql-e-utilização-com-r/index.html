@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="description" content="Simple minimalist theme">
+<meta name="keywords" content="minimalist,blog,goa,hugo,developer">
+
+<base href="https://jodavid.github.io">
+
+<title>
+  Jodavid Ferreira - instalação de SQL e utilização com R 
+</title>
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,700|Roboto:300,300i,400,400i,500,500i,700,700i">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="https://jodavid.github.io/css/main.css">
+<link rel="stylesheet" href="https://jodavid.github.io/css/custom.css">
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://jodavid.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://jodavid.github.io/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://jodavid.github.io/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="https://jodavid.github.io/manifest.json">
+<link rel="mask-icon" href="https://jodavid.github.io/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+<body lang="pt-br">
+<div class="container">
+
+
+<header class="row text-left title">
+  <h1 class="title">instalação de SQL e utilização com R</h1>
+</header>
+<section id="category-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-left meta">
+        PUBLISHED ON 14 DE JAN DE 2021 
+      
+      
+      
+      —
+      
+      
+      <a class="meta" href="https://jodavid.github.io/categories/r">R</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/categories/sql">SQL</a>
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+<section id="content-pane" class="row">
+  <div class="col-md-12 text-justify content">
+    
+    
+    
+    
+
+
+<p><code>MariaDB</code> foi lançado em 2009, como um fork (criado pelos mesmos desenvolvedores do <code>MySQL</code> após sua aquisição pela Oracle e usaram o código original open-source do <code>MySQL</code> para criar o <code>MariaDB</code>) destinado a “assegurar que a base de código <code>MySQL</code> seria livre para sempre”.
+O <code>MariaDB</code> é um dos bancos de dados mais conhecidos do mundo, foi mantido a estrutura de código aberto sendo sua principal característica a rapidez, escalabilidade e robustez de suas ferramentas, plugins e, claro, capacidade de armazenamento. Isso o fez conseguir usuários de renome, como:</p>
+<ul>
+<li>Google;</li>
+<li>Wikipedia;</li>
+<li>BlaBlaCar;</li>
+<li>Nokia;</li>
+<li>Samsung.</li>
+</ul>
+<p>Diante disso, vamos utilizar o <code>MariaDB</code>, mostrando como instalá-lo no <code>GNU/Linux Debian</code> e utilizá-lo com o <code>R</code>. Para instalar utilize o seguinte comando no Terminal:</p>
+<pre><code>sudo apt install mariadb-server</code></pre>
+<p>para verificar se instalou e também descobrir a versão,
+execute no Terminal:</p>
+<pre class="bash"><code>mariadb --version</code></pre>
+<pre><code>## mariadb  Ver 15.1 Distrib 10.3.27-MariaDB, for debian-linux-gnu (x86_64) using readline 5.2</code></pre>
+<p>Com o <code>MariaDB</code> instalado vamos a primeira configuração, ainda no Terminal</p>
+<pre><code>sudo mysql_secure_installation</code></pre>
+<p>A não ser que você saiba o que está fazendo, responda às perguntas da seguinte forma:</p>
+<ul>
+<li>Enter current password for root (enter for none): <strong>pressione Enter.</strong></li>
+<li>Set root password? [Y/n]: <strong>pressione Enter.</strong></li>
+<li>New password: <strong>digite uma senha forte para ser usada pelo root do MariaDB (eu utilizei x).</strong></li>
+<li>Remove anonymous users? [Y/n]: <strong>pressione Enter.</strong></li>
+<li>Disallow root login remotely? [Y/n]: <strong>responda de acordo com a sua necessidade. A melhor resposta, caso não saiba o que fazer, será Y.</strong></li>
+<li>Remove test database and access to it? [Y/n]: <strong>pressione Enter.</strong></li>
+<li>Reload privilege tables now? [Y/n]: <strong>pressione Enter.</strong></li>
+</ul>
+<p>Para facilitar o andamento do post eu coloquei como <em>senha forte</em> a letra <span class="math inline">\(x\)</span>.
+Para acesar o <code>MariaDB</code> sem erros, recomendo os seguintes passos no Terminal:</p>
+<pre><code>sudo mariadb -u root -p
+
+MariaDB []&gt;use mysql;
+MariaDB [mysql]&gt;update user set plugin=&#39; &#39; where User=&#39;root&#39;;
+MariaDB [mysql]&gt;flush privileges;
+MariaDB [mysql]&gt;exit</code></pre>
+<p>Após o comando <strong>sudo mariadb -u root -p</strong> é necessário colocar a senha para acesar.
+Se deu tudo certo ao executar novamente <strong>sudo mariadb -u root -p</strong>, a seguinte saída é visualizada:</p>
+<pre><code>Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 82
+Server version: 10.3.27-MariaDB-0+deb10u1 Debian 10
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt; </code></pre>
+<p>Com o servidor de banco de dados instalado, devemos instalar uma biblioteca necessária no <code>Debian</code> para que o pacote no <code>R</code> seja instalado corretamente.</p>
+<pre><code>sudo apt install libmariadbclient-dev</code></pre>
+<p>Agora podemos nos concentrar em nosso exemplo para enviar e receber dados do <code>MariaDB</code>.
+Primeiro passo vamos instalar os pacotes que serão utilizados em nosso estudo, o
+<code>tidyverse</code> e o <code>RMariaDB</code>.</p>
+<pre class="r"><code># Pacotes necessários
+library(RMariaDB)
+library(tidyverse)</code></pre>
+<p>Agora vamos obter a base de dados.
+Vamos utilizar a base de dados
+<a href="https://dados.gov.br/dataset/anvisa-precos-de-medicamentos-consumidor">Preços de Medicamentos - Consumidor</a>
+obtida no site do goverdo de dados abertos <a href="https://dados.gov.br/">dados.gov.br</a>,
+para obter uma base de dados através de uma url, utilize os seguintes passos:</p>
+<pre class="r"><code># Url do Banco de dados
+url_banco &lt;- url(&quot;https://dados.anvisa.gov.br/dados/TA_PRECO_MEDICAMENTO.csv&quot;)
+preco_medicamento &lt;- read.csv2(url_banco,encoding = &quot;latin1&quot;) # Lendo o Banco de dados
+preco_medicamento &lt;- tibble(preco_medicamento) # Convertendo em formato tibble
+
+# Mostrando as primeiras 6 linhas do banco de dados
+head(preco_medicamento) </code></pre>
+<pre><code>## # A tibble: 6 x 40
+##   SUBSTÂNCIA CNPJ  LABORATÓRIO CÓDIGO.GGREM REGISTRO EAN.1 EAN.2 EAN.3 PRODUTO
+##   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  
+## 1 ACETATO D… 18.4… BAYER S.A.       5.39e14 1,7056E… 7,89… &quot;   … &quot;   … BAYCUT…
+## 2 ABATACEPTE 56.9… BRISTOL-MY…      5.05e14 1,018E+… 7,89… &quot;   … &quot;   … ORENCIA
+## 3 ABATACEPTE 56.9… BRISTOL-MY…      5.05e14 1,018E+… 7,89… &quot;   … &quot;   … ORENCIA
+## 4 ABATACEPTE 56.9… BRISTOL-MY…      5.05e14 1,018E+… 7,89… &quot;   … &quot;   … ORENCIA
+## 5 ABCIXIMABE 51.7… JANSSEN-CI…      5.15e14 1,12363… 7,89… &quot;   … &quot;   … REOPRO 
+## 6 ABCIXIMABE 43.9… ELI LILLY …      5.08e14 1,126E+… 7,89… &quot;   … &quot;   … REOPRO 
+## # … with 31 more variables: APRESENTAÇÃO &lt;chr&gt;, CLASSE.TERAPÊUTICA &lt;chr&gt;,
+## #   TIPO.DE.PRODUTO..STATUS.DO.PRODUTO. &lt;chr&gt;, REGIME.DE.PREÇO &lt;chr&gt;,
+## #   PF.Sem.Impostos &lt;dbl&gt;, PF.0. &lt;dbl&gt;, PF.12. &lt;dbl&gt;, PF.17. &lt;dbl&gt;,
+## #   PF.17..ALC &lt;dbl&gt;, PF.17.5. &lt;dbl&gt;, PF.17.5..ALC &lt;dbl&gt;, PF.18. &lt;dbl&gt;,
+## #   PF.18..ALC &lt;dbl&gt;, PF.20. &lt;dbl&gt;, PMC.0. &lt;dbl&gt;, PMC.12. &lt;dbl&gt;, PMC.17. &lt;dbl&gt;,
+## #   PMC.17..ALC &lt;dbl&gt;, PMC.17.5. &lt;dbl&gt;, PMC.17.5..ALC &lt;dbl&gt;, PMC.18. &lt;dbl&gt;,
+## #   PMC.18..ALC &lt;dbl&gt;, PMC.20. &lt;dbl&gt;, RESTRIÇÃO.HOSPITALAR &lt;chr&gt;, CAP &lt;chr&gt;,
+## #   CONFAZ.87 &lt;chr&gt;, ICMS.0. &lt;chr&gt;, ANÁLISE.RECURSAL &lt;int&gt;,
+## #   LISTA.DE.CONCESSÃO.DE.CRÉDITO.TRIBUTÁRIO..PIS.COFINS. &lt;chr&gt;,
+## #   COMERCIALIZAÇÃO.2019 &lt;chr&gt;, TARJA &lt;chr&gt;</code></pre>
+<p>Com a base de dados em formato <em>tibble</em>, vamos enviá-los para o banco de dados,
+para isso vamos executar os seguintes passos:</p>
+<ol style="list-style-type: decimal">
+<li>Devemos criar a base de dados, fazer a conexão e em seguida enviar os dados</li>
+</ol>
+<pre><code>#Conectar
+conex &lt;- dbConnect(
+  drv = RMariaDB::MariaDB(),
+  username = &#39;root&#39;,
+  password = &#39;x&#39;,
+  host = &#39;localhost&#39;,
+  port = 3306
+)
+
+
+# Criar a base de dados
+dbExecute(conex, &quot;CREATE DATABASE medicamentos&quot;)
+
+
+#Conectar ao MariaDB para envio dos dados
+con &lt;- dbConnect(RMariaDB::MariaDB(), dbname = &quot;medicamentos&quot;,username=&quot;root&quot;,password=&quot;x&quot;)
+
+# Enviando os dados preco_medicamento com o mesmo nome para o MariaDB
+dbWriteTable(con, &quot;preco_medicamento&quot;, preco_medicamento);
+
+#Desconectar
+dbDisconnect(con)
+
+</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Se tudo ocorreu corretamente até aqui, então seus dados já estão na base de dados. Vamos agora,
+descobrir como utilizar dados de uma base que já se encontra no bando de dados.
+Vamos executar a função <em>rm(list=ls()))</em> que remove todas as variáveis existentes no <code>R</code>, e assim temos a certeza que nossos dados estão vindo do banco de dados.</li>
+</ol>
+<pre class="r"><code>rm(list=ls())
+
+library(RMariaDB)
+library(tidyverse)
+
+#Conectar ao banco de dados
+con &lt;- dbConnect(RMariaDB::MariaDB(), dbname = &quot;medicamentos&quot;,username=&quot;root&quot;,password=&quot;x&quot;)
+
+#Listando as tabelas
+dbListTables(con,dbname = &quot;preco_medicamento&quot;)</code></pre>
+<pre><code>## [1] &quot;preco_medicamento&quot;</code></pre>
+<pre class="r"><code>#Lendo os dados de salvando na variável dados_banco
+dados_banco &lt;- dbReadTable(con,name=&quot;preco_medicamento&quot;)
+dados_banco &lt;- tibble(dados_banco)
+
+#Desconectar
+dbDisconnect(con)
+
+# Novamente mostrando as 6 pimeiras linhas do banco
+head(dados_banco)</code></pre>
+<pre><code>## # A tibble: 6 x 40
+##   SUBSTÂNCIA CNPJ  LABORATÓRIO CÓDIGO.GGREM REGISTRO EAN.1 EAN.2 EAN.3 PRODUTO
+##   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  
+## 1 ACETATO D… 18.4… BAYER S.A.       5.39e14 1,7056E… 7,89… &quot;   … &quot;   … BAYCUT…
+## 2 ABATACEPTE 56.9… BRISTOL-MY…      5.05e14 1,018E+… 7,89… &quot;   … &quot;   … ORENCIA
+## 3 ABATACEPTE 56.9… BRISTOL-MY…      5.05e14 1,018E+… 7,89… &quot;   … &quot;   … ORENCIA
+## 4 ABATACEPTE 56.9… BRISTOL-MY…      5.05e14 1,018E+… 7,89… &quot;   … &quot;   … ORENCIA
+## 5 ABCIXIMABE 51.7… JANSSEN-CI…      5.15e14 1,12363… 7,89… &quot;   … &quot;   … REOPRO 
+## 6 ABCIXIMABE 43.9… ELI LILLY …      5.08e14 1,126E+… 7,89… &quot;   … &quot;   … REOPRO 
+## # … with 31 more variables: APRESENTAÇÃO &lt;chr&gt;, CLASSE.TERAPÊUTICA &lt;chr&gt;,
+## #   TIPO.DE.PRODUTO..STATUS.DO.PRODUTO. &lt;chr&gt;, REGIME.DE.PREÇO &lt;chr&gt;,
+## #   PF.Sem.Impostos &lt;dbl&gt;, PF.0. &lt;dbl&gt;, PF.12. &lt;dbl&gt;, PF.17. &lt;dbl&gt;,
+## #   PF.17..ALC &lt;dbl&gt;, PF.17.5. &lt;dbl&gt;, PF.17.5..ALC &lt;dbl&gt;, PF.18. &lt;dbl&gt;,
+## #   PF.18..ALC &lt;dbl&gt;, PF.20. &lt;dbl&gt;, PMC.0. &lt;dbl&gt;, PMC.12. &lt;dbl&gt;, PMC.17. &lt;dbl&gt;,
+## #   PMC.17..ALC &lt;dbl&gt;, PMC.17.5. &lt;dbl&gt;, PMC.17.5..ALC &lt;dbl&gt;, PMC.18. &lt;dbl&gt;,
+## #   PMC.18..ALC &lt;dbl&gt;, PMC.20. &lt;dbl&gt;, RESTRIÇÃO.HOSPITALAR &lt;chr&gt;, CAP &lt;chr&gt;,
+## #   CONFAZ.87 &lt;chr&gt;, ICMS.0. &lt;chr&gt;, ANÁLISE.RECURSAL &lt;int&gt;,
+## #   LISTA.DE.CONCESSÃO.DE.CRÉDITO.TRIBUTÁRIO..PIS.COFINS. &lt;chr&gt;,
+## #   COMERCIALIZAÇÃO.2019 &lt;chr&gt;, TARJA &lt;chr&gt;</code></pre>
+<p>Fiz questão de chamar novamente os dois pacotes utilizados, pelo fato de que você queira apenas chamar os dados já existentes no banco de dados, logo a primeira parte de envio não é necessária. Aloquei os dados a uma variável de nome diferente, neste caso utiliei <em>dados_banco</em> para ter certeza de que os dados foram retornados do <code>MariaDB</code>, quando observado as linhas, é possível perceber que são iguais aos dados enviados.</p>
+<p>Se algum dia desejar deletar o banco do <code>MariaDB</code> por dentro do <code>R</code> também é possível utilizando o comando:</p>
+<pre><code>#Conectar
+conex &lt;- dbConnect(
+  drv = RMariaDB::MariaDB(),
+  username = &#39;root&#39;,
+  password = &#39;x&#39;,
+  host = &#39;localhost&#39;,
+  port = 3306
+)
+
+
+# Para deletar a base dados utilize
+dbExecute(conex, &quot;DROP DATABASE images_PolSAR&quot;) #DELETE BD</code></pre>
+<p>Fonte:</p>
+<p><a href="https://eriberto.pro.br/blog/2018/09/04/instalando-e-configurando-mariadb-no-debian-9/">https://eriberto.pro.br/blog/2018/09/04/instalando-e-configurando-mariadb-no-debian-9/</a></p>
+<p><a href="https://rockcontent.com/br/blog/mariadb/">https://rockcontent.com/br/blog/mariadb/</a></p>
+<p><a href="https://kinsta.com/pt/blog/mariadb-vs-mysql/#mariadb">https://kinsta.com/pt/blog/mariadb-vs-mysql/#mariadb</a></p>
+<p><br/>
+<br/>
+<br/></p>
+<div id="post-gerado-com-framework-hugo-httpgohugo.io-r-markdown-httprmarkdown.rstudio.com-no-qual-os-resultados-são-gerados-na-geração-da-página." class="section level4">
+<h4>“Post gerado com framework HUGO (<a href="http://gohugo.io/">http://gohugo.io/</a>), R Markdown (<a href="http://rmarkdown.rstudio.com/">http://rmarkdown.rstudio.com/</a>), no qual os resultados são gerados na geração da página.”</h4>
+</div>
+
+  </div>
+</section>
+<section id="tag-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-right meta">
+      
+      
+      
+      TAGS:
+      
+      
+      <a class="meta" href="https://jodavid.github.io/tags/r">R</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/tags/mariadb">MARIADB</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/tags/sql">SQL</a>
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<section id="menu-pane" class="row menu text-center">
+  
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post/web-scraping-introduction-with-r/">&lt; prev | </a></span>
+  
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post">post</a></span>
+  
+  
+  
+  <h4 class="text-center"><a class="menu-item" href="https://jodavid.github.io">home</a></h4>
+</section>
+
+
+
+<footer class="row text-center footer">
+  <hr />
+  
+  <h6 class="text-center copyright">© 2021. Jodavid Ferreira. <a href="http://creativecommons.org/licenses/by/3.0/">Some Rights Reserved</a>.</h6>
+  
+  <h6 class="text-center powered">Powered by <a href="https://gohugo.io/">Hugo  v0.54.0</a> &amp; <a href="https://github.com/shenoybr/hugo-goa">Goa</a>.</h6>
+  
+      
+      <h6><a href="" aria-label="RSS Feed"><i class="fas fa-rss" aria-hidden="true"></i></a></h6>
+    
+  
+</footer>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-141028971-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
+
+
