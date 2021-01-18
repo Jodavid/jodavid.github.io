@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Thu, 14 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jodavid.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gráfico no R utilizando Malhas e Leaflet</title>
+      <link>https://jodavid.github.io/post/gr%C3%A1fico-no-r-utilizando-malhas-e-leaflet/</link>
+      <pubDate>Sun, 17 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/post/gr%C3%A1fico-no-r-utilizando-malhas-e-leaflet/</guid>
+      <description>Neste post vamos abordar a criação de um gráfico utilizando malhas digitais e Leaflet com intuito de analisar visualmente um problema em questão que envolva análise com mapas e dados de área.
+Dados de área: são dados obtidos quando a ocorrência de um fenômeno em estudo se dá em uma área geográfica aleatória, por exemplo, áreas de incidência de alguma endemia ou epidemia. Na prática, estes dados são associados a levantamentos de recursos humanos, como censos e estatísticas da saúde.</description>
+    </item>
     
     <item>
       <title>instalação de SQL e utilização com R</title>
@@ -69,6 +79,15 @@ Esse post vai mostrar como executar códigos de Julia estando no ambiente R, al�
       
       <guid>https://jodavid.github.io/post/comparison-of-time-efficiency-of-a-same-function-in-r/</guid>
       <description>Atualmente, com tantas tarefas diárias que temos que realizar, torna-se cada vez mais difícil o gerenciamento de nosso tempo. E o tempo é uma palavra fundamental com quem trabalha com métodos de análises de dados no qual o período de processamento do método é uma parte fundamental, pois influência diretamente no tempo de finalização da análise. Quanto mais as ferramentas utilizadas demoram em sua execução, mais tempo será necessário para conclusão do estudo.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jodavid.github.io/post/covid/plot_estado_site/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/post/covid/plot_estado_site/</guid>
+      <description>leaflet (function() { // If window.HTMLWidgets is already defined, then use it; otherwise create a // new object. This allows preceding code to set options that affect the // initialization process (though none currently exist). window.HTMLWidgets = window.HTMLWidgets || {}; // See if we&#39;re running in a viewer pane. If not, we&#39;re in a web browser. var viewerMode = window.HTMLWidgets.viewerMode = /\bviewer_pane=1\b/.test(window.location); // See if we&#39;re running in Shiny mode.</description>
     </item>
     
   </channel>

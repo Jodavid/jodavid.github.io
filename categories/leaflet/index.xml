@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leaflet on Jodavid Ferreira</title>
+    <link>https://jodavid.github.io/categories/leaflet/</link>
+    <description>Recent content in Leaflet on Jodavid Ferreira</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Sun, 17 Jan 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jodavid.github.io/categories/leaflet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>gráfico no R utilizando Malhas e Leaflet</title>
+      <link>https://jodavid.github.io/post/gr%C3%A1fico-no-r-utilizando-malhas-e-leaflet/</link>
+      <pubDate>Sun, 17 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/post/gr%C3%A1fico-no-r-utilizando-malhas-e-leaflet/</guid>
+      <description>Neste post vamos abordar a criação de um gráfico utilizando malhas digitais e Leaflet com intuito de analisar visualmente um problema em questão que envolva análise com mapas e dados de área.
+Dados de área: são dados obtidos quando a ocorrência de um fenômeno em estudo se dá em uma área geográfica aleatória, por exemplo, áreas de incidência de alguma endemia ou epidemia. Na prática, estes dados são associados a levantamentos de recursos humanos, como censos e estatísticas da saúde.</description>
+    </item>
+    
+  </channel>
+</rss>

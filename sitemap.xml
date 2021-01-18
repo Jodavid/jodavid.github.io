@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jodavid.github.io/post/gr%C3%A1fico-no-r-utilizando-malhas-e-leaflet/</loc>
+    <lastmod>2021-01-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jodavid.github.io/post/instala%C3%A7%C3%A3o-de-sql-e-utiliza%C3%A7%C3%A3o-com-r/</loc>
     <lastmod>2021-01-14T00:00:00+00:00</lastmod>
   </url>
@@ -43,6 +48,10 @@
   </url>
   
   <url>
+    <loc>https://jodavid.github.io/post/covid/plot_estado_site/</loc>
+  </url>
+  
+  <url>
     <loc>https://jodavid.github.io/tags/byte-code-compilation/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -66,6 +75,12 @@
   </url>
   
   <url>
+    <loc>https://jodavid.github.io/tags/covid/</loc>
+    <lastmod>2021-01-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jodavid.github.io/tags/cuda/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -85,7 +100,7 @@
   
   <url>
     <loc>https://jodavid.github.io/</loc>
-    <lastmod>2021-01-14T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -98,6 +113,12 @@
   <url>
     <loc>https://jodavid.github.io/categories/julia/</loc>
     <lastmod>2021-01-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jodavid.github.io/categories/leaflet/</loc>
+    <lastmod>2021-01-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -115,7 +136,7 @@
   
   <url>
     <loc>https://jodavid.github.io/post/</loc>
-    <lastmod>2021-01-14T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -127,13 +148,19 @@
   
   <url>
     <loc>https://jodavid.github.io/tags/r/</loc>
-    <lastmod>2021-01-14T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jodavid.github.io/categories/r/</loc>
-    <lastmod>2021-01-14T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jodavid.github.io/tags/shapes/</loc>
+    <lastmod>2021-01-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
