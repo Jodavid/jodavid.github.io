@@ -131,9 +131,9 @@ names(dados)</code></pre>
 <pre class="r"><code>library(knitr)
 
 dados$display_url[1]</code></pre>
-<pre><code>## [1] &quot;https://instagram.fjpa11-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/140306086_3611356148946853_8467194764663536046_n.jpg?_nc_ht=instagram.fjpa11-1.fna.fbcdn.net&amp;_nc_cat=101&amp;_nc_ohc=4bQeqWBJqfsAX9z5j1K&amp;tp=1&amp;oh=8b6aeef07797a476b1383b6a5eec5d1c&amp;oe=602F63F0&quot;</code></pre>
+<pre><code>## [1] &quot;https://instagram.fjpa11-1.fna.fbcdn.net/v/t51.2885-15/e35/140052897_151435833281572_8520393276030489828_n.jpg?_nc_ht=instagram.fjpa11-1.fna.fbcdn.net&amp;_nc_cat=104&amp;_nc_ohc=yZjxiI8ZeZwAX_KEi8o&amp;tp=1&amp;oh=0cb7adaeba6e69b30488ccb18afdb5dc&amp;oe=602F34F4&quot;</code></pre>
 <pre class="r"><code>include_graphics(dados$display_url[1])</code></pre>
-<p><img src="https://instagram.fjpa11-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/140306086_3611356148946853_8467194764663536046_n.jpg?_nc_ht=instagram.fjpa11-1.fna.fbcdn.net&amp;_nc_cat=101&amp;_nc_ohc=4bQeqWBJqfsAX9z5j1K&amp;tp=1&amp;oh=8b6aeef07797a476b1383b6a5eec5d1c&amp;oe=602F63F0" /><!-- --></p>
+<p><img src="https://instagram.fjpa11-1.fna.fbcdn.net/v/t51.2885-15/e35/140052897_151435833281572_8520393276030489828_n.jpg?_nc_ht=instagram.fjpa11-1.fna.fbcdn.net&amp;_nc_cat=104&amp;_nc_ohc=yZjxiI8ZeZwAX_KEi8o&amp;tp=1&amp;oh=0cb7adaeba6e69b30488ccb18afdb5dc&amp;oe=602F34F4" /><!-- --></p>
 <div id="nuvem-de-tags" class="section level2">
 <h2>Nuvem de tags</h2>
 <p>Para uma primeira análise, vamos brincar criando uma nuvem de tags das palavras que mais aparecem nas descrições das imagens, e para isso vamos utilizar a coluna <code>description</code>.</p>
@@ -162,7 +162,7 @@ dados_str &lt;- unlist(corpus)
 texto &lt;- tolower(dados_str)
 lista_palavras &lt;- strsplit(texto, &quot;\\W+&quot;)
 vetor_palavras &lt;- unlist(lista_palavras)</code></pre>
-<pre class="r"><code>wordcloud(words = vetor_palavras, min.freq = 10, random.order = TRUE, colors = yarrr::piratepal(&quot;basel&quot;), use.r.layout = TRUE, rot.per = 0.5)</code></pre>
+<pre class="r"><code>wordcloud(words = vetor_palavras, min.freq = 3, random.order = TRUE, colors = yarrr::piratepal(&quot;basel&quot;), use.r.layout = TRUE, rot.per = 0.5)</code></pre>
 <p><img src="https://jodavid.github.io/post/scrap-no-instagram-usando-instatouch-e-r_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p><br/></p>
 <p>Acima é observado a nuvem de tags ou palavras.
@@ -229,20 +229,12 @@ Frequência
 #tecnologia
 </td>
 <td style="text-align:right;">
-94
+92
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-#informatica
-</td>
-<td style="text-align:right;">
-10
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-#computador
+#negocios
 </td>
 <td style="text-align:right;">
 8
@@ -250,7 +242,23 @@ Frequência
 </tr>
 <tr>
 <td style="text-align:left;">
-#inovacao
+#venezuela
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+#apple
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+#software
 </td>
 <td style="text-align:right;">
 7
@@ -259,14 +267,6 @@ Frequência
 <tr>
 <td style="text-align:left;">
 #digital
-</td>
-<td style="text-align:right;">
-6
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-#software
 </td>
 <td style="text-align:right;">
 6
@@ -309,7 +309,7 @@ ggplot() +
 <p><img src="https://jodavid.github.io/post/scrap-no-instagram-usando-instatouch-e-r_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p><br/></p>
 <p>Para um análise mais detalhada você pode visualizar o banco <code>df</code> e identificar se realmente as frases correspondem com seus sentimentos alocados.</p>
-<p>Fontes (sobre instagram):</p>
+<p>Fontes:</p>
 <p><a href="https://neilpatel.com/br/blog/instagram-o-que-e/">https://neilpatel.com/br/blog/instagram-o-que-e/</a></p>
 <p><a href="https://canaltech.com.br/redes-sociais/o-que-e-instagram/">https://canaltech.com.br/redes-sociais/o-que-e-instagram/</a></p>
 <p><a href="https://github.com/vinaypotluri/Sentimental-Analysis/blob/master/sourcecode.R">https://github.com/vinaypotluri/Sentimental-Analysis/blob/master/sourcecode.R</a></p>
