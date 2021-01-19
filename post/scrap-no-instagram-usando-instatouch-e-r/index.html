@@ -131,9 +131,9 @@ names(dados)</code></pre>
 <pre class="r"><code>library(knitr)
 
 dados$display_url[1]</code></pre>
-<pre><code>## [1] &quot;https://instagram.fjpa11-1.fna.fbcdn.net/v/t51.2885-15/e35/140052897_151435833281572_8520393276030489828_n.jpg?_nc_ht=instagram.fjpa11-1.fna.fbcdn.net&amp;_nc_cat=104&amp;_nc_ohc=yZjxiI8ZeZwAX_KEi8o&amp;tp=1&amp;oh=0cb7adaeba6e69b30488ccb18afdb5dc&amp;oe=602F34F4&quot;</code></pre>
+<pre><code>## [1] &quot;https://instagram.fjpa11-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/139801468_170434627755319_330333114248701_n.jpg?_nc_ht=instagram.fjpa11-1.fna.fbcdn.net&amp;_nc_cat=107&amp;_nc_ohc=kzAe8Q-YvqIAX8F6yAe&amp;tp=1&amp;oh=e27db52ef6e0263c7092c37c63958d3f&amp;oe=60324777&quot;</code></pre>
 <pre class="r"><code>include_graphics(dados$display_url[1])</code></pre>
-<p><img src="https://instagram.fjpa11-1.fna.fbcdn.net/v/t51.2885-15/e35/140052897_151435833281572_8520393276030489828_n.jpg?_nc_ht=instagram.fjpa11-1.fna.fbcdn.net&amp;_nc_cat=104&amp;_nc_ohc=yZjxiI8ZeZwAX_KEi8o&amp;tp=1&amp;oh=0cb7adaeba6e69b30488ccb18afdb5dc&amp;oe=602F34F4" /><!-- --></p>
+<p><img src="https://instagram.fjpa11-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/139801468_170434627755319_330333114248701_n.jpg?_nc_ht=instagram.fjpa11-1.fna.fbcdn.net&amp;_nc_cat=107&amp;_nc_ohc=kzAe8Q-YvqIAX8F6yAe&amp;tp=1&amp;oh=e27db52ef6e0263c7092c37c63958d3f&amp;oe=60324777" /><!-- --></p>
 <div id="nuvem-de-tags" class="section level2">
 <h2>Nuvem de tags</h2>
 <p>Para uma primeira análise, vamos brincar criando uma nuvem de tags das palavras que mais aparecem nas descrições das imagens, e para isso vamos utilizar a coluna <code>description</code>.</p>
@@ -162,7 +162,841 @@ dados_str &lt;- unlist(corpus)
 texto &lt;- tolower(dados_str)
 lista_palavras &lt;- strsplit(texto, &quot;\\W+&quot;)
 vetor_palavras &lt;- unlist(lista_palavras)</code></pre>
-<pre class="r"><code>wordcloud(words = vetor_palavras, min.freq = 3, random.order = TRUE, colors = yarrr::piratepal(&quot;basel&quot;), use.r.layout = TRUE, rot.per = 0.5)</code></pre>
+<pre class="r"><code>wordcloud(words = vetor_palavras, min.freq = 2, random.order = TRUE, colors = yarrr::piratepal(&quot;basel&quot;), use.r.layout = TRUE, rot.per = 0.5)</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : design could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : pesquisadores could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : bancodevenezuela could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : cuenta could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : software could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : valpo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tatuajes could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : segurancapatrimonial could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : celular could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : ayudante could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : monitoramentohs could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : inovacao could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : depilacao could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : modulo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : deposito could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : dispositivos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : acessorio could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : palestine could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : segurancacondominial could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : selfies could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : campanhiasemfioesembateria could not be fit on page. It will not be
+## plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : apresentacao could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : conoce could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : sentido could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : investimento could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : del could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : maclinsfit could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : servicio could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : menores could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : smartwatch could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : senales could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tecnologiatecno could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : servicios could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : mensaje could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tienda could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : enviosnacionales could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : aparelho could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : preparado could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : espiritualidade could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : madres could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : enquanto could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : assunto could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : disponible could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : transmissao could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : sunacripve could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : color could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : recargable could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : simplificadabasta could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : maclinssportfitness could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : elegiremos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : whatsapp could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : clientes could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : virus could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : queremos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : totalmente could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : ribeiraodasneves could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : quais could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : produtos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : manos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : multimidia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : longe could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : central could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : logistica could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : completa could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : envie could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : gusto could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : pais could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tablet could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : melhores could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : mim could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : nuevos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : covid could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : residencia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : contato could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : processar could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : maclins could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : santaluzia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : campanhia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : almacenamiento could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : dispondran could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : normas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : motor could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : siguenos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : qualquer could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : arab could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : inteligencia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : algum could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : itebio could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : antonio could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : melhor could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : social could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : fveu could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : iluminacao could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : vista could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : ate could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : polegadas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : game could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : organizacao could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : intelbras could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : troca could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : dias could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : atendimento could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : sera could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : agora could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : conheca could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : usar could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : adelante could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tipo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tecno could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : face could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : auxilio could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : rastreador could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : dentro could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : google could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : solicite could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : amazon could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : aprender could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : laptop could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : familia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : taller could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : comerciais could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : morales could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : ciencia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : economia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : verdade could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : notebook could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : pago could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : spark could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : pratica could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : canal could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : bancaria could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : especialistas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : caracas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : predios could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : configurar could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : wireless could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : amamos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : trabajaremos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : microsoft could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : pcgamer could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : presidente could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : plasma could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : equipada could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : estao could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : ultravelocidade could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : podran could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : domicilio could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : atencion could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : assistenciatecnica could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : shop could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : egypt could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : visitas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : modelos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : ensino could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : segurancaeletronica could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : mantente could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : puertos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : enero could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : novidades could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : dia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : bienvenidoalfuturoexclusivo could not be fit on page. It will not be
+## plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : diferente could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : metros could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : processos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : velocidad could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : dupla could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : alcance could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : jordan could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : los could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : elonmusk could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : instalar could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : cualquier could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : portaria could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : drivers could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : kilometros could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : privacidade could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : educacion could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : cuentas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : todos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : todas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : escritorios could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : duracion could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : gran could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : possa could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : incrivel could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : algeria could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : nuestras could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : positivo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : consultas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : cameras could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : contar could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : processadores could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : apenas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : windows could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : realizar could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : estoy could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : beaga could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : abre could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : binarias could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : possuem could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : pode could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : imagens could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : artificial could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : engenharia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : estrategia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : informacoes could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : moda could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : controle could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tecnico could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : requisitos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : upgrade could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : nacional could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : todo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : corridaderua could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : iphone could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : existe could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : pantallas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : sociales could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : instachile could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : felizmartes could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : campainhas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : campo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : apoio could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : perfuradaos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : panico could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : dados could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : cobija could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : diagnostico could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : alarme could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : horas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : valparaiso could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : indicativo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : gestao could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : inforec could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : emprendimiento could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : snowden could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : producto could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : hijos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : criptomonedas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : relacion could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : sudan could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : techno could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : elegante could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : siente could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : asesoria could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : agronegocio could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : funciona could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : acompanham could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : seguranca could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : facilita could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : autonomia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : vagas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : automatica could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : escolha could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : qualidade could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : notebooks could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : remota could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : equipo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : potenciado could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : problemas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : segurancainteligente could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tomar could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : visitem could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : institucion could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : oman could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : valledupar could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : acesso could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : computador could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : muchas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : emergencias could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : sparkgo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : campainha could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : autonomo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : falcon could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : meteorologica could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : mejores could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : kuwait could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : estar could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : residencias could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : objetos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : barreiras could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : asus could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : entrega could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : privacy could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : arabia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : direito could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tenemos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tempo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : podcast could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : hayan could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : venezuela could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : cutuchi could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : sigue could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : gravacao could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : trazer could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : consultorio could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : pedidos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : celulares could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : nueva could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : corazon could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : protector could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : audio could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : detalhes could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tres could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : botones could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : escribenos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : playa could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : martingale could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : buenas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : alecso could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : confira could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : coronavirus could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : saudi could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : samsung could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : wwwjcbtechnologycomec could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : interfoniaresidencial could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tenido could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : camara could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : pasion could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : profissionais could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : hoje could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : logitech could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : fonte could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : desbloqueo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : dinheiro could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : usando could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : dinosaurio could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : veiculos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : electronica could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : saude could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : mouse could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : dispensa could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : integra could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : apexo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : rapido could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : event could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : paseo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : suporte could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : qualidadedevida could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : compra could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : programacao could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : router could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : feliz could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : santiago could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : brasil could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : sedan could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : latidos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : vicio could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : apple could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : setup could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tech could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : rumbo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : pra could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : avancada could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : amigos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : inalambrica could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tudo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : segurancaperimetral could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : bajo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : carga could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : economiadigital could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : sabe could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : ciudad could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : giro could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : conforto could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : medico could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : incluye could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : internet could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : trabalhar could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : medicina could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : facebook could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : ghz could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : llegaron could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : petro could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : italia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tecnosparkgo could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : bmw could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : baterias could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : ginastica could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : marketingdigital could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : redes could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : dolor could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : digital could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : ficar could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : cabeza could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : ligar could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : precisa could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : necessario could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : existem could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : universidadencasa could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : cosasdetecnologia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : cftv could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : autos could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : led could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : serie could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : pandemia could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : fixar could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : pessoas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : criptofveu could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : chile could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : envios could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : flex could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : dispensam could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : usuarios could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : entregas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : golpistas could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : medellin could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : app could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : variedad could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : grande could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : calazacon could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : tambem could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : empresa could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : moviles could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : android could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(words = vetor_palavras, min.freq = 2, random.order =
+## TRUE, : toda could not be fit on page. It will not be plotted.</code></pre>
 <p><img src="https://jodavid.github.io/post/scrap-no-instagram-usando-instatouch-e-r_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p><br/></p>
 <p>Acima é observado a nuvem de tags ou palavras.
@@ -229,23 +1063,7 @@ Frequência
 #tecnologia
 </td>
 <td style="text-align:right;">
-92
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-#negocios
-</td>
-<td style="text-align:right;">
-8
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-#venezuela
-</td>
-<td style="text-align:right;">
-8
+94
 </td>
 </tr>
 <tr>
@@ -253,7 +1071,15 @@ Frequência
 #apple
 </td>
 <td style="text-align:right;">
-7
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+#informatica
+</td>
+<td style="text-align:right;">
+8
 </td>
 </tr>
 <tr>
@@ -261,12 +1087,20 @@ Frequência
 #software
 </td>
 <td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+#celulares
+</td>
+<td style="text-align:right;">
 7
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-#digital
+#gamer
 </td>
 <td style="text-align:right;">
 6
