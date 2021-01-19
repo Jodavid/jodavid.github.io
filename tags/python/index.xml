@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Jodavid Ferreira</title>
+    <link>https://jodavid.github.io/tags/python/</link>
+    <description>Recent content in Python on Jodavid Ferreira</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Mon, 18 Jan 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jodavid.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>scrap no instagram usando instatouch e R</title>
+      <link>https://jodavid.github.io/post/scrap-no-instagram-usando-instatouch-e-r/</link>
+      <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/post/scrap-no-instagram-usando-instatouch-e-r/</guid>
+      <description>O Instagram é um dos aplicativos mais queridos e populares do Brasil e do mundo. Segundo o Sprout Social em 2019, existia mais de 1 bilhão de usuários ativos com números impressionantes de engajamento: 15 vezes mais que em outras plataformas. E o Brasil é o país que ocupa a segunda posição no ranking de usuários. Por isso, é natural que empreendedores e profissionais de marketing desejem extrair todo o potencial que o aplicativo permite.</description>
+    </item>
+    
+  </channel>
+</rss>

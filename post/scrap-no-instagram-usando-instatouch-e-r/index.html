@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="description" content="Simple minimalist theme">
+<meta name="keywords" content="minimalist,blog,goa,hugo,developer">
+
+<base href="https://jodavid.github.io">
+
+<title>
+  Jodavid Ferreira - scrap no instagram usando instatouch e R 
+</title>
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,700|Roboto:300,300i,400,400i,500,500i,700,700i">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="https://jodavid.github.io/css/main.css">
+<link rel="stylesheet" href="https://jodavid.github.io/css/custom.css">
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://jodavid.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://jodavid.github.io/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://jodavid.github.io/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="https://jodavid.github.io/manifest.json">
+<link rel="mask-icon" href="https://jodavid.github.io/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+<body lang="pt-br">
+<div class="container">
+
+
+<header class="row text-left title">
+  <h1 class="title">scrap no instagram usando instatouch e R</h1>
+</header>
+<section id="category-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-left meta">
+        PUBLISHED ON 18 DE JAN DE 2021 
+      
+      
+      
+      —
+      
+      
+      <a class="meta" href="https://jodavid.github.io/categories/r">R</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/categories/python">PYTHON</a>
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+<section id="content-pane" class="row">
+  <div class="col-md-12 text-justify content">
+    
+    
+    
+    
+
+
+<p>O Instagram é um dos aplicativos mais queridos e populares do Brasil e do mundo. Segundo o <a href="https://sproutsocial.com/insights/instagram-stats/">Sprout Social</a> em <strong>2019</strong>, existia mais de 1 bilhão de usuários ativos com números impressionantes de engajamento: 15 vezes mais que em outras plataformas. E o Brasil é o país que ocupa a segunda posição no ranking de usuários. <strong>Por isso, é natural que empreendedores e profissionais de marketing desejem extrair todo o potencial que o aplicativo permite.</strong></p>
+<p>E o aplicativo é gratuito e, a partir dele, é possível tirar fotos com o celular, aplicar efeitos nas imagens e compartilhar com seus amigos. No Instagram, os usuários podem curtir e comentar nas suas fotos e há ainda o uso de <code>hashtags (#)</code> para que seja possível encontrar imagens relacionadas a um mesmo tema, mesmo que as pessoas que tiraram essas fotos não sejam suas amigas.</p>
+<p>Diante do descrito anteriormente sobre o Instagram, é notável que ela é uma ferramenta rica em dados, no qual extraídos e analisados de forma corretas podem trazer direcionamentos interessantes.</p>
+<p>Uma forma de obter dados em sistemas web é utilizando ferramentas de <em>Scraper</em>. Neste caso vamos utilizar o <a href="https://www.npmjs.com/package/instatouch/v/2.1.3"><strong>instatouch</strong></a>. Com ele é possível:</p>
+<ul>
+<li>Extrair postagens de mídia de nome de usuário, hashtag ou localização;</li>
+<li>Obter os comentários de uma postagem específica do instagram;</li>
+<li>Extrair informações de usuários que gostaram de uma postagem específica;</li>
+<li>Baixe e salve a mídia em um arquivo ZIP;</li>
+<li>Crie arquivos JSON/CSV com informações de postagem;</li>
+</ul>
+<p>Vale salientar que não é necessário inserir login e senha, e
+que este é apenas um scraper que usa a API de gráfico do instagram para obter mídia.</p>
+<p>A instalação necessita do
+<a href="https://nodejs.org/?spm=a2c6h.14275010.0.0.7abe2b08cWjFdX">Node.js</a> v8.6.0+, que pode ser instalado no GNU/Linux Ubuntu ou Debian da seguinte maneira:</p>
+<pre><code>sudo apt install npm</code></pre>
+<p>Para instalar o <strong>instatouch</strong> utilize o seguinte comando</p>
+<pre><code>sudo npm i -g instatouch</code></pre>
+<p>Como exemplo neste post, vamos utilizar o scrap por <code>hashtags (#)</code>, e dessa forma analisar o retorno. Vamos utilizar a hastag: <strong>#tecnologia</strong> e analisar o resultados de um forma simples com uma nuvem de tags das palavras que mais aparecem.</p>
+<p>Para fazer o scraper vamos utilizar o seguinte comando. Algumas opções aparecer como a opção <em>-c</em> após <em>instatouch hashtag [id]</em> indica quantos post quer retornado, o <em>default = 40</em>. Vou definir 100 resultados como retorno, a fim de exemplo.
+Outras opções utilizadas foram <em>–filepath</em> que direciona a pasta a ser salva o documento e <em>–filename</em> que determina o nome do arquivo.</p>
+<pre class="bash"><code>instatouch hashtag tecnologia -c 100 --filepath &quot;&quot; --filename &quot;tecnologia&quot;</code></pre>
+<pre><code>## - InstaTouch Scraper Started
+## CSV path: tecnologia.csv</code></pre>
+<p>Com o arquivo baixado, vamos utilizar o <code>R</code> para fazer análise dos dados.
+Primeiramente vamos ler o arquivo e descobrir o dados que foram obtidos.</p>
+<pre class="r"><code># Pacotes Necessários
+library(stringr)
+library(stringi)
+library(tm)
+library(wordcloud)
+library(yarrr)
+
+# Lendo o arquivo
+dados &lt;- read.csv2(&quot;tecnologia.csv&quot;,sep=&quot;,&quot;)
+
+# Nomes das colunas
+names(dados)</code></pre>
+<pre><code>##  [1] &quot;id&quot;                 &quot;shortcode&quot;          &quot;type&quot;              
+##  [4] &quot;is_video&quot;           &quot;dimension.height&quot;   &quot;dimension.width&quot;   
+##  [7] &quot;display_url&quot;        &quot;thumbnail_src&quot;      &quot;owner.id&quot;          
+## [10] &quot;description&quot;        &quot;comments&quot;           &quot;likes&quot;             
+## [13] &quot;comments_disabled&quot;  &quot;taken_at_timestamp&quot; &quot;location&quot;          
+## [16] &quot;hashtags&quot;           &quot;mentions&quot;           &quot;views&quot;             
+## [19] &quot;video_url&quot;</code></pre>
+<p>Das variáveis retornadas, podemos identificar algumas que serão utilizadas neste estudo, entre elas <code>display_url</code> é referente so url da publicação e <code>description</code> que representa a descrição da publicação.</p>
+<p>Abaixo é possível ver a imagem retornada no primeiro resultado do scraper.</p>
+<pre class="r"><code>library(knitr)
+
+dados$display_url[1]</code></pre>
+<pre><code>## [1] &quot;https://instagram.fjpa11-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/140306086_3611356148946853_8467194764663536046_n.jpg?_nc_ht=instagram.fjpa11-1.fna.fbcdn.net&amp;_nc_cat=101&amp;_nc_ohc=4bQeqWBJqfsAX9z5j1K&amp;tp=1&amp;oh=8b6aeef07797a476b1383b6a5eec5d1c&amp;oe=602F63F0&quot;</code></pre>
+<pre class="r"><code>include_graphics(dados$display_url[1])</code></pre>
+<p><img src="https://instagram.fjpa11-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/140306086_3611356148946853_8467194764663536046_n.jpg?_nc_ht=instagram.fjpa11-1.fna.fbcdn.net&amp;_nc_cat=101&amp;_nc_ohc=4bQeqWBJqfsAX9z5j1K&amp;tp=1&amp;oh=8b6aeef07797a476b1383b6a5eec5d1c&amp;oe=602F63F0" /><!-- --></p>
+<div id="nuvem-de-tags" class="section level2">
+<h2>Nuvem de tags</h2>
+<p>Para uma primeira análise, vamos brincar criando uma nuvem de tags das palavras que mais aparecem nas descrições das imagens, e para isso vamos utilizar a coluna <code>description</code>.</p>
+<pre class="r"><code># Separando a coluna description
+dados_str &lt;- dados$description
+
+# Fazendo manipulação e limpeza dos dados
+dados_str &lt;- stri_trans_general(dados_str,&quot;Latin-ASCII&quot;)
+
+dados_transf &lt;- as.data.frame(dados_str)
+corpus &lt;- Corpus(VectorSource(dados_str))
+corpus &lt;- tm_map(corpus, stripWhitespace) #realizando tratamento de múltiplos espaços
+corpus &lt;- tm_map(corpus, tolower) #transformando em letra minúsucula
+corpus &lt;- tm_map(corpus, function(x) gsub(&quot;@[[:alnum:]]*&quot;, &quot;&quot;, x)) #removendo mencoes
+corpus &lt;- tm_map(corpus, removePunctuation) #removendo pontuação
+corpus &lt;- tm_map(corpus, removeNumbers) #removendo números
+corpus &lt;- tm_map(corpus, function(x) gsub(&quot;http[[:alnum:]]*&quot;, &quot;&quot;, x))  #removendo URLs
+corpus &lt;- tm_map(corpus, removeWords, c(stopwords(&quot;portuguese&quot;),&quot;rt&quot;)) #removendo 
+
+# transformando a variável corpus de lista em vetor e alocando na variável dados_str
+
+dados_str &lt;- unlist(corpus)
+
+# inicio do código para Nuvem de palavras
+
+texto &lt;- tolower(dados_str)
+lista_palavras &lt;- strsplit(texto, &quot;\\W+&quot;)
+vetor_palavras &lt;- unlist(lista_palavras)</code></pre>
+<pre class="r"><code>wordcloud(words = vetor_palavras, min.freq = 10, random.order = TRUE, colors = yarrr::piratepal(&quot;basel&quot;), use.r.layout = TRUE, rot.per = 0.5)</code></pre>
+<p><img src="https://jodavid.github.io/post/scrap-no-instagram-usando-instatouch-e-r_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><br/></p>
+<p>Acima é observado a nuvem de tags ou palavras.
+Apesar da limpeza realizada nas palavras, ainda aparecem palavras denominadas ‘stopwords’, isso requer uma limpeza mais detalhada, então dessa forma, esse tratamento mostrado pode ser considerado um tratamento inicial.
+É possível perceber que quando a frequência de palavras altera, o tamanho e as cores das palavras também mudam, neste caso facilitando a visualização das palavras para análise.</p>
+</div>
+<div id="hashtags-mais-citadas" class="section level2">
+<h2>HASHTAGS MAIS CITADAS</h2>
+<p>Também é possível identificar as <code>hashtags (#)</code> mais citadas nas descrições, para isso vamos utilizar o código abaixo, que nos retorna uma tabela com as <code>hashtags (#)</code> e suas frequências.</p>
+<pre class="r"><code>library(kableExtra)
+
+text &lt;- list()
+htemp &lt;- list()
+htags &lt;- data.frame()
+
+# Separando a coluna description
+dados_str &lt;- dados$description
+
+#&lt;&gt;----------------------------------------------------------------&lt;&gt;
+# Fazendo manipulação e limpeza dos dados
+dados_str &lt;- stri_trans_general(dados_str,&quot;Latin-ASCII&quot;)
+
+corpus2 &lt;- Corpus(VectorSource(dados_str))
+corpus2 &lt;- tm_map(corpus2, stripWhitespace) #realizando tratamento de múltiplos espaços
+corpus2 &lt;- tm_map(corpus2, tolower) #transformando em letra minúsucula
+#retornando a variável dados_str
+dados_str &lt;- unlist(corpus2)
+#&lt;&gt;----------------------------------------------------------------&lt;&gt;
+
+data &lt;- as.matrix(dados_str)
+
+maxrows &lt;- nrow(data)
+for(i in 1:maxrows){
+  text[i] &lt;- as.character(data[i])#data[i,10]) # Coluna referente a description
+  htemp &lt;- str_extract_all(text[i], &quot;#\\S+&quot;, TRUE)
+  
+  if(ncol(htemp) != 0){
+    for(j in 1:ncol(htemp)){
+      htags[i,j] &lt;- htemp[1,j]
+    }  
+  }
+} 
+
+df_htags &lt;- as.data.frame(table(unlist(htags)))
+df_htags &lt;- df_htags[order(df_htags$Freq,decreasing=T),]
+
+colnames(df_htags) &lt;- c(&quot;Hastag&quot;,&quot;Frequência&quot;)
+rownames(df_htags) &lt;- NULL
+kable(head(df_htags))</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Hastag
+</th>
+<th style="text-align:right;">
+Frequência
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+#tecnologia
+</td>
+<td style="text-align:right;">
+94
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+#informatica
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+#computador
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+#inovacao
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+#digital
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+#software
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="análise-de-sentimento" class="section level2">
+<h2>ANÁLISE DE SENTIMENTO</h2>
+<p>Essa parte da análise de sentimento, possui como intuito descobrir se as palavras e frases das descrições possuem teor negativo, neutro ou positivo. Este caso também é um estudo inicial, mas com resultados interessantes. Como resultado foi gerado um gráfico de barras para identificar diantes dos retornos, quantos foram negativos, neutro ou positivos.</p>
+<pre class="r"><code># Pacotes Necessário
+library(SentimentAnalysis)
+library(SnowballC)
+library(dplyr)
+
+# Análise de Sentimento
+sentiment &lt;- analyzeSentiment(dados_str)
+# Extraia o sentimento baseado em dicionário de acordo com o dicionário QDAP
+sentiment2 &lt;- sentiment$SentimentQDAP
+# Veja a direção do sentimento (ou seja, positivo, neutro e negativo)
+sentiment3 &lt;- convertToDirection(sentiment$SentimentQDAP)
+
+
+# Crie um novo dataframe com as colunas desejadas
+df &lt;- data.frame(dados_str=dados_str[-length(dados_str)], sentiment2=sentiment2[-length(dados_str)], sentiment3=sentiment3[-length(dados_str)])
+# Remova as linhas com NA
+df &lt;- df[complete.cases(df), ]</code></pre>
+<pre class="r"><code>library(ggplot2)
+
+# Obtenha a frequência de cada sentimento (positivo, neutro e negativo) 
+freq &lt;- df %&gt;% 
+        group_by(sentiment3) %&gt;% 
+        summarise(Freq=n())
+
+ggplot() + 
+  geom_bar(mapping = aes(x = freq$sentiment3, y = freq$Freq), stat = &quot;identity&quot;) +
+  ylab(&#39;Frequência de Sentimento&#39;) +
+  xlab(&#39;&quot;Tipo do sentimento&quot;&#39;)</code></pre>
+<p><img src="https://jodavid.github.io/post/scrap-no-instagram-usando-instatouch-e-r_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><br/></p>
+<p>Para um análise mais detalhada você pode visualizar o banco <code>df</code> e identificar se realmente as frases correspondem com seus sentimentos alocados.</p>
+<p>Fontes (sobre instagram):</p>
+<p><a href="https://neilpatel.com/br/blog/instagram-o-que-e/">https://neilpatel.com/br/blog/instagram-o-que-e/</a></p>
+<p><a href="https://canaltech.com.br/redes-sociais/o-que-e-instagram/">https://canaltech.com.br/redes-sociais/o-que-e-instagram/</a></p>
+<p><a href="https://github.com/vinaypotluri/Sentimental-Analysis/blob/master/sourcecode.R">https://github.com/vinaypotluri/Sentimental-Analysis/blob/master/sourcecode.R</a></p>
+<p><br/>
+<br/>
+<br/></p>
+<div id="post-gerado-com-framework-hugo-httpgohugo.io-r-markdown-httprmarkdown.rstudio.com-no-qual-os-resultados-são-gerados-na-geração-da-página." class="section level4">
+<h4>“Post gerado com framework HUGO (<a href="http://gohugo.io/">http://gohugo.io/</a>), R Markdown (<a href="http://rmarkdown.rstudio.com/">http://rmarkdown.rstudio.com/</a>), no qual os resultados são gerados na geração da página.”</h4>
+</div>
+</div>
+
+  </div>
+</section>
+<section id="tag-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-right meta">
+      
+      
+      
+      TAGS:
+      
+      
+      <a class="meta" href="https://jodavid.github.io/tags/r">R</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/tags/instagram">INSTAGRAM</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/tags/instatouch">INSTATOUCH</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/tags/python">PYTHON</a>
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<section id="menu-pane" class="row menu text-center">
+  
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post/gr%C3%A1fico-no-r-utilizando-malhas-e-leaflet/">&lt; prev | </a></span>
+  
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post">post</a></span>
+  
+  
+  
+  <h4 class="text-center"><a class="menu-item" href="https://jodavid.github.io">home</a></h4>
+</section>
+
+
+
+<footer class="row text-center footer">
+  <hr />
+  
+  <h6 class="text-center copyright">© 2021. Jodavid Ferreira. <a href="http://creativecommons.org/licenses/by/3.0/">Some Rights Reserved</a>.</h6>
+  
+  <h6 class="text-center powered">Powered by <a href="https://gohugo.io/">Hugo  v0.54.0</a> &amp; <a href="https://github.com/shenoybr/hugo-goa">Goa</a>.</h6>
+  
+      
+      <h6><a href="" aria-label="RSS Feed"><i class="fas fa-rss" aria-hidden="true"></i></a></h6>
+    
+  
+</footer>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-141028971-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
+
+
