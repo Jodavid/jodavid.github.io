@@ -184,11 +184,11 @@ historama_normal &lt;- function(bot, update)
 
 hist_norm_handler &lt;- CommandHandler(&quot;hist_norm&quot;, historama_normal)
 updater &lt;- updater + hist_norm_handler</code></pre>
-<p>Para iniciar o chatBot utilizea função abaixo:</p>
+<p>Para iniciar o chatBot utilize a função abaixo:</p>
 <pre><code>updater$start_polling()</code></pre>
 <p>Nosso Bot atualmente possui 4 funções, que podem ser acessadas com <code>/start</code>, <code>/hoje</code>, <code>/hist_norm</code> e a quarta função é repetir tudo que é digitado.</p>
 <p>Abaixo segue uma imagem das funções funcionando no Telegram:</p>
-<p><img src="exemplo-chatbot.jpg" width="231" /></p>
+<p><img src="images/exemplo-chatbot.jpg" width="231" /></p>
 <!--
 Recomendo colocar essa aplicação em um servidor Shiny, assim é possível fazer com essa aplicação seja executada sempre, pois o ChatBot só funciona com a aplicação rodando.
 -->
