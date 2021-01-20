@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="description" content="Simple minimalist theme">
+<meta name="keywords" content="minimalist,blog,goa,hugo,developer">
+
+<base href="https://jodavid.github.io">
+
+<title>
+  Jodavid Ferreira - construindo um ChatBot para Telegram com R 
+</title>
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,700|Roboto:300,300i,400,400i,500,500i,700,700i">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="https://jodavid.github.io/css/main.css">
+<link rel="stylesheet" href="https://jodavid.github.io/css/custom.css">
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://jodavid.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://jodavid.github.io/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://jodavid.github.io/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="https://jodavid.github.io/manifest.json">
+<link rel="mask-icon" href="https://jodavid.github.io/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+<body lang="pt-br">
+<div class="container">
+
+
+<header class="row text-left title">
+  <h1 class="title">construindo um ChatBot para Telegram com R</h1>
+</header>
+<section id="category-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-left meta">
+        PUBLISHED ON 19 DE JAN DE 2021 
+      
+      
+      
+      —
+      
+      
+      <a class="meta" href="https://jodavid.github.io/categories/r">R</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/categories/telegram">TELEGRAM</a>
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+<section id="content-pane" class="row">
+  <div class="col-md-12 text-justify content">
+    
+    
+    
+    
+<script src="https://jodavid.github.io/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>O Chatbot é um programa de computador que simula uma conversa humana em um chat. Dessa forma, é possível automatizar tarefas repetitivas e burocráticas, como dúvidas frequentes, na forma de diálogo pré-definido entre o usuário e um ‘robô’. Essa tecnologia automatiza conversas e já é usada por diversas empresas e organizações para atender clientes, dar informações sobre serviços, vender produtos, entregar conteúdo, entre outras funções.</p>
+<p>Essas ferramentas usam inteligência artificial e estão cada vez mais aperfeiçoadas. Ou seja, você não sabe, mas provavelmente já conversou com um robô.</p>
+<p>Neste post vamos criar um ChatBot para o Telegram e controlado com software R.</p>
+<div id="criando-o-bot-no-telegram" class="section level3">
+<h3>Criando o Bot no Telegram</h3>
+<p>Primeiro passo é criar o Bot no Telegram, para esse passo crie uma conta no <a href="https://web.telegram.org/">Telegram</a> e em seguida procure o usuário <a href="https://telegram.me/botfather">@BotFather</a> e inicie uma conversa da seguinte forma com o seguinte comando para criar um novo bot:</p>
+<pre><code>/newbot</code></pre>
+<p>Você deve obter uma resposta instantânea:</p>
+<pre><code>Alright, a new bot. How are we going to call it? Please choose a name for your bot.</code></pre>
+<p>que pede para você escolher um nome para o seu Bot. Você deve enviar então o nome que deseja para o bot, que pode ser qualquer um, por exemplo:</p>
+<pre><code>JFRBot</code></pre>
+<p>Em seguida receberá a seguinte mensagem:</p>
+<pre><code>Good. Now let&#39;s choose a username for your bot. It must end in `bot`. Like this, for example: TetrisBot or tetris_bot.</code></pre>
+<p>O BotFather agora pedirá que você escolha um <strong>nome de usuário</strong> para o seu Bot. Este nome de usuário deve terminar em <em>bot</em> e ser globalmente único. Neste tutorial, vou alterar um pouco o nome, mas levando em consideração que seja parecido como nome escolhido anteriormente. Envie seu nome de usuário escolhido para BotFather:</p>
+<pre><code>J_frbot</code></pre>
+<p>Depois de fazer isso, o BotFather enviará a você uma mensagem de “Parabéns”, que incluirá um token.</p>
+<pre><code>Done! Congratulations on your new bot. You will find it at t.me/J_frbot. You can now add a description, about section and profile picture for your bot, see /help for a list of commands. By the way, when you&#39;ve finished creating your cool bot, ping our Bot Support if you want a better username for it. Just make sure the bot is fully operational before you do this.
+
+Use this token to access the HTTP API:
+123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11
+Keep your token secure and store it safely, it can be used by anyone to control your bot.
+
+For a description of the Bot API, see this page: https://core.telegram.org/bots/api</code></pre>
+<p><strong>eu substituí o token pois ele é único, este acima é apenas um exemplo</strong>.</p>
+<p>O token é esta parte: 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11</p>
+<p>Alguns comandos do <a href="https://telegram.me/botfather">@BotFather</a> podem ser encontrados <a href="https://core.telegram.org/bots#6-botfather" class="uri">https://core.telegram.org/bots#6-botfather</a>.</p>
+<p>Para o restante deste tutorial, indicaremos onde você precisa colocar seu token usando &lt;your-bot-token&gt; ou apenas TOKEN. Anote o token, pois você precisará dele no código que está prestes a escrever.</p>
+</div>
+<div id="iniciando-código-no-r" class="section level3">
+<h3>Iniciando código no R</h3>
+<p>Com a criação do Bot pelo Telegram concluído, vamos agora configurar o <code>R</code> para que consigamos consevar com o Bot e assim criar esse robô que está cada vez mais ganhando espaço.</p>
+<p>O primeiro passo é instalar e chamar a biblioteca no qual usaremos:</p>
+<pre class="r"><code># Pacote Necessário
+# install.packages(telegram.bot)
+
+library(telegram.bot) #Pacote para Telegram</code></pre>
+<p>Com o pacote instalado, é o momento de utilização do Token:</p>
+<pre class="r"><code>#Token do Bot:
+bot &lt;- Bot(token = &quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11&quot;)
+updater &lt;- Updater(token = &quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11&quot;)
+
+print(bot$getMe())</code></pre>
+<pre><code>## $id
+## [1] 1406230646
+## 
+## $is_bot
+## [1] TRUE
+## 
+## $first_name
+## [1] &quot;JFRBot&quot;
+## 
+## $username
+## [1] &quot;J_frbot&quot;
+## 
+## $can_join_groups
+## [1] TRUE
+## 
+## $can_read_all_group_messages
+## [1] FALSE
+## 
+## $supports_inline_queries
+## [1] FALSE</code></pre>
+<p>Pelo resultado anterior é possível verificar que estamos conectados ao nosso Bot corretamente.</p>
+<p>A seguir vamos criar algumas funções e verificar se obtemos respostas quando conversarmos com nosso Bot pelo Telegram.</p>
+<pre class="r"><code>#Funcao start
+start &lt;- function(bot, update)
+{
+  bot$sendMessage(chat_id = update$message$chat_id,
+                  text = sprintf(&quot;Olá %s, se estiver recebendo está mensagem, significa que eu existo e estou aqui!&quot;,
+                                 update$message$from$first_name))
+}
+start_handler &lt;- CommandHandler(&quot;start&quot;, start)
+updater &lt;- updater + start_handler
+
+#Funcao hoje
+hoje &lt;- function(bot, update)
+{
+  bot$sendMessage(chat_id = update$message$chat_id,
+                  text = sprintf(&quot;A data de hoje é %s&quot;,
+                                 format(Sys.Date(), &quot;%d-%b-%Y&quot;)))
+}
+hoje_handler &lt;- CommandHandler(&quot;hoje&quot;, hoje)
+updater &lt;- updater + hoje_handler
+
+#Funcao echo
+echo &lt;- function(bot, update){
+  bot$sendMessage(chat_id = update$message$chat_id, text = update$message$text)
+}
+
+updater &lt;- updater + MessageHandler(echo, MessageFilters$text)
+
+#Funcao histograma de uma normal
+historama_normal &lt;- function(bot, update)
+{
+  png(&quot;my_plot.png&quot;)
+  hist(rnorm(1000))
+  dev.off()
+  bot$sendPhoto(chat_id = update$message$chat_id, photo = &#39;my_plot.png&#39;)
+}
+
+hist_norm_handler &lt;- CommandHandler(&quot;hist_norm&quot;, historama_normal)
+updater &lt;- updater + hist_norm_handler</code></pre>
+<p>Para iniciar o chatBot utilizea função abaixo:</p>
+<pre><code>updater$start_polling()</code></pre>
+<p>Nosso Bot atualmente possui 4 funções, que podem ser acessadas com <code>/start</code>, <code>/hoje</code>, <code>/hist_norm</code> e a quarta função é repetir tudo que é digitado.</p>
+<p>Abaixo segue uma imagem das funções funcionando no Telegram:</p>
+<p><img src="exemplo-chatbot.jpg" width="231" /></p>
+<!--
+Recomendo colocar essa aplicação em um servidor Shiny, assim é possível fazer com essa aplicação seja executada sempre, pois o ChatBot só funciona com a aplicação rodando.
+-->
+<p>O artigo <em>Como Instalar o shiny server em seu Próprio Servidor</em> do Marcus Nunes mostra como instalar um servidor Shiny, o artigo é encontrado no link: <a href="https://marcusnunes.me/posts/como-instalar-o-shiny-em-seu-proprio-servidor/" class="uri">https://marcusnunes.me/posts/como-instalar-o-shiny-em-seu-proprio-servidor/</a>.</p>
+<p>Fontes:</p>
+<p><a href="https://www.techtudo.com.br/noticias/2018/03/o-que-e-chatbot-entenda-como-funciona-o-robo-que-conversa-com-voce.ghtml" class="uri">https://www.techtudo.com.br/noticias/2018/03/o-que-e-chatbot-entenda-como-funciona-o-robo-que-conversa-com-voce.ghtml</a></p>
+<p><a href="https://cran.r-project.org/web/packages/telegram.bot/vignettes/telegrambot-introduction.html" class="uri">https://cran.r-project.org/web/packages/telegram.bot/vignettes/telegrambot-introduction.html</a></p>
+<p><a href="https://chatbotsmagazine.com/building-a-telegram-chatbot-with-r-2754cb75759f" class="uri">https://chatbotsmagazine.com/building-a-telegram-chatbot-with-r-2754cb75759f</a></p>
+<p><br/> <br/> <br/></p>
+<div id="post-gerado-com-framework-hugo-httpgohugo.io-r-markdown-httprmarkdown.rstudio.com-no-qual-os-resultados-são-gerados-na-geração-da-página." class="section level4">
+<h4>“Post gerado com framework HUGO (<a href="http://gohugo.io/" class="uri">http://gohugo.io/</a>), R Markdown (<a href="http://rmarkdown.rstudio.com/" class="uri">http://rmarkdown.rstudio.com/</a>), no qual os resultados são gerados na geração da página.”</h4>
+</div>
+</div>
+
+  </div>
+</section>
+<section id="tag-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-right meta">
+      
+      
+      
+      TAGS:
+      
+      
+      <a class="meta" href="https://jodavid.github.io/tags/r">R</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/tags/telegram">TELEGRAM</a>
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<section id="menu-pane" class="row menu text-center">
+  
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post/scrap-no-instagram-usando-instatouch-e-r/">&lt; prev | </a></span>
+  
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post">post</a></span>
+  
+  
+  
+  <h4 class="text-center"><a class="menu-item" href="https://jodavid.github.io">home</a></h4>
+</section>
+
+
+
+<footer class="row text-center footer">
+  <hr />
+  
+  <h6 class="text-center copyright">© 2021. Jodavid Ferreira. <a href="http://creativecommons.org/licenses/by/3.0/">Some Rights Reserved</a>.</h6>
+  
+  <h6 class="text-center powered">Powered by <a href="https://gohugo.io/">Hugo  v0.54.0</a> &amp; <a href="https://github.com/shenoybr/hugo-goa">Goa</a>.</h6>
+  
+      
+      <h6><a href="" aria-label="RSS Feed"><i class="fas fa-rss" aria-hidden="true"></i></a></h6>
+    
+  
+</footer>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-141028971-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
+
+

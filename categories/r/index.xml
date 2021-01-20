@@ -6,10 +6,20 @@
     <description>Recent content in R on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Mon, 18 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jodavid.github.io/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>construindo um ChatBot para Telegram com R</title>
+      <link>https://jodavid.github.io/post/construindo-um-chatbot-para-telegram-com-r/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/post/construindo-um-chatbot-para-telegram-com-r/</guid>
+      <description>O Chatbot é um programa de computador que simula uma conversa humana em um chat. Dessa forma, é possível automatizar tarefas repetitivas e burocráticas, como dúvidas frequentes, na forma de diálogo pré-definido entre o usuário e um ‘robô’. Essa tecnologia automatiza conversas e já é usada por diversas empresas e organizações para atender clientes, dar informações sobre serviços, vender produtos, entregar conteúdo, entre outras funções.
+Essas ferramentas usam inteligência artificial e estão cada vez mais aperfeiçoadas.</description>
+    </item>
     
     <item>
       <title>scrap no instagram usando instatouch e R</title>

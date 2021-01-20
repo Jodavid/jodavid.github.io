@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Telegram on Jodavid Ferreira</title>
+    <link>https://jodavid.github.io/categories/telegram/</link>
+    <description>Recent content in Telegram on Jodavid Ferreira</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jodavid.github.io/categories/telegram/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>construindo um ChatBot para Telegram com R</title>
+      <link>https://jodavid.github.io/post/construindo-um-chatbot-para-telegram-com-r/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/post/construindo-um-chatbot-para-telegram-com-r/</guid>
+      <description>O Chatbot é um programa de computador que simula uma conversa humana em um chat. Dessa forma, é possível automatizar tarefas repetitivas e burocráticas, como dúvidas frequentes, na forma de diálogo pré-definido entre o usuário e um ‘robô’. Essa tecnologia automatiza conversas e já é usada por diversas empresas e organizações para atender clientes, dar informações sobre serviços, vender produtos, entregar conteúdo, entre outras funções.
+Essas ferramentas usam inteligência artificial e estão cada vez mais aperfeiçoadas.</description>
+    </item>
+    
+  </channel>
+</rss>
