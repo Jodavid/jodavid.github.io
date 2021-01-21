@@ -196,7 +196,7 @@ updater &lt;- updater + hist_norm_handler</code></pre>
 <h2>Menu de itens</h2>
 <p>Será mostrado a seguir como criar um menu de itens como destacado na imagem abaixo. Este menu ajuda a definir e mostrar aos usuários os comandos prontos e existentes no Bot.</p>
 <p align="center">
-<img src="img/chatbot2.png" width="231" />
+<img src="img/chatbot2.png" width="431" />
 </p>
 <p>Para criar o menu de itens, acesse o chat do
 <a href="https://telegram.me/botfather">@BotFather</a> que é quem comanda os Bot,
@@ -215,11 +215,10 @@ Send /empty to keep the list empty.</code></pre>
 <pre><code>start - inicio do Bot
 hoje - data atual
 hist_norm - Histograma da distribuição Normal</code></pre>
-<!--
-Recomendo colocar essa aplicação em um servidor Shiny, assim é possível fazer com essa aplicação seja executada sempre, pois o ChatBot só funciona com a aplicação rodando.
-
-O artigo *Como Instalar o shiny server em seu Próprio Servidor* do Marcus Nunes mostra como instalar um servidor Shiny, o artigo é encontrado no link: <https://marcusnunes.me/posts/como-instalar-o-shiny-em-seu-proprio-servidor/>.
--->
+<p>Se conseguiu chegar aqui e com o código em <code>R</code> mostrado estando em execução, o seu ChatBot deve estar funcionando e respondendo a seus comandos pelo Telegram.</p>
+<p>O Bot só funciona se o arquivo estiver rodando no <code>R</code>, ou, uma outra forma é colocar num servidor que suporte códigos em <code>R</code>.
+Eu possuo o <code>shiny-server</code> instalado em minha máquina local, e dessa forma foi possível criar um arquivo, no qual, quando este aberto, o ChatBot fica funcionando, ou seja, quando eu estiver com o notebook ligado, esse Bot ensinado nesse post está funcionando e voê pode conversar com ele pesquisado-o no Telegram por <code>JFRBot</code> ou <code>@J_frbot</code>.</p>
+<p>O artigo <em>Como Instalar o shiny server em seu Próprio Servidor</em> do Marcus Nunes mostra como instalar um servidor Shiny, o artigo é encontrado no link: <a href="https://marcusnunes.me/posts/como-instalar-o-shiny-em-seu-proprio-servidor/" class="uri">https://marcusnunes.me/posts/como-instalar-o-shiny-em-seu-proprio-servidor/</a>.</p>
 <p>Fontes:</p>
 <p><a href="https://www.techtudo.com.br/noticias/2018/03/o-que-e-chatbot-entenda-como-funciona-o-robo-que-conversa-com-voce.ghtml" class="uri">https://www.techtudo.com.br/noticias/2018/03/o-que-e-chatbot-entenda-como-funciona-o-robo-que-conversa-com-voce.ghtml</a></p>
 <p><a href="https://cran.r-project.org/web/packages/telegram.bot/vignettes/telegrambot-introduction.html" class="uri">https://cran.r-project.org/web/packages/telegram.bot/vignettes/telegrambot-introduction.html</a></p>
