@@ -189,8 +189,32 @@ updater &lt;- updater + hist_norm_handler</code></pre>
 <p>Nosso Bot atualmente possui 4 funções, que podem ser acessadas com <code>/start</code>, <code>/hoje</code>, <code>/hist_norm</code> e a quarta função é repetir tudo que é digitado.</p>
 <p>Abaixo segue uma imagem das funções funcionando no Telegram:</p>
 <p align="center">
-<img src="images/exemplo-chatbot.jpg#center" width="231" />
+<img src="img/exemplo-chatbot.jpg#center" width="231" />
 </p>
+</div>
+<div id="menu-de-itens" class="section level2">
+<h2>Menu de itens</h2>
+<p>Será mostrado a seguir como criar um menu de itens como destacado na imagem abaixo. Este menu ajuda a definir e mostrar aos usuários os comandos prontos e existentes no Bot.</p>
+<p align="center">
+<img src="img/chatbot2.png" width="231" />
+</p>
+<p>Para criar o menu de itens, acesse o chat do
+<a href="https://telegram.me/botfather">@BotFather</a> que é quem comanda os Bot,
+e exeute o seguinte comando:</p>
+<pre><code>/setcommands</code></pre>
+<p>Você receberá a mensagem abaixo se possuir mais de um Bot</p>
+<pre><code>Choose a bot to change the list of commands.</code></pre>
+<p>ao escolher o Bot desejado será novamente emitida uma mensagem</p>
+<pre><code>OK. Send me a list of commands for your bot. Please use this format:
+
+command1 - Description
+command2 - Another description
+
+Send /empty to keep the list empty.</code></pre>
+<p>A seguir pode colocar a lista com todos os comandos e as descrições, no nosso exemplo, como possui 3 funções, <code>/start</code>, <code>/hoje</code>, <code>/hist_norm</code> foram colocadas essas funções como mostrados abaixo.</p>
+<pre><code>start - inicio do Bot
+hoje - data atual
+hist_norm - Histograma da distribuição Normal</code></pre>
 <!--
 Recomendo colocar essa aplicação em um servidor Shiny, assim é possível fazer com essa aplicação seja executada sempre, pois o ChatBot só funciona com a aplicação rodando.
 
