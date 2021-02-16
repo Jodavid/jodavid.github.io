@@ -48,16 +48,6 @@
   </url>
   
   <url>
-    <loc>https://jodavid.github.io/about/</loc>
-    <lastmod>2020-12-26T21:48:51-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jodavid.github.io/expert-advisors/</loc>
-    <lastmod>2020-05-15T21:48:51-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://jodavid.github.io/post/covid/plot_estado_site/</loc>
   </url>
   
@@ -100,6 +90,14 @@
     <loc>https://jodavid.github.io/categories/cuda/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jodavid.github.io/expert-advisors/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jodavid.github.io/extras/</loc>
   </url>
   
   <url>
@@ -196,6 +194,10 @@
     <loc>https://jodavid.github.io/tags/shapes/</loc>
     <lastmod>2021-01-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jodavid.github.io/about/</loc>
   </url>
   
   <url>
