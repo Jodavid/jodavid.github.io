@@ -254,8 +254,10 @@ O *speckle* *multilook* descrita pela distribuição gama,
 com densidade
 
 `\begin{align}
-f_Y(y;L,L) = \dfrac{L^{L}}{\Gamma(L)}y^{L - 1}e^{-L y}\, \mathbb{I}_{(0,\infty)}(y),
-\label{eq:gama}
+  \begin{array}{lr}
+  f_Y(y;L,L) = \dfrac{L^{L}}{\Gamma(L)}y^{L - 1}e^{-L y}\,\mathbb{I}_{(0,\infty)}(y), &amp;  (1)
+  \end{array}
+\label{eq:gama} 
 \end{align}`
 
 em que `\(\Gamma(t) = \int\limits^{\infty}_{0} x^{t-1}e^{-x}\mathrm{d}x\)` é a função gama.
@@ -282,7 +284,9 @@ a distribuição *gama inversa*
 para o retroespalhamento.
 
 `\begin{align}
-f(x;\alpha,\gamma) = \dfrac{\gamma^{-\alpha}}{\Gamma(-\alpha)}x^{\alpha - 1}e^{-\frac{\gamma}{x}}\, \mathbb{I}_{(0,\infty)}(x),
+  \begin{array}{lr}
+f(x;\alpha,\gamma) = \dfrac{\gamma^{-\alpha}}{\Gamma(-\alpha)}x^{\alpha - 1}e^{-\frac{\gamma}{x}}\, \mathbb{I}_{(0,\infty)}(x), &amp; (2)
+  \end{array}
 \label{eq:reciprocalgama}
 \end{align}`
 
@@ -303,7 +307,7 @@ retornos SAR.
 
 Sejam `\(X\)` e `\(Y\)` duas variáveis aleatórias escalares positivas e independentes
 tal que,
-`\(X\)` está associado ao *backscatter*, 
+`\(X\)` está associado ao *retroespalhamento*, 
 enquanto
 `\(Y\)` descreve o *speckle*.
 
@@ -336,6 +340,7 @@ pode-se mostrar que
 tem densidade
 
 `\begin{align*}
+  \begin{array}{lr}
 f_Z(z;\alpha,\gamma,L)
 =
 \frac{L^L \Gamma(L-\alpha)}{\gamma^\alpha\Gamma(-\alpha) \Gamma(L)} 
@@ -344,7 +349,8 @@ f_Z(z;\alpha,\gamma,L)
 }{ 
 	[\gamma\,+\,L\,z]^{L-\alpha} 
 }\,
-\mathbb{I}_{(0,\infty)}(z),
+\mathbb{I}_{(0,\infty)}(z), &amp; (3)
+  \end{array}
 \end{align*}`
 
 em que 
@@ -370,7 +376,9 @@ variável aleatória
 é denotada por `\(Z \sim G\Gamma (\alpha,\phi,\mu)\)` e sua densidade é
 
 `\begin{align}
-f(z;\alpha,\phi,\mu) = \dfrac{\alpha}{\Gamma(\phi)}\mu^{\alpha\phi}z^{\alpha\phi - 1}e^{-(\mu z)^\alpha}\, \mathbb{I}_{(0,\infty)}(z),
+  \begin{array}{lr}
+f(z;\alpha,\phi,\mu) = \dfrac{\alpha}{\Gamma(\phi)}\mu^{\alpha\phi}z^{\alpha\phi - 1}e^{-(\mu z)^\alpha}\, \mathbb{I}_{(0,\infty)}(z), &amp; (4)
+  \end{array}
 \label{eq:gamagene}
 \end{align}`
 
@@ -392,8 +400,10 @@ Nesse caso o retorno é matricial complexo e segue uma distribuição Wishart co
 e com densidade
 
 `\begin{equation}
+  \begin{array}{lr}
 f_{\boldsymbol{Y}}(\dot{\boldsymbol{Y}};\boldsymbol{\Sigma},L) = \frac{L^{mL}|\dot{\boldsymbol{Y}}|^{L-m}}{|\boldsymbol{\Sigma}|^L \Gamma_m(L)} \exp\bigl[
--L\operatorname{tr}\bigl(\boldsymbol{\Sigma}^{-1}\dot{\boldsymbol{Y}}\bigr)\bigr]\,\mathbb{I}_{\mathbf{\Omega}_+}(\dot{\mathbf{Y}}),
+-L\operatorname{tr}\bigl(\boldsymbol{\Sigma}^{-1}\dot{\boldsymbol{Y}}\bigr)\bigr]\,\mathbb{I}_{\mathbf{\Omega}_+}(\dot{\mathbf{Y}}), &amp; (5)
+  \end{array}
 \label{eq:denswishart}
 \end{equation}`
 
@@ -439,8 +449,9 @@ A densidade neste caso é dada por
 A densidade neste caso é dada por
 
 `\begin{align*}
-f_{\boldsymbol{Z}}&amp;(\dot{\boldsymbol{Z}};\alpha,\,\boldsymbol{\Sigma},\,L) =\int_0^{\infty}\, x^{-m^2}\, f_{\boldsymbol{Y}}(\dot{\boldsymbol{Z}}/x;\mathbf{\Sigma},L)\, f_{X}(x; \alpha,\mu=1)\, \mathrm{d}x\\
-=&amp;\,\,\frac{
+  \begin{array}{lr}
+    \begin{array}{rl}
+f_{\boldsymbol{Z}}&amp;(\dot{\boldsymbol{Z}};\alpha,\,\boldsymbol{\Sigma},\,L)  = \,\,\frac{
 	L^{Lm}\Gamma(Lm-\alpha)
 }{
 	|\boldsymbol{\Sigma}|^L\,(-\alpha-1)^\alpha\,\Gamma(-\alpha)\,\Gamma_m(L)}
@@ -448,7 +459,11 @@ f_{\boldsymbol{Z}}&amp;(\dot{\boldsymbol{Z}};\alpha,\,\boldsymbol{\Sigma},\,L) =
 &amp;\,\,
 |\dot{\boldsymbol{Z}}|^{L-m}
 \,\,[\,(-\alpha-1) \,+\, L \operatorname{tr}(\boldsymbol{\Sigma}^{-1}\dot{\boldsymbol{Z}})\,]^{\alpha-Lm}\,\mathbb{I}_{\mathbf{\Omega}_+}(\dot{\mathbf{Z}}),
+  \end{array} &amp; (6)
+  \end{array}
 \end{align*}`
+
+&lt;br/&gt;
 
 em que o
 parâmetro `\(\alpha\)`
@@ -490,7 +505,7 @@ Dois conceitos importantes são "Informação" e "Entropia" que foram inicialmen
 
 `\begin{align}
   \begin{array}{lr}
-    I(Z) = \log_b\left(\frac{1}{f(Z)}\right) = - \log_b\left(f(Z)\right), &amp; (1)
+    I(Z) = \log_b\left(\frac{1}{f(Z)}\right) = - \log_b\left(f(Z)\right), &amp; (7)
   \end{array}
 \end{align}`
 
@@ -507,7 +522,7 @@ Através do teorema H de Boltzmann (BOLTZMANN , 1970), Shannon definiu a entropi
 
 `\begin{align}
   \begin{array}{lr}
-    H(Z) = E[I(Z)] = E[-\ln(f(Z))], &amp; (2)
+    H(Z) = E[I(Z)] = E[-\ln(f(Z))], &amp; (8)
   \end{array}
 \end{align}`
 	
@@ -515,7 +530,7 @@ em que `\(E(\cdot)\)` é o operador valor esperado e `\(I(Z)\)` é a informaçã
 	
 `\begin{align}
   \begin{array}{lr}
-	  H(Z) = \int f(z)I(z)dz = - \int f(z)\log_b f(z)dz. &amp; (3)
+	  H(Z) = \int f(z)I(z)dz = - \int f(z)\log_b f(z)dz. &amp; (9)
   \end{array}
 \end{align}`
 
@@ -544,7 +559,7 @@ A classe ( `\(h,\phi\)` ) de entropia de
 
 `\begin{align}
   \begin{array}{lr}
-H_{\phi}^h(\boldsymbol{\theta})\,=\,h\Big(\,\int_{\mathcal A}\phi(\,f_{Z}(z;\boldsymbol{\theta})\,)\mathrm{d}z\,\Big), &amp; (4)
+H_{\phi}^h(\boldsymbol{\theta})\,=\,h\Big(\,\int_{\mathcal A}\phi(\,f_{Z}(z;\boldsymbol{\theta})\,)\mathrm{d}z\,\Big), &amp; (10)
   \end{array}
   \label{definicao_H}
 \end{align}`
@@ -582,7 +597,7 @@ de `\(Z\)` com densidade `\(f(z;\boldsymbol{\theta})\)`.
 Então
 `\begin{equation}
   \begin{array}{lr}
-\sqrt{N} \big[H_h^\phi(\widehat{\boldsymbol{\theta}})-H_h^\phi(\boldsymbol{\theta})\big] \xrightarrow[N\rightarrow \infty]{\mathcal D} \mathcal N\left(0,\sigma_{\phi}^2(\boldsymbol{\theta})\right), &amp; (5)
+\sqrt{N} \big[H_h^\phi(\widehat{\boldsymbol{\theta}})-H_h^\phi(\boldsymbol{\theta})\big] \xrightarrow[N\rightarrow \infty]{\mathcal D} \mathcal N\left(0,\sigma_{\phi}^2(\boldsymbol{\theta})\right), &amp; (11)
   \end{array}
 \label{eq:conver_distg0i}
 \end{equation}`
@@ -611,7 +626,7 @@ e variância `\(\sigma^2\)`, '' `\(\xrightarrow[]{\mathcal{D}}\)` '' denota conv
 
 `\begin{equation}
   \begin{array}{lr}
-\sigma_{\phi}^2(\boldsymbol{\theta})=\boldsymbol{\delta}^\top \boldsymbol{{\mathcal K}}(\boldsymbol{\theta})^{-1}\boldsymbol{\delta}, &amp; (6)
+\sigma_{\phi}^2(\boldsymbol{\theta})=\boldsymbol{\delta}^\top \boldsymbol{{\mathcal K}}(\boldsymbol{\theta})^{-1}\boldsymbol{\delta}, &amp; (12)
   \end{array}
 \label{varentro-trab2}
 \end{equation}`
@@ -645,12 +660,12 @@ De acordo com Nascimento, Frery e Cintra (2018), a metodologia para testes de hi
 \left\lbrace \begin{array}{cl}
 \mathcal{H}_0 : &amp; H_S(\boldsymbol{\theta}_1)=H_S(\boldsymbol{\theta}_2)=\cdot=H_S(\boldsymbol{\theta}_q) = \nu, \\
 \mathcal{H}_1 : &amp; \exists\, i,j \text{, tal que, } H_S(\boldsymbol{\theta}_i) \neq H_S(\boldsymbol{\theta}_j).
-\end{array} \right. &amp; (7)
+\end{array} \right. &amp; (13)
   \end{array}
 \end{equation}`
 
 
-**Há alguma evidência estatística para rejeitar a suposição de que duas amostras PolSAR vêm do mesmo modelo?**
+**Há alguma evidência estatística para rejeitar a suposição de que duas amostras SAR/PolSAR vêm do mesmo modelo?**
 
 
 ---
@@ -667,7 +682,7 @@ A fim de dar resposta à questão, do Lema 1, temos que
 
 `\begin{align}
   \begin{array}{lr}
-\sum\limits_{i=1}^q\dfrac{N_i(H_\text{S}(\widehat{\boldsymbol{\theta}}_i) - \overline{\nu})^2}{\sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_i)} \xrightarrow[N_i\rightarrow \infty]{\mathcal D} \chi^2_{q-1}, &amp; (8)
+\sum\limits_{i=1}^q\dfrac{N_i(H_\text{S}(\widehat{\boldsymbol{\theta}}_i) - \overline{\nu})^2}{\sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_i)} \xrightarrow[N_i\rightarrow \infty]{\mathcal D} \chi^2_{q-1}, &amp; (14)
   \end{array}
 \end{align}`
 
@@ -678,7 +693,7 @@ em que
   \begin{array}{lr}
 \overline{\nu} = 
 \left[\sum\limits_{i=1}^q\dfrac{N_i}{\sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_i)}\right]^{-1}
-\sum\limits_{i=1}^q\dfrac{N_iH_\text{S}(\widehat{\boldsymbol{\theta}}_i)}{\sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_i)}. &amp; (9)
+\sum\limits_{i=1}^q\dfrac{N_iH_\text{S}(\widehat{\boldsymbol{\theta}}_i)}{\sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_i)}. &amp; (15)
   \end{array}
 \end{align}`
 
@@ -701,7 +716,7 @@ Uma resposta à questão pode ser dada pela seguinte estatística de teste:
 `\begin{align}
   \begin{array}{lr}
 S_\text{S}(\widehat{\boldsymbol{\theta}}_1,\ldots,\widehat{\boldsymbol{\theta}}_q)\,=\,
-\sum\limits_{i=1}^q\dfrac{N_i(H_\text{S}(\widehat{\boldsymbol{\theta}}_i) - \overline{\nu})^2}{\sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_i)}. &amp; (10)
+\sum\limits_{i=1}^q\dfrac{N_i(H_\text{S}(\widehat{\boldsymbol{\theta}}_i) - \overline{\nu})^2}{\sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_i)}. &amp; (16)
   \end{array}
 \label{eq:statistic}
 \end{align}`
@@ -726,7 +741,7 @@ A partir dos resultados obtidos, pode-se mostrar então a proposição abaixo.
   &lt;/div&gt;
   
 Sejam
-`\(\widehat{\boldsymbol{\theta}}_i\)` para `\(i=1,\ldots,q\)` EMVs baseados em amostras aleatórias de tamanho `\(N_i\)` independentes entre si e suficientementes grandes. Se `\(S_S(\widehat{\boldsymbol{\theta}}_1,\ldots,\widehat{\boldsymbol{\theta}}_q) = s\)`, então a hipótese nula `\(\mathcal{H}_0\)`  pode ser rejeitada a um nível nominal `\(\alpha\)` se `\(P(\chi_{1}^2 &gt; s) \leq \alpha\)`.
+`\(\widehat{\boldsymbol{\theta}}_i\)` para `\(i=1,\ldots,q\)` EMVs baseados em amostras aleatórias de tamanho `\(N_i\)` independentes entre si e suficientementes grandes. Se `\(S_S(\widehat{\boldsymbol{\theta}}_1,\ldots,\widehat{\boldsymbol{\theta}}_q) = s\)`, então a hipótese nula `\(\mathcal{H}_0\)`  pode ser rejeitada a um nível nominal `\(\alpha\)` se `\(P(\chi_{q-1}^2 &gt; s) \leq \alpha\)`.
 
 &lt;/div&gt;
 
@@ -741,13 +756,13 @@ Sejam
 
 
 &lt;br/&gt;
-No caso de comparar duas amostras do mesmo tamanho `\((N_1=N_2=N)\)` , a Equação (10) reduz a
+No caso de comparar duas amostras do mesmo tamanho `\((N_1=N_2=N)\)` , a Equação (16) reduz a
 
 &lt;br/&gt;
 
 `\begin{align}
   \begin{array}{lr}
-S_\text{S}(\widehat{\boldsymbol{\theta}}_1,\widehat{\boldsymbol{\theta}}_2) =N\dfrac{\left[H_\text{S}(\widehat{\boldsymbol{\theta}}_1) - H_\text{S}(\widehat{\boldsymbol{\theta}}_2)\right]^2}{\sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_1) + \sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_2)}. &amp; (11)
+S_\text{S}(\widehat{\boldsymbol{\theta}}_1,\widehat{\boldsymbol{\theta}}_2) =N\dfrac{\left[H_\text{S}(\widehat{\boldsymbol{\theta}}_1) - H_\text{S}(\widehat{\boldsymbol{\theta}}_2)\right]^2}{\sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_1) + \sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_2)}. &amp; (17)
   \end{array}
 \label{eq:statistic_reduces}
 \end{align}`
@@ -786,7 +801,7 @@ S_\text{S}(\widehat{\boldsymbol{\theta}}_1,\widehat{\boldsymbol{\theta}}_2) =N\d
 &lt;div class="contrib"&gt;
 
   &lt;div class="blockin"&gt; 
-  Quanto à esse casamento entre TI e modelos *SAR*, duas questões em aberto (ao melhor do nosso conhecimento) são:
+  Quanto à esse casamento entre TI e modelos SAR, duas questões em aberto (ao melhor do nosso conhecimento) são:
   &lt;/div&gt;
 
 --
@@ -870,7 +885,7 @@ L^L\,\Gamma(L\,-\,\alpha)
 +
 \,(\,L\,-\,\alpha\,)\,
 [\,\psi^{(0)}(\,L\,-\,\alpha)\,+\,\log \gamma\,-\,\psi^{(0)}(-\alpha)\,], 
-  \end{array} &amp; (12)
+  \end{array} &amp; (18)
   \end{array}
 \label{entropy_g}
 \end{align}`
@@ -901,7 +916,7 @@ a ES de `\(Z\)` é dada por
     \begin{array}{rl}
 H_\text{S}(\,\Gamma^*\,)\,=\,&amp;H_\text{S}(\,[L,\mu]\,)\, \\
 =\,&amp;\,L \, \left( \,\log L\, - \, \log \mu \right) + \log \Gamma(L) + (1-L)\psi^{(0)}(L).
-  \end{array} &amp; (13)
+  \end{array} &amp; (19)
   \end{array}
 \label{entropy_gam}
 \end{align}`
@@ -929,12 +944,35 @@ a densidade conjunta da imagem, `\(\widehat{\mathbf{{H}}}_S\)`, é
 `\begin{align}
   \begin{array}{lr}
 p\left(\mathbf{\dot{H}}_S;\boldsymbol{\theta}\right) =
-\prod_{i=1}^T \left\{ \sum_{g=1}^{c} \pi_g\bigg[ f_{_\mathcal{N}}(\mathbf{\dot{H}}_S(i);\boldsymbol{\theta}_g)\bigg]\right\}, &amp; (14)
+\prod_{i=1}^T \left\{ \sum_{g=1}^{c} \pi_g\bigg[ f_{_\mathcal{N}}(\mathbf{\dot{H}}_S(i);\boldsymbol{\theta}_g)\bigg]\right\}, &amp; (20)
   \end{array}
 \label{modelmmg0i}
 \end{align}`
 
 que é o modelo de segmentação.
+
+
+---
+
+## Um novo algoritmo de segmentação baseado em Entropia
+&lt;hr/&gt;
+
+Baseando-se na Equação (20),
+a probabilidade condicional
+da entropia no `\(i\)`-ésimo *pixel* pertencer a `\(g\)`-ésima região na `\(k\)`-ésima iteração dado uma imagem é:
+
+`\begin{align}
+  \begin{array}{lr}
+  \begin{array}{rl}
+\label{eq:prob_prior1g0i}
+p\left(U_{ig}=1|\mathbf{\dot{H}}_S(i);\hat{\mathbf{\theta}}^{(k)}\right) = &amp;
+\hat{\tau}_g\left(\hat{\mathbf{\theta}}^{(k)} | \mathbf{\dot{H}}_S(i) \right)  \\
+= &amp; \dfrac{\hat{\pi}_g^{(k)}(i) \bigg[ f_{_\mathcal{N}}\left(\mathbf{\dot{H}}_S\!(i);\hat{\mathbf{\theta}}_g^{(k)}\right)\bigg] }{\sum\limits_{g=1}^{c} {\hat{\pi}_g^{(k)}(i)}\bigg[ f_{_\mathcal{N}}\left(\mathbf{\dot{H}}_S\!(i);\hat{\mathbf{\theta}}_g^{(k)}\right)\bigg]}. \nonumber
+  \end{array} &amp; (21)
+  \end{array}
+\end{align}`
+
+
 
 ---
 
@@ -1142,7 +1180,7 @@ H_\text{S}(\,\mathcal{G}^0_m\,) \, = &amp;
 	}{
 		|\mathbf{\Sigma}|^L\,\Gamma(-\alpha)\,(-\alpha-1)^\alpha\,\Gamma_m(L)
 	}. \nonumber
-	\end{array} &amp; (15)
+	\end{array} &amp; (22)
 	\end{array}
 \end{align}`
 &lt;/p&gt;
@@ -1177,7 +1215,7 @@ H_\text{S}(\,s\mathcal{W}^{\mathbb{C}}_m\,)\,= &amp; \,H_\text{S}(\,[\mathbf{\Si
 &amp; \,+ mL 
 +(m-L)\psi_m^{(0)}(L) \nonumber \\
 &amp;\, + \sum\limits_{k=0}^{m-1} \log  \Gamma (L-k).
-	\end{array} &amp; (16)
+	\end{array} &amp; (23)
 	\end{array}
 \end{align}`
 &lt;/p&gt;
@@ -1196,7 +1234,7 @@ tal que `\(\sum_{g=1}^c \pi_g = 1\)`, então a densidade conjunta para `\(\wideh
 	
 `\begin{align}
   \begin{array}{lr}
-p\left(\dot{H}_S;\mathbf{\theta}\right) = \prod_{i=1}^T \left\{ \sum_{g=1}^{c} \pi_g\bigg[ f_{_\mathcal{N}}(\dot{H}_S(i);\mathbf{\theta}_g)\bigg]\right\}, &amp; (17)
+p\left(\dot{H}_S;\mathbf{\theta}\right) = \prod_{i=1}^T \left\{ \sum_{g=1}^{c} \pi_g\bigg[ f_{_\mathcal{N}}(\dot{H}_S(i);\mathbf{\theta}_g)\bigg]\right\}, &amp; (24)
   \end{array}
 \end{align}`
 	
@@ -1412,11 +1450,13 @@ Tomando o MM como mecanismo gerador de distribuições *PolSAR*, cada retorno as
 o modelo do retorno `\(\mathbf{Z} = \mathbf{Y} X\)` é dado por maneira (ANFINSEN; ELTOFT , 2011)
 
 `\begin{align*}
+  \begin{array}{lr}
 f_{\mathbf{Z}}(\dot{\mathbf{Z}})
 =
 \int_0^{\infty}	
 x^{-m^2}\underbrace{f_{\mathbf{Y}}(\dot{\mathbf{Z}}/x)}_{\text{Speckle}}\underbrace{f_X(x)}_{\text{Backscatter}}
-\mathrm{d}x,	
+\mathrm{d}x,	&amp; (25)
+  \end{array}
 \end{align*}`
 
 em que `\({\dot{\mathbf{Z}}}\in\mathbf{\Omega}_+:=\{\mathbf{Z}\in \mathbb{C}^m\times \mathbb{C}^m:\mathbf{Z}=\mathbf{Z}^*\}\)`
@@ -1469,10 +1509,12 @@ seja
 com função densidade de probabilidade
 
 `\begin{align}
+  \begin{array}{lr}
 f({\dot{\mathbf{Z}}_i}) =
   \frac{|{\dot{\mathbf{Z}}_i}|^{L-m}}{|\mathbf{\Sigma}|^L\Gamma_m(L)}
 \exp \left\{ - \operatorname{tr} \left(\mathbf{\Sigma}^{-1}{\dot{\mathbf{Z}}_i} \right)  \right\}
- \, \mathbb{I}_{ \mathbf{ \Omega }_+ } ( \dot{ \mathbf{S} } )
+ \, \mathbb{I}_{ \mathbf{ \Omega }_+ } ( \dot{ \mathbf{S} } ) &amp; (26)
+  \end{array}
 \end{align}`
 
 
@@ -1483,7 +1525,7 @@ Então,
 e
 a matriz de coerência por célula
 segue a soma composta
-`\(\mathbf{S}=\sum_{i=1}^N\mathbf{Z}_i\)` ~(FINE, 2006)[@fine2006probability] e
+`\(\mathbf{S}=\sum_{i=1}^N\mathbf{Z}_i\)` ~(FINE, 2006) e
 considerando que `\(N\sim \text{TPo}(\lambda)\)`,
 logo a densidade é dada por
 
@@ -1493,6 +1535,8 @@ logo a densidade é dada por
 &lt;hr/&gt;
 
 `\begin{align*}
+  \begin{array}{lr}
+  \begin{array}{rl}
 f({\dot{\mathbf{S}}})
 &amp;=\sum_{k=1}^\infty P(N=k)f_{\mathbf{S}_k}({\dot{\mathbf{S}}})\,\mathbb{I}_{\mathbf{\Omega}_+}(\dot{\mathbf{S}})
 \\
@@ -1501,6 +1545,8 @@ f({\dot{\mathbf{S}}})
 \sum_{i=1}^\infty\frac{\lambda^k}{k!}f_{\mathcal{W}_{m}^{\mathbb{C}}(\mathbf{\Sigma},kL)}({\dot{\mathbf{S}}})
 \\
 &amp;=\left(\frac{\mathrm{e}^{-\operatorname{tr}\left(\mathbf{\Sigma}^{-1}{\dot{\mathbf{S}}}\right)}}{|{\dot{\mathbf{S}}}|^m\left(\mathrm{e}^\lambda-1\right)}\right)\sum_{i=1}^\infty\frac{\left(\lambda|\mathbf{\Sigma}^{-1}{\dot{\mathbf{S}}}|^L\right)^k}{k!\Gamma_m(kL)},
+  \end{array} &amp; (27)
+  \end{array}
 \end{align*}`
 em que `\({\dot{\mathbf{S}}}=\{s_{i,j}\}\)` é uma possível realização de `\({\mathbf{S}}=\{S_{i,j}\}\)`.
 
@@ -1517,7 +1563,10 @@ Esta situação é denotada por
 Agora assuma que `\(N\sim \text{Geo}(p)\)` e `\(\mathbf{Z}_i\sim \mathcal{W}_{m}^{\mathbb{C}}(\mathbf{\Sigma},L)\)` para `\(i=1,\ldots,N\)`,
 a matriz de coerência por célula segue a soma composta
  `\(\mathbf{S}=\sum_{i=1}^N\mathbf{Z}_i\)` com densidade
+ 
 `\begin{align*}
+  \begin{array}{lr}
+  \begin{array}{rl}
 f({\dot{\mathbf{S}}})
 &amp;=\sum_{k=1}^\infty P(N=k)f_{\mathbf{S}_k}(\dot{\mathbf{S}}) \mathbb{I}_{\mathbf{\Omega}_+}(\dot{\mathbf{S}})
 \\
@@ -1535,6 +1584,8 @@ f({\dot{\mathbf{S}}})
 }{
 	\Gamma_m(kL)
 }\,\mathbb{I}_{\mathbf{\Omega}_+}(\dot{\mathbf{S}}).
+  \end{array} &amp; (28)
+  \end{array}
 \end{align*}`
 
 Essa situação é denotada como `\(\mathbf{S}\sim \text{CG}\mathcal{W}_{m}^{\mathbb{C}}(p,\mathbf{\Sigma},L)\)`.
@@ -1628,8 +1679,10 @@ a transformada de Mellin para o mapeamento
 é definida como \cite{anfinsen2011application}:
 
 `\begin{align*}
+  \begin{array}{lr}
 \phi_{\mathbf{C}}(s) &amp; = \mathcal{M}\{g(\mathbf{C})\}(s)
-= \int\limits_{\mathbf{\Omega}_+}^{}|\mathbf{C}|^{s-m}g(\mathbf{C})\mathrm{d}\mathbf{C}
+= \int\limits_{\mathbf{\Omega}_+}^{}|\mathbf{C}|^{s-m}g(\mathbf{C})\mathrm{d}\mathbf{C} &amp; (29)
+  \end{array}
 \end{align*}`
 
 com `\(s \in \mathbb{C}\)`, sempre que a integral existe.
@@ -1644,7 +1697,9 @@ A função geradora de cumulantes do tipo Mellin (*Mellin-kind cumulant-generati
 é definida como
 
 `\begin{align}
-\varphi_{\mathbf{C}}(s) = \log \phi_{\mathbf{C}}(s),
+  \begin{array}{lr}
+\varphi_{\mathbf{C}}(s) = \log \phi_{\mathbf{C}}(s), &amp; (30)
+  \end{array}
 \end{align}`
 
 e
@@ -1653,7 +1708,9 @@ de `\(\nu\)` -ésima ordem
 é definida como
 
 `\begin{align}
-\left. \kappa_\nu{\mathbf{C}} = \dfrac{d^\nu}{ds^\nu}\varphi_{\mathbf{C}}(s) \right|_{s=m}.
+  \begin{array}{lr}
+\left. \kappa_\nu{\mathbf{C}} = \dfrac{d^\nu}{ds^\nu}\varphi_{\mathbf{C}}(s) \right|_{s=m}. &amp; (31)
+  \end{array}
 \end{align}`
 
 ---
