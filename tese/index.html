@@ -1,0 +1,2151 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>ENTROPIAS E SOMAS COMPOSTAS PARA MATRIZES ESTOCÁSTICAS APLICADAS A SISTEMAS POLSAR</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Orientador: Dr. Abraão David Costa do Nascimento" />
+    <meta name="date" content="2021-01-01" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="css/jodavid.css" type="text/css" />
+    <link rel="stylesheet" href="css/mmp.css" type="text/css" />
+    <link rel="stylesheet" href="css/mmp-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# ENTROPIAS E SOMAS COMPOSTAS PARA MATRIZES ESTOCÁSTICAS APLICADAS A SISTEMAS POLSAR
+## Jodavid de Araújo Ferreira
+### Orientador: Dr. Abraão David Costa do Nascimento
+### Universidade Federal de Pernambuco - UFPE
+### 2021
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;&lt;span&gt;
+&lt;div style="font-size: 14px;margin-bottom: -10px;"&gt;
+  &lt;img src="imagens/book-cover.png" width="20px" align="center"&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;ENTROPIAS E SOMAS COMPOSTAS PARA MATRIZES ESTOCÁSTICAS APLICADAS A SISTEMAS POLSAR - &lt;a href="http://jodavid.github.io"&gt; Jodavid Ferreira&lt;/a&gt;
+&lt;/div&gt;
+&lt;/span&gt;&lt;/div&gt;
+
+
+
+
+
+---
+
+# Estrutura
+
+&lt;hr&gt;
+
+* INTRODUÇÃO
+
+&lt;!--
+* CONTRIBUIÇÕES
+* DADOS *SAR* POLARIMÉTRICOS MULTILOOK
+* TEORIA DA INFORMAÇÃO E UTILIZAÇÃO EM DADOS *SAR* E
+*POLSAR MULTILOOK*
+--&gt;
+
+* ENTROPIA DE SHANNON PARA A DISTRIBUIÇÃO `\(\mathcal{G}^0_I\)`: NOVAS ABORDAGENS PARA SEGMENTAÇÃO E DETECÇÃO DE MUDANÇA EM IMAGENS *SAR*
+
+* ENTROPIA DE SHANNON PARA A DISTRIBUIÇÃO `\(\mathcal{G}^0_m\)`: ENSAIOS SOBRE SEGMENTAÇÃO NÃO SUPERVISIONADA E DETECÇÃO DE MUDANÇA
+
+* SOMAS COMPOSTAS PARA MATRIZES ESTOCÁSTICAS APLICADAS A SISTEMAS *POLSAR*
+
+* CONCLUSÃO
+
+* REFERÊNCIAS
+
+---
+
+# Introdução 
+
+&lt;hr&gt;
+
+&lt;!-- Antes de tudo vamos entender o que é um radar e sua importância nesta tese.
+--&gt;
+
+* **RADAR** é um acrônimo de *Radio Detection and Ranging*;
+
+* é baseado nos princípios da propagação eletromagnética, em que, uma onda eletromagnética é emitida por uma fonte e é retrodifundida;
+   &lt;!--(reflexão da onda na direção da qual eles vieram) --&gt;
+
+
+De acordo com Zyl (2011), uma imagem de radar é o resultado entre uma interação da energia emitida pelo radar com o objeto em estudo e a aparência da imagem é influenciada pela forma e textura do alvo.
+
+--
+&lt;img src="imagens/introdução/image-textura-int.png" width="35%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Introdução 
+
+&lt;hr&gt;
+
+* O *SAR* (*Synthetic Aperture Radar*) ou radar de abertura sintética;
+&lt;!-- é um tipo de radar que --&gt;
+
+* possuem um sensor que ao longo da rota destinada transmite microondas em direção a uma cena geográfica;
+
+* os pulsos emitidos ireção a um cenário real podem ter polarizações circulares e/ou lineares;
+&lt;img src="imagens/introdução/pulsosHHHV.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+
+* quando é utilizado apenas um par de direções, as imagens geradas são chamadas de *SAR* monopolarizadas e quando utilizado múltiplas direções o processo é chamado *Polarimetric SAR - PolSAR*; 
+
+---
+
+
+# Introdução
+
+&lt;hr&gt;
+
+&lt;img src="imagens/introdução/diagrama1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+
+# Introdução
+
+&lt;hr&gt;
+
+&lt;img src="imagens/introdução/diagrama2.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+
+# Introdução 
+
+&lt;hr&gt;
+
+### Vantagens
+
+
+* podem ser obtidos de qualquer lugar (terrestre, marítimo, aéreo);
+* a qualquer hora (diurno ou noturno);
+* em quase todas condições climáticas (nuvens, chuvas);
+* produzir imagens de alta resolução (grande largura de banda) das superfícies estudadas;
+
+&lt;br/&gt;
+
+### Desvantagens
+
+* custo alto;
+* profissionais qualificados;
+* as imagens obtidas são afetadas por um ruído chamado *speckle*, que gera uma aparência granular nas imagens, criando uma dificuldade na interpretação e análise;
+
+---
+
+
+# Introdução 
+
+&lt;hr&gt;
+
+### Vantagens
+
+
+* podem ser obtidos de qualquer lugar (terrestre, marítimo, aéreo);
+* a qualquer hora (diurno ou noturno);
+* em quase todas condições climáticas (nuvens, chuvas);
+* produzir imagens de alta resolução (grande largura de banda) das superfícies estudadas;
+
+&lt;br/&gt;
+
+### Desvantagens
+
+* custo alto;
+* profissionais qualificados;
+* **as imagens obtidas são afetadas por um ruído chamado *speckle*, que gera uma aparência granular nas imagens, criando uma dificuldade na interpretação e análise;**
+
+
+--
+
+&lt;div class="imgspeckle"&gt;
+&lt;img src="imagens/introdução/speckle.png"&gt;
+Efeito speckle em uma imagem SAR.
+Fonte: (NASCIMENTO, 2012).
+&lt;/div&gt;
+
+---
+
+
+# Introdução 
+
+&lt;hr&gt;
+
+* O *speckle* impõe aos dados *SAR/PolSAR* uma natureza multiplicativa tal que as intensidades *SAR* ou as intensidades multidimensionais de um dado *PolSAR* não se comportem como a lei normal ou Gaussiana.
+
+* Para lidar probabilisticamente com dados speckle de modo a
+incorporar sua influência no espaço paramétrico:
+  * as distribuições `\(\mathcal{G}_I^0\)` proposta por Frery et al. (1997) para descrever intensidades *SAR multilook*;
+  * e `\(\mathcal{G}^0_m\)` introduzida por Freitas, Frery e Correia (2005) para descrever retornos *PolSAR* *multilook* têm se mostrado como excelentes leis  para descrever cenários de diferentes tipos de relevos.
+
+---
+
+# Introdução 
+
+&lt;hr&gt;
+
+&lt;br/&gt;
+Métodos considerando a ação do speckle têm sido propostos em diversas áreas:
+
+&lt;br/&gt;
+1. classificação (FRERY; CORREIA; FREITAS , 2007),
+2. segmentação (BEAULIEU; TOUZI , 2004), 
+3. detecção de borda (SCHOU et al. , 2003),
+4. detecção de mudança (NASCIMENTO; FRERY; CINTRA , 2018).
+
+
+---
+
+# Introdução 
+
+&lt;hr&gt;
+
+&lt;br/&gt;
+Métodos considerando a ação do speckle têm sido propostos em diversas áreas:
+
+&lt;br/&gt;
+1. classificação (FRERY; CORREIA; FREITAS , 2007),
+2. **segmentação (BEAULIEU; TOUZI , 2004),**
+3. detecção de borda (SCHOU et al. , 2003),
+4. **detecção de mudança (NASCIMENTO; FRERY; CINTRA , 2018).**
+
+&lt;br/&gt;
+
+As primeiras contibuições desta tese proporcionam avanços quanto aos itens **2** e **4**.
+
+---
+
+# Lista de Notações
+
+&lt;hr&gt;
+
+&lt;br /&gt;
+
+Para fazer separação entre escalares, vetores e matrizes aleatórias de suas respectivas realizações, utilizar-se-ão:
+
+&lt;br/&gt;
+
+* `\(Z\)` : Variável aleatória;
+* `\(z\)` : Realização de uma variável aleatória;
+* `\(\mathbf{z}\)` :  Vetor aleatório;
+* `\(\dot{\mathbf{z}}\)` :  Realização de um vetor aleatório;
+* `\(\mathbf{Z}\)`: Matriz aleatória;
+* `\(\dot{\mathbf{Z}}\)`: Realização de uma matriz aleatória.
+
+---
+
+## Modelagem estatística para dados SAR e PolSAR multilook
+&lt;hr/&gt;
+
+### Distribuições de variáveis aleatórias
+
+#### Distribuição para o speckle unidimensional
+
+O *speckle* *multilook* descrita pela distribuição gama, 
+`\(Y \sim \Gamma(L, L)\)`,
+com densidade
+
+`\begin{align}
+f_Y(y;L,L) = \dfrac{L^{L}}{\Gamma(L)}y^{L - 1}e^{-L y}\, \mathbb{I}_{(0,\infty)}(y),
+\label{eq:gama}
+\end{align}`
+
+em que `\(\Gamma(t) = \int\limits^{\infty}_{0} x^{t-1}e^{-x}\mathrm{d}x\)` é a função gama.
+
+
+
+---
+
+## Modelagem estatística para dados SAR e PolSAR multilook
+&lt;hr/&gt;
+
+### Distribuições de variáveis aleatórias
+
+#### Distribuição para o retroespalhamento
+
+O retroespalhamento (*backscatter*)
+carrega todas as informações relevantes da área mapeada.
+Em particular,
+ele envolve o comportamento físico do alvo; por exemplo, umidade e relevo.
+
+Neste estudo,
+a distribuição *gama inversa*
+é utilizada
+para o retroespalhamento.
+
+`\begin{align}
+f(x;\alpha,\gamma) = \dfrac{\gamma^{-\alpha}}{\Gamma(-\alpha)}x^{\alpha - 1}e^{-\frac{\gamma}{x}}\, \mathbb{I}_{(0,\infty)}(x),
+\label{eq:reciprocalgama}
+\end{align}`
+
+em que `\(\alpha &lt; 0\)` é o parâmetro de forma e `\(\gamma\)` é parâmetro de escala.
+
+---
+
+## Modelagem estatística para dados SAR e PolSAR multilook
+&lt;hr/&gt;
+
+### Distribuições de variáveis aleatórias
+
+#### Distribuição para intensidade SAR por MM
+
+O modelo multiplicativo (MM) que
+é uma abordagem bem-sucedida para descrever 
+retornos SAR.
+
+Sejam `\(X\)` e `\(Y\)` duas variáveis aleatórias escalares positivas e independentes
+tal que,
+`\(X\)` está associado ao *backscatter*, 
+enquanto
+`\(Y\)` descreve o *speckle*.
+
+Então, o MM assume que cada
+"intensidade"
+(norma quadrada de um canal de polarização complexo)
+oriunda de um *pixel* de imagem *SAR*
+é o resultado de uma variável aleatória
+`\(Z\)`
+que é o produto de 
+`\(X\)` e `\(Y\)`; 
+isto é,
+`\(Z=Y\times X\)`.
+
+---
+
+
+## Modelagem estatística para dados SAR e PolSAR multilook
+&lt;hr/&gt;
+
+### Distribuições de variáveis aleatórias
+
+#### Distribuição para intensidade SAR por MM
+
+
+Sejam `\(X\sim\Gamma(L,L)\)` e
+`\(Y\sim\Gamma^{-1}(-\alpha,\gamma)\)`,
+pode-se mostrar que
+`\(Z\)`
+tem densidade
+
+`\begin{align*}
+f_Z(z;\alpha,\gamma,L)
+=
+\frac{L^L \Gamma(L-\alpha)}{\gamma^\alpha\Gamma(-\alpha) \Gamma(L)} 
+\frac{
+	z^{L-1}
+}{ 
+	[\gamma\,+\,L\,z]^{L-\alpha} 
+}\,
+\mathbb{I}_{(0,\infty)}(z),
+\end{align*}`
+
+em que 
+`\(\alpha &lt; 0\)`
+é o parâmetro de rugosidade,
+`\(\gamma\)` é a escala e `\(L\)` é NEL.
+Este caso é denotado por `\(Z\sim \mathcal{G}^0_I(\alpha,\gamma,L)\)`.
+
+---
+
+## Modelagem estatística para dados SAR e PolSAR multilook
+&lt;hr/&gt;
+
+### Distribuições de variáveis aleatórias
+
+#### Distribuição para intensidade SAR por abordagem empírica
+
+Segundo Li et al. (2011), um modelo alternativo à abordagem de MM, conhecido como abordagem empírica, é a lei gama generalizada ( `\(\text{G}\Gamma\)` ).
+
+
+Essa
+variável aleatória
+é denotada por `\(Z \sim G\Gamma (\alpha,\phi,\mu)\)` e sua densidade é
+
+`\begin{align}
+f(z;\alpha,\phi,\mu) = \dfrac{\alpha}{\Gamma(\phi)}\mu^{\alpha\phi}z^{\alpha\phi - 1}e^{-(\mu z)^\alpha}\, \mathbb{I}_{(0,\infty)}(z),
+\label{eq:gamagene}
+\end{align}`
+
+em que
+`\(\alpha\)` é parâmetro de forma e, `\(\phi\)` e `\(\mu\)` são parâmetros de escala.
+
+
+---
+
+## Modelagem estatística para dados SAR e PolSAR multilook
+&lt;hr/&gt;
+
+### Distribuições de matrizes aleatórias
+
+#### Distribuição para o speckle multidimensional
+
+Nesse caso o retorno é matricial complexo e segue uma distribuição Wishart complexa escalonada, denotada por
+`\(\boldsymbol{Y} \sim s\mathcal{W}^{\mathbb{C}}_m(\boldsymbol{\Sigma},L)\)`
+e com densidade
+
+`\begin{equation}
+f_{\boldsymbol{Y}}(\dot{\boldsymbol{Y}};\boldsymbol{\Sigma},L) = \frac{L^{mL}|\dot{\boldsymbol{Y}}|^{L-m}}{|\boldsymbol{\Sigma}|^L \Gamma_m(L)} \exp\bigl[
+-L\operatorname{tr}\bigl(\boldsymbol{\Sigma}^{-1}\dot{\boldsymbol{Y}}\bigr)\bigr]\,\mathbb{I}_{\mathbf{\Omega}_+}(\dot{\mathbf{Y}}),
+\label{eq:denswishart}
+\end{equation}`
+
+em que `\(\dot{\mathbf{Y}}\in\mathbf{\Omega}_+:=\{\mathbf{Y}\in \mathbb{C}^m\times \mathbb{C}^m:\mathbf{Y}=\mathbf{Y}^*\}\)`
+é uma saída de `\(\mathbf{Y}\)`,
+`\(|\cdot|\)` é o determinante da matriz, `\(\Gamma_m(L)=\pi^{m(m-1)/2}\prod_{i=0}^{m-1}\Gamma(L-i)\)`
+é a função gama multivariada
+`\(L\geq m\)` é NEL
+e `\(\operatorname{tr}(\cdot)\)`
+é o operador traço.
+
+
+---
+
+## Modelagem estatística para dados SAR e PolSAR multilook
+&lt;hr/&gt;
+
+### Distribuições de matrizes aleatórias
+
+#### Distribuição para retornos PolSAR por MM
+
+Seja `\(\boldsymbol{Y}\)`
+uma matriz aleatória seguindo a distribuição `\(s\mathcal{W}^{\mathbb{C}}_m\)`
+e 
+`\(X\)`
+uma variável aleatória escalar positiva.
+
+O MM para imagens *PolSAR* *multilook*
+assume  que cada *pixel* segue a identidade `\(\boldsymbol{Z}=\boldsymbol{Y}\times X\)`.
+Nesse caso, enquanto a variável aleatória `\(X\)` modela o retroespalhamento do terreno,
+`\(\boldsymbol{Y}\)` descreve o ruído *speckle* multidimensional *multilook*.
+A densidade neste caso é dada por
+
+---
+
+## Modelagem estatística para dados SAR e PolSAR multilook
+&lt;hr/&gt;
+
+### Distribuições de matrizes aleatórias
+
+#### Distribuição para retornos PolSAR por MM
+
+A densidade neste caso é dada por
+
+`\begin{align*}
+f_{\boldsymbol{Z}}&amp;(\dot{\boldsymbol{Z}};\alpha,\,\boldsymbol{\Sigma},\,L) =\int_0^{\infty}\, x^{-m^2}\, f_{\boldsymbol{Y}}(\dot{\boldsymbol{Z}}/x;\mathbf{\Sigma},L)\, f_{X}(x; \alpha,\mu=1)\, \mathrm{d}x\\
+=&amp;\,\,\frac{
+	L^{Lm}\Gamma(Lm-\alpha)
+}{
+	|\boldsymbol{\Sigma}|^L\,(-\alpha-1)^\alpha\,\Gamma(-\alpha)\,\Gamma_m(L)}
+\times \\
+&amp;\,\,
+|\dot{\boldsymbol{Z}}|^{L-m}
+\,\,[\,(-\alpha-1) \,+\, L \operatorname{tr}(\boldsymbol{\Sigma}^{-1}\dot{\boldsymbol{Z}})\,]^{\alpha-Lm}\,\mathbb{I}_{\mathbf{\Omega}_+}(\dot{\mathbf{Z}}),
+\end{align*}`
+
+em que o
+parâmetro `\(\alpha\)`
+está associado à rugosidade
+do relevo.
+
+---
+
+
+## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+
+&lt;hr&gt;
+
+A utilização da Teoria da Informação (TI) nos contextos de dados *SAR* e *PolSAR* tem se mostrado promissor.
+
+* *SAR* :
+ * CHAN; GAMBINI; FRERY , 2020;
+ * FRERY, 2019;
+ * WANG et al. , 2018;
+ * LIU; CAO; YANG , 2016;
+ * SHAN et al. , 2010.
+* *PolSAR* : 
+  * FERREIRA; COÊLHO; NASCIMENTO,2021;
+  * YU; YUE , 2020;
+  * BOUHLEL; MERIC, 2020;
+  * NASCIMENTO; FRERY; CINTRA, 2018;
+  * WANG et al. , 2017.
+ 
+
+---
+
+## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+
+&lt;hr&gt;
+
+Dois conceitos importantes são "Informação" e "Entropia" que foram inicialmente definidos no contexto de teoria da comunicação por Shannon (1948). Ele determinou que uma função adequada para quantificar informação preservando a aditividade é a função logarítmica; ou seja,
+
+&lt;br/&gt;
+
+`\begin{align}
+  \begin{array}{lr}
+    I(Z) = \log_b\left(\frac{1}{f(Z)}\right) = - \log_b\left(f(Z)\right), &amp; (1)
+  \end{array}
+\end{align}`
+
+
+em que `\(Z\)` é uma variável aleatória, `\(f(Z)\)` uma densidade (ou função de probabilidade), `\(b\)` é a base do logaritmo utilizado e os valores comumente usados para `\(b\)` são `\(2\)`, o número de Euler ( `\(e\)` ) e 10.
+
+---
+
+## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+
+&lt;hr&gt;
+
+Através do teorema H de Boltzmann (BOLTZMANN , 1970), Shannon definiu a entropia de uma variável aleatória contínua `\(Z\)` como:
+
+`\begin{align}
+  \begin{array}{lr}
+    H(Z) = E[I(Z)] = E[-\ln(f(Z))], &amp; (2)
+  \end{array}
+\end{align}`
+	
+em que `\(E(\cdot)\)` é o operador valor esperado e `\(I(Z)\)` é a informação obtida de `\(Z\)` (BORDA, 2011). A entropia pode ser reescrita de forma explícita como:
+	
+`\begin{align}
+  \begin{array}{lr}
+	  H(Z) = \int f(z)I(z)dz = - \int f(z)\log_b f(z)dz. &amp; (3)
+  \end{array}
+\end{align}`
+
+	
+
+---
+
+
+## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+
+&lt;hr&gt;
+
+
+Em 1994, Salicrú et al. (1994) propuseram a classe (h, `\(\phi\)`) de entropia - que generaliza o conceito original de entropia - e suas distribuições assintóticas.
+
+### A chasse h- `\(\phi\)` de entropias
+
+Seja 
+`\(f_{Z}(z;\boldsymbol{\theta})\)` 
+a função densidade de `\(Z\)`
+com vetor de parâmetros
+`\(\boldsymbol{\theta}\in \boldsymbol{\Theta}\subseteq \mathbb{R}^p\)`.
+A classe ( `\(h,\phi\)` ) de entropia de
+`\(Z\)` 
+é definida por
+
+`\begin{align}
+  \begin{array}{lr}
+H_{\phi}^h(\boldsymbol{\theta})\,=\,h\Big(\,\int_{\mathcal A}\phi(\,f_{Z}(z;\boldsymbol{\theta})\,)\mathrm{d}z\,\Big), &amp; (4)
+  \end{array}
+  \label{definicao_H}
+\end{align}`
+
+em que `\(\phi:\bigl[0,\infty\bigr) \rightarrow \mathbb{R}\)` é côncava e `\(h:\mathbb{R} \rightarrow \mathbb{R}\)` é crescente, ou `\(\phi\)` é convexa `\(h\)` 
+é decrescente.
+Em particular,
+a ES
+é obtida quando
+`\(h(x)=x\)` e `\(\phi(x)=-x\,\log(x)\)`. 
+
+---
+
+## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+
+&lt;hr&gt;
+
+
+O resultado a seguir foi proposto por Pardo et al. (1997) e aborda o uso de entropia em métodos de inferência estatística.
+
+&lt;div class="contrib"&gt;
+
+  &lt;div class="blockin"&gt; 
+  Lema 1:
+  &lt;/div&gt;
+  
+Seja
+`\(\widehat{\boldsymbol{\theta}} =[\widehat{\theta_1},\;\widehat{\theta_2},\;\cdots,\;\widehat{\theta_p}]^\top\)`
+o estimador de máxima verossimilhança (EMV) para
+`\(\boldsymbol{\theta}=[\theta_1,\;\theta_2,\;\cdots,\;\theta_p]^\top\)` 
+baseado na amostra aleatória
+(amostra independente e identicamente distribuída)
+`\(Z_1,\ldots,Z_N\)`, 
+de `\(Z\)` com densidade `\(f(z;\boldsymbol{\theta})\)`. 
+Então
+`\begin{equation}
+  \begin{array}{lr}
+\sqrt{N} \big[H_h^\phi(\widehat{\boldsymbol{\theta}})-H_h^\phi(\boldsymbol{\theta})\big] \xrightarrow[N\rightarrow \infty]{\mathcal D} \mathcal N\left(0,\sigma_{\phi}^2(\boldsymbol{\theta})\right), &amp; (5)
+  \end{array}
+\label{eq:conver_distg0i}
+\end{equation}`
+&lt;/div&gt;
+
+[@Pardo1997]
+
+---
+
+## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+
+&lt;hr&gt;
+
+### A classe h- `\(\phi\)` de entropias - cont.
+
+
+&lt;div class="contrib"&gt;
+
+  &lt;div class="blockin"&gt; 
+  Lema 1 - cont.:
+  &lt;/div&gt;
+
+em que  `\(\mathcal N(\mu,\sigma^2)\)` 
+é a distribuição Normal com média `\(\mu\)`
+e variância `\(\sigma^2\)`, '' `\(\xrightarrow[]{\mathcal{D}}\)` '' denota convergência em distribuição,
+
+`\begin{equation}
+  \begin{array}{lr}
+\sigma_{\phi}^2(\boldsymbol{\theta})=\boldsymbol{\delta}^\top \boldsymbol{{\mathcal K}}(\boldsymbol{\theta})^{-1}\boldsymbol{\delta}, &amp; (6)
+  \end{array}
+\label{varentro-trab2}
+\end{equation}`
+
+`\(\small \boldsymbol{{\mathcal K}}(\boldsymbol{\theta}) = E\{ -\partial^2 \log f_{Z}(Z;\boldsymbol{\theta})/ \partial \boldsymbol{\theta}\,\partial \boldsymbol{\theta}^\top\}\)`
+é a matriz de informação de Fisher (MIF)
+e 
+`\(\small \boldsymbol{\delta}=[\delta_1,\cdots,\delta_p]^\top\)`
+tal que
+`\(\delta_i=\partial H_h^\phi(\boldsymbol{\theta})/\partial \theta_i\)`
+para `\(i=1,2,\ldots,p\)`.
+
+	
+&lt;/div&gt;
+
+
+---
+
+
+## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+
+&lt;hr&gt;
+
+
+### A classe h- `\(\phi\)` de entropias - cont.
+
+De acordo com Nascimento, Frery e Cintra (2018), a metodologia para testes de hipóteses e intervalos de confiança baseada na entropia de Shannon é dada como segue:
+
+`\begin{equation}
+  \begin{array}{lr}
+\left\lbrace \begin{array}{cl}
+\mathcal{H}_0 : &amp; H_S(\boldsymbol{\theta}_1)=H_S(\boldsymbol{\theta}_2)=\cdot=H_S(\boldsymbol{\theta}_q) = \nu, \\
+\mathcal{H}_1 : &amp; \exists\, i,j \text{, tal que, } H_S(\boldsymbol{\theta}_i) \neq H_S(\boldsymbol{\theta}_j).
+\end{array} \right. &amp; (7)
+  \end{array}
+\end{equation}`
+
+
+**Há alguma evidência estatística para rejeitar a suposição de que duas amostras PolSAR vêm do mesmo modelo?**
+
+
+---
+
+
+
+## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+
+&lt;hr&gt;
+
+### A classe h- `\(\phi\)` de entropias - cont.
+
+A fim de dar resposta à questão, do Lema 1, temos que
+
+`\begin{align}
+  \begin{array}{lr}
+\sum\limits_{i=1}^q\dfrac{N_i(H_\text{S}(\widehat{\boldsymbol{\theta}}_i) - \overline{\nu})^2}{\sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_i)} \xrightarrow[N_i\rightarrow \infty]{\mathcal D} \chi^2_{q-1}, &amp; (8)
+  \end{array}
+\end{align}`
+
+
+em que
+
+`\begin{align}
+  \begin{array}{lr}
+\overline{\nu} = 
+\left[\sum\limits_{i=1}^q\dfrac{N_i}{\sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_i)}\right]^{-1}
+\sum\limits_{i=1}^q\dfrac{N_iH_\text{S}(\widehat{\boldsymbol{\theta}}_i)}{\sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_i)}. &amp; (9)
+  \end{array}
+\end{align}`
+
+
+---
+
+
+
+## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+
+&lt;hr&gt;
+
+&lt;br/&gt;
+### A classe h- `\(\phi\)` de entropias - cont.
+
+&lt;br/&gt;
+Uma resposta à questão pode ser dada pela seguinte estatística de teste:
+
+&lt;br/&gt;
+`\begin{align}
+  \begin{array}{lr}
+S_\text{S}(\widehat{\boldsymbol{\theta}}_1,\ldots,\widehat{\boldsymbol{\theta}}_q)\,=\,
+\sum\limits_{i=1}^q\dfrac{N_i(H_\text{S}(\widehat{\boldsymbol{\theta}}_i) - \overline{\nu})^2}{\sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_i)}. &amp; (10)
+  \end{array}
+\label{eq:statistic}
+\end{align}`
+
+
+---
+
+
+## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+
+&lt;hr&gt;
+
+### A classe h- `\(\phi\)` de entropias - cont.
+
+A partir dos resultados obtidos, pode-se mostrar então a proposição abaixo.
+
+
+&lt;div class="contrib"&gt;
+
+  &lt;div class="blockin"&gt; 
+  Proposição 1:
+  &lt;/div&gt;
+  
+Sejam
+`\(\widehat{\boldsymbol{\theta}}_i\)` para `\(i=1,\ldots,q\)` EMVs baseados em amostras aleatórias de tamanho `\(N_i\)` independentes entre si e suficientementes grandes. Se `\(S_S(\widehat{\boldsymbol{\theta}}_1,\ldots,\widehat{\boldsymbol{\theta}}_q) = s\)`, então a hipótese nula `\(\mathcal{H}_0\)`  pode ser rejeitada a um nível nominal `\(\alpha\)` se `\(P(\chi_{1}^2 &gt; s) \leq \alpha\)`.
+
+&lt;/div&gt;
+
+---
+
+## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+
+&lt;hr&gt;
+
+&lt;br/&gt;
+### A classe h- `\(\phi\)` de entropias - cont.
+
+
+&lt;br/&gt;
+No caso de comparar duas amostras do mesmo tamanho `\((N_1=N_2=N)\)` , a Equação (10) reduz a
+
+&lt;br/&gt;
+
+`\begin{align}
+  \begin{array}{lr}
+S_\text{S}(\widehat{\boldsymbol{\theta}}_1,\widehat{\boldsymbol{\theta}}_2) =N\dfrac{\left[H_\text{S}(\widehat{\boldsymbol{\theta}}_1) - H_\text{S}(\widehat{\boldsymbol{\theta}}_2)\right]^2}{\sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_1) + \sigma_{\text{S}}^2(\widehat{\boldsymbol{\theta}}_2)}. &amp; (11)
+  \end{array}
+\label{eq:statistic_reduces}
+\end{align}`
+
+
+---
+
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;hr/&gt;
+# ENTROPIA DE SHANNON PARA A DISTRIBUIÇÃO `\(\mathcal{G}_I^0\)` : NOVAS ABORDAGENS PARA SEGMENTAÇÃO E DETECÇÃO DE MUDANÇA EM IMAGENS SAR
+&lt;hr/&gt;
+
+---
+
+## Entropia de Shannon para a distribuição `\(\mathcal{G}_I^0\)`
+&lt;hr/&gt;
+
+&lt;br/&gt;
+
+* Apesar do processamento *multilook* impor um tipo de controle no efeito *speckle*, ainda assim, é necessários métodos específicos no processmento de das imagens *SAR*;
+
+
+* O modelo `\(\mathcal{G}_I^0\)` proposto por Frery et al. (1997) tem sido amplamente utilizado para descrever características de imagens *SAR*;
+
+* utilização do uso de medidas da TI combinadas com modelos que abarquem a física de formação das imagens;
+
+
+---
+
+## Entropia de Shannon para a distribuição `\(\mathcal{G}_I^0\)`
+&lt;hr/&gt;
+
+
+&lt;div class="contrib"&gt;
+
+  &lt;div class="blockin"&gt; 
+  Quanto à esse casamento entre TI e modelos *SAR*, duas questões em aberto (ao melhor do nosso conhecimento) são:
+  &lt;/div&gt;
+
+--
+
+1. **o que dizer da expressão em forma fechada para a entropia de Shannon utilizando a distribuição `\(\mathcal{G}_I^0\)` ? e**
+
+--
+
+2. **como aplicar essas quantidades e suas possíveis distribuições no processamento (particularmente na análise de agrupamento e detecção de mudança) de retornos SAR?**
+
+&lt;/div&gt;
+
+---
+
+## Entropia de Shannon para a distribuição `\(\mathcal{G}_I^0\)`
+&lt;hr/&gt;
+
+
+&lt;div class="contrib"&gt;
+
+  &lt;div class="blockin"&gt; 
+  Contribuições:
+  &lt;/div&gt;
+  
+As duas primeiras propostas consistem de métodos de **segmentação** e de **detecção de mudanças** para imagens *SAR*. Para tal, são assumidas as distribuições `\(\Gamma\)` e `\(\mathcal{G}_I^0\)` e suas versões estocásticas para entropia de Shannon (ES).
+
+Neste capítulo, uma forma fechada para expressão da entropia de Shannon com base na distribuição `\(\mathcal{G}_I^0\)` (um modelo flexível para intensidades *SAR*) é derivada. Adicionalmente, várias de suas propriedades são derivadas.
+&lt;/div&gt;
+
+---
+
+
+## Entropia estocástica de Shannon para `\(\mathcal{G}^0_I\)` e sua distribuição assintótica
+&lt;hr/&gt;
+
+&lt;!--
+Utilizando os resultados do Capítulo 3, algumas propriedades da ES são derivadas para o modelo `\(\mathcal{G}^0_I\)`, necessárias para a construção do novo mecanismo de segmentação.
+
+A seguir a expressão de forma fechada para ES da distribuição `\(\mathcal{G}^0_I\)` é
+--&gt;
+
+&lt;div class="contrib" style="font"&gt;
+
+&lt;div class="blockin"&gt; 
+
+Teorema 1 :
+&lt;/div&gt;
+
+Seja
+`\(Z \sim \mathcal{G}_I^0 (\alpha, \gamma, L)\)` ,
+então a ES de `\(Z\)` é dada por
+
+&lt;p style="font-size:19px;"&gt;
+`\begin{align}
+  \begin{array}{lr}
+    \begin{array}{rl}
+H_\text{S}(\,\mathcal{G}^0_I\,)
+\,=\, &amp;
+\,H_\text{S}(\,[\alpha,\gamma,L]\,)
+\,=\,
+E[-\log\,f_Z(Z;\alpha,\gamma,L)]
+\nonumber \\
+\,=\,&amp;
+\,-\,\log\frac{
+L^L\,\Gamma(L\,-\,\alpha)
+}{
+\Gamma(-\alpha)\,
+\gamma^\alpha
+\,\Gamma(L)
+}
+\nonumber \\
+&amp;\,+\,
+(1-L)\,\Big\{\,
+\psi^{(0)}(L) 
+\,-\,\log L 
+\,+\,\log\gamma 
+\,-\,\psi^{(0)}(-\alpha)
+\,\Big\}
+\nonumber \\
+&amp;
++
+\,(\,L\,-\,\alpha\,)\,
+[\,\psi^{(0)}(\,L\,-\,\alpha)\,+\,\log \gamma\,-\,\psi^{(0)}(-\alpha)\,], 
+  \end{array} &amp; (12)
+  \end{array}
+\label{entropy_g}
+\end{align}`
+em que `\(\psi^{(0)}(\cdot)\)` é a função digama.
+&lt;/p&gt;
+&lt;/div&gt;
+
+---
+
+## Entropia estocástica de Shannon para `\(\mathcal{G}^0_I\)` e sua distribuição assintótica
+&lt;hr/&gt;
+
+
+&lt;div class="contrib" style="font"&gt;
+
+&lt;div class="blockin"&gt; 
+
+Lema 2:
+&lt;/div&gt;
+
+Seja
+`\(Z \sim \Gamma^* ( L, \mu ) := \Gamma( L, L/\mu )\)` ,
+a ES de `\(Z\)` é dada por
+
+&lt;p style="font-size:20px;"&gt;
+`\begin{align}
+  \begin{array}{lr}
+    \begin{array}{rl}
+H_\text{S}(\,\Gamma^*\,)\,=\,&amp;H_\text{S}(\,[L,\mu]\,)\, \\
+=\,&amp;\,L \, \left( \,\log L\, - \, \log \mu \right) + \log \Gamma(L) + (1-L)\psi^{(0)}(L).
+  \end{array} &amp; (13)
+  \end{array}
+\label{entropy_gam}
+\end{align}`
+&lt;/p&gt;
+&lt;/div&gt;
+
+Nesse estudo, é assumido o termo "entropia estocástica" como a expressão da entropia após a substituição dos parâmetros por seus estimadores consistentes (como pelos EMVs).
+
+---
+
+## Um novo algoritmo de segmentação baseado em Entropia
+&lt;hr/&gt;
+
+
+No que segue, um novo paradigma de segmentação para imagens *SAR* multidimensional é desenvolvido, levando em consideração ES estocástica para `\(\Gamma^*\)` e `\(\mathcal{G}_I^0\)` .
+
+Assumindo que
+(i) `\(\widehat{\mathbf{{H}}}_S(i)\)` e `\(\widehat{\mathbf{{H}}}_S(j)\)` são independentes
+e
+(ii) adotando a probabilidade a priori de que o `\(i\)`-ésimo *pixel* pertence ao `\(g\)`-ésimo grupo como `\(p\left(U_{ig} = 1\right) = \pi_g\in [0, 1]\)` tal que
+`\(\sum_{g=1}^c \pi_g = 1\)`,
+então 
+a densidade conjunta da imagem, `\(\widehat{\mathbf{{H}}}_S\)`, é
+
+`\begin{align}
+  \begin{array}{lr}
+p\left(\mathbf{\dot{H}}_S;\boldsymbol{\theta}\right) =
+\prod_{i=1}^T \left\{ \sum_{g=1}^{c} \pi_g\bigg[ f_{_\mathcal{N}}(\mathbf{\dot{H}}_S(i);\boldsymbol{\theta}_g)\bigg]\right\}, &amp; (14)
+  \end{array}
+\label{modelmmg0i}
+\end{align}`
+
+que é o modelo de segmentação.
+
+---
+
+## Um novo algoritmo de segmentação baseado em Entropia
+&lt;hr/&gt;
+
+
+&lt;img src="imagens/trabalho 2/algoritmo-SAR.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+Se o erro absoluto entre os passos `\((k)\)` e `\((k+1)\)` é menor do que um certo limite especificado
+(i.e., |
+`\(S^{(k+1)} - S^{(k)}| &lt; \epsilon )\)` ,
+então o algoritmo converge. Neste estudo foi usado um limite de
+`\(\epsilon = 1\times10^{-5}\)`.
+
+
+---
+
+
+## Um novo algoritmo para detecção de mudança baseado em Entropia
+
+
+&lt;hr/&gt;
+
+
+&lt;img src="imagens/trabalho 2/algoritmo-det-SAR.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+São retiradas amostras das imagens com janelamento `\(3\times3\)` ao redor do *pixel* em estudo e estimado os parâmetros para aplicação do teste de hipóteses. O nível de significância adotado nesse estudo foi de `\(\alpha = 1\times10^{-4}\)`.
+
+
+---
+
+# Resultados - Segmentação
+&lt;hr/&gt;
+
+### Desempenho de segmentação sobre uma cena da imagem EMISAR de Foulum, Dinamarca.
+
+&lt;img src="imagens/trabalho 2/foulum-SAR.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Resultados - Segmentação
+&lt;hr/&gt;
+
+### Desempenho de segmentação sobre uma cena da imagem EMISAR de Foulum, Dinamarca.
+
+&lt;img src="imagens/trabalho 2/foulum-SAR-best.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Resultados - Segmentação
+&lt;hr/&gt;
+
+### Desempenho de segmentação sobre uma cena da imagem E-SAR de Munique, Alemanha.
+
+&lt;img src="imagens/trabalho 2/munique-SAR.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Resultados - Segmentação
+&lt;hr/&gt;
+
+### Desempenho de segmentação sobre uma cena da imagem E-SAR de Munique, Alemanha.
+
+&lt;img src="imagens/trabalho 2/munique-SAR-best.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+
+# Resultados - Segmentação
+&lt;hr/&gt;
+
+### Desempenho de segmentação sobre uma cena da imagem AIRSAR de Flevoland, Holanda.
+
+&lt;img src="imagens/trabalho 2/flevolad-SAR.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Resultados - Segmentação
+&lt;hr/&gt;
+
+### Desempenho de segmentação sobre uma cena da imagem AIRSAR de Flevoland, Holanda.
+
+&lt;img src="imagens/trabalho 2/flevolad-SAR-best.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+# Resultados - Detecção de mudança
+&lt;hr/&gt;
+
+### Resultados da detecção de mudança para região de Los Angeles (EUA).
+
+&lt;img src="imagens/trabalho 2/detec-cena1-SAR.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Resultados - Detecção de mudança
+&lt;hr/&gt;
+
+### Resultados da detecção de mudança para região de Los Angeles (EUA).
+
+&lt;img src="imagens/trabalho 2/detec-cena1-SAR-best.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+# Resultados - Detecção de mudança
+&lt;hr/&gt;
+
+### Resultados da detecção de mudança para região de Califórnia (EUA).
+
+&lt;img src="imagens/trabalho 2/detec-cena2-SAR.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Resultados - Detecção de mudança
+&lt;hr/&gt;
+
+### Resultados da detecção de mudança para região de Califórnia (EUA).
+
+&lt;img src="imagens/trabalho 2/detec-cena2-SAR-best.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;hr/&gt;
+# ENTROPIA DE SHANNON PARA A DISTRIBUIÇÃO `\(\mathcal{G}_m^0\)` : ENSAIOS SOBRE SEGMENTAÇÃO NÃO SUPERVISIONADA E DETECÇÃO DE MUDANÇA
+&lt;hr/&gt;
+
+---
+
+##  Entropia de Shannon para a distribuição `\(\mathcal{G}_m^0\)`
+&lt;hr/&gt;
+
+&lt;br/&gt;
+
+* Este capítulo consiste na extensão do estudo anterior para as distribuições polarimétricas `\(\mathcal{G}^0_m\)` e Wishart complexas escalonadas ( `\(\text{s}\mathcal{W}^\mathbb{C}_m\)` ). Ou seja, novas estratégias de segmentação e detecção de mudança são endereçadas;
+
+* Serão utilizados medidas de Teoria da Informação para lidar com imagens *PolSAR*;
+
+* Um dos desafios no processamento de imagens é o *speckle*. Ele é modelado como ruído multiplicativo e tem um efeito negativo, em muitos casos, levando a uma interpretação errada da cena nas análises (LANG et al., 2014).
+
+---
+
+##  Entropia de Shannon para a distribuição `\(\mathcal{G}_m^0\)`
+
+&lt;hr/&gt;
+
+&lt;br/&gt;
+
+&lt;div class="contrib"&gt;
+
+  &lt;div class="blockin"&gt; 
+  Contribuições:
+  &lt;/div&gt;
+  
+As contribuições no contexto *PolSAR multilook* envolvem as distribuições `\(\text{s}\mathcal{W}^\mathbb{C}_m\)` e `\(\mathcal{G}^0_m\)` para descrever retornos *PolSAR*.
+Inicialmente **uma expressão em forma fechada para a entropia de Shannon da `\(\mathcal{G}^0_m\)` é derivada** bem como várias quantidades matemáticas associadas, tais que como funções gradiente sobre a nova entropia e a matriz informação observada. Com base em seu comportamento assintótico,
+novos **algoritmos de segmentação** não supervisionado e **detecção de mudança** são propostos.
+&lt;/div&gt;
+
+---
+
+
+
+## Background para Inferência Estatística baseada na Entropia de Shannon
+
+&lt;hr/&gt;
+
+&lt;!--Frery, Cintra e Nascimento (2013) derivaram as entropias de Shannon para o modelo polarimétrico `\(\text{s}\mathcal{W}^\mathbb{C}_m\)`. A seguir é derivado a ES para a distribuição `\(\mathcal{G}^0_m\)` e o resultado é mostrado no seguinte teorema. --&gt;
+
+&lt;div class="contrib"&gt;
+
+  &lt;div class="blockin"&gt; 
+  Teorema 2 : 
+  &lt;/div&gt;
+
+Seja
+`\(\mathbf{Z} \sim \mathcal{G}^0_m ( \alpha, \mathbf{\Sigma}, L )\)`,
+então a entropia de Shannon para
+`\(\mathbf{Z}\)`
+é dada por
+
+&lt;p style="font-size:20px;margin-top: -15px;"&gt;
+`\begin{align}
+\begin{array}{lr}
+\begin{array}{rl}
+H_\text{S}(\,\mathcal{G}^0_m\,) \, = &amp; 
+\,H_\text{S}(\,[\alpha,\mathbf{\Sigma},L]\,) \nonumber \\ 
+	\,= &amp; \,
+	(m-L)\,\Big\{\,\log|\mathbf{\Sigma}|\,+\,\psi^{(0)}(L) -\,m\,\log L \nonumber  \\
+	&amp;
+	\,+\,m\,\log(-\alpha-1)\,-\,m\,\psi^{(0)}(-\alpha)\,\Big\} \\
+	&amp;
++\,(\,m\,L\,-\,\alpha\,)\,[\,\psi^{(0)}(\,m\,L\,-\,\alpha\,)  +\,\log(\,-\alpha\,-\,1\,)\,\\
+	&amp;
+	-\,\psi^{(0)}(\,-\alpha\,)\,]
+	\,-\,\log\frac{
+		L^{mL}\,\Gamma(mL\,-\,\alpha)
+	}{
+		|\mathbf{\Sigma}|^L\,\Gamma(-\alpha)\,(-\alpha-1)^\alpha\,\Gamma_m(L)
+	}. \nonumber
+	\end{array} &amp; (15)
+	\end{array}
+\end{align}`
+&lt;/p&gt;
+&lt;/div&gt;
+
+
+---
+
+## Background para Inferência Estatística baseada na Entropia de Shannon
+
+&lt;hr/&gt;
+
+Como um caso particular,
+temos
+`\(H_S(\mathcal{G}^0_m)\rightarrow H_S(s\mathcal{W}^{\mathbb{C}}_m)\)`
+quando
+`\(\alpha \rightarrow \infty\)` ,
+em que ( FRERY; CINTRA; NASCIMENTO, 2013)
+
+&lt;div class="contrib"&gt;
+
+  &lt;div class="blockin2"&gt; 
+  &lt;/div&gt;
+
+&lt;p style="font-size:22px;margin-top: -15px;"&gt;
+`\begin{align}
+\begin{array}{lr}
+    \begin{array}{rl}
+H_\text{S}(\,s\mathcal{W}^{\mathbb{C}}_m\,)\,= &amp; \,H_\text{S}(\,[\mathbf{\Sigma},L]\,) \nonumber \\
+\,= &amp; \,
+\dfrac{m(m-1)}{2}\log \pi - m^2 \log L + m \log |\mathbf{\Sigma}| \\
+&amp; \,+ mL 
++(m-L)\psi_m^{(0)}(L) \nonumber \\
+&amp;\, + \sum\limits_{k=0}^{m-1} \log  \Gamma (L-k).
+	\end{array} &amp; (16)
+	\end{array}
+\end{align}`
+&lt;/p&gt;
+&lt;/div&gt;
+
+
+---
+
+
+
+## Um novo algoritmo de segmentação baseado em Entropia
+&lt;hr/&gt;
+
+Adotando a probabilidade a priori do `\(i\)`-ésimo *pixel* pertencer ao `\(g\)`-ésimo grupo como `\(p\left(U_{ig} = 1\right) = \pi_g\in [0, 1]\)`
+tal que `\(\sum_{g=1}^c \pi_g = 1\)`, então a densidade conjunta para `\(\widehat{\mathbf{{H}}}_S\)` é dada por 
+	
+`\begin{align}
+  \begin{array}{lr}
+p\left(\dot{H}_S;\mathbf{\theta}\right) = \prod_{i=1}^T \left\{ \sum_{g=1}^{c} \pi_g\bigg[ f_{_\mathcal{N}}(\dot{H}_S(i);\mathbf{\theta}_g)\bigg]\right\}, &amp; (17)
+  \end{array}
+\end{align}`
+	
+que denominamos como modelo de segmentação.
+
+---
+
+## Um novo algoritmo de segmentação baseado em Entropia
+&lt;hr/&gt;
+
+### Estimativa dos parâmetros do modelo pelo algoritmo Expectation-Maximization Estocástico
+
+
+* O algoritmo expectation-maximization estocástico (Stochastic Expectation-Maximization - SEM)
+
+* É uma versão estocástica do EM e algumas vantagens do algoritmo SEM são:
+    * o baixo custo computacional em relação ao EM;
+    * a convergência para o máximo local quando o modelo ajustado é analiticamente intratável.
+
+* não há necessidade de determinar a esperança condicional na forma fechada como é exigido no EM e também é possível substituir os EMVs por outros estimadores, desde que suas propriedades de convergência sejam satisfeitas.
+
+---
+
+## Algoritmo de segmentação baseado em Entropia
+&lt;hr/&gt;
+
+
+&lt;img src="imagens/trabalho 3/algoritmo-seg-polsar.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+Diversas formas podem ser usadas para medir a convergência do algoritmo SEM.
+Neste estudo, utiliza-se 	o erro absoluto relativo das verossimilhanças entre as etapas. Se o erro absoluto relativo é menor que um certo *threshold* ( `\(\epsilon\)` ), então o algoritmo converge. Neste estudo foi usado `\(\epsilon = 1\times10^{-5}\)`.
+
+---
+
+## Algoritmo de detecção de mudança 
+&lt;hr/&gt;
+
+
+&lt;img src="imagens/trabalho 3/algoritmo-det-polsar.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+Pares de amostras de um janelamento `\(3\times3\)` sobre um mesmo ponto geográfico de duas imagens obtidas em instantes distintos são selecionados.
+ara cada par de amostras, são executados os testes para duas amostras com base nas ESs das distribuições `\(\mathcal{G}^0_m\)` e `\(\text{s}\mathcal{W}^\mathbb{C}_m\)`. O nível de significância adotado em todos os casos é `\(\alpha = 1 \times 10^{-4}\)`. 
+
+---
+
+## Resultados - Segmentação
+
+&lt;hr/&gt;
+
+### Estudo de segmentação sobre uma cena da imagem AIRSAR de São Francisco, EUA
+
+&lt;img src="imagens/trabalho 3/SF-seg.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+## Resultados - Segmentação
+
+&lt;hr/&gt;
+
+### Estudo de segmentação sobre uma cena da imagem AIRSAR de São Francisco, EUA
+
+&lt;img src="imagens/trabalho 3/SF-seg-best.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Resultados - Segmentação
+
+&lt;hr/&gt;
+
+### Estudo de segmentação sobre uma cena da imagem E-SAR de Munique, Alemanha
+
+&lt;img src="imagens/trabalho 3/munique-seg.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+## Resultados - Segmentação
+
+&lt;hr/&gt;
+
+### Estudo de segmentação sobre uma cena da imagem E-SAR de Munique, Alemanha
+
+&lt;img src="imagens/trabalho 3/munique-seg-best.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Resultados - Segmentação
+
+&lt;hr/&gt;
+
+### Estudo de segmentação sobre uma cena da imagem AgriSAR de DEMMIN-Görmin, Alemanha.
+
+&lt;img src="imagens/trabalho 3/demmin-seg.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Resultados - Segmentação
+
+&lt;hr/&gt;
+
+### Estudo de segmentação sobre uma cena da imagem AgriSAR de DEMMIN-Görmin, Alemanha.
+
+&lt;img src="imagens/trabalho 3/demmin-seg-best.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Resultados - Detecção de mudança
+
+&lt;hr/&gt;
+
+### Resultados da detecção de mudança para região de Los Angeles (EUA).
+
+&lt;img src="imagens/trabalho 3/cena1-det.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Resultados - Detecção de mudança
+
+&lt;hr/&gt;
+
+### Resultados da detecção de mudança para região de Los Angeles (EUA).
+
+&lt;img src="imagens/trabalho 3/cena1-det-best.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Resultados - Detecção de mudança
+
+&lt;hr/&gt;
+
+### Resultados da detecção de mudança para região de Califórnia (EUA).
+
+&lt;img src="imagens/trabalho 3/cena2-det.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Resultados - Detecção de mudança
+
+&lt;hr/&gt;
+
+### Resultados da detecção de mudança para região de Califórnia (EUA).
+
+&lt;img src="imagens/trabalho 3/cena2-det-best.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;hr/&gt;
+# SOMAS COMPOSTAS PARA MATRIZES ESTOCÁSTICAS APLICADAS A SISTEMAS POLSAR
+&lt;hr/&gt;
+
+
+---
+
+### SOMAS COMPOSTAS PARA MATRIZES ESTOCÁSTICAS APLICADAS A SISTEMAS POLSAR
+
+&lt;hr/&gt;
+
+
+* Este capítulo é focado na proposta de distribuições para dados *PolSAR* multilook cujo suporte é o conjunto de matrizes hermitianas positivas definidas, diga-se `\(\mathbf{\Omega}_+\)` , também conhecido como o conjunto das Matrizes de covariâncias amostrais (MCA) (BIAN; MERCER, 2014).
+
+* Eles são frequentemente derivados:
+   * ou da modelagem multiplicativa (MM) (FREITAS; FRERY; CORREIA, 2005)
+   * ou da transformada inversa de Fourier (TIF) (YUEH et al., 1989).
+
+* Esses modelos possuem uma explicação física e descrevem bem vários tipos de solo puro (que possuem mesma característica), porém eles frequentemente requerem uma abordagem de mistura para trabalhar com terrenos multimodais.
+
+
+---
+
+### SOMAS COMPOSTAS PARA MATRIZES ESTOCÁSTICAS APLICADAS A SISTEMAS POLSAR
+
+&lt;hr/&gt;
+
+&lt;br/&gt;
+* Em geral, uma imagem *PolSAR* é não homogênea e a definição de uma janela automática na imagem (sobre a qual frequentemente se quer extrair atributos locais) pode apresentar dados multimodais;
+
+* Nesse caso, a distribuição dos dados pode ser aproximada por um modelo de mistura ( EL-ZAART; ZIOU , 2007; EVERITT , 2014);
+
+* Este trabalho avança-se na proposta de dois novos modelos para dados *PolSAR multilook*.
+
+
+---
+
+### SOMAS COMPOSTAS PARA MATRIZES ESTOCÁSTICAS APLICADAS A SISTEMAS POLSAR
+
+&lt;hr&gt;
+
+
+&lt;div class="contrib"&gt;
+
+  &lt;div class="blockin"&gt; 
+  Contribuições:
+  &lt;/div&gt;
+  
+Novas distribuições para dados *PolSAR multilook* usando a abordagem de soma estocástica são introduzidas para descrever dados multimodais. Elas são denominadas como composta Poisson truncada Wishart complexa ( `\(\text{CPT}\mathcal{W}^\mathbb{C}_m\)` ) e composta geométrica Wishart complexa ( `\(\text{CG}\mathcal{W}^\mathbb{C}_m\)` ). Algumas propriedades matemáticas das distribuições são derivadas, tais como as funções características (fc) e cumulantes de Mellin. Novos processos de estimação por máxima verossimilhança via algoritmo *EM (Expectation-Maximization)*
+são derivados e avaliados por experimentos Monte Carlo.
+&lt;/div&gt;
+
+---
+
+## Modelos da literatura e formulação física das novas propostas
+
+&lt;hr/&gt;
+
+Tomando o MM como mecanismo gerador de distribuições *PolSAR*, cada retorno associado a uma entrada da imagem é o produto de duas variáveis aleatórias independentes, que descrevem a configuração do terreno e o efeito do speckle.
+
+
+o modelo do retorno `\(\mathbf{Z} = \mathbf{Y} X\)` é dado por maneira (ANFINSEN; ELTOFT , 2011)
+
+`\begin{align*}
+f_{\mathbf{Z}}(\dot{\mathbf{Z}})
+=
+\int_0^{\infty}	
+x^{-m^2}\underbrace{f_{\mathbf{Y}}(\dot{\mathbf{Z}}/x)}_{\text{Speckle}}\underbrace{f_X(x)}_{\text{Backscatter}}
+\mathrm{d}x,	
+\end{align*}`
+
+em que `\({\dot{\mathbf{Z}}}\in\mathbf{\Omega}_+:=\{\mathbf{Z}\in \mathbb{C}^m\times \mathbb{C}^m:\mathbf{Z}=\mathbf{Z}^*\}\)`
+é uma possível realização de `\(\mathbf{Z}\)`
+e
+`\((\cdot)^*\)` é o operador transposto conjugado.
+
+
+---
+
+
+## Modelos da literatura e formulação física das novas propostas
+ &lt;hr/&gt;
+ 
+&lt;p style="text-align: center;"&gt;Tabela 1 - Resumo das distribuições MCA.
+&lt;img src="imagens/trabalho 1/resumo-mca.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;/p&gt;
+ 
+---
+
+
+## Modelos da literatura e formulação física das novas propostas
+ &lt;hr/&gt;
+ 
+ &lt;br/&gt;
+ 
+&lt;img src="imagens/trabalho 1/diagrama-distribuicoes.png" width="100%" style="display: block; margin: auto;" /&gt;
+Figura 1 - Diagrama das relações entre distribuições *PolSAR*. Aqui, o vetor de parâmetros ( `\(\alpha , \beta , \lambda , p\)` ) representa a forma, `\(\mathbf{\Sigma}\)` denota um tipo de locação ou uma matriz de dispersão e `\(L\)` é o NEL.
+
+ 
+---
+
+## Modelos da literatura e formulação física das novas propostas
+&lt;hr/&gt;
+
+* evidências de que a distribuição Wishart complexa pode representar o retorno *PolSAR* de cenários homogêneos (GOODMAN, 1963; HAGEDORNA et al., 2006).
+
+* as distribuições Poisson truncada e geométrica são usadas para modelar a quantidade de sinais retornados em uma célula de resolução.
+
+* combinando essas duas evidências, propomos a soma aleatória da distribuição Wishart complexa com o número de termos seguindo as leis Poisson truncada e geométrica como dois descritores para o retorno de dados *PolSAR*;
+
+---
+
+## Novos modelos
+&lt;hr/&gt;
+
+Primeiramente, 
+seja
+`\(\mathbf{Z}_i\sim \mathcal{W}_{m}^{\mathbb{C}}(\mathbf{\Sigma},L)\)` para `\(i=1,\ldots,N\)`
+com função densidade de probabilidade
+
+`\begin{align}
+f({\dot{\mathbf{Z}}_i}) =
+  \frac{|{\dot{\mathbf{Z}}_i}|^{L-m}}{|\mathbf{\Sigma}|^L\Gamma_m(L)}
+\exp \left\{ - \operatorname{tr} \left(\mathbf{\Sigma}^{-1}{\dot{\mathbf{Z}}_i} \right)  \right\}
+ \, \mathbb{I}_{ \mathbf{ \Omega }_+ } ( \dot{ \mathbf{S} } )
+\end{align}`
+
+
+em que `\(\Gamma_m(L)\)`
+é a função gama multivariada.
+Então,
+`\(\mathbf{S}_k=\sum_{i=1}^k\mathbf{Z}_i\sim \mathcal{W}_{m}^{\mathbb{C}}(\mathbf{\Sigma},kL)\)` (MAIWALD; KRAUS, 2000)[@maiwald2000calculation]
+e
+a matriz de coerência por célula
+segue a soma composta
+`\(\mathbf{S}=\sum_{i=1}^N\mathbf{Z}_i\)` ~(FINE, 2006)[@fine2006probability] e
+considerando que `\(N\sim \text{TPo}(\lambda)\)`,
+logo a densidade é dada por
+
+---
+
+## Novos modelos
+&lt;hr/&gt;
+
+`\begin{align*}
+f({\dot{\mathbf{S}}})
+&amp;=\sum_{k=1}^\infty P(N=k)f_{\mathbf{S}_k}({\dot{\mathbf{S}}})\,\mathbb{I}_{\mathbf{\Omega}_+}(\dot{\mathbf{S}})
+\\
+&amp;=
+\left(\frac{1}{\mathrm{e}^\lambda-1}\right)
+\sum_{i=1}^\infty\frac{\lambda^k}{k!}f_{\mathcal{W}_{m}^{\mathbb{C}}(\mathbf{\Sigma},kL)}({\dot{\mathbf{S}}})
+\\
+&amp;=\left(\frac{\mathrm{e}^{-\operatorname{tr}\left(\mathbf{\Sigma}^{-1}{\dot{\mathbf{S}}}\right)}}{|{\dot{\mathbf{S}}}|^m\left(\mathrm{e}^\lambda-1\right)}\right)\sum_{i=1}^\infty\frac{\left(\lambda|\mathbf{\Sigma}^{-1}{\dot{\mathbf{S}}}|^L\right)^k}{k!\Gamma_m(kL)},
+\end{align*}`
+em que `\({\dot{\mathbf{S}}}=\{s_{i,j}\}\)` é uma possível realização de `\({\mathbf{S}}=\{S_{i,j}\}\)`.
+
+Esta situação é denotada por
+`\(\mathbf{S}\sim \text{CPT}\mathcal{W}_{m}^{\mathbb{C}}(\lambda,\mathbf{\Sigma},L)\)`.
+
+---
+
+
+## Novos modelos
+&lt;hr/&gt;
+
+
+Agora assuma que `\(N\sim \text{Geo}(p)\)` e `\(\mathbf{Z}_i\sim \mathcal{W}_{m}^{\mathbb{C}}(\mathbf{\Sigma},L)\)` para `\(i=1,\ldots,N\)`,
+a matriz de coerência por célula segue a soma composta
+ `\(\mathbf{S}=\sum_{i=1}^N\mathbf{Z}_i\)` com densidade
+`\begin{align*}
+f({\dot{\mathbf{S}}})
+&amp;=\sum_{k=1}^\infty P(N=k)f_{\mathbf{S}_k}(\dot{\mathbf{S}}) \mathbb{I}_{\mathbf{\Omega}_+}(\dot{\mathbf{S}})
+\\
+&amp;=
+\left(
+\frac{
+	p\mathrm{e}^{-\operatorname{tr}\left(\mathbf{\Sigma}^{-1}{\dot{\mathbf{S}}}\right)}
+}{
+	(1-p)|{\dot{\mathbf{S}}}|^m
+}
+\right)
+\sum_{k=1}^\infty
+\frac{
+	\left((1-p)|\mathbf{\Sigma}^{-1}{\dot{\mathbf{S}}}|^L\right)^k
+}{
+	\Gamma_m(kL)
+}\,\mathbb{I}_{\mathbf{\Omega}_+}(\dot{\mathbf{S}}).
+\end{align*}`
+
+Essa situação é denotada como `\(\mathbf{S}\sim \text{CG}\mathcal{W}_{m}^{\mathbb{C}}(p,\mathbf{\Sigma},L)\)`.
+
+
+---
+
+## Novos modelos
+&lt;hr/&gt;
+
+A Figuraa seguir  mostra as densidades marginais de
+`\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` e `\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)`.
+Elas podem assumir formas multimodais.
+
+
+&lt;img src="imagens/trabalho 1/densidades-marginais.png" width="100%" style="display: block; margin: auto;" /&gt;
+Figura 2 - Densidades marginais das distribuições  `\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` e  `\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)`.
+
+---
+
+
+## Propriedades Matemáticas -  Função característica
+
+&lt;hr/&gt;
+
+&lt;div class="contrib"&gt;
+
+  &lt;div class="blockin"&gt; 
+  Lema 3:
+  &lt;/div&gt;
+
+Seja
+`\(\mathbf{S} = \sum\limits_{i=1}^{N} \mathbf{Z}_i\)`
+tal que
+`\(\mathbf{Z}_1,\ldots,\mathbf{Z}_N\)`
+é uma amostra aleatória retirada de
+`\(\mathbf{Z}\)`
+com *fc*
+`\(\varphi_{\mathbf{Z}}(\cdot)\)`
+e
+`\(N\)`
+é
+uma variável aleatória inteira positiva
+com *fc*
+`\(\varphi_{N}(\cdot)\)`.
+A *fc* de `\(\mathbf{S}\)` quando `\(N\)` e `\(\mathbf{Z}_i\)` são independentes, é dado por
+`$$\varphi_{\mathbf{S}}(\mathbf{T}) = E(e^{i\mathbf{T}\mathbf{S}}) =  \varphi_{N}\left(-i\log\varphi_{\mathbf{Z}}(\mathbf{T})\right),\text{ em que } i = \sqrt{-1}.$$`
+&lt;/div&gt;
+
+---
+
+
+## Propriedades Matemáticas -  Função característica
+
+&lt;hr/&gt;
+
+* `\(N \sim \text{TPo}(\lambda)\)` com `\(\varphi_{N}(t) = \dfrac{e^{\lambda e^{it}}-1}{e^{\lambda}-1}\)`.
+
+* `\(N \sim \text{Geo}(p)\)` com `\(\varphi_{N}(t) = \dfrac{pe^{it}}{1-qe^{it}}	= \dfrac{p}{e^{-it}-q}\)`.
+
+* `\(\mathbf{Z}_k\sim \mathcal{W}_{m}^{\mathbb{C}}(L,\mathbf{\Sigma})\)`
+	com *fc*
+	`\(\varphi_{\mathbf{Z}_k}(\mathbf{T}) =  |\mathbf{\Sigma}|^{-L}|\mathbf{\Sigma}^{-1} - i\mathbf{T}|^{-L}\)`
+
+--
+
+&lt;br/&gt;
+
+## Estimação por máxima verossimilhança via EM
+&lt;hr/&gt;
+
+* Os EMVs para os parâmetros para as ditribuições
+`\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` e  `\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)` foram obtidos
+por meio do algoritmo EM (DEMPSTER; LAIRD; RUBIN, 1977).
+
+
+---
+
+
+## Diagrama de Mellin
+&lt;hr/&gt;
+
+A transformada de Mellin aplicada a matrizes aleatórias hermitianas é definida em
+`\(\mathbf{\Omega}_+\)`
+(ANFINSEN; DOULGERIS; ELTOFT, 2009) e, portanto, pode ser aplicada aos modelos
+`\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` e  `\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)`.
+
+Seja `\(\mathbf{C} \in  \mathbf{\Omega}_+\)`, 
+a transformada de Mellin para o mapeamento
+`\(g(\mathbf{C}): \mathbf{\Omega}_+ \rightarrow \mathbb{R}\)`
+é definida como \cite{anfinsen2011application}:
+
+`\begin{align*}
+\phi_{\mathbf{C}}(s) &amp; = \mathcal{M}\{g(\mathbf{C})\}(s)
+= \int\limits_{\mathbf{\Omega}_+}^{}|\mathbf{C}|^{s-m}g(\mathbf{C})\mathrm{d}\mathbf{C}
+\end{align*}`
+
+com `\(s \in \mathbb{C}\)`, sempre que a integral existe.
+
+---
+
+
+## Diagrama de Mellin
+&lt;hr/&gt;
+
+A função geradora de cumulantes do tipo Mellin (*Mellin-kind cumulant-generating function* - MCGF)
+é definida como
+
+`\begin{align}
+\varphi_{\mathbf{C}}(s) = \log \phi_{\mathbf{C}}(s),
+\end{align}`
+
+e
+a matriz de log-cumulante (MLC)
+de `\(\nu\)` -ésima ordem
+é definida como
+
+`\begin{align}
+\left. \kappa_\nu{\mathbf{C}} = \dfrac{d^\nu}{ds^\nu}\varphi_{\mathbf{C}}(s) \right|_{s=m}.
+\end{align}`
+
+---
+
+
+## Experimentos Numéricos - Análise com dados artificiais
+&lt;hr/&gt;
+
+Um experimento de Monte Carlo é realizado  para quantificar
+o comportamento assintótico dos \acrshort{emv}s para os parâmetros `\([\lambda,\mathbf{\Sigma}]\)` e `\([p,\mathbf{\Sigma}]\)`.
+
+1. amostras das distribuições
+	`\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)`
+	e
+	`\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)`
+	são geradas;
+2. tamanhos
+	`\(T=10, 30, 100\)` e `\(1000\)`
+	e mil replicas Monte Carlo são utilizadas.
+3. adotamos NEL igual a quatro (L = 4)
+4. e uma matriz comum
+
+`\begin{align}
+	\mathbf{\Sigma}
+	=
+	\left[\!\!
+	\begin{array}{ccc}
+	0.07582+0i &amp; 0.00364+0.00388i &amp; 0.01604+0.01125i\\
+	&amp; 0.03737+0i &amp; 0.00151+0.00202i \\
+	&amp; &amp; 0.06308+0i
+	\end{array} 
+	\!\! \right]\!\!,
+\end{align}`
+
+com
+`\(|\mathbf{\Sigma}| =  0.00016 \text{ e } \text{tr}(\mathbf{\Sigma})= 0.17626\)` .
+
+---
+
+## Experimentos Numéricos - Análise com dados artificiais
+&lt;hr/&gt;
+
+Tabela 2 - Performance dos EMVs para dados `\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)`
+&lt;img src="imagens/trabalho 1/emv-cptw.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+*Parâmetros Verdadeiros:* 
+`\(|\mathbf{\Sigma}| =  0.00016 \text{ e } \text{tr}(\mathbf{\Sigma})= 0.17626\)`
+
+---
+
+
+## Experimentos Numéricos - Análise com dados artificiais
+&lt;hr/&gt;
+
+Tabela 3 - Performance dos EMVs para dados `\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)`
+
+&lt;img src="imagens/trabalho 1/emv-cgw.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+*Parâmetros Verdadeiros:* 
+`\(|\mathbf{\Sigma}| =  0.00016 \text{ e } \text{tr}(\mathbf{\Sigma})= 0.17626\)`
+
+---
+
+
+## Experimentos Numéricos - Análise de dados reais
+&lt;hr/&gt;
+
+&lt;img src="imagens/trabalho 1/emv-sf.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+Figura 3 - Mapas dos parâmetros estimados das distribuições `\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` ( acima ) e
+`\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)` ( em baixo ) para a imagem
+ São Francisco.
+
+---
+
+
+## Experimentos Numéricos - Análise de dados reais
+&lt;hr/&gt;
+
+&lt;img src="imagens/trabalho 1/emv-foulum.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+Figura 4 - Mapas dos parâmetros estimados das distribuições `\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` ( acima ) e
+`\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)` ( em baixo ) para a imagem
+ Foulum.
+
+---
+
+## Experimentos Numéricos - Análise de dados reais
+&lt;hr/&gt;
+
+&lt;img src="imagens/trabalho 1/emv-demmin.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+Figura 5 - Mapas dos parâmetros estimados das distribuições `\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` ( acima ) e
+`\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)` ( em baixo ) para a imagem
+ DEMMIN-Görmin.
+
+---
+
+## Experimentos Numéricos - Análise de dados reais
+&lt;hr/&gt;
+
+&lt;img src="imagens/trabalho 1/mellin-sf.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+Figura 6 - Diagrama de Mellin com amostra de MLCs calculados a partir das amostras de São Francisco.
+
+---
+
+
+## Experimentos Numéricos - Análise de dados reais
+&lt;hr/&gt;
+
+&lt;img src="imagens/trabalho 1/mellin-foulum.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+Figura 7 - Diagrama de Mellin com amostra de MLCs calculados a partir das amostras de Foulum.
+
+---
+
+## Experimentos Numéricos - Análise de dados reais
+&lt;hr/&gt;
+
+&lt;img src="imagens/trabalho 1/mellin-demmin.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+Figura 8 - Diagrama de Mellin com amostra de MLCs calculados a partir das amostras de DEMMIN-Görmin.
+
+---
+
+
+## Experimentos Numéricos - Análise de dados reais
+&lt;hr/&gt;
+
+Tabela 4 - Resultados de ajuste em intensidades de dados *PolSAR* da imagem de São Francisc com L fixo.
+
+
+&lt;img src="imagens/trabalho 1/marginal2.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+## Experimentos Numéricos - Análise de dados reais
+&lt;hr/&gt;
+
+Tabela 5 - Resultados de ajuste em intensidades de dados *PolSAR* da imagem de Foulum com L fixo.
+
+
+&lt;img src="imagens/trabalho 1/marginal1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Experimentos Numéricos - Análise de dados reais
+&lt;hr/&gt;
+
+Tabela 6 - Resultados de ajuste em intensidades de dados *PolSAR* da imagem de DEMMIN-Görmin com L fixo.
+
+
+&lt;img src="imagens/trabalho 1/marginal3.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Conclusões
+&lt;hr/&gt;
+
+#### Entropia de Shannon para a distribuição `\(\mathcal{G}^0_I\)`: Novas abordagens para segmentação e detecção de mudança em imagens SAR
+
+
+* Para segmentação, foram realizadas três aplicações em imagens reais
+e duas aplicações para detecção de mudança;
+
+* Para segmentação das imagens EMISAR de Foulum (homogênea com cinco áreas) e para a imagem AIRSAR de Flevoland (homogênea com onze áreas), o segmentador baseado na entropia de Shannon da `\(\Gamma\)` sob dependência `\(\text{DEL}_{\Gamma^*}\)` forneceu os melhores resultados;
+
+* Para a imagem E-SAR de Munique (mais heterogênea), o procedimento de segmentação baseado em entropia de Shannon da `\(\mathcal{G}^0_I\)` sob independência `\(\text{IEL}_{\mathcal{G}^0}\)` ofereceu o melhor resultado;
+
+
+---
+
+## Conclusões
+&lt;hr/&gt;
+
+#### Entropia de Shannon para a distribuição `\(\mathcal{G}^0_m\)`: ensaios sobe segmentação não supervisionada e detecção de mudança
+
+* Resultados
+indicam que 
+o segmentador baseado na entropia de Shannon
+da lei `\(\mathcal{G}^0_m\)`
+foi mais recomendado para reconhecer regiões
+sobre imagens com mais áreas de misturas,
+enquanto
+aquele construído a partir da  
+ `\(\text{s}\mathcal{W}_{m}^{\mathbb{C}}\)`
+foi a melhor opção para imagens com regiões mais dispersas.
+
+&lt;hr/&gt;
+
+#### Detecção de mudança
+
+&lt;!--* Neste caso, para as duas regiões o melhor detector de mudança segundo o coeficiente Kappa foi o D-$H_\text{S}(\,s\mathcal{W}^{\mathbb{C}}_m)|\widehat{L}$, que é o detector baseado no `\(H_\text{S}(\,s\mathcal{W}^{\mathbb{C}}_m\,)\)` para \acrshort{enl} estimado. --&gt;
+
+* Comparando os resultados dos detectores propostos para dados *SAR* com o propostos para dados *PolSAR*, as melhores detecções de mudança foram obtidas utilizando as imagens *PolSAR*.
+
+---
+
+## Conclusões
+&lt;hr/&gt;
+
+#### SOMAS COMPOSTAS PARA MATRIZES ESTOCÁSTICAS APLICADAS A SISTEMAS POLSAR
+
+* foram derivados estimadores de máxima verossimilhança (EMVs) para ajustar os modelos *PolSAR* equipados com o algoritmo *Expectation-Maximization*.
+
+* os resultados numéricos para  as expressões dos EMVs encontrados indicaram que tais estimativas apresentaram valores baixos de viés e erros quadráticos médios para tamanhos de amostra que são realistas com a prática de processamento de dados *PolSAR*.
+
+* os diagramas dos MLCs como critério de comparação, apontaram que os modelos  `\(\text{CPT}\mathcal{W}_m^{\mathbb{C}}\)` e `\(\text{CG}\mathcal{W}_m^{\mathbb{C}}\)` podem fornecer melhores descrições de alguns cenários *PolSAR*.
+
+---
+
+&lt;hr/&gt;
+&lt;br/&gt;
+&lt;h1 style="text-align: center;"&gt;
+OBRIGADO!
+&lt;/h1&gt;
+&lt;br/&gt;
+&lt;hr/&gt;
+
+&lt;br/&gt;
+&lt;h3 style="margin-top:-20px;"&gt;
+SUPORTE COMPUTACIONAL
+&lt;/h3&gt;
+&lt;hr/&gt;
+
+
+* A tese produzida no sistema de formatação de texto `LaTeX` :  [https://www.latex-project.org/](https://www.latex-project.org/)
+
+* Slide produzido com Rmarkdown, com pacote
+`Xaringan` : [https://github.com/yihui/xaringan](https://github.com/yihui/xaringan).
+
+* As análises foram implementadas utilizando a linguagem de porgramação `R` : [https://www.r-project.org/](https://www.r-project.org/)
+
+* As imagens reais *SAR/PolSAR* foram obtidas no software `PolSARpro` :  [https://earth.esa.int/web/polsarpro/home](https://earth.esa.int/web/polsarpro/home)
+
+
+---
+
+## Referências
+&lt;hr/&gt;
+
+ZYL, J. J. van. Synthetic aperture radar polarimetry. [S.l.]: John Wiley &amp; Sons, 2011. v. 2.
+
+NASCIMENTO, A. D. C. Teoria estatística da informação para dados de radar de abertura sintética univariados e polarimétricos. Universidade Federal de Pernambuco, 2012.
+
+FRERY, A. C.; MULLER, H.-J.; YANASSE, C. d. C. F.; SANT’ANNA, S. J. S. A model for extremely heterogeneous clutter. IEEE Transactions on Geoscience and Remote Sensing, IEEE, v. 35, p. 648–659, 1997.
+
+FREITAS, C. C.; FRERY, A. C.; CORREIA, A. H. The polarimetric `\(\mathcal{G}\)` distribution for SAR data analysis. Environmetrics: the Official Journal of the International Environmetrics Society, Wiley Online Library, v. 16, p. 13–31, 2005.
+
+---
+
+## Referências
+&lt;hr/&gt;
+
+FRERY, A. C.; CORREIA, A. H.; FREITAS, C. d. C. Classifying multifrequency fully polarimetric imagery with multiple sources of statistical evidence and contextual information. IEEE Transactions on Geoscience and Remote Sensing, IEEE, v. 45, p. 3098–3109, 2007.
+
+BEAULIEU, J. M.; TOUZI, R. Segmentation of textured polarimetric SAR scenes by likelihood approximation. IEEE Transactions on Geoscience and Remote Sensing, IEEE, v. 42, p. 2063–2072, 2004.
+
+SCHOU, J.; SKRIVER, H.; NIELSEN, A. A.; CONRADSEN, K. CFAR edge detector for
+polarimetric SAR images. IEEE Transactions on Geoscience and Remote Sensing, IEEE, v. 41, p. 20–32, 2003.
+
+---
+
+## Referências
+&lt;hr/&gt;
+
+NASCIMENTO, A. D.; FRERY, A. C.; CINTRA, R. J. Detecting changes in fully polarimetric SAR imagery with statistical information theory. IEEE Transactions on Geoscience and Remote Sensing, IEEE, v. 57, n. 3, p. 1380–1392, 2018.
+
+CHAN, D.; GAMBINI, J.; FRERY, A. C. Speckle noise reduction in SAR images using information theory. In: IEEE. 2020 IEEE Latin American GRSS &amp; ISPRS Remote Sensing Conference (LAGIRS). [S.l.], 2020. p. 456–461.
+
+FRERY, A. C. Statistical information theory and geometry for SAR image analysis. In: IEEE. 2019 IEEE Recent Advances in Geoscience and Remote Sensing: Technologies, Standards and Applications (TENGARSS). [S.l.], 2019. p. 1–4.
+
+---
+
+## Referências
+&lt;hr/&gt;
+
+WANG, H.; RAN, Y.; LIU, S.; DENG, Y.; SU, D. Ship target detection in high-resolution SAR images based on information theory and harris corner detection. In: SPRINGER. International Conference in Communications, Signal Processing, and Systems. [S.l.], 2018. p. 685–694.
+
+LIU, S.; CAO, Z.; YANG, H. Information theory-based target detection for high-resolution SAR image. IEEE Geoscience and Remote Sensing Letters, IEEE, v. 13, n. 3, p. 404–408, 2016.
+
+SHAN, Z.; WANG, C.; ZHANG, H.; WU, F. Change detection in urban areas with high resolution sar images using second kind statistics based `\(\mathcal{G}^0\)` distribution. In: IEEE. 2010 IEEE International Geoscience and Remote Sensing Symposium. [S.l.], 2010. p. 4600–4603.
+
+---
+
+## Referências
+&lt;hr/&gt;
+
+FERREIRA, J. A.; COÊLHO, H.; NASCIMENTO, A. D. A family of divergence-based
+classifiers for polarimetric synthetic aperture radar (PolSAR) imagery vector and matrix features. International Journal of Remote Sensing, Taylor \&amp; Francis, v. 42, n. 4, p. 1201–1229, 2021.
+
+YU, X.; YUE, X. Similarity matrix entropy for multitemporal polarimetric SAR change detection. IEEE Geoscience and Remote Sensing Letters, IEEE, 2020.
+
+BOUHLEL, N.; MERIC, S. Multilook polarimetric SAR change detection using stochastic distances between matrix-variate `\(\mathcal{G}_d^0\)` distributions. IEEE Transactions on Geoscience and Remote Sensing, IEEE, v. 58, n. 10, p. 6823–6843, 2020.
+
+---
+
+## Referências
+&lt;hr/&gt;
+
+WANG, W.; XIANG, D.; BAN, Y.; ZHANG, J.; WAN, J. Superpixel segmentation of
+polarimetric SAR images based on integrated distance measure and entropy rate method. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, IEEE, v. 10, n. 9, p. 4045–4058, 2017.
+
+SHANNON, C. E. A mathematical theory of communication. Bell System Technical Journal, Wiley Online Library, v. 27, p. 379–423, 1948.
+
+BOLTZMANN, L. Weitere studien über das wärmegleichgewicht unter gasmolekülen. In: Kinetische Theorie II. [S.l.]: Springer, 1970. p. 115–225.
+
+BORDA, M. Fundamentals in information theory and coding. [S.l.]: Springer Science \&amp; Business Media, 2011.
+
+---
+
+## Referências
+&lt;hr/&gt;
+
+SALICRÚ, M.; MORALES, D.; MENÉNDEZ, M.; PARDO, L. On the applications of divergence type measures in testing statistical hypotheses. Journal of Multivariate Analysis, Elsevier, v. 51, p. 372–391, 1994.
+
+PARDO, L.; MORALES, D.; SALICRÚ, M.; MENÉNDEZ, M. Large sample behavior of entropy measures when parameters are estimated. Communications in Statistics-Theory and Methods, Taylor \&amp; Francis, v. 26, p. 483–501, 1997.
+
+LANG, F.; YANG, J.; LI, D.; ZHAO, L.; SHI, L. Polarimetric SAR image segmentation using statistical region merging. IEEE Geoscience and Remote Sensing Letters, v. 11, n. 2, p. 509–513, 2014.
+
+FRERY, A. C.; CINTRA, R. J.; NASCIMENTO, A. D. Entropy-based statistical analysis of PolSAR data. IEEE Transactions on Geoscience and Remote Sensing, IEEE, v. 51, p. 3733–3743, 2013.
+
+---
+
+## Referências
+&lt;hr/&gt;
+
+BIAN, Y.; MERCER, B. Multilook polarimetric SAR data probability density function estimation using a generalized form of multivariate K-distribution. Remote Sensing Letters, Taylor &amp; Francis, v. 5, p. 682–691, 2014.
+
+YUEH, S.; KONG, J.; JAO, J.; SHIN, R.; NOVAK, L. K-distribution and polarimetric terrain radar clutter. Journal of Electromagnetic Waves and Applications, Taylor &amp; Francis, v. 3, p. 747–768, 1989.
+
+EL-ZAART, A.; ZIOU, D. Statistical modelling of multimodal SAR images. International Journal of Remote Sensing, Taylor &amp; Francis, v. 28, n. 10, p. 2277–2294, 2007.
+
+EVERITT, B. S. Finite mixture distributions. Wiley StatsRef: Statistics Reference Online, Wiley Online Library, 2014.
+
+---
+
+## Referências
+&lt;hr/&gt;
+
+ANFINSEN, S. N.; ELTOFT, T. Application of the matrix-variate Mellin transform to analysis of polarimetric radar images. IEEE Transactions on Geoscience and Remote Sensing, IEEE, v. 49, p. 2281–2295, 2011.
+
+BOMBRUN, L.; BEAULIEU, J.-M. Fisher distribution for texture modeling of polarimetric SAR data. IEEE Geoscience and Remote Sensing Letters, IEEE, v. 5, p. 512–516, 2008.
+
+LEE, J.; SCHULER, D.; LANG, R.; RANSON, K. K-distribution for multilook processed polarimetric SAR imagery. In: IEEE. Proceedings of IGARSS’94-1994 IEEE International Geoscience and Remote Sensing Symposium. [S.l.], 1994. v. 4, p. 2179–2181.
+
+DENG, X.; LÓPEZ-MARTÍNEZ, C.; CHEN, J.; HAN, P. Statistical modeling of polarimetric SAR data: A survey and challenges. Remote Sensing, v. 9, p. 348, 2017.
+
+---
+
+## Referências
+&lt;hr/&gt;
+
+ANFINSEN, S. N.; DOULGERIS, A. P.; ELTOFT, T. Estimation of the equivalent number of looks in polarimetric synthetic aperture radar imagery. IEEE Transactions on Geoscience and Remote Sensing, IEEE, v. 47, p. 3795–3809, 2009.
+
+GOODMAN, N. R. Statistical analysis based on a certain multivariate complex Gaussian distribution (an introduction). The Annals of Mathematical Statistics, JSTOR, v. 34, p. 152–177, 1963.
+
+HAGEDORNA, M.; SMITHA, P. J.; BONESA, P. J.; MILLANEA, R. P.; PAIRMANB, D. A
+trivariate chi-squared distribution derived fromthe complex Wishart distribution. Journal of Multivariate Analysis, v. 97, p. 655–674, 2006.
+
+MAIWALD, D.; KRAUS, D. Calculation of moments of complex Wishart and complex inverse Wishart distributed matrices. IEE Proceedings-Radar, Sonar and Navigation, IET, v. 147, p. 162–168, 2000.
+
+---
+
+## Referências
+&lt;hr/&gt;
+
+FINE, T. L. Probability and Probabilistic Reasoning for Electrical Engineering. [S.l.]: Prentice Hall, 2006.
+
+DEMPSTER, A. P.; LAIRD, N. M.; RUBIN, D. B. Maximum likelihood from incomplete data via the EM algorithm. Journal of the Royal Statistical Society: Series B (Methodological), Wiley Online Library, v. 39, p. 1–22, 1977.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
