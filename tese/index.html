@@ -1494,7 +1494,7 @@ Figura 1 - Diagrama das relações entre distribuições *PolSAR*. Aqui, o vetor
 
 * evidências de que a distribuição Wishart complexa pode representar o retorno *PolSAR* de cenários homogêneos (GOODMAN, 1963; HAGEDORNA et al., 2006).
 
-* as distribuições Poisson truncada e geométrica são usadas para modelar a quantidade de sinais retornados em uma célula de resolução.
+* usadas para modelar a quantidade de sinais retornados em uma célula de resolução, estão as distribuições Poisson truncada e geométrica.
 
 * combinando essas duas evidências, propomos a soma aleatória da distribuição Wishart complexa com o número de termos seguindo as leis Poisson truncada e geométrica como dois descritores para o retorno de dados *PolSAR*;
 
@@ -1521,11 +1521,11 @@ f({\dot{\mathbf{Z}}_i}) =
 em que `\(\Gamma_m(L)\)`
 é a função gama multivariada.
 Então,
-`\(\mathbf{S}_k=\sum_{i=1}^k\mathbf{Z}_i\sim \mathcal{W}_{m}^{\mathbb{C}}(\mathbf{\Sigma},kL)\)` (MAIWALD; KRAUS, 2000)[@maiwald2000calculation]
+`\(\mathbf{S}_k=\sum_{i=1}^k\mathbf{Z}_i\sim \mathcal{W}_{m}^{\mathbb{C}}(\mathbf{\Sigma},kL)\)` (MAIWALD; KRAUS, 2000)
 e
 a matriz de coerência por célula
 segue a soma composta
-`\(\mathbf{S}=\sum_{i=1}^N\mathbf{Z}_i\)` ~(FINE, 2006) e
+`$$\mathbf{S}=\sum_{i=1}^N\mathbf{Z}_i$$`  e
 considerando que `\(N\sim \text{TPo}(\lambda)\)`,
 logo a densidade é dada por
 
@@ -1632,7 +1632,10 @@ uma variável aleatória inteira positiva
 com *fc*
 `\(\varphi_{N}(\cdot)\)`.
 A *fc* de `\(\mathbf{S}\)` quando `\(N\)` e `\(\mathbf{Z}_i\)` são independentes, é dado por
-`$$\varphi_{\mathbf{S}}(\mathbf{T}) = E(e^{i\mathbf{T}\mathbf{S}}) =  \varphi_{N}\left(-i\log\varphi_{\mathbf{Z}}(\mathbf{T})\right),\text{ em que } i = \sqrt{-1}.$$`
+`\begin{align}
+\varphi_{\mathbf{S}}(\mathbf{T}) &amp; = E(e^{i\mathbf{T}\mathbf{S}})\\
+&amp; =  \varphi_{N}\left(-i\log\varphi_{\mathbf{Z}}(\mathbf{T})\right),\text{ em que } i = \sqrt{-1}.
+\end{align}`
 &lt;/div&gt;
 
 ---
