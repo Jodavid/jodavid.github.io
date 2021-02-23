@@ -6,10 +6,20 @@
     <description>Recent content in R on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jodavid.github.io/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Refresh de um script R com Crontab</title>
+      <link>https://jodavid.github.io/post/refresh-de-um-script-r-com-crontab/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/post/refresh-de-um-script-r-com-crontab/</guid>
+      <description>Este post será breve e com um objetivo específico. Vamos criar um refessh em um script R com o Crontab, entretanto, esse refresh como mencionado nesse post, nada mais é do que um agendamento de tarefas, no qual o Crontab irá executar a tarefa agendada, toda vez que a condição especificada ocorer.
+O que é Crontab? &#34;O Cron é utilizado para agendar tarefas recorrentes, as tarefas são chamadas de cronjobs e são gerenciadas pelo crontab (tabela do cron).</description>
+    </item>
     
     <item>
       <title>construindo um ChatBot para Telegram com R</title>

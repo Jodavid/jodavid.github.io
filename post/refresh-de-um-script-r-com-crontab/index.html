@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="description" content="Simple minimalist theme">
+<meta name="keywords" content="minimalist,blog,goa,hugo,developer">
+
+<base href="https://jodavid.github.io">
+
+<title>
+  Jodavid Ferreira - Refresh de um script R com Crontab 
+</title>
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,700|Roboto:300,300i,400,400i,500,500i,700,700i">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="https://jodavid.github.io/css/main.css">
+<link rel="stylesheet" href="https://jodavid.github.io/css/custom.css">
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://jodavid.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://jodavid.github.io/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://jodavid.github.io/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="https://jodavid.github.io/manifest.json">
+<link rel="mask-icon" href="https://jodavid.github.io/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+<body lang="pt-BR">
+<div class="container">
+
+
+<header class="row text-left title">
+  <h1 class="title">Refresh de um script R com Crontab</h1>
+</header>
+<section id="category-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-left meta">
+        PUBLISHED ON 22 DE FEB DE 2021 
+      
+      
+      
+      —
+      
+      
+      <a class="meta" href="https://jodavid.github.io/categories/r">R</a>
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+<section id="content-pane" class="row">
+  <div class="col-md-12 text-justify content">
+    
+    
+    
+    
+<script src="https://jodavid.github.io/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Este post será breve e com um objetivo específico. Vamos criar um refessh em um script <code>R</code> com o <code>Crontab</code>, entretanto, esse <code>refresh</code> como mencionado nesse post, nada mais é do que um agendamento de tarefas, no qual o <code>Crontab</code> irá executar a tarefa agendada, toda vez que a condição especificada ocorer.</p>
+<div id="o-que-é-crontab" class="section level2">
+<h2>O que é Crontab?</h2>
+<p>"O Cron é utilizado para agendar tarefas recorrentes, as tarefas são chamadas de cronjobs e são gerenciadas pelo crontab (tabela do cron).</p>
+<p>Esta ferramenta vem instalada em diversas distribuições Linux, mas caso o Cron não esteja instalado na sua máquina é possível instalar através do comando abaixo (No Ubuntu)":</p>
+<pre><code># apt-get install cron</code></pre>
+<p>Para criar uma nova tarefa usamos o comando <strong>crontab -e</strong> que irá abrir o arquivo do cron para inserir o agendamento para o usuário atual.</p>
+<pre><code># crontab -e</code></pre>
+<ul>
+<li>Se necessário usar o <strong>sudo</strong> nos comandos acima.</li>
+</ul>
+<p>O crontab possui seis colunas, que correspondem aos minutos, horas, dias, meses, semanas e, por fim, aos comandos que serão executados.</p>
+<p>Abaixo segue detalhes sobre eles:</p>
+<ul>
+<li><em>Minuto:</em> Valores de 0 a 59 ou *</li>
+<li><em>Hora:</em> Valores de 0 a 23 ou *</li>
+<li><em>Dia:</em> Valores de 1 a 31 ou *</li>
+<li><em>Mês:</em> Valores de 1 a 12, jan a dec ou *</li>
+<li><em>Semana:</em> 0 a 6, sun a sat ou * (0 e 7 representa Domingo)</li>
+<li><em>Comando:</em> O comando a ser executado ou script</li>
+</ul>
+<p>O caractere asterisco (*) significa do primeiro ao último.</p>
+<p>Com o arquivo do <code>Crontab</code> aberto vamos adicionar a seginte linha
+<code>*/15 * * * * Rscript script.R</code>, após o Rscript coloca todo o caminho até o arquivo a ser executado, e nos minutos foram colocados ’*/15’ para o arquivo ser executado a cada 15 minutos.</p>
+<pre><code># 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+
+*/15 * * * * Rscript &#39;script.R&#39;
+</code></pre>
+</div>
+<div id="script-r" class="section level2">
+<h2>Script R</h2>
+<p>Vamos utilizar um script R que envia uma mensagem para o Telegram toda vez que for executado.
+Para isso, vou utilizar um Bot que criei no post anterior: <a href="https://jodavid.github.io/post/construindo-um-chatbot-para-telegram-com-r/">https://jodavid.github.io/post/construindo-um-chatbot-para-telegram-com-r/</a></p>
+<p><strong>script.R:</strong></p>
+<pre class="r"><code># Pacote Necessário: telegram.bot
+
+# Token do Bot:
+bot &lt;- telegram.bot::Bot(token = &quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11&quot;)
+
+# Adicionando id do Recepetor (abaixo como descobrir seu id no Telegram)
+chatid &lt;- &quot;574895214&quot; #id aleatório aqui
+
+# Enviando o horário atual
+bot$sendMessage(chat_id = chatid,
+                text = format(Sys.time(), &quot;%X&quot;)
+                )</code></pre>
+<p><br/ ></p>
+</div>
+<div id="como-descobrir-seu-id" class="section level2">
+<h2>Como descobrir seu id</h2>
+<ol style="list-style-type: decimal">
+<li>Acesse esse link pelo Telegram: <a href="https://t.me/my_id_bot">https://t.me/my_id_bot</a>;</li>
+<li>Utiliza o <code>/start</code>;</li>
+<li>Seu <code>id</code> do Telegram vai aparecer na tela de conversa.</li>
+</ol>
+<hr/>
+<p><br/ ></p>
+<p>Com esse código acima, estando correto o token do bot e o id do receptor, a mensagem chegará no Telegram corretamente.</p>
+<p><strong>OBS.:</strong> É necessário interagir com o bot após a criação dele, para que as mensagens cheguem corretamente. Não fazendo isso, o bot não consegue enviar mensagens ao usuário.</p>
+<p><br/>
+<br/></p>
+<p>Fontes:</p>
+<p><a href="https://medium.com/totvsdevelopers/entendendo-o-crontab-607bc9f00ed3">https://medium.com/totvsdevelopers/entendendo-o-crontab-607bc9f00ed3</a></p>
+<p><br/>
+<br/>
+<br/></p>
+<div id="post-gerado-com-framework-hugo-httpgohugo.io-r-markdown-httprmarkdown.rstudio.com-no-qual-os-resultados-são-gerados-na-geração-da-página." class="section level4">
+<h4>“Post gerado com framework HUGO (<a href="http://gohugo.io/">http://gohugo.io/</a>), R Markdown (<a href="http://rmarkdown.rstudio.com/">http://rmarkdown.rstudio.com/</a>), no qual os resultados são gerados na geração da página.”</h4>
+</div>
+</div>
+
+  </div>
+</section>
+<section id="tag-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-right meta">
+      
+      
+      
+      TAGS:
+      
+      
+      <a class="meta" href="https://jodavid.github.io/tags/r">R</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/tags/contrab">CONTRAB</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/tags/linux">LINUX</a>
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<section id="menu-pane" class="row menu text-center">
+  
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post/construindo-um-chatbot-para-telegram-com-r/">&lt; prev | </a></span>
+  
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post">post</a></span>
+  
+  
+  
+  <h4 class="text-center"><a class="menu-item" href="https://jodavid.github.io">home</a></h4>
+</section>
+
+
+
+<footer class="row text-center footer">
+  <hr />
+  
+  <h6 class="text-center copyright">© 2021. Jodavid Ferreira. <a href="http://creativecommons.org/licenses/by/3.0/">Todos os direitos reservados</a>.</h6>
+  
+  <h6 class="text-center powered">Powered by <a href="https://gohugo.io/">Hugo  v0.54.0</a> &amp; <a href="https://github.com/shenoybr/hugo-goa">Goa</a>.</h6>
+  
+      
+      <h6><a href="" aria-label="RSS Feed"><i class="fas fa-rss" aria-hidden="true"></i></a></h6>
+    
+  
+</footer>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-141028971-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
+
+
