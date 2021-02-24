@@ -579,8 +579,6 @@ Então
 \end{equation}`
 &lt;/div&gt;
 
-[@Pardo1997]
-
 ---
 
 ## Teoria da Informação em dados SAR e PolSAR multilook
@@ -760,12 +758,12 @@ S_\text{S}(\widehat{\boldsymbol{\theta}}_1,\widehat{\boldsymbol{\theta}}_2) =N\d
 
 &lt;br/&gt;
 
-* Apesar do processamento *multilook* impor um tipo de controle no efeito *speckle*, ainda assim, é necessários métodos específicos no processmento de das imagens *SAR*;
+* Apesar do processamento *multilook* impor um tipo de controle no efeito do ruído *speckle*, é requerida a proposta de técnicas adaptadas ao processameto de imagens *SAR*.
 
 
-* O modelo `\(\mathcal{G}_I^0\)` proposto por Frery et al. (1997) tem sido amplamente utilizado para descrever características de imagens *SAR*;
+* O modelo `\(\mathcal{G}_I^0\)` proposto por Frery et al. (1997) tem sido amplamente utilizado para descrever características de imagens *SAR*.
 
-* utilização do uso de medidas da TI combinadas com modelos que abarquem a física de formação das imagens;
+* O uso de medidas da TI combinadas com modelos ligados a física de formação das imagens tem apontado para bons desempenhos.
 
 
 ---
@@ -777,16 +775,16 @@ S_\text{S}(\widehat{\boldsymbol{\theta}}_1,\widehat{\boldsymbol{\theta}}_2) =N\d
 &lt;div class="contrib"&gt;
 
   &lt;div class="blockin"&gt; 
-  Quanto à esse casamento entre TI e modelos SAR, duas questões em aberto (ao melhor do nosso conhecimento) são:
+  Quanto à combinação entre TI e modelos SAR, duas questões em aberto (ao melhor do nosso conhecimento) são:
   &lt;/div&gt;
 
 --
 
-1. **o que dizer da expressão em forma fechada para a entropia de Shannon utilizando a distribuição `\(\mathcal{G}_I^0\)` ? e**
+1. **O que dizer da expressão em forma fechada para a entropia de Shannon utilizando a distribuição `\(\mathcal{G}_I^0\)` ?**
 
 --
 
-2. **como aplicar essas quantidades e suas possíveis distribuições no processamento (particularmente na análise de agrupamento e detecção de mudança) de retornos SAR?**
+2. **Como aplicar essa quantidade e sua possível distribuição no processamento (particularmente na análise de agrupamento e detecção de mudança) de retornos SAR?**
 
 &lt;/div&gt;
 
@@ -907,7 +905,7 @@ Nesse estudo, é assumido o termo "entropia estocástica" como a expressão da e
 &lt;hr/&gt;
 
 
-No que segue, um novo paradigma de segmentação para imagens *SAR* multidimensional é desenvolvido, levando em consideração ES estocástica para `\(\Gamma^*\)` e `\(\mathcal{G}_I^0\)` .
+No que segue, um novo paradigma de segmentação para imagens *SAR* multidimensional é desenvolvido, levando em consideração as ESs estocásticas para `\(\Gamma^*\)` e `\(\mathcal{G}_I^0\)` .
 
 Assumindo que
 (i) `\(\widehat{\mathbf{{H}}}_S(i)\)` e `\(\widehat{\mathbf{{H}}}_S(j)\)` são independentes
@@ -961,7 +959,7 @@ p\left(U_{ig}=1|\mathbf{\dot{H}}_S(i);\hat{\mathbf{\theta}}^{(k)}\right) = &amp;
 Se o erro absoluto entre os passos `\((k)\)` e `\((k+1)\)` é menor do que um certo limite especificado
 (i.e., |
 `\(S^{(k+1)} - S^{(k)}| &lt; \epsilon )\)` ,
-então o algoritmo converge. Neste estudo foi usado um limite de
+então o algoritmo converge. Neste estudo, utilizou-se um limite de
 `\(\epsilon = 1\times10^{-5}\)`.
 
 
@@ -1090,11 +1088,11 @@ São retiradas amostras das imagens com janelamento `\(3\times3\)` ao redor do *
 
 &lt;br/&gt;
 
-* Este capítulo consiste na extensão do estudo anterior para as distribuições polarimétricas `\(\mathcal{G}^0_m\)` e Wishart complexas escalonadas ( `\(\text{s}\mathcal{W}^\mathbb{C}_m\)` ). Ou seja, novas estratégias de segmentação e detecção de mudança são endereçadas;
+* Este capítulo consiste na extensão do estudo anterior para as distribuições polarimétricas `\(\mathcal{G}^0_m\)` e Wishart complexas escalonadas ( `\(\text{s}\mathcal{W}^\mathbb{C}_m\)` ). Ou seja, novas estratégias de segmentação e detecção de mudança são endereçadas.
 
-* Serão utilizados medidas de Teoria da Informação para lidar com imagens *PolSAR*;
+* Serão utilizados medidas de Teoria da Informação para lidar com imagens *PolSAR*.
 
-* Um dos desafios no processamento de imagens é o *speckle*. Ele é modelado como ruído multiplicativo e tem um efeito negativo, em muitos casos, levando a uma interpretação errada da cena nas análises (LANG et al., 2014).
+* Um dos desafios no processamento de imagens é o *speckle multidimensional*. Ele é modelado com o ruído multiplicativo e tem um efeito negativo, podendo levar a uma interpretação errada da cena nas análises (LANG et al., 2014).
 
 ---
 
@@ -1224,13 +1222,11 @@ que denominamos como modelo de segmentação.
 ### Estimativa dos parâmetros do modelo pelo algoritmo Expectation-Maximization Estocástico
 
 
-* O algoritmo expectation-maximization estocástico (Stochastic Expectation-Maximization - SEM)
-
-* É uma versão estocástica do EM e algumas vantagens do algoritmo SEM são:
-    * o baixo custo computacional em relação ao EM;
-    * a convergência para o máximo local quando o modelo ajustado é analiticamente intratável.
-
-* não há necessidade de determinar a esperança condicional na forma fechada como é exigido no EM e também é possível substituir os EMVs por outros estimadores, desde que suas propriedades de convergência sejam satisfeitas.
+* O algoritmo expectation-maximization estocástico (Stochastic Expectation-Maximization - SEM). É uma versão estocástica do EM e algumas vantagens do algoritmo SEM são:
+    * O baixo custo computacional em relação ao EM.
+    * A convergência para o máximo local quando o modelo ajustado é analiticamente intratável.
+    * Não há necessidade de determinar a esperança condicional na forma fechada como é exigido no EM e,
+    * também é possível substituir os EMVs por outros estimadores, desde que suas propriedades de convergência sejam satisfeitas.
 
 ---
 
@@ -1241,7 +1237,7 @@ que denominamos como modelo de segmentação.
 &lt;img src="imagens/trabalho 3/algoritmo-seg-polsar.png" width="95%" style="display: block; margin: auto;" /&gt;
 
 Diversas formas podem ser usadas para medir a convergência do algoritmo SEM.
-Neste estudo, utiliza-se 	o erro absoluto relativo das verossimilhanças entre as etapas. Se o erro absoluto relativo é menor que um certo *threshold* ( `\(\epsilon\)` ), então o algoritmo converge. Neste estudo foi usado `\(\epsilon = 1\times10^{-5}\)`.
+Neste estudo, utiliza-se 	o erro absoluto relativo das verossimilhanças entre as etapas. Se o erro absoluto relativo é menor que um certo *threshold* ( `\(\epsilon\)` ), então o algoritmo converge. Neste estudo, utilizou-se `\(\epsilon = 1\times10^{-5}\)`.
 
 ---
 
@@ -1252,7 +1248,7 @@ Neste estudo, utiliza-se 	o erro absoluto relativo das verossimilhanças entre a
 &lt;img src="imagens/trabalho 3/algoritmo-det-polsar.png" width="95%" style="display: block; margin: auto;" /&gt;
 
 Pares de amostras de um janelamento `\(3\times3\)` sobre um mesmo ponto geográfico de duas imagens obtidas em instantes distintos são selecionados.
-ara cada par de amostras, são executados os testes para duas amostras com base nas ESs das distribuições `\(\mathcal{G}^0_m\)` e `\(\text{s}\mathcal{W}^\mathbb{C}_m\)`. O nível de significância adotado em todos os casos é `\(\alpha = 1 \times 10^{-4}\)`. 
+Para cada par de amostras, são executados os testes para duas amostras com base nas ESs das distribuições `\(\mathcal{G}^0_m\)` e `\(\text{s}\mathcal{W}^\mathbb{C}_m\)`. O nível de significância adotado em todos os casos é `\(\alpha = 1 \times 10^{-4}\)`. 
 
 ---
 
@@ -1376,7 +1372,7 @@ ara cada par de amostras, são executados os testes para duas amostras com base 
 
 * Este capítulo é focado na proposta de distribuições para dados *PolSAR* multilook cujo suporte é o conjunto de matrizes hermitianas positivas definidas, diga-se `\(\mathbf{\Omega}_+\)` , também conhecido como o conjunto das Matrizes de covariâncias amostrais (MCA) (BIAN; MERCER, 2014).
 
-* Eles são frequentemente derivados:
+* Essas distribuições são frequentemente derivadas:
    * ou da modelagem multiplicativa (MM) (FREITAS; FRERY; CORREIA, 2005)
    * ou da transformada inversa de Fourier (TIF) (YUEH et al., 1989).
 
@@ -1394,7 +1390,7 @@ ara cada par de amostras, são executados os testes para duas amostras com base 
 
 * Nesse caso, a distribuição dos dados pode ser aproximada por um modelo de mistura ( EL-ZAART; ZIOU , 2007; EVERITT , 2014);
 
-* Este trabalho avança-se na proposta de dois novos modelos para dados *PolSAR multilook*.
+* Este trabalho avança na proposta de dois novos modelos para dados *PolSAR multilook*.
 
 
 ---
@@ -1410,7 +1406,7 @@ ara cada par de amostras, são executados os testes para duas amostras com base 
   Contribuições:
   &lt;/div&gt;
   
-Novas distribuições para dados *PolSAR multilook* usando a abordagem de soma estocástica são introduzidas para descrever dados multimodais. Elas são denominadas como composta Poisson truncada Wishart complexa ( `\(\text{CPT}\mathcal{W}^\mathbb{C}_m\)` ) e composta geométrica Wishart complexa ( `\(\text{CG}\mathcal{W}^\mathbb{C}_m\)` ). Algumas propriedades matemáticas das distribuições são derivadas, tais como as funções características (fc) e cumulantes de Mellin. Novos processos de estimação por máxima verossimilhança via algoritmo *EM (Expectation-Maximization)*
+Novas distribuições para dados *PolSAR multilook* usando a abordagem de soma estocástica são introduzidas para descrever dados multimodais. Elas são denominadas como composta Poisson truncada Wishart complexa ( `\(\text{CPT}\mathcal{W}^\mathbb{C}_m\)` ) e composta geométrica Wishart complexa ( `\(\text{CG}\mathcal{W}^\mathbb{C}_m\)` ). Algumas propriedades matemáticas das distribuições são derivadas, tais como as funções características (fc) e cumulantes de Mellin. Novos mecanismos de estimação por máxima verossimilhança via algoritmo *EM (Expectation-Maximization)*
 são derivados e avaliados por experimentos Monte Carlo.
 &lt;/div&gt;
 
@@ -1423,7 +1419,7 @@ são derivados e avaliados por experimentos Monte Carlo.
 Tomando o MM como mecanismo gerador de distribuições *PolSAR*, cada retorno associado a uma entrada da imagem é o produto de duas variáveis aleatórias independentes, que descrevem a configuração do terreno e o efeito do speckle.
 
 
-o modelo do retorno `\(\mathbf{Z} = \mathbf{Y} X\)` é dado por maneira (ANFINSEN; ELTOFT , 2011)
+O retorno `\(\mathbf{Z} = \mathbf{Y} X\)` tem densidade dada por (ANFINSEN; ELTOFT , 2011)
 
 `\begin{align*}
   \begin{array}{lr}
@@ -1468,11 +1464,11 @@ Figura 1 - Diagrama das relações entre distribuições *PolSAR*. Aqui, o vetor
 ## Modelos da literatura e formulação física das novas propostas
 &lt;hr/&gt;
 
-* evidências de que a distribuição Wishart complexa pode representar o retorno *PolSAR* de cenários homogêneos (GOODMAN, 1963; HAGEDORNA et al., 2006).
+* Há evidências de que a distribuição Wishart complexa pode representar o retorno *PolSAR* de cenários homogêneos (GOODMAN, 1963; HAGEDORNA et al., 2006).
 
-* usadas para modelar a quantidade de sinais retornados em uma célula de resolução, estão as distribuições Poisson truncada e geométrica.
+* As distribuições Poisson truncada e geométrica são usadas para modelar a quantidade de sinais retornados em uma célula de resolução.
 
-* combinando essas duas evidências, propomos a soma aleatória da distribuição Wishart complexa com o número de termos seguindo as leis Poisson truncada e geométrica como dois descritores para o retorno de dados *PolSAR*;
+* Combinando essas duas evidências, propomos a soma aleatória da distribuição Wishart complexa com o número de termos seguindo as leis Poisson truncada e geométrica como dois descritores para o retorno de dados *PolSAR*.
 
 ---
 
@@ -1502,7 +1498,7 @@ e
 a matriz de coerência por célula
 segue a soma composta
 `$$\mathbf{S}=\sum_{i=1}^N\mathbf{Z}_i$$`  e
-considerando que `\(N\sim \text{TPo}(\lambda)\)`,
+tal que `\(N\sim \text{TPo}(\lambda)\)`,
 logo a densidade é dada por
 
 ---
@@ -1572,7 +1568,7 @@ Essa situação é denotada como `\(\mathbf{S}\sim \text{CG}\mathcal{W}_{m}^{\ma
 ## Novos modelos
 &lt;hr/&gt;
 
-A Figuraa seguir  mostra as densidades marginais de
+A seguinte figura  mostra as densidades marginais de
 `\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` e `\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)`.
 Elas podem assumir formas multimodais.
 
@@ -1607,7 +1603,7 @@ e
 uma variável aleatória inteira positiva
 com *fc*
 `\(\varphi_{N}(\cdot)\)`.
-A *fc* de `\(\mathbf{S}\)` quando `\(N\)` e `\(\mathbf{Z}_i\)` são independentes, é dado por
+A *fc* de `\(\mathbf{S}\)` quando `\(N\)` e `\(\mathbf{Z}_i\)` são independentes é dada por
 `\begin{align}
 \varphi_{\mathbf{S}}(\mathbf{T}) &amp; = E(e^{i\mathbf{T}\mathbf{S}})\\
 &amp; =  \varphi_{N}\left(-i\log\varphi_{\mathbf{Z}}(\mathbf{T})\right),\text{ em que } i = \sqrt{-1}.
@@ -1655,7 +1651,7 @@ A transformada de Mellin aplicada a matrizes aleatórias hermitianas é definida
 Seja `\(\mathbf{C} \in  \mathbf{\Omega}_+\)`, 
 a transformada de Mellin para o mapeamento
 `\(g(\mathbf{C}): \mathbf{\Omega}_+ \rightarrow \mathbb{R}\)`
-é definida como \cite{anfinsen2011application}:
+é definida como:
 
 `\begin{align*}
   \begin{array}{lr}
@@ -1677,7 +1673,7 @@ A função geradora de cumulantes do tipo Mellin (*Mellin-kind cumulant-generati
 
 `\begin{align}
   \begin{array}{lr}
-\varphi_{\mathbf{C}}(s) = \log \phi_{\mathbf{C}}(s), &amp; (30)
+\varphi_{\mathbf{C}}(s) = \log \phi_{\mathbf{C}}(s) &amp; (30)
   \end{array}
 \end{align}`
 
@@ -1699,18 +1695,18 @@ de `\(\nu\)` -ésima ordem
 &lt;hr/&gt;
 
 Um experimento de Monte Carlo é realizado  para quantificar
-o comportamento assintótico dos \acrshort{emv}s para os parâmetros `\([\lambda,\mathbf{\Sigma}]\)` e `\([p,\mathbf{\Sigma}]\)`.
+o comportamento assintótico dos EMVs para os parâmetros `\([\lambda,\mathbf{\Sigma}]\)` e `\([p,\mathbf{\Sigma}]\)`.
 
-1. amostras das distribuições
+1. Amostras das distribuições
 	`\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)`
 	e
 	`\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)`
-	são geradas;
-2. tamanhos
+	são geradas.
+2. Tamanhos
 	`\(T=10, 30, 100\)` e `\(1000\)`
 	e mil replicas Monte Carlo são utilizadas.
-3. adotamos NEL igual a quatro (L = 4)
-4. e uma matriz comum
+3. Adotamos NEL igual a quatro (L = 4).
+4. E uma matriz comum
 
 `\begin{align}
 	\mathbf{\Sigma}
@@ -1855,11 +1851,11 @@ Tabela 6 - Resultados de ajuste em intensidades de dados *PolSAR* da imagem de D
 
 
 * Para segmentação, foram realizadas três aplicações em imagens reais
-e duas aplicações para detecção de mudança;
+e duas aplicações para detecção de mudança.
 
-* Para segmentação das imagens EMISAR de Foulum (homogênea com cinco áreas) e para a imagem AIRSAR de Flevoland (homogênea com onze áreas), o segmentador baseado na entropia de Shannon da `\(\Gamma\)` sob dependência `\(\text{DEL}_{\Gamma^*}\)` forneceu os melhores resultados;
+* Para segmentação das imagens EMISAR de Foulum (homogênea com cinco áreas) e para a imagem AIRSAR de Flevoland (homogênea com onze áreas), o segmentador baseado na entropia de Shannon da `\(\Gamma\)` sob dependência `\(\text{DEL}_{\Gamma^*}\)` forneceu os melhores resultados.
 
-* Para a imagem E-SAR de Munique (mais heterogênea), o procedimento de segmentação baseado em entropia de Shannon da `\(\mathcal{G}^0_I\)` sob independência `\(\text{IEL}_{\mathcal{G}^0}\)` ofereceu o melhor resultado;
+* Para a imagem E-SAR de Munique (mais heterogênea), o procedimento de segmentação baseado em entropia de Shannon da `\(\mathcal{G}^0_I\)` sob independência `\(\text{IEL}_{\mathcal{G}^0}\)` ofereceu o melhor resultado.
 
 
 ---
@@ -1874,7 +1870,7 @@ indicam que
 o segmentador baseado na entropia de Shannon
 da lei `\(\mathcal{G}^0_m\)`
 foi mais recomendado para reconhecer regiões
-sobre imagens com mais áreas de misturas,
+sobre imagens com áreas mais misturas,
 enquanto
 aquele construído a partir da  
  `\(\text{s}\mathcal{W}_{m}^{\mathbb{C}}\)`
@@ -1895,11 +1891,11 @@ foi a melhor opção para imagens com regiões mais dispersas.
 
 #### SOMAS COMPOSTAS PARA MATRIZES ESTOCÁSTICAS APLICADAS A SISTEMAS POLSAR
 
-* foram derivados estimadores de máxima verossimilhança (EMVs) para ajustar os modelos *PolSAR* equipados com o algoritmo *Expectation-Maximization*.
+* Foram derivados estimadores de máxima verossimilhança (EMVs) para ajustar os modelos *PolSAR* através do Algoritmo *Expectation-Maximization*.
 
-* os resultados numéricos para  as expressões dos EMVs encontrados indicaram que tais estimativas apresentaram valores baixos de viés e erros quadráticos médios para tamanhos de amostra que são realistas com a prática de processamento de dados *PolSAR*.
+* Os resultados numéricos para  as expressões dos EMVs encontrados indicaram que tais estimativas apresentaram valores baixos de viés e erros quadráticos médios para tamanhos de amostra que são realistas com a prática de processamento de dados *PolSAR*.
 
-* os diagramas dos MLCs como critério de comparação, apontaram que os modelos  `\(\text{CPT}\mathcal{W}_m^{\mathbb{C}}\)` e `\(\text{CG}\mathcal{W}_m^{\mathbb{C}}\)` podem fornecer melhores descrições de alguns cenários *PolSAR*.
+* Os diagramas de MLCs como critério de comparação apontaram que os modelos  `\(\text{CPT}\mathcal{W}_m^{\mathbb{C}}\)` e `\(\text{CG}\mathcal{W}_m^{\mathbb{C}}\)` podem fornecer melhores descrições de alguns cenários *PolSAR*.
 
 ---
 
@@ -1942,34 +1938,7 @@ Journal of Statistical Computation and Simulation, v. online, p. 1-18, 2020.
 
 `\(\checkmark\)` Ferreira, J. A. ; Coêlho, H. F. C. ; Nascimento, A. D. C. A Family of Divergence-based Classifiers for Polarimetric Synthetic Aperture Radar (PolSAR) Imagery Vector and Matrix Features. International Journal of Remote Sensing (Online), v. 42, p. 1201-1229, 2020.
 	
-`\(\checkmark\)` MORAES, RONEI M. ; FERREIRA, JODAVID A. ; MACHADO, LILIANE S. . A New Bayesian Network Based on Gaussian Naive Bayes with Fuzzy Parameters for Training Assessment in Virtual Simulators. International Journal of Fuzzy Systems, 2020.
-
----
-
-&lt;hr/&gt;
-&lt;br/&gt;
-&lt;h1 style="text-align: center;"&gt;
-OBRIGADO!
-&lt;/h1&gt;
-&lt;br/&gt;
-&lt;hr/&gt;
-
-&lt;br/&gt;
-&lt;h3 style="margin-top:-20px;"&gt;
-SUPORTE COMPUTACIONAL
-&lt;/h3&gt;
-&lt;hr/&gt;
-
-
-* A tese produzida no sistema de formatação de texto `LaTeX` :  [https://www.latex-project.org/](https://www.latex-project.org/)
-
-* Slide produzido com Rmarkdown, com pacote
-`Xaringan` : [https://github.com/yihui/xaringan](https://github.com/yihui/xaringan).
-
-* As análises foram implementadas utilizando a linguagem de porgramação `R` : [https://www.r-project.org/](https://www.r-project.org/)
-
-* As imagens reais *SAR/PolSAR* foram obtidas no software `PolSARpro` :  [https://earth.esa.int/web/polsarpro/home](https://earth.esa.int/web/polsarpro/home)
-
+`\(\checkmark\)` Moraes, Ronei M. ; Ferreira, Jodavid A. ; Machado, Liliane S. . A New Bayesian Network Based on Gaussian Naive Bayes with Fuzzy Parameters for Training Assessment in Virtual Simulators. International Journal of Fuzzy Systems, 2020.
 
 ---
 
@@ -2105,6 +2074,33 @@ MAIWALD, D.; KRAUS, D. Calculation of moments of complex Wishart and complex inv
 FINE, T. L. Probability and Probabilistic Reasoning for Electrical Engineering. [S.l.]: Prentice Hall, 2006.
 
 DEMPSTER, A. P.; LAIRD, N. M.; RUBIN, D. B. Maximum likelihood from incomplete data via the EM algorithm. Journal of the Royal Statistical Society: Series B (Methodological), Wiley Online Library, v. 39, p. 1–22, 1977.
+
+&lt;hr/&gt;
+&lt;br/&gt;
+&lt;h1 style="text-align: center;"&gt;
+OBRIGADO!
+&lt;/h1&gt;
+&lt;br/&gt;
+&lt;hr/&gt;
+
+&lt;br/&gt;
+&lt;h3 style="margin-top:-20px;"&gt;
+SUPORTE COMPUTACIONAL
+&lt;/h3&gt;
+&lt;hr/&gt;
+
+
+* A tese produzida no sistema de formatação de texto `LaTeX` :  [https://www.latex-project.org/](https://www.latex-project.org/)
+
+* Slide produzido com Rmarkdown, com pacote
+`Xaringan` : [https://github.com/yihui/xaringan](https://github.com/yihui/xaringan).
+
+* As análises foram implementadas utilizando a linguagem de porgramação `R` : [https://www.r-project.org/](https://www.r-project.org/)
+
+* As imagens reais *SAR/PolSAR* foram obtidas no software `PolSARpro` :  [https://earth.esa.int/web/polsarpro/home](https://earth.esa.int/web/polsarpro/home)
+
+
+---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
