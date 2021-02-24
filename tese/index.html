@@ -34,8 +34,6 @@ layout: true
 
 
 
-
-
 ---
 
 # Estrutura
@@ -70,9 +68,9 @@ layout: true
 &lt;!-- Antes de tudo vamos entender o que é um radar e sua importância nesta tese.
 --&gt;
 
-* **RADAR** é um acrônimo de *Radio Detection and Ranging*;
+* **RADAR** é um acrônimo de *Radio Detection and Ranging*
 
-* é baseado nos princípios da propagação eletromagnética, em que, uma onda eletromagnética é emitida por uma fonte e é retrodifundida;
+* Ele é baseado nos princípios da propagação eletromagnética, em que, uma onda eletromagnética é emitida por uma fonte e é retrodifundida
    &lt;!--(reflexão da onda na direção da qual eles vieram) --&gt;
 
 
@@ -87,15 +85,12 @@ De acordo com Zyl (2011), uma imagem de radar é o resultado entre uma interaç�
 
 &lt;hr&gt;
 
-* O *SAR* (*Synthetic Aperture Radar*) ou radar de abertura sintética;
-&lt;!-- é um tipo de radar que --&gt;
+* O radar de abertura sintética (*Synthetic Aperture Radar* - *SAR*) é acoplado a uma plataforma que ao longo da rota destinada transmite microondas em direção a uma cena geográfica;
 
-* possuem um sensor que ao longo da rota destinada transmite microondas em direção a uma cena geográfica;
-
-* os pulsos emitidos ireção a um cenário real podem ter polarizações circulares e/ou lineares;
+* Os pulsos emitidos em direção a um cenário real podem ter polarizações circulares e/ou lineares;
 &lt;img src="imagens/introdução/pulsosHHHV.jpg" width="50%" style="display: block; margin: auto;" /&gt;
 
-* quando é utilizado apenas um par de direções, as imagens geradas são chamadas de *SAR* monopolarizadas e quando utilizado múltiplas direções o processo é chamado *Polarimetric SAR - PolSAR*; 
+* Quando é utilizado apenas um par de direções, as imagens geradas são chamadas de *SAR* monopolarizadas e, quando utilizado múltiplas direções, o processo é chamado *PolSAR (Polarimetric SAR)*; 
 
 ---
 
@@ -127,7 +122,7 @@ De acordo com Zyl (2011), uma imagem de radar é o resultado entre uma interaç�
 ### Vantagens
 
 
-* podem ser obtidos de qualquer lugar (terrestre, marítimo, aéreo);
+* Imagens *SAR* podem ser obtidos de qualquer lugar (terrestre, marítimo, aéreo);
 * a qualquer hora (diurno ou noturno);
 * em quase todas condições climáticas (nuvens, chuvas);
 * produzir imagens de alta resolução (grande largura de banda) das superfícies estudadas;
@@ -137,7 +132,6 @@ De acordo com Zyl (2011), uma imagem de radar é o resultado entre uma interaç�
 ### Desvantagens
 
 * custo alto;
-* profissionais qualificados;
 * as imagens obtidas são afetadas por um ruído chamado *speckle*, que gera uma aparência granular nas imagens, criando uma dificuldade na interpretação e análise;
 
 ---
@@ -150,7 +144,7 @@ De acordo com Zyl (2011), uma imagem de radar é o resultado entre uma interaç�
 ### Vantagens
 
 
-* podem ser obtidos de qualquer lugar (terrestre, marítimo, aéreo);
+* Imagens *SAR* podem ser obtidos de qualquer lugar (terrestre, marítimo, aéreo);
 * a qualquer hora (diurno ou noturno);
 * em quase todas condições climáticas (nuvens, chuvas);
 * produzir imagens de alta resolução (grande largura de banda) das superfícies estudadas;
@@ -160,7 +154,6 @@ De acordo com Zyl (2011), uma imagem de radar é o resultado entre uma interaç�
 ### Desvantagens
 
 * custo alto;
-* profissionais qualificados;
 * **as imagens obtidas são afetadas por um ruído chamado *speckle*, que gera uma aparência granular nas imagens, criando uma dificuldade na interpretação e análise;**
 
 
@@ -245,11 +238,9 @@ Para fazer separação entre escalares, vetores e matrizes aleatórias de suas r
 ## Modelagem estatística para dados SAR e PolSAR multilook
 &lt;hr/&gt;
 
-### Distribuições de variáveis aleatórias
+### Distribuição para o speckle unidimensional
 
-#### Distribuição para o speckle unidimensional
-
-O *speckle* *multilook* descrita pela distribuição gama, 
+O *speckle* *multilook* é descrito pela distribuição gama, 
 `\(Y \sim \Gamma(L, L)\)`,
 com densidade
 
@@ -260,7 +251,7 @@ com densidade
 \label{eq:gama} 
 \end{align}`
 
-em que `\(\Gamma(t) = \int\limits^{\infty}_{0} x^{t-1}e^{-x}\mathrm{d}x\)` é a função gama.
+em que `\(\Gamma(t) = \int\limits^{\infty}_{0} x^{t-1}e^{-x}\mathrm{d}x\)` é a função gama e `\(L\)` é o número de equivalente de *looks* (NEL).
 
 
 
@@ -269,19 +260,17 @@ em que `\(\Gamma(t) = \int\limits^{\infty}_{0} x^{t-1}e^{-x}\mathrm{d}x\)` é a 
 ## Modelagem estatística para dados SAR e PolSAR multilook
 &lt;hr/&gt;
 
-### Distribuições de variáveis aleatórias
-
-#### Distribuição para o retroespalhamento
+### Distribuição para o retroespalhamento
 
 O retroespalhamento (*backscatter*)
-carrega todas as informações relevantes da área mapeada.
+carrega grande parte das informações relevantes da área mapeada.
 Em particular,
 ele envolve o comportamento físico do alvo; por exemplo, umidade e relevo.
 
 Neste estudo,
 a distribuição *gama inversa*
 é utilizada
-para o retroespalhamento.
+para o retroespalhamento, tendo densidade
 
 `\begin{align}
   \begin{array}{lr}
@@ -297,12 +286,9 @@ em que `\(\alpha &lt; 0\)` é o parâmetro de forma e `\(\gamma\)` é parâmetro
 ## Modelagem estatística para dados SAR e PolSAR multilook
 &lt;hr/&gt;
 
-### Distribuições de variáveis aleatórias
+### Distribuição para intensidade SAR por MM
 
-#### Distribuição para intensidade SAR por MM
-
-O modelo multiplicativo (MM) que
-é uma abordagem bem-sucedida para descrever 
+O modelo multiplicativo (MM) é uma abordagem bem-sucedida para descrever 
 retornos SAR.
 
 Sejam `\(X\)` e `\(Y\)` duas variáveis aleatórias escalares positivas e independentes
@@ -328,9 +314,7 @@ isto é,
 ## Modelagem estatística para dados SAR e PolSAR multilook
 &lt;hr/&gt;
 
-### Distribuições de variáveis aleatórias
-
-#### Distribuição para intensidade SAR por MM
+### Distribuição para intensidade SAR por MM
 
 
 Sejam `\(Y\sim\Gamma(L,L)\)` e
@@ -364,9 +348,7 @@ Este caso é denotado por `\(Z\sim \mathcal{G}^0_I(\alpha,\gamma,L)\)`.
 ## Modelagem estatística para dados SAR e PolSAR multilook
 &lt;hr/&gt;
 
-### Distribuições de variáveis aleatórias
-
-#### Distribuição para intensidade SAR por abordagem empírica
+### Distribuição para intensidade SAR por abordagem empírica
 
 Segundo Li et al. (2011), um modelo alternativo à abordagem de MM, conhecido como abordagem empírica, é a lei gama generalizada ( `\(\text{G}\Gamma\)` ).
 
@@ -391,9 +373,7 @@ em que
 ## Modelagem estatística para dados SAR e PolSAR multilook
 &lt;hr/&gt;
 
-### Distribuições de matrizes aleatórias
-
-#### Distribuição para o speckle multidimensional
+### Distribuição para o speckle multidimensional
 
 Nesse caso o retorno é matricial complexo e segue uma distribuição Wishart complexa escalonada, denotada por
 `\(\boldsymbol{Y} \sim s\mathcal{W}^{\mathbb{C}}_m(\boldsymbol{\Sigma},L)\)`
@@ -421,9 +401,7 @@ e `\(\operatorname{tr}(\cdot)\)`
 ## Modelagem estatística para dados SAR e PolSAR multilook
 &lt;hr/&gt;
 
-### Distribuições de matrizes aleatórias
-
-#### Distribuição para retornos PolSAR por MM
+### Distribuição para retornos PolSAR por MM
 
 Seja `\(\boldsymbol{Y}\)`
 uma matriz aleatória seguindo a distribuição `\(s\mathcal{W}^{\mathbb{C}}_m\)`
@@ -442,21 +420,19 @@ A densidade neste caso é dada por
 ## Modelagem estatística para dados SAR e PolSAR multilook
 &lt;hr/&gt;
 
-### Distribuições de matrizes aleatórias
-
-#### Distribuição para retornos PolSAR por MM
+### Distribuição para retornos PolSAR por MM
 
 A densidade neste caso é dada por
 
 `\begin{align*}
   \begin{array}{lr}
     \begin{array}{rl}
-f_{\boldsymbol{Z}}&amp;(\dot{\boldsymbol{Z}};\alpha,\,\boldsymbol{\Sigma},\,L)  = \,\,\frac{
+&amp; f_{\boldsymbol{Z}}(\dot{\boldsymbol{Z}};\alpha,\,\boldsymbol{\Sigma},\,L)  = \,\,\frac{
 	L^{Lm}\Gamma(Lm-\alpha)
 }{
 	|\boldsymbol{\Sigma}|^L\,(-\alpha-1)^\alpha\,\Gamma(-\alpha)\,\Gamma_m(L)}
 \times \\
-&amp;\,\,
+&amp;
 |\dot{\boldsymbol{Z}}|^{L-m}
 \,\,[\,(-\alpha-1) \,+\, L \operatorname{tr}(\boldsymbol{\Sigma}^{-1}\dot{\boldsymbol{Z}})\,]^{\alpha-Lm}\,\mathbb{I}_{\mathbf{\Omega}_+}(\dot{\mathbf{Z}}),
   \end{array} &amp; (6)
@@ -473,11 +449,11 @@ do relevo.
 ---
 
 
-## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+## Teoria da Informação em dados SAR e PolSAR multilook
 
 &lt;hr&gt;
 
-A utilização da Teoria da Informação (TI) nos contextos de dados *SAR* e *PolSAR* tem se mostrado promissor.
+A utilização da Teoria da Informação (TI) nos contextos de dados *SAR* e *PolSAR* tem se mostrado promissora
 
 * *SAR* :
  * CHAN; GAMBINI; FRERY , 2020;
@@ -495,7 +471,7 @@ A utilização da Teoria da Informação (TI) nos contextos de dados *SAR* e *Po
 
 ---
 
-## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+## Teoria da Informação em dados SAR e PolSAR multilook
 
 &lt;hr&gt;
 
@@ -514,7 +490,7 @@ em que `\(Z\)` é uma variável aleatória, `\(f(Z)\)` uma densidade (ou funçã
 
 ---
 
-## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+## Teoria da Informação em dados SAR e PolSAR multilook
 
 &lt;hr&gt;
 
@@ -526,7 +502,7 @@ Através do teorema H de Boltzmann (BOLTZMANN , 1970), Shannon definiu a entropi
   \end{array}
 \end{align}`
 	
-em que `\(E(\cdot)\)` é o operador valor esperado e `\(I(Z)\)` é a informação obtida de `\(Z\)` (BORDA, 2011). A entropia pode ser reescrita de forma explícita como:
+em que `\(E(\cdot)\)` é o operador valor esperado e `\(I(Z)\)` é a informação obtida de `\(Z\)` (BORDA, 2011). A entropia pode ser reescrita como:
 	
 `\begin{align}
   \begin{array}{lr}
@@ -539,7 +515,7 @@ em que `\(E(\cdot)\)` é o operador valor esperado e `\(I(Z)\)` é a informaçã
 ---
 
 
-## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+## Teoria da Informação em dados SAR e PolSAR multilook
 
 &lt;hr&gt;
 
@@ -573,7 +549,7 @@ a ES
 
 ---
 
-## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+## Teoria da Informação em dados SAR e PolSAR multilook
 
 &lt;hr&gt;
 
@@ -607,7 +583,7 @@ Então
 
 ---
 
-## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+## Teoria da Informação em dados SAR e PolSAR multilook
 
 &lt;hr&gt;
 
@@ -646,7 +622,7 @@ para `\(i=1,2,\ldots,p\)`.
 ---
 
 
-## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+## Teoria da Informação em dados SAR e PolSAR multilook
 
 &lt;hr&gt;
 
@@ -672,7 +648,7 @@ De acordo com Nascimento, Frery e Cintra (2018), a metodologia para testes de hi
 
 
 
-## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+## Teoria da Informação em dados SAR e PolSAR multilook
 
 &lt;hr&gt;
 
@@ -702,7 +678,7 @@ em que
 
 
 
-## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+## Teoria da Informação em dados SAR e PolSAR multilook
 
 &lt;hr&gt;
 
@@ -725,7 +701,7 @@ S_\text{S}(\widehat{\boldsymbol{\theta}}_1,\ldots,\widehat{\boldsymbol{\theta}}_
 ---
 
 
-## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+## Teoria da Informação em dados SAR e PolSAR multilook
 
 &lt;hr&gt;
 
@@ -747,7 +723,7 @@ Sejam
 
 ---
 
-## Teoria da Informação e Utilização em dados SAR e PolSAR multilook
+## Teoria da Informação em dados SAR e PolSAR multilook
 
 &lt;hr&gt;
 
