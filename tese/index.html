@@ -216,25 +216,6 @@ As primeiras contibuições desta tese proporcionam avanços quanto aos itens **
 
 ---
 
-# Lista de Notações
-
-&lt;hr&gt;
-
-&lt;br /&gt;
-
-Para fazer separação entre escalares, vetores e matrizes aleatórias de suas respectivas realizações, utilizar-se-ão:
-
-&lt;br/&gt;
-
-* `\(Z\)` : Variável aleatória;
-* `\(z\)` : Realização de uma variável aleatória;
-* `\(\mathbf{z}\)` :  Vetor aleatório;
-* `\(\dot{\mathbf{z}}\)` :  Realização de um vetor aleatório;
-* `\(\mathbf{Z}\)`: Matriz aleatória;
-* `\(\dot{\mathbf{Z}}\)`: Realização de uma matriz aleatória.
-
----
-
 ## Modelagem estatística para dados SAR e PolSAR multilook
 &lt;hr/&gt;
 
@@ -404,7 +385,7 @@ e `\(\operatorname{tr}(\cdot)\)`
 ### Distribuição para retornos PolSAR por MM
 
 Seja `\(\boldsymbol{Y}\)`
-uma matriz aleatória seguindo a distribuição `\(s\mathcal{W}^{\mathbb{C}}_m\)`
+uma &lt;u&gt;matriz aleatória&lt;/u&gt; seguindo a distribuição `\(s\mathcal{W}^{\mathbb{C}}_m\)`
 e 
 `\(X\)`
 uma variável aleatória escalar positiva.
@@ -684,7 +665,7 @@ em que
 ### A classe h- `\(\phi\)` de entropias - cont.
 
 &lt;br/&gt;
-Uma resposta à questão pode ser dada pela seguinte estatística de teste:
+Uma resposta à questão, pode ser dada pela seguinte estatística de teste:
 
 &lt;br/&gt;
 `\begin{align}
@@ -974,7 +955,9 @@ então o algoritmo converge. Neste estudo, utilizou-se um limite de
 
 &lt;img src="imagens/trabalho 2/algoritmo-det-SAR.png" width="95%" style="display: block; margin: auto;" /&gt;
 
-São retiradas amostras das imagens com janelamento `\(3\times3\)` ao redor do *pixel* em estudo e estimado os parâmetros para aplicação do teste de hipóteses. O nível de significância adotado nesse estudo foi de `\(\alpha = 1\times10^{-4}\)`.
+&lt;!--São retiradas amostras das imagens com janelamento `\(3\times3\)` ao redor do *pixel* em estudo e estimado os parâmetros para aplicação do teste de hipóteses.
+--&gt;
+O nível de significância adotado nesse estudo foi de `\(\alpha = 1\times10^{-4}\)`.
 
 
 ---
@@ -1370,7 +1353,7 @@ Para cada par de amostras, são executados os testes para duas amostras com base
 &lt;hr/&gt;
 
 
-* Este capítulo é focado na proposta de distribuições para dados *PolSAR* multilook cujo suporte é o conjunto de matrizes hermitianas positivas definidas, diga-se `\(\mathbf{\Omega}_+\)` , também conhecido como o conjunto das Matrizes de covariâncias amostrais (MCA) (BIAN; MERCER, 2014).
+* Este capítulo é focado na proposta de distribuições para dados *PolSAR* multilook cujo suporte é o conjunto de matrizes hermitianas positivas definidas, diga-se `\(\mathbf{\Omega}_+\)`, também conhecido como o conjunto das Matrizes de covariâncias amostrais (MCA) (BIAN; MERCER, 2014).
 
 * Essas distribuições são frequentemente derivadas:
    * ou da modelagem multiplicativa (MM) (FREITAS; FRERY; CORREIA, 2005)
@@ -1568,68 +1551,12 @@ Essa situação é denotada como `\(\mathbf{S}\sim \text{CG}\mathcal{W}_{m}^{\ma
 ## Novos modelos
 &lt;hr/&gt;
 
-A seguinte figura  mostra as densidades marginais de
-`\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` e `\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)`.
-Elas podem assumir formas multimodais.
-
-
 &lt;img src="imagens/trabalho 1/densidades-marginais.png" width="100%" style="display: block; margin: auto;" /&gt;
-Figura 2 - Densidades marginais das distribuições  `\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` e  `\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)`.
-
----
-
-
-## Propriedades Matemáticas -  Função característica
-
-&lt;hr/&gt;
-
-&lt;div class="contrib"&gt;
-
-  &lt;div class="blockin"&gt; 
-  Lema 3:
-  &lt;/div&gt;
-
-Seja
-`\(\mathbf{S} = \sum\limits_{i=1}^{N} \mathbf{Z}_i\)`
-tal que
-`\(\mathbf{Z}_1,\ldots,\mathbf{Z}_N\)`
-é uma amostra aleatória retirada de
-`\(\mathbf{Z}\)`
-com *fc*
-`\(\varphi_{\mathbf{Z}}(\cdot)\)`
-e
-`\(N\)`
-é
-uma variável aleatória inteira positiva
-com *fc*
-`\(\varphi_{N}(\cdot)\)`.
-A *fc* de `\(\mathbf{S}\)` quando `\(N\)` e `\(\mathbf{Z}_i\)` são independentes é dada por
-`\begin{align}
-\varphi_{\mathbf{S}}(\mathbf{T}) &amp; = E(e^{i\mathbf{T}\mathbf{S}})\\
-&amp; =  \varphi_{N}\left(-i\log\varphi_{\mathbf{Z}}(\mathbf{T})\right),\text{ em que } i = \sqrt{-1}.
-\end{align}`
-&lt;/div&gt;
-
----
-
-
-## Propriedades Matemáticas -  Função característica
-
-&lt;hr/&gt;
-
-* `\(N \sim \text{TPo}(\lambda)\)` com `\(\varphi_{N}(t) = \dfrac{e^{\lambda e^{it}}-1}{e^{\lambda}-1}\)`.
-
-* `\(N \sim \text{Geo}(p)\)` com `\(\varphi_{N}(t) = \dfrac{pe^{it}}{1-qe^{it}}	= \dfrac{p}{e^{-it}-q}\)`.
-
-* `\(\mathbf{Z}_k\sim \mathcal{W}_{m}^{\mathbb{C}}(L,\mathbf{\Sigma})\)`
-	com *fc*
-	`\(\varphi_{\mathbf{Z}_k}(\mathbf{T}) =  |\mathbf{\Sigma}|^{-L}|\mathbf{\Sigma}^{-1} - i\mathbf{T}|^{-L}\)`
+Figura 2 - Densidades marginais das dist.  `\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` e  `\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)`.
 
 --
 
-&lt;br/&gt;
-
-## Estimação por máxima verossimilhança via EM
+### Estimação por máxima verossimilhança via EM
 &lt;hr/&gt;
 
 * Os EMVs para os parâmetros para as ditribuições
@@ -1755,8 +1682,8 @@ Tabela 3 - Performance dos EMVs para dados `\(\text{CG}\mathcal{W}_{m}^{\mathbb{
 
 &lt;img src="imagens/trabalho 1/emv-sf.png" width="100%" style="display: block; margin: auto;" /&gt;
 
-Figura 3 - Mapas dos parâmetros estimados das distribuições `\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` ( acima ) e
-`\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)` ( em baixo ) para a imagem
+Figura 3 - Mapas dos parâmetros estimados das distribuições `\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` (acima) e
+`\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)` (em baixo) para a imagem
  São Francisco.
 
 ---
@@ -1767,8 +1694,8 @@ Figura 3 - Mapas dos parâmetros estimados das distribuições `\(\text{CPT}\mat
 
 &lt;img src="imagens/trabalho 1/emv-foulum.png" width="100%" style="display: block; margin: auto;" /&gt;
 
-Figura 4 - Mapas dos parâmetros estimados das distribuições `\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` ( acima ) e
-`\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)` ( em baixo ) para a imagem
+Figura 4 - Mapas dos parâmetros estimados das distribuições `\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` (acima) e
+`\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)` (em baixo) para a imagem
  Foulum.
 
 ---
@@ -1778,8 +1705,8 @@ Figura 4 - Mapas dos parâmetros estimados das distribuições `\(\text{CPT}\mat
 
 &lt;img src="imagens/trabalho 1/emv-demmin.png" width="100%" style="display: block; margin: auto;" /&gt;
 
-Figura 5 - Mapas dos parâmetros estimados das distribuições `\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` ( acima ) e
-`\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)` ( em baixo ) para a imagem
+Figura 5 - Mapas dos parâmetros estimados das distribuições `\(\text{CPT}\mathcal{W}_{m}^{\mathbb{C}}\)` (acima) e
+`\(\text{CG}\mathcal{W}_{m}^{\mathbb{C}}\)` (em baixo) para a imagem
  DEMMIN-Görmin.
 
 ---
@@ -1816,7 +1743,7 @@ Figura 8 - Diagrama de Mellin com amostra de MLCs calculados a partir das amostr
 ## Experimentos Numéricos - Análise de dados reais
 &lt;hr/&gt;
 
-Tabela 4 - Resultados de ajuste em intensidades de dados *PolSAR* da imagem de São Francisc com L fixo.
+Tabela 4 - Resultados de ajuste em intensidades de dados *PolSAR* da imagem de São Francisco com L fixo.
 
 
 &lt;img src="imagens/trabalho 1/marginal2.png" width="100%" style="display: block; margin: auto;" /&gt;
@@ -1853,9 +1780,9 @@ Tabela 6 - Resultados de ajuste em intensidades de dados *PolSAR* da imagem de D
 * Para segmentação, foram realizadas três aplicações em imagens reais
 e duas aplicações para detecção de mudança.
 
-* Para segmentação das imagens EMISAR de Foulum (homogênea com cinco áreas) e para a imagem AIRSAR de Flevoland (homogênea com onze áreas), o segmentador baseado na entropia de Shannon da `\(\Gamma\)` sob dependência `\(\text{DEL}_{\Gamma^*}\)` forneceu os melhores resultados.
+* Para segmentação das imagens &lt;u&gt;EMISAR de Foulum&lt;/u&gt; (homogênea com cinco áreas) e para a imagem &lt;u&gt;AIRSAR de Flevoland&lt;/u&gt; (homogênea com onze áreas), o segmentador baseado na entropia de Shannon da `\(\Gamma\)` sob dependência `\(\text{DEL}_{\Gamma^*}\)` forneceu os melhores resultados.
 
-* Para a imagem E-SAR de Munique (mais heterogênea), o procedimento de segmentação baseado em entropia de Shannon da `\(\mathcal{G}^0_I\)` sob independência `\(\text{IEL}_{\mathcal{G}^0}\)` ofereceu o melhor resultado.
+* Para a imagem &lt;u&gt;E-SAR de Munique&lt;/u&gt; (mais heterogênea), o procedimento de segmentação baseado em entropia de Shannon da `\(\mathcal{G}^0_I\)` sob independência `\(\text{IEL}_{\mathcal{G}^0}\)` ofereceu o melhor resultado.
 
 
 ---
@@ -1870,11 +1797,10 @@ indicam que
 o segmentador baseado na entropia de Shannon
 da lei `\(\mathcal{G}^0_m\)`
 foi mais recomendado para reconhecer regiões
-sobre imagens com áreas mais misturas,
-enquanto
-aquele construído a partir da  
- `\(\text{s}\mathcal{W}_{m}^{\mathbb{C}}\)`
-foi a melhor opção para imagens com regiões mais dispersas.
+sobre imagens com áreas &lt;u&gt;mais sobrespostas&lt;/u&gt;,
+enquanto aquele construído a partir da
+`\(\text{s}\mathcal{W}_{m}^{\mathbb{C}}\)`
+foi a melhor opção para imagens com &lt;u&gt;regiões mais dispersas&lt;/u&gt;.
 
 &lt;hr/&gt;
 
@@ -1895,7 +1821,7 @@ foi a melhor opção para imagens com regiões mais dispersas.
 
 * Os resultados numéricos para  as expressões dos EMVs encontrados indicaram que tais estimativas apresentaram valores baixos de viés e erros quadráticos médios para tamanhos de amostra que são realistas com a prática de processamento de dados *PolSAR*.
 
-* Os diagramas de MLCs como critério de comparação apontaram que os modelos  `\(\text{CPT}\mathcal{W}_m^{\mathbb{C}}\)` e `\(\text{CG}\mathcal{W}_m^{\mathbb{C}}\)` podem fornecer melhores descrições de alguns cenários *PolSAR*.
+* Os &lt;u&gt;diagramas de MLCs&lt;/u&gt; como critério de comparação apontaram que os modelos  `\(\text{CPT}\mathcal{W}_m^{\mathbb{C}}\)` e `\(\text{CG}\mathcal{W}_m^{\mathbb{C}}\)` podem fornecer melhores descrições de alguns &lt;u&gt;cenários *PolSAR*&lt;/u&gt;.
 
 ---
 
