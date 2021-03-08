@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="description" content="Simple minimalist theme">
+<meta name="keywords" content="minimalist,blog,goa,hugo,developer">
+
+<base href="https://jodavid.github.io">
+
+<title>
+  Jodavid Ferreira - Gerando um Mapa com &#39;geobr&#39; no R 
+</title>
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,700|Roboto:300,300i,400,400i,500,500i,700,700i">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="https://jodavid.github.io/css/main.css">
+<link rel="stylesheet" href="https://jodavid.github.io/css/custom.css">
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://jodavid.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://jodavid.github.io/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://jodavid.github.io/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="https://jodavid.github.io/manifest.json">
+<link rel="mask-icon" href="https://jodavid.github.io/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+<body lang="pt-BR">
+<div class="container">
+
+
+<header class="row text-left title">
+  <h1 class="title">Gerando um Mapa com &#39;geobr&#39; no R</h1>
+</header>
+<section id="category-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-left meta">
+        PUBLISHED ON 7 DE MAR DE 2021 
+      
+      
+      
+      —
+      
+      
+      <a class="meta" href="https://jodavid.github.io/categories/r">R</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/categories/geobr">GEOBR</a>
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+<section id="content-pane" class="row">
+  <div class="col-md-12 text-justify content">
+    
+    
+    
+    
+<script src="Gerando um Mapa com 'geobr' no R_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Neste Post vamos gerar dois mapas com pacote <code>geobr</code>, com intiuto de mostrar
+o potêncial do pacote que pode gerar análises muito maiores do que os mostrados
+nesse post.</p>
+<blockquote>
+<p>geobr é um pacote computacional para download de conjuntos de dados espaciais oficiais do Brasil. O pacote inclui uma ampla gama de dados geoespaciais em formato de geopacote (como shapefiles), disponíveis em várias escalas geográficas e por vários anos com atributos harmonizados, projeção e topologia.</p>
+</blockquote>
+<p>O texto acima foi retirado do site do <a href="https://github.com/">github</a> do pacote: <a href="https://github.com/ipeaGIT/geobr">https://github.com/ipeaGIT/geobr</a>.</p>
+<p>Como exemplo simples, vamos gerar um primeiro mapas de frequências utilizando os estados do Brasil, para isso vamos gerar uma amostra de tamanho 1.000 (escolhido aleatóriamente) dos 27 estados do país.</p>
+<p>Lista dos estados do Brasil (BR):</p>
+<ul>
+<li>Acre - AC;</li>
+<li>Alagoas - AL;</li>
+<li>Amapá - AP;</li>
+<li>Amazonas - AM;</li>
+<li>Bahia - BA;</li>
+<li>Ceará - CE;</li>
+<li>Distrito Federal - DF;</li>
+<li>Espírito Santo - ES;</li>
+<li>Goiás - GO;</li>
+<li>Maranhão - MA;</li>
+<li>Mato Grosso - MT;</li>
+<li>Mato Grosso do Sul - MS;</li>
+<li>Minas Gerais - MG;</li>
+<li>Pará - PA;</li>
+<li>Paraíba - PB;</li>
+<li>Paraná - PR;</li>
+<li>Pernambuco - PE;</li>
+<li>Piauí - PI;</li>
+<li>Roraima - RR;</li>
+<li>Rondônia - RO;</li>
+<li>Rio de Janeiro - RJ;</li>
+<li>Rio Grande do Norte - RN;</li>
+<li>Rio Grande do Sul - RS;</li>
+<li>Santa Catarina - SC;</li>
+<li>São Paulo - SP;</li>
+<li>Sergipe - SE;</li>
+<li>Tocantins - TO.</li>
+</ul>
+<pre class="r"><code># Estados
+estados &lt;- c(&quot;AC&quot;, &quot;AL&quot;, &quot;AP&quot;, &quot;AM&quot;, &quot;BA&quot;, &quot;CE&quot;, &quot;DF&quot;, &quot;ES&quot;,
+             &quot;GO&quot;, &quot;MA&quot;, &quot;MT&quot;, &quot;MS&quot;, &quot;MG&quot;, &quot;PA&quot;, &quot;PB&quot;, &quot;PR&quot;,
+             &quot;PE&quot;, &quot;PI&quot;, &quot;RR&quot;, &quot;RO&quot;, &quot;RJ&quot;, &quot;RN&quot;, &quot;RS&quot;, &quot;SC&quot;,
+             &quot;SP&quot;, &quot;SE&quot;, &quot;TO&quot;)
+# Verificando se existem 27 estados
+length(estados)</code></pre>
+<pre><code>## [1] 27</code></pre>
+<pre class="r"><code># Criando uma amostra de tamanho 1.000
+
+amostra &lt;- sample(x = estados, size = 1000, replace = TRUE)
+
+# Verificando as frequências em cada estado
+
+table(amostra)</code></pre>
+<pre><code>## amostra
+## AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP 
+## 40 30 28 45 36 36 31 41 41 40 42 44 37 36 40 47 32 38 38 27 34 30 34 50 35 27 
+## TO 
+## 41</code></pre>
+<p>Em geral ficou uma amostra uniforme, em torno da frequẽncia 35. Vamos agora chamar a biblioteca e gerar o mapa usando o <code>geobr</code>.</p>
+<pre class="r"><code># Instalando o &#39;geobr&#39;
+remotes::install_github(&quot;ipeaGIT/geobr&quot;, subdir = &quot;r-package&quot;)</code></pre>
+<p>No Debian/Ubuntu, foi necessário instalar a <code>libudunits2-dev</code> no terminal do linux;</p>
+<pre class="bash"><code># No Teminal Linux
+apt install libudunits2-dev
+</code></pre>
+<p>Após a instalação da biblioteca no Sistema operacional, foi utilizado o comando para instalar o pacote novamente e se tudo ocorreu como esperado, o pacote foi instalado com sucesso!</p>
+<p>Abaixo vamos seguir com o código da geração do mapa</p>
+<pre class="r"><code># Lendo as bibliotecas
+library(geobr) # Necessárias para os dados dos mapas
+library(dplyr) # Necessária para manipulação dos dados
+
+# Convertendo a amostra em tibble
+amostra &lt;- as_tibble(amostra)
+
+# Agrupando os dados dos estados
+dados_estados &lt;- amostra %&gt;%
+                  mutate(abbrev_state = factor(value)) %&gt;% 
+                  group_by(abbrev_state) %&gt;% 
+                  summarise(n = n())
+
+# Fazendo left_join das informações do geobr com os dados
+dados_mapa &lt;- read_state(year=2019, showProgress = FALSE) %&gt;% 
+              left_join(dados_estados)</code></pre>
+<p>Gerando o mapa utilizando a frequência gerada pelo prórpio <code>ggplot</code>:</p>
+<pre class="r"><code># Pacote ggplot2
+library(ggplot2)
+
+
+# Código do MAPA
+dados_mapa %&gt;%
+  ggplot() +
+  geom_sf(aes(fill = n)) +
+  labs(title = &quot;Mapa Brasil&quot;, fill = &quot;Frequência&quot;)+
+  theme_minimal()+
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())</code></pre>
+<p><img src="Gerando um Mapa com 'geobr' no R_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Criando um intervalo e fazendo o gráfico de acordo com a legenda criada:</p>
+<pre class="r"><code># Descobrindo o maximo e minimo para definir a quantidade de intervalos
+max(dados_mapa$n) # Calculando o máximo</code></pre>
+<pre><code>## [1] 50</code></pre>
+<pre class="r"><code>min(dados_mapa$n) # Calculando o mínimo</code></pre>
+<pre><code>## [1] 27</code></pre>
+<pre class="r"><code>max(dados_mapa$n) - min(dados_mapa$n) # Diferença</code></pre>
+<pre><code>## [1] 23</code></pre>
+<pre class="r"><code># Por questão de facilidade vamos dividir em 3 categorias:
+# 1 - Frequência de menos de 20;
+# 2 - Frequência de 20 a 30;
+# 3 - Frequência de 30 ou mais;
+
+#Criando os Intervalos para a Legenda
+classes = c(-Inf, 20, 31, Inf)
+classes_plot &lt;- findInterval(dados_mapa$n,classes)
+
+# Criar legenda
+legenda =  c(&#39;menos de 20&#39;,
+             &#39;20 |-- 30 &#39;,
+             &#39;mais de 30&#39;)
+
+cores = c(&quot;#e9e57f&quot;,
+          &quot;#cda300&quot;,
+          &quot;#a46500&quot;)
+
+
+# Adicionando a coluna classes_plot no tibble dados_mapa
+
+dados_mapa &lt;- dados_mapa %&gt;% 
+              mutate(classes_plot = factor(classes_plot))
+
+# Código do MAPA
+dados_mapa %&gt;%
+  ggplot() +
+  geom_sf(aes(fill = classes_plot), color = &quot;black&quot;) +
+  labs(title = &quot;Mapa Brasil&quot;, fill = &quot;Frequência Criada&quot;)+
+  scale_fill_manual(labels = legenda,
+                    values = cores)+ 
+  theme_minimal()+
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())</code></pre>
+<p><img src="Gerando um Mapa com 'geobr' no R_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Com esses códigos são possíveis a criação de mapas utilizando frequências usando o pacote <code>geobr</code>.</p>
+<p>Fontes:</p>
+<p><a href="https://www.instagram.com/p/CMDauKFgsJo/?utm_source=ig_web_copy_link">Instagram: programando_em_r</a></p>
+<p><br/>
+<br/>
+<br/></p>
+<div id="post-gerado-com-framework-hugo-httpgohugo.io-r-markdown-httprmarkdown.rstudio.com-no-qual-os-resultados-são-gerados-na-geração-da-página." class="section level4">
+<h4>“Post gerado com framework HUGO (<a href="http://gohugo.io/">http://gohugo.io/</a>), R Markdown (<a href="http://rmarkdown.rstudio.com/">http://rmarkdown.rstudio.com/</a>), no qual os resultados são gerados na geração da página.”</h4>
+</div>
+
+  </div>
+</section>
+<section id="tag-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-right meta">
+      
+      
+      
+      TAGS:
+      
+      
+      <a class="meta" href="https://jodavid.github.io/tags/r">R</a>, 
+      
+      <a class="meta" href="https://jodavid.github.io/tags/geobr">GEOBR</a>
+      
+      
+      
+    </h6>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<section id="menu-pane" class="row menu text-center">
+  
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post/refresh-de-um-script-r-com-crontab/">&lt; prev | </a></span>
+  
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post">post</a></span>
+  
+  
+  
+  <h4 class="text-center"><a class="menu-item" href="https://jodavid.github.io">home</a></h4>
+</section>
+
+
+
+<footer class="row text-center footer">
+  <hr />
+  
+  <h6 class="text-center copyright">© 2021. Jodavid Ferreira. <a href="http://creativecommons.org/licenses/by/3.0/">Todos os direitos reservados</a>.</h6>
+  
+  <h6 class="text-center powered">Powered by <a href="https://gohugo.io/">Hugo  v0.54.0</a> &amp; <a href="https://github.com/shenoybr/hugo-goa">Goa</a>.</h6>
+  
+      
+      <h6><a href="" aria-label="RSS Feed"><i class="fas fa-rss" aria-hidden="true"></i></a></h6>
+    
+  
+</footer>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-141028971-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
+
+

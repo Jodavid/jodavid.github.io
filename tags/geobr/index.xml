@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Geobr on Jodavid Ferreira</title>
+    <link>https://jodavid.github.io/tags/geobr/</link>
+    <description>Recent content in Geobr on Jodavid Ferreira</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Sun, 07 Mar 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jodavid.github.io/tags/geobr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gerando um Mapa com &#39;geobr&#39; no R</title>
+      <link>https://jodavid.github.io/post/gerando-um-mapa-com-geobr-no-r/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/post/gerando-um-mapa-com-geobr-no-r/</guid>
+      <description>Neste Post vamos gerar dois mapas com pacote geobr, com intiuto de mostrar o potêncial do pacote que pode gerar análises muito maiores do que os mostrados nesse post.
+ geobr é um pacote computacional para download de conjuntos de dados espaciais oficiais do Brasil. O pacote inclui uma ampla gama de dados geoespaciais em formato de geopacote (como shapefiles), disponíveis em várias escalas geográficas e por vários anos com atributos harmonizados, projeção e topologia.</description>
+    </item>
+    
+  </channel>
+</rss>
