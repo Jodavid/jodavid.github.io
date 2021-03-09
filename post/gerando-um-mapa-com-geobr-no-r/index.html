@@ -13,7 +13,7 @@
 <base href="https://jodavid.github.io">
 
 <title>
-  Jodavid Ferreira - Gerando um Mapa com &#39;geobr&#39; no R 
+  Jodavid Ferreira - Gerando um Mapa com `geobr` no R 
 </title>
 
 <meta name="generator" content="Hugo 0.54.0" />
@@ -50,7 +50,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 
 <header class="row text-left title">
-  <h1 class="title">Gerando um Mapa com &#39;geobr&#39; no R</h1>
+  <h1 class="title">Gerando um Mapa com `geobr` no R</h1>
 </header>
 <section id="category-pane" class="row meta">
   
@@ -79,7 +79,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
     
     
     
-<script src="Gerando um Mapa com 'geobr' no R_files/header-attrs/header-attrs.js"></script>
+<script src="Gerando um Mapa com geobr no R_files/header-attrs/header-attrs.js"></script>
 
 
 <p>Neste Post vamos gerar dois mapas com pacote <code>geobr</code>, com intiuto de mostrar
@@ -137,9 +137,9 @@ amostra &lt;- sample(x = estados, size = 1000, replace = TRUE)
 table(amostra)</code></pre>
 <pre><code>## amostra
 ## AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP 
-## 38 41 33 35 36 32 39 30 35 31 39 42 42 38 36 32 37 34 49 49 32 30 31 49 37 31 
+## 49 46 34 35 39 35 33 45 25 49 33 45 32 38 31 38 35 35 47 29 40 38 35 34 33 31 
 ## TO 
-## 42</code></pre>
+## 36</code></pre>
 <p>Em geral ficou uma amostra uniforme, em torno da frequẽncia 35. Vamos agora chamar a biblioteca e gerar o mapa usando o <code>geobr</code>.</p>
 <pre class="r"><code># Instalando o &#39;geobr&#39;
 remotes::install_github(&quot;ipeaGIT/geobr&quot;, subdir = &quot;r-package&quot;)</code></pre>
@@ -180,15 +180,15 @@ dados_mapa %&gt;%
         axis.text = element_blank(),
         axis.ticks = element_blank(),
         panel.grid = element_blank())</code></pre>
-<p><img src="Gerando um Mapa com 'geobr' no R_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="https://jodavid.github.io/post/Gerando%20um%20Mapa%20com%20geobr%20no%20R_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Criando um intervalo e fazendo o gráfico de acordo com a legenda criada:</p>
 <pre class="r"><code># Descobrindo o maximo e minimo para definir a quantidade de intervalos
 max(dados_mapa$n) # Calculando o máximo</code></pre>
 <pre><code>## [1] 49</code></pre>
 <pre class="r"><code>min(dados_mapa$n) # Calculando o mínimo</code></pre>
-<pre><code>## [1] 30</code></pre>
+<pre><code>## [1] 25</code></pre>
 <pre class="r"><code>max(dados_mapa$n) - min(dados_mapa$n) # Diferença</code></pre>
-<pre><code>## [1] 19</code></pre>
+<pre><code>## [1] 24</code></pre>
 <pre class="r"><code># Por questão de facilidade vamos dividir em 3 categorias:
 # 1 - Frequência de menos de 20;
 # 2 - Frequência de 20 a 30;
@@ -225,7 +225,7 @@ dados_mapa %&gt;%
         axis.text = element_blank(),
         axis.ticks = element_blank(),
         panel.grid = element_blank())</code></pre>
-<p><img src="Gerando um Mapa com 'geobr' no R_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="https://jodavid.github.io/post/Gerando%20um%20Mapa%20com%20geobr%20no%20R_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Com esses códigos são possíveis a criação de mapas utilizando frequências usando o pacote <code>geobr</code>.</p>
 <p>Fontes:</p>
 <p><a href="https://www.instagram.com/p/CMDauKFgsJo/?utm_source=ig_web_copy_link">Instagram: programando_em_r</a></p>
@@ -274,6 +274,8 @@ dados_mapa %&gt;%
   
   <span><a class="menu-item" href="https://jodavid.github.io/post">post</a></span>
   
+  
+  <span><a class="menu-item" href="https://jodavid.github.io/post/gerando-um-mapa-com-geobr-no-r/"> | next &gt;</a></span>
   
   
   <h4 class="text-center"><a class="menu-item" href="https://jodavid.github.io">home</a></h4>
