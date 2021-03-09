@@ -137,9 +137,9 @@ amostra &lt;- sample(x = estados, size = 1000, replace = TRUE)
 table(amostra)</code></pre>
 <pre><code>## amostra
 ## AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP 
-## 40 30 28 45 36 36 31 41 41 40 42 44 37 36 40 47 32 38 38 27 34 30 34 50 35 27 
+## 38 41 33 35 36 32 39 30 35 31 39 42 42 38 36 32 37 34 49 49 32 30 31 49 37 31 
 ## TO 
-## 41</code></pre>
+## 42</code></pre>
 <p>Em geral ficou uma amostra uniforme, em torno da frequẽncia 35. Vamos agora chamar a biblioteca e gerar o mapa usando o <code>geobr</code>.</p>
 <pre class="r"><code># Instalando o &#39;geobr&#39;
 remotes::install_github(&quot;ipeaGIT/geobr&quot;, subdir = &quot;r-package&quot;)</code></pre>
@@ -184,11 +184,11 @@ dados_mapa %&gt;%
 <p>Criando um intervalo e fazendo o gráfico de acordo com a legenda criada:</p>
 <pre class="r"><code># Descobrindo o maximo e minimo para definir a quantidade de intervalos
 max(dados_mapa$n) # Calculando o máximo</code></pre>
-<pre><code>## [1] 50</code></pre>
+<pre><code>## [1] 49</code></pre>
 <pre class="r"><code>min(dados_mapa$n) # Calculando o mínimo</code></pre>
-<pre><code>## [1] 27</code></pre>
+<pre><code>## [1] 30</code></pre>
 <pre class="r"><code>max(dados_mapa$n) - min(dados_mapa$n) # Diferença</code></pre>
-<pre><code>## [1] 23</code></pre>
+<pre><code>## [1] 19</code></pre>
 <pre class="r"><code># Por questão de facilidade vamos dividir em 3 categorias:
 # 1 - Frequência de menos de 20;
 # 2 - Frequência de 20 a 30;
