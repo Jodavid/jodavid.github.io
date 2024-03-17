@@ -5,27 +5,21 @@
     <link>https://jodavid.github.io/</link>
     <description>Recent content on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>pt-BR</language><atom:link href="https://jodavid.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>pt-BR</language>
+    <atom:link href="https://jodavid.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Livros e Materiais de Ensino</title>
       <link>https://jodavid.github.io/ensino/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://jodavid.github.io/ensino/</guid>
       <description>Livros e Materiais Livros Aprimorando a comunicação dos resultados com Storytelling Inteligência Artificial e Estatística: Perspectivas e Aplicações Generative AI Explorando a Análise de Dados em Nuvem com AWS, GCP e Azure Explorando Python e PySpark no contexto da Estatística Gerenciamento Operacional de Modelos (MLOps) de Aprendizado de Máquina com R e Python Materiais Extras CV (em português) criado com R + Markdown usando o pacote pagedown baseado no código-fonte do Nicholas Strayer :</description>
     </item>
-    
     <item>
       <title>Sobre mim</title>
       <link>https://jodavid.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://jodavid.github.io/about/</guid>
-      <description>Eu sou Jodavid Ferreira
-graduado em Estatística pela UFPB, possui Mestrado e Doutorado em Estatística pela UFPE, e Pós-Doutorado no Programa de Pós Graduação em Modelos de Decisão e Saúde na UFPB.
-É entusiasta de software livre e de código aberto (free and open-source software - FOSS), e gosta sempre de estar atualizado sobre as novidades tecnológicas e assuntos relacionados a Inteligência Artificial e Machine Learning.
-Na parte acadêmica desenvolveu/desenvolve suas pesquisas nas linhas de aprendizado supervisionado (classificação) e aprendizado não supervisionado(segmentação, agrupamento) caminhando por várias áreas da estatística como distribuições de probabilidade, testes de hipóteses, inferência estatística, teoria da informação.</description>
+      <description>Eu sou Jodavid Ferreira&#xA;graduado em Estatística pela UFPB, possui Mestrado e Doutorado em Estatística pela UFPE, e Pós-Doutorado no Programa de Pós Graduação em Modelos de Decisão e Saúde na UFPB.&#xA;É entusiasta de software livre e de código aberto (free and open-source software - FOSS), e gosta sempre de estar atualizado sobre as novidades tecnológicas e assuntos relacionados a Inteligência Artificial e Machine Learning.&#xA;Na parte acadêmica desenvolveu/desenvolve suas pesquisas nas linhas de aprendizado supervisionado (classificação) e aprendizado não supervisionado(segmentação, agrupamento) caminhando por várias áreas da estatística como distribuições de probabilidade, testes de hipóteses, inferência estatística, teoria da informação.</description>
     </item>
-    
   </channel>
 </rss>

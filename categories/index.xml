@@ -5,6 +5,7 @@
     <link>https://jodavid.github.io/categories/</link>
     <description>Recent content in Categories on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>pt-BR</language><atom:link href="https://jodavid.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>pt-BR</language>
+    <atom:link href="https://jodavid.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
