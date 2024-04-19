@@ -2,18 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:4321/categories/</loc>
+    <loc>https://jodavid.github.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:4321/introducaoads/</loc>
+    <loc>https://jodavid.github.io/introducaoads/</loc>
   </url><url>
-    <loc>http://localhost:4321/</loc>
+    <loc>https://jodavid.github.io/</loc>
   </url><url>
-    <loc>http://localhost:4321/extras/</loc>
+    <loc>https://jodavid.github.io/extras/</loc>
   </url><url>
-    <loc>http://localhost:4321/ensino/</loc>
+    <loc>https://jodavid.github.io/redesneurais/</loc>
   </url><url>
-    <loc>http://localhost:4321/about/</loc>
+    <loc>https://jodavid.github.io/ensino/</loc>
   </url><url>
-    <loc>http://localhost:4321/tags/</loc>
+    <loc>https://jodavid.github.io/about/</loc>
+  </url><url>
+    <loc>https://jodavid.github.io/tags/</loc>
   </url>
 </urlset>
