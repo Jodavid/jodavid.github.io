@@ -1,0 +1,2 @@
+0_apresentacao_disciplina - https://introducaocienciadedados20241.github.io/0_apresentacao_disciplina/Apresentacao-DS.html
+1_inteligencia_artificial - https://introducaocienciadedados20241.github.io/1_inteligencia_artificial/IA_e_DS.html

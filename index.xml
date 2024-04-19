@@ -2,23 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jodavid Ferreira</title>
-    <link>https://jodavid.github.io/</link>
+    <link>http://localhost:4321/</link>
     <description>Recent content on Jodavid Ferreira</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <atom:link href="https://jodavid.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:4321/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Livros e Materiais de Ensino</title>
-      <link>https://jodavid.github.io/ensino/</link>
+      <title>Introdução à Ciência de Dados</title>
+      <link>http://localhost:4321/introducaoads/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jodavid.github.io/ensino/</guid>
+      <guid>http://localhost:4321/introducaoads/</guid>
+      <description>Essa página tem como objetivo deixar disponível o material da disciplina de Introdução à Ciência de Dados ministrada pelo Profº Jodavid Ferreira no curso de Estatística na Universidade Federal de Pernambuco - UFPE.&#xA;Aula 01 - Apresentação da disciplina (slide)&#xA;Aula 02 - Introdução a Inteligência Artificial (slide)&#xA;Obs.: Nos slides possuem imagens e gráficos obtidas da internet. Caso a fonte não seja informada na imagem ou referência, contactar o autor para que a mesma seja adicionada.</description>
+    </item>
+    <item>
+      <title>Materiais Complementares</title>
+      <link>http://localhost:4321/extras/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/extras/</guid>
       <description>Livros e Materiais Livros Aprimorando a comunicação dos resultados com Storytelling Inteligência Artificial e Estatística: Perspectivas e Aplicações Generative AI Explorando a Análise de Dados em Nuvem com AWS, GCP e Azure Explorando Python e PySpark no contexto da Estatística Gerenciamento Operacional de Modelos (MLOps) de Aprendizado de Máquina com R e Python Materiais Extras CV (em português) criado com R + Markdown usando o pacote pagedown baseado no código-fonte do Nicholas Strayer :</description>
     </item>
     <item>
-      <title>Sobre mim</title>
-      <link>https://jodavid.github.io/about/</link>
+      <title>Redes Neurais</title>
+      <link>http://localhost:4321/redesneurais/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jodavid.github.io/about/</guid>
+      <guid>http://localhost:4321/redesneurais/</guid>
+      <description>Essa página tem como objetivo deixar disponível o material da disciplina de Redes Neurais ministrada pelo Profº Jodavid Ferreira no curso de Estatística na Universidade Federal de Pernambuco - UFPE.&#xA;Aula 01 - Apresentação da disciplina (slide)&#xA;Aula 02 - Introdução a Inteligência Artificial (slide)&#xA;Obs.: Nos slides possuem imagens e gráficos obtidas da internet. Caso a fonte não seja informada na imagem ou referência, contactar o autor para que a mesma seja adicionada.</description>
+    </item>
+    <item>
+      <title>Slides e Materiais de Ensino</title>
+      <link>http://localhost:4321/ensino/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/ensino/</guid>
+      <description> Disciplinas Introdução à Ciência de Dados Redes Neurais </description>
+    </item>
+    <item>
+      <title>Sobre mim</title>
+      <link>http://localhost:4321/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4321/about/</guid>
       <description>Eu sou Jodavid Ferreira&#xA;graduado em Estatística pela UFPB, possui Mestrado e Doutorado em Estatística pela UFPE, e Pós-Doutorado no Programa de Pós Graduação em Modelos de Decisão e Saúde na UFPB.&#xA;É entusiasta de software livre e de código aberto (free and open-source software - FOSS), e gosta sempre de estar atualizado sobre as novidades tecnológicas e assuntos relacionados a Inteligência Artificial e Machine Learning.&#xA;Na parte acadêmica desenvolveu/desenvolve suas pesquisas nas linhas de aprendizado supervisionado (classificação) e aprendizado não supervisionado(segmentação, agrupamento) caminhando por várias áreas da estatística como distribuições de probabilidade, testes de hipóteses, inferência estatística, teoria da informação.</description>
     </item>
   </channel>
