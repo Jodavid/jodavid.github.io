@@ -17,6 +17,15 @@ I am an enthusiast of free and open-source software (FOSS) and always strive to 
     </item>
     
     <item>
+      <title>Complementary Materials</title>
+      <link>https://jodavid.github.io/extras/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/extras/</guid>
+      <description>Books and Materials Books  Aprimorando a comunicação dos resultados com Storytelling Inteligência Artificial e Estatística: Perspectivas e Aplicações Generative AI Explorando a Análise de Dados em Nuvem com AWS, GCP e Azure Explorando Python e PySpark no contexto da Estatística Gerenciamento Operacional de Modelos (MLOps) de Aprendizado de Máquina com R e Python  Materials     Extras   CV (in Portuguese) created with R + Markdown using the package pagedown based on the source code of Nicholas Strayer :</description>
+    </item>
+    
+    <item>
       <title>Introdução à Ciência de Dados</title>
       <link>https://jodavid.github.io/introducaoads/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -27,15 +36,6 @@ I am an enthusiast of free and open-source software (FOSS) and always strive to 
   Aula 02 - Introdução a Inteligência Artificial (slide)
   Aula 03 - Conceitos de Ciência de Dados (slide)
     Listas de Exercício  Lista 00 - Conceitos de IA e Ciência de Dados Lista 01 - Exercícios de Python Lista 02 Lista 03 Lista 04    Projeto de Pesquisa  Normas do Trabalho     Obs.</description>
-    </item>
-    
-    <item>
-      <title>Materiais Complementares</title>
-      <link>https://jodavid.github.io/extras/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jodavid.github.io/extras/</guid>
-      <description>Livros e Materiais Livros  Aprimorando a comunicação dos resultados com Storytelling Inteligência Artificial e Estatística: Perspectivas e Aplicações Generative AI Explorando a Análise de Dados em Nuvem com AWS, GCP e Azure Explorando Python e PySpark no contexto da Estatística Gerenciamento Operacional de Modelos (MLOps) de Aprendizado de Máquina com R e Python  Materiais     Extras   CV (em português) criado com R + Markdown usando o pacote pagedown baseado no código-fonte do Nicholas Strayer :</description>
     </item>
     
     <item>
