@@ -17,48 +17,26 @@ I am an enthusiast of free and open-source software (FOSS) and always strive to 
     </item>
     
     <item>
-      <title>Complementary Materials</title>
-      <link>https://jodavid.github.io/extras/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jodavid.github.io/extras/</guid>
-      <description>Books and Materials Books  Aprimorando a comunicação dos resultados com Storytelling Inteligência Artificial e Estatística: Perspectivas e Aplicações Generative AI Explorando a Análise de Dados em Nuvem com AWS, GCP e Azure Explorando Python e PySpark no contexto da Estatística Gerenciamento Operacional de Modelos (MLOps) de Aprendizado de Máquina com R e Python  Materials     Extras   CV (in Portuguese) created with R + Markdown using the package pagedown based on the source code of Nicholas Strayer :</description>
-    </item>
-    
-    <item>
       <title>Course Materials</title>
       <link>https://jodavid.github.io/courses/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jodavid.github.io/courses/</guid>
       <description> Welcome to the Materials page! Here, you&amp;rsquo;ll find study materials for courses I teach in undergraduate and postgraduate programs. Explore the links below to access the content and enhance your learning experience.
-Undergraduate  Introduction to Data Science - Introdução à Ciência de Dados - link   Neural Network - Redes Neurais - link  Postgraduate  Computational Statistics - Tópicos Especiais em Estatística Computacional - link   Machine Learning - Aprendizagem de Máquina - link   </description>
+Undergraduate  Introduction to Data Science - Introdução à Ciência de Dados - link here   Artificial Neural Network - Redes Neurais Artificiais - link here  Postgraduate  Computational Statistics Topics - Tópicos Especiais em Estatística Computacional - link here   Machine Learning - Aprendizagem de Máquina - link here   </description>
     </item>
     
     <item>
-      <title>Introdução à Ciência de Dados</title>
-      <link>https://jodavid.github.io/introducaoads/</link>
+      <title>Extras</title>
+      <link>https://jodavid.github.io/extras/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jodavid.github.io/introducaoads/</guid>
-      <description>Essa página tem como objetivo deixar disponível o material da disciplina de Introdução à Ciência de Dados ministrada pelo Profº Jodavid Ferreira no curso de Estatística na Universidade Federal de Pernambuco - UFPE.
-  Aula 01 - Apresentação da disciplina (slide)
-  Aula 02 - Introdução a Inteligência Artificial (slide)
-  Aula 03 - Conceitos de Ciência de Dados (slide)
-    Listas de Exercício  Lista 00 - Conceitos de IA e Ciência de Dados Lista 01 - Exercícios de Python Lista 02 Lista 03 Lista 04    Projeto de Pesquisa  Normas do Trabalho     Obs.</description>
-    </item>
-    
-    <item>
-      <title>Redes Neurais</title>
-      <link>https://jodavid.github.io/redesneurais/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jodavid.github.io/redesneurais/</guid>
-      <description>Essa página tem como objetivo deixar disponível o material da disciplina de Redes Neurais ministrada pelo Profº Jodavid Ferreira no curso de Estatística na Universidade Federal de Pernambuco - UFPE.
-  Aula 01 - Apresentação da disciplina (slide)
-  Aula 02 - Introdução a Inteligência Artificial (slide)
-  Aula 03 - Introdução ao básico de Python (slide)
-  Aula 04 - Análise Exploratória de Dados com Python (slide)</description>
+      <guid>https://jodavid.github.io/extras/</guid>
+      <description>   CV (in Portuguese) created with R + Markdown using the package pagedown based on the source code of Nicholas Strayer :
+  CV link (online) - pt-BR: https://jodavid.github.io/cv/
+  CV link (pdf): CV in PDF
+  Source Code Link: https://github.com/jodavid/cv
+  </description>
     </item>
     
     <item>
@@ -67,8 +45,8 @@ Undergraduate  Introduction to Data Science - Introdução à Ciência de Dados 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jodavid.github.io/researches/</guid>
-      <description>Welcome to the Researches page!
-Researches Articles in Scientific Journals 2025  FERREIRA, J. A.; MORAES, R. M. ; MACHADO, L. S. . A New Double Weighted Fuzzy Hypergeometric Naive Bayes Network and its Application for User&amp;rsquo;s Assessment in Virtual Reality Simulators. International Journal of Computational Intelligence Systems, 2025.  link: https://link.springer.com/article/10.1007/s44196-025-00816-5    2024  FERREIRA, J. A.; RODRIGUES, A. K. G. ; OSPINA, R. ; GOMEZ, L.</description>
+      <description>Welcome to my Research page! Here, you’ll find my published work in scientific journals and conference proceedings. Explore my academic contributions and ongoing projects.
+Researches Articles in Scientific Journals 2025  [link] A New Double Weighted Fuzzy Hypergeometric Naive Bayes Network and its Application for User&amp;rsquo;s Assessment in Virtual Reality Simulators.  International Journal of Computational Intelligence Systems, 2025. Ferreira, J. A.; Moraes, R. M.; Machado, L. S.    2024  [link] Machine learning classification based on k-Nearest Neighbors for PolSAR data.</description>
     </item>
     
     <item>
