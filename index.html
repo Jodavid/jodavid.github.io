@@ -50,7 +50,7 @@
 
 <section id="info-pane" class="text-center info">
   
-  <h3 class="intro">Professor at UFPE | AI and Open-Source software enthusiast</h3>
+  <h3 class="intro">Professor at UFPE | <!-- raw HTML omitted -->AI and Open-Source software enthusiast<!-- raw HTML omitted --></h3>
   
   
   <h4 class="description">&hellip;I hold a Ph.D. in Statistics and use this platform to share my insights, teaching materials, professional contacts, and personal information&hellip;</h4>
@@ -184,8 +184,20 @@
 
 
 <h6 class="text-center copyright">
-        <span class="fas fa-envelope">&nbsp&nbsp</span>jodavid dot ferreira at ufpe dot com
+        <span class="fas fa-envelope">&nbsp&nbsp</span>jodavid dot ferreira at ufpe dot com &nbsp&nbsp | &nbsp&nbsp 
+        
+        <span class="fas fa-sync-alt fa-refresh">&nbsp&nbsp</span>Last updated: <span id="lastModified"></span>
+  
 </h6>
+
+
+<script>
+  document.getElementById('lastModified').textContent = new Date(document.lastModified).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+</script>
 
 
 <footer class="text-center footer">
@@ -196,13 +208,13 @@
   <h6 class="text-center powered">Powered by <a href="https://gohugo.io/">Hugo  v0.92.2</a> &amp; <a href="https://github.com/shenoybr/hugo-goa">Goa</a>.</h6>
   
       
-      <h6><a href="" aria-label="RSS Feed"><i class="fas fa-rss" aria-hidden="true"></i></a></h6>
-    
   
 </footer>
 
 </div>
 
+
+  
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
