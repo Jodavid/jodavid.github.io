@@ -57,5 +57,16 @@ Academic Curriculum Vitae (CV) My CV is built using R Markdown and the pagedown 
       <description> Disciplinas  Introdução à Ciência de Dados    Redes Neurais    </description>
     </item>
     
+    <item>
+      <title>Students &amp; Advising</title>
+      <link>https://jodavid.github.io/students/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/students/</guid>
+      <description>Welcome to the Students &amp;amp; Advising page. I actively supervise and mentor students across undergraduate, master&amp;rsquo;s, and doctoral programs in the Department of Statistics (DEst) and the Graduate Program in Statistics (PPGEST) at the Federal University of Pernambuco (UFPE).
+Our research group focuses on Statistical Machine Learning, Deep Representation Learning, Polarimetric SAR (PolSAR) Remote Sensing, Generative AI &amp;amp; Autonomous Agents, and Applied Statistical Modeling.
+ 🔬 Current Students (In Progress) Doctoral Advising (Ph.</description>
+    </item>
+    
   </channel>
 </rss>
