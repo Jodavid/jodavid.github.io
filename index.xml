@@ -1,50 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Jodavid Ferreira</title>
-		<link>https://jodavid.github.io/</link>
-		<description>Recent content on Jodavid Ferreira</description>
-		<generator>Hugo</generator>
-		<language>pt-BR</language>
-		
-		
-		
-		
-			<atom:link href="https://jodavid.github.io/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>About Me</title>
-				<link>https://jodavid.github.io/about/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://jodavid.github.io/about/</guid>
-				<description>&lt;p&gt;I am &lt;strong&gt;Jodavid Ferreira&lt;/strong&gt;, I&amp;rsquo;m Professor in the &lt;em&gt;Department of Statistics&lt;/em&gt; at the &lt;strong&gt;Federal University of Pernambuco (UFPE)&lt;/strong&gt;. I have a Bachelor&amp;rsquo;s degree in &lt;em&gt;Statistics from UFPB&lt;/em&gt;, a &lt;em&gt;Master&amp;rsquo;s and Ph.D. in Statistics from UFPE&lt;/em&gt;, and a &lt;strong&gt;Postdoctoral fellowship in the Decision Models and Health Graduate Program at UFPB&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I am an enthusiast of &lt;strong&gt;free and open-source software (FOSS)&lt;/strong&gt; and always strive to stay updated on technological advancements and topics related to &lt;strong&gt;Artificial Intelligence, Deep Learning and Machine Learning&lt;/strong&gt;.&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Course Materials</title>
-				<link>https://jodavid.github.io/courses/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://jodavid.github.io/courses/</guid>
-				<description>&lt;hr&gt;&#xA;&lt;p&gt;Welcome to the Materials page! Here, you&amp;rsquo;ll find study materials for courses I teach in undergraduate and postgraduate programs. Explore the links below to access the content and enhance your learning experience.&lt;/p&gt;&#xA;&lt;h4 id=&#34;undergraduate&#34;&gt;Undergraduate&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/introducao_ds/&#34;&gt;Introduction to Data Science - Introdução à Ciência de Dados - link here&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;br/&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/redes_neurais/&#34;&gt;Artificial Neural Network - Redes Neurais Artificiais - link here&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;br/&gt;&#xA;&lt;br/&gt;&#xA;&lt;h4 id=&#34;graduate&#34;&gt;Graduate&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/computationalstatisticstopics/&#34;&gt;Computational Statistics Topics - Tópicos Especiais em Estatística Computacional - link here&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;br/&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/aprendizagemdemaquina/&#34;&gt;Statistical Machine Learning - Aprendizagem Estatístico de Máquina - link here&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;br/&gt;&#xA;&lt;hr&gt;</description>
-			</item>
-			<item>
-				<title>Extras</title>
-				<link>https://jodavid.github.io/extras/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://jodavid.github.io/extras/</guid>
-				<description>&lt;hr&gt;&#xA;&lt;!--&#xA;&#xA;### Books and Materials&#xA;&#xA;#### Books&#xA;&#xA;&lt;br/&gt;&#xA;&#xA;1.  [Aprimorando a comunicação dos resultados com Storytelling](#)&#xA;2.  [Inteligência Artificial e Estatística: Perspectivas e Aplicações](#)&#xA;3.  [Generative AI](#)&#xA;4.  [Explorando a Análise de Dados em Nuvem com AWS, GCP e Azure](#)&#xA;5.  [Explorando Python e PySpark no contexto da Estatística](#)&#xA;6.  [Gerenciamento Operacional de Modelos (MLOps) de Aprendizado de Máquina com R e Python](#)&#xA;&#xA;&lt;br/&gt;&#xA;&#xA;#### Materials&#xA;&#xA;-&#xA;&#xA;&#xA;&lt;pre&gt; &lt;/pre&gt;&#xA;&lt;pre&gt; &lt;/pre&gt;&#xA;&#xA;&lt;br/&gt; &lt;br/&gt;&#xA;&#xA;------------------------------------------------------------------------&#xA;&#xA;--&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CV (in Portuguese) created with R + Markdown using the package &lt;a href=&#34;https://github.com/rstudio/pagedown&#34;&gt;&lt;strong&gt;pagedown&lt;/strong&gt;&lt;/a&gt; based on the source code of &lt;a href=&#34;https://github.com/nstrayer/cv&#34;&gt;&lt;strong&gt;Nicholas Strayer&lt;/strong&gt;&lt;/a&gt; :&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Presentations</title>
-				<link>https://jodavid.github.io/presentations/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://jodavid.github.io/presentations/</guid>
-				<description>&lt;hr&gt;&#xA;&lt;p&gt;Welcome to my Presentations page! Here, you will find slides and materials from lectures, workshops, conference talks, seminars, and academic presentations that I have delivered over the years. Feel free to explore the content and use it as a learning resource.&lt;/p&gt;&#xA;&lt;h3&gt;2026&lt;/h3&gt;&#xA;&lt;p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/CBJME_PolSAR_Models/index.html&#34;&gt;[link] &lt;strong&gt;Matrix-Variate Probabilistic Models for Remote Sensing Data [Pt-BR]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Presentation delivered at the 6th Brazilian Congress of Young Researchers in Pure Mathematics, Applied Mathematics, and Statistics (VI CBJME).&lt;/li&gt;&#xA;&lt;li&gt;This work was developed in collaboration with Nascimento, A. D. C., and Frery, A.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/CBJME_PolSAR_Models/index.html&#34;&gt;https://jodavid.github.io/CBJME_PolSAR_Models/index.html&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;h3&gt;2025&lt;/h3&gt;&#xA;&lt;p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/sparkepbest/#/title-slide&#34;&gt;[link] &lt;strong&gt;Short Course: Exploring R and Python with Spark in Statistical Applications [Pt-BR]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Presented at the 5th Paraíba Statistics Meeting (EPBEST).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/sparkepbest/#/title-slide&#34;&gt;https://jodavid.github.io/sparkepbest/#/title-slide&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/Apresentacao_MLOps/#/title-slide&#34;&gt;[link] &lt;strong&gt;Operational Management of Machine Learning Models (MLOps) with R [Pt-BR]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Presented at the 5th R Day – National Meeting of R Users, Santa Maria, Rio Grande do Sul, Brazil.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/Apresentacao_MLOps/#/title-slide&#34;&gt;https://jodavid.github.io/Apresentacao_MLOps/#/title-slide&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/APRESENTACAO_COLEGIO_APLICACAO/#/title-slide&#34;&gt;[link] &lt;strong&gt;Statisticians and Data Scientists: Who They Are, What They Do, and Where They Work [Pt-BR]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Presented at the Application School of the Federal University of Pernambuco (UFPE).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/APRESENTACAO_COLEGIO_APLICACAO/#/title-slide&#34;&gt;https://jodavid.github.io/APRESENTACAO_COLEGIO_APLICACAO/#/title-slide&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/presentation_ml_classification_based_knn_for_polsar_data/SEMINARIO_UFPE_KNN.html#/title-slide&#34;&gt;[link] &lt;strong&gt;Machine Learning Classification Based on k-Nearest Neighbors for PolSAR Data [En]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Seminar presented at the Graduate Program in Statistics (PPGEST - UFPE), developed in collaboration with Ferreira, J.A. &amp;amp; Rodrigues, A.K.G. &amp;amp; Ospina, R. &amp;amp; Gomez, L.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/presentation_ml_classification_based_knn_for_polsar_data/SEMINARIO_UFPE_KNN.html#/title-slide&#34;&gt;https://jodavid.github.io/presentation_ml_classification_based_knn_for_polsar_data/SEMINARIO_UFPE_KNN.html&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/similarity_vit_python/apresentacao/#/section&#34;&gt;[link] &lt;strong&gt;Image Similarity Using Vision Transformers in Python [Pt-BR]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Presented at the Brazilian Meeting of Biometry and Statistics (RBRAS 2025).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/similarity_vit_python/apresentacao/#/section&#34;&gt;https://jodavid.github.io/similarity_vit_python/apresentacao/#/section&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;h3&gt;2024&lt;/h3&gt;&#xA;&lt;p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/Int_R_para_GeoProcessamento/GeoR_2024.html#/title-slide&#34;&gt;[link] &lt;strong&gt;Short Course: Introduction to R for Geoprocessing Applications [Pt-BR]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Presented at the 1st GEOTEC (Geotechnologies Meeting) of the Federal Institute of Paraíba (Institudo Federal da Paraíba - IFPB).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/Int_R_para_GeoProcessamento/GeoR_2024.html#/title-slide&#34;&gt;https://jodavid.github.io/Int_R_para_GeoProcessamento/GeoR_2024.html&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/UFPB_PPGMDS_2024/PPGMDS_2024.html#/title-slide&#34;&gt;[link] &lt;strong&gt;Artificial Intelligence in Healthcare: Concepts, Overview, and Applications in Health Sciences [Pt-BR]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Presentation prepared for the 1st Workshop of the Graduate Program in Decision Models and Health at the Federal University of Paraíba (Universidade Federal da Paraíba - UFPB).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/UFPB_PPGMDS_2024/PPGMDS_2024.html#/title-slide&#34;&gt;https://jodavid.github.io/UFPB_PPGMDS_2024/PPGMDS_2024.html&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/seminario_unir/SEMINARIO_UNIR_IA.html#/title-slide&#34;&gt;[link] &lt;strong&gt;Artificial Intelligence and Statistics: Concepts, Job Market Overview, and an AI Case Study [Pt-BR]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Presented at the 5th Online Lecture Series on Statistics (Universidade Federal de Rondônia - UNIR)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/seminario_unir/SEMINARIO_UNIR_IA.html#/title-slide&#34;&gt;https://jodavid.github.io/seminario_unir/SEMINARIO_UNIR_IA.html&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/APRESENTACAO_GENAI_SINAPE2024/SINAPE_2024.html#/title-slide&#34;&gt;[link] &lt;strong&gt;GEMINI: Using Google&amp;rsquo;s Generative AI for Image Interpretation in Statistical Contexts [Pt-BR]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Work presented at the Brazilian Symposium on Probability and Statistics (SINAPE 2024), developed in collaboration with &lt;a href=&#34;https://www.crunchbase.com/person/paulo-campos-cac8&#34;&gt;Paulo Campos&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/APRESENTACAO_GENAI_SINAPE2024/SINAPE_2024.html#/title-slide&#34;&gt;https://jodavid.github.io/APRESENTACAO_GENAI_SINAPE2024/SINAPE_2024.html&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;h3&gt;2023&lt;/h3&gt;&#xA;&lt;p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/UEPB_APRESENTACAO/SEMINARIO_UEPB_IA.html#/title-slide&#34;&gt;[link] &lt;strong&gt;Statistics, Machine Learning, and Artificial Intelligence: A Perspective on the Statistician&amp;rsquo;s Role in the Job Market [Pt-BR]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Presented at the Statistics Week of the State University of Paraíba (Universidade Estadual da Paraíba - UEPB)..&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/UEPB_APRESENTACAO/SEMINARIO_UEPB_IA.html#/title-slide&#34;&gt;https://jodavid.github.io/UEPB_APRESENTACAO/SEMINARIO_UEPB_IA.html&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/seminario_ufpe_ia/SEMINARIO_UFPE_IA.html#/title-slide&#34;&gt;[link] &lt;strong&gt;Artificial Intelligence, Machine Learning, and Statistics: Concepts, Tools, and an Overview of the Job Market [Pt-BR]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Presented at the Graduate Program in Statistics - PPGEST (Universidade Federal de Pernambuco - UFPE).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/seminario_ufpe_ia/SEMINARIO_UFPE_IA.html#/title-slide&#34;&gt;https://jodavid.github.io/seminario_ufpe_ia/SEMINARIO_UFPE_IA.html&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;h3&gt;2022&lt;/h3&gt;&#xA;&lt;p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/semana_academica_ufal/Semana_Academica_UFAL.html#/title-slide&#34;&gt;[link] &lt;strong&gt;Data Science: Core Concepts and an Overview of the Job Market [Pt-BR]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Presented at the 5th Industrial Engineering Week - V Semana de Engenharia de Produção (Universidade Federal de Alagoas - UFAL).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/semana_academica_ufal/Semana_Academica_UFAL.html#/title-slide&#34;&gt;https://jodavid.github.io/semana_academica_ufal/Semana_Academica_UFAL.html&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/seminario_ppgmds_fuzzyclass/Seminario_FuzzyClass.html#/title-slide&#34;&gt;[link] &lt;strong&gt;Bayesian Networks with the FuzzyClass Package [Pt-BR]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Seminar presented at the Graduate Program in Modelos de Decisão e Saúde- PPGMDS (Universidade Federal da Paraíba - UFPB).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/seminario_ppgmds_fuzzyclass/Seminario_FuzzyClass.html#/title-slide&#34;&gt;https://jodavid.github.io/seminario_ppgmds_fuzzyclass/Seminario_FuzzyClass.html&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/Semana_Academica_UFPR/Semana_Academica_UFPR.html#/title-slide&#34;&gt;[link] &lt;strong&gt;Exploratory Data Analysis with Python [Pt-BR]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Presented at the Academic Week of the Federal University of Paraná (Universidade Federal do Paraná- UFPR).&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/Semana_Academica_UFPR/Semana_Academica_UFPR.html#/title-slide&#34;&gt;https://jodavid.github.io/Semana_Academica_UFPR/Semana_Academica_UFPR.html&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;h3&gt;2021&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/Slide-Introdu-o-a-Web-Scrapping-com-rvest/#1&#34;&gt;[link] &lt;strong&gt;Introduction to Web Scraping with rvest [Pt-BR]&lt;/strong&gt;&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Presentation delivered on the Estatidados YouTube channel.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/Slide-Introdu-o-a-Web-Scrapping-com-rvest/#1&#34;&gt;https://jodavid.github.io/Slide-Introdu-o-a-Web-Scrapping-com-rvest/#1&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;&lt;hr&gt;</description>
-			</item>
-			<item>
-				<title>Slides e Materiais de Ensino</title>
-				<link>https://jodavid.github.io/ensino/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://jodavid.github.io/ensino/</guid>
-				<description>&lt;hr&gt;&#xA;&lt;h4 id=&#34;disciplinas&#34;&gt;Disciplinas&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/introducaoads/&#34;&gt;Introdução à Ciência de Dados&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;br/&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://jodavid.github.io/redesneurais/&#34;&gt;Redes Neurais&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;br/&gt;&#xA;&lt;hr&gt;</description>
-			</item>
-	</channel>
+  <channel>
+    <title>Jodavid Ferreira</title>
+    <link>https://jodavid.github.io/</link>
+    <description>Recent content on Jodavid Ferreira</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jodavid.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Me</title>
+      <link>https://jodavid.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/about/</guid>
+      <description>I am Jodavid Ferreira, Professor in the Department of Statistics (DEst) at the Federal University of Pernambuco (UFPE), Brazil.
+Academic Background  Postdoctoral Fellowship in Decision Models and Health (PPGMDS) — Federal University of Paraíba (UFPB) Ph.D. in Statistics — Federal University of Pernambuco (UFPE) M.Sc. in Statistics — Federal University of Pernambuco (UFPE) B.Sc. in Statistics — Federal University of Paraíba (UFPB)  Research Agenda In my academic trajectory, I actively develop research in statistical learning, supervised classification, and unsupervised clustering/segmentation.</description>
+    </item>
+    
+    <item>
+      <title>Course Materials &amp; Teaching</title>
+      <link>https://jodavid.github.io/courses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/courses/</guid>
+      <description>Welcome to the Course Materials &amp;amp; Teaching page! Here you will find syllabus outlines, lecture notes, coding exercises, and interactive slides for courses I teach across undergraduate and graduate programs in Statistics and Data Science at the Federal University of Pernambuco (UFPE).
+Undergraduate Courses   Introduction to Data Science (Introdução à Ciência de Dados)
+ Foundational course covering data wrangling, exploratory data analysis, visualization, and computational data science in R and Python.</description>
+    </item>
+    
+    <item>
+      <title>Extras &amp; Resources</title>
+      <link>https://jodavid.github.io/extras/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/extras/</guid>
+      <description>Welcome to the Extras &amp;amp; Resources repository. Here you will find quick links to academic CV formats, open repositories, IDEs, and setup instructions.
+Academic Curriculum Vitae (CV) My CV is built using R Markdown and the pagedown package, adapted from Nicholas Strayer&amp;rsquo;s template:
+ Interactive Online CV (pt-BR): https://jodavid.github.io/cv/ Downloadable PDF Version: jodavid_cv.pdf (Direct Download) Source Code Repository: https://github.com/jodavid/cv  Scientific Computing &amp;amp; Tools  Course Code Repository: Machine Learning and Statistical Learning notebooks — https://github.</description>
+    </item>
+    
+    <item>
+      <title>Presentations &amp; Talks</title>
+      <link>https://jodavid.github.io/presentations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/presentations/</guid>
+      <description>Welcome to my Presentations &amp;amp; Talks repository. Below are slides, interactive web presentations, and materials from keynote lectures, workshops, conference talks, and academic seminars delivered across statistics, machine learning, AI, and remote sensing.
+2026  Matrix-Variate Probabilistic Models for Remote Sensing Data [Pt-BR]  Presentation delivered at the 6th Brazilian Congress of Young Researchers in Pure Mathematics, Applied Mathematics, and Statistics (VI CBJME). Collaboration with Nascimento, A. D. C., and Frery, A.</description>
+    </item>
+    
+    <item>
+      <title>Slides e Materiais de Ensino</title>
+      <link>https://jodavid.github.io/ensino/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/ensino/</guid>
+      <description> Disciplinas  Introdução à Ciência de Dados    Redes Neurais    </description>
+    </item>
+    
+  </channel>
 </rss>

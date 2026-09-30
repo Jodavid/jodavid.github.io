@@ -1,211 +1,253 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.92.2" />
 
-    <head>
+    <title>Jodavid Ferreira · Academic Website</title>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <meta name="description" content="Jodavid Ferreira – Professor of Statistics at UFPE. Research in Machine Learning, Artificial Intelligence, and PolSAR Imagery.">
+    
+    <meta name="keywords" content="statistics,machine learning,artificial intelligence,PolSAR,UFPE,data science,deep learning,professor">
 
-        
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-        
-        <meta name="description" content="Simple minimalist theme">
-        
-        <meta name="keywords" content="minimalist,blog,goa,hugo,developer">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous">
 
-        <title>
-              Jodavid Ferreira
-            
-        </title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-        <meta name="generator" content="Hugo 0.162.1">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="https://jodavid.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://jodavid.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://jodavid.github.io/favicon-16x16.png">
+    <link rel="manifest" href="https://jodavid.github.io/site.webmanifest">
+    <meta name="theme-color" content="#ffffff">
 
-        <link rel="alternate" type="application/rss&#43;xml" href="https://jodavid.github.io/index.xml">
-        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-        
+    
+    <link rel="stylesheet" href="https://jodavid.github.io/css/main.css">
+    <link rel="stylesheet" href="https://jodavid.github.io/css/custom.css">
 
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-            crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="stylesheet" href="https://jodavid.github.io/css/main.css">
-        <link rel="stylesheet" href="https://jodavid.github.io/css/custom.css">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    
+</head>
+<body lang="en">
+<div class="site-wrapper">
+<header class="site-nav-header">
+  <div class="nav-inner container">
+    <a href="https://jodavid.github.io" class="nav-brand">
+      <span class="nav-brand-title">Jodavid Ferreira</span>
+      <span class="nav-brand-badge">UFPE</span>
+    </a>
 
-        <link rel="apple-touch-icon" sizes="180x180" href="https://jodavid.github.io/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="https://jodavid.github.io/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://jodavid.github.io/favicon-16x16.png">
-        <link rel="manifest" href="https://jodavid.github.io/site.webmanifest">
-        <meta name="theme-color" content="#ffffff"><link rel="alternate" type="application/rss+xml" title="Jodavid Ferreira" href="https://jodavid.github.io/index.xml" />
-        <link rel="alternate" type="application/json" title="Jodavid Ferreira" href="https://jodavid.github.io/feed.json" />
-        <link rel="EditURI" type="application/rsd+xml" href="https://jodavid.github.io/rsd.xml" /></head>
+    <button class="nav-toggle-btn" id="navToggleBtn" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
 
-    <body lang="pt-BR">
-        <div class="container my-auto">
-
-<header class="text-center header">
-  
-  
-  <img src="https://jodavid.github.io/images/jodavid.jpg" alt="Author Image" class="img-fluid rounded-circle mx-auto d-block headshot">
-  
-  
-
-  <h1 class="author mt-3">Jodavid Ferreira</h1>
+    <nav class="nav-links-menu" id="navLinksMenu">
+      
+      
+      <a class="nav-item-link " 
+         href="/about/">
+        about me
+      </a>
+      
+      <a class="nav-item-link " 
+         href="/courses/">
+        course materials
+      </a>
+      
+      <a class="nav-item-link " 
+         href="/presentations/">
+        presentations
+      </a>
+      
+      <a class="nav-item-link " 
+         href="https://jodavid.github.io/cv/">
+        cv (pt-BR)
+      </a>
+      
+      <a class="nav-item-link " 
+         href="/extras/">
+        extras
+      </a>
+      
+    </nav>
+  </div>
 </header>
 
-<section id="info-pane" class="text-center info">
-  
-  <h3 class="intro"><p>Professor at UFPE | <p>AI and Open-Source software enthusiast</p></p>
-</h3>
-  
-  
-  <h4 class="description">&hellip;I hold a Ph.D. in Statistics and use this platform to share my insights, teaching materials, professional contacts, and personal information&hellip;</h4>
-  
+
+<section class="hero-section">
+  <div class="hero-container container">
+    <div class="avatar-ring">
+      <img src="https://jodavid.github.io/images/jodavid.jpg" alt="Jodavid Ferreira" class="avatar-photo" />
+    </div>
+
+    <h1 class="hero-title">Jodavid Ferreira<span class="hero-title-suffix">, Ph.D.</span></h1>
+    <p class="hero-affiliation">
+      <span class="affiliation-role">Professor of Statistics</span> · 
+      <a href="https://www.ufpe.br" target="_blank" rel="noopener" class="affiliation-inst">Federal University of Pernambuco (UFPE)</a>
+    </p>
+    <p class="hero-dept">Department of Statistics (DEst) · Recife, PE, Brazil</p>
+
+    <div class="hero-tags">
+      <span class="research-pill"><i class="fas fa-chart-line"></i> Statistics & Probability</span>
+      <span class="research-pill"><i class="fas fa-brain"></i> Machine Learning</span>
+      <span class="research-pill"><i class="fas fa-satellite"></i> PolSAR Remote Sensing</span>
+      <span class="research-pill"><i class="fas fa-microchip"></i> Artificial Intelligence & LLMs</span>
+      <span class="research-pill"><i class="fas fa-code-branch"></i> Open-Source & FOSS</span>
+    </div>
+  </div>
 </section>
 
-<section id="social-pane" class="text-center social">
-  
-  
-  
-  <a href="https://scholar.google.com/citations?user=jodavid.fereira" aria-label="Google Scholar" target="_blank"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
-  
-  
-  <a href="https://orcid.org/0000-0002-2131-6464" aria-label="ORCID" target="_blank"><i class="fab fa-orcid" aria-hidden="true"></i></a>
-  
-  
-  
-  
-  
-  <a href="https://github.com/jodavid" aria-label="Github" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a>
-  
-  
-  
-  <a href="https://linkedin.com/in/jodavidferreira" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+<section class="bio-summary-section">
+  <div class="bio-summary-container container">
+    <p class="bio-summary-text">
+      Ph.D. in Statistics from UFPE with postdoctoral work in Decision Models and Health. 
+      My research centers on <strong>statistical learning, supervised classification, and unsupervised segmentation</strong>, with specialized applications in <strong>polarimetric synthetic aperture radar (PolSAR)</strong> imagery and modern <strong>Generative AI & LLMs</strong>.
+    </p>
+  </div>
 </section>
 
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Person",
-  "name": "Jodavid Ferreira",
-  "url": "",
-  "sameAs": [
-    
-    
-    "https://scholar.google.com/citations?user=jodavid.fereira",
-    "https://orcid.org/0000-0002-2131-6464",
-    
-    
-    
-    "https://github.com/jodavid",
-    
-    "https://linkedin.com/in/jodavidferreira",
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    ""
-  ]
-}
-</script>
+<section class="academic-social-section">
+  <div class="academic-social-container container">
+    <div class="social-badges-grid">
+      
+      <a href="https://scholar.google.com/citations?user=jodavid.fereira" class="social-badge-btn" target="_blank" rel="noopener" title="Google Scholar Profile">
+        <i class="fas fa-graduation-cap"></i>
+        <span>Google Scholar</span>
+      </a>
+      
 
+      
+      <a href="https://orcid.org/0000-0002-2131-6464" class="social-badge-btn" target="_blank" rel="noopener" title="ORCID iD">
+        <i class="fab fa-orcid"></i>
+        <span>ORCID</span>
+      </a>
+      
 
+      
+      <a href="http://lattes.cnpq.br/4617170601890026" class="social-badge-btn" target="_blank" rel="noopener" title="Currículo Lattes (CNPq)">
+        <i class="fas fa-address-card"></i>
+        <span>Lattes CNPq</span>
+      </a>
+      
 
+      
+      <a href="https://github.com/jodavid" class="social-badge-btn" target="_blank" rel="noopener" title="GitHub Profile">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      
 
-<section id="main-menu-pane" class="text-center main-menu">
-  
-  <h4><a class="menu-item" href="https://jodavid.github.io/about/">about  me</a></h4>
-  
-  <h4><a class="menu-item" href="https://jodavid.github.io/courses/">course materials</a></h4>
-  
-  <h4><a class="menu-item" href="https://jodavid.github.io/presentations/">presentations</a></h4>
-  
-  <h4><a class="menu-item" href="https://jodavid.github.io/cv/">cv (pt-BR)</a></h4>
-  
-  <h4><a class="menu-item" href="https://jodavid.github.io/extras/">extras</a></h4>
-  
+      
+      <a href="https://linkedin.com/in/jodavidferreira" class="social-badge-btn" target="_blank" rel="noopener" title="LinkedIn Profile">
+        <i class="fab fa-linkedin"></i>
+        <span>LinkedIn</span>
+      </a>
+      
+
+      
+    </div>
+  </div>
 </section>
 
 
-<footer class="text-center footer">
-  <hr />
-  
-  <h6 class="text-center copyright">© 2026. Jodavid Ferreira. <a href="http://creativecommons.org/licenses/by/3.0/">All rights reserved</a>.</h6>
-  
-  <h6 class="text-center powered"><a href="https://gohugo.io/">Hugo</a> <a
-      href="https://github.com/shenoydotme/hugo-goa">Goa</a> by <a href="https://shenoy.me">shenoydotme</a> and <a
-      href="https://papyrusapps.com">Papyrus Apps</a></h6>
-  
-  
-  <h6>
-    <a href="https://jodavid.github.io/index.xml" aria-label="RSS Feed"><i class="fas fa-rss" aria-hidden="true"></i></a>
-  </h6>
-  
-  
+<section class="home-hub-section">
+  <div class="home-hub-container container">
+    <div class="section-heading-wrapper">
+      <h2 class="section-heading-title">Academic & Teaching Hub</h2>
+      <p class="section-heading-sub">Explore teaching materials, recent presentations, research projects, and academic background.</p>
+    </div>
 
+    <div class="home-hub-grid">
+      <a href="/presentations/" class="hub-card">
+        <div class="hub-card-icon-wrap icon-presentations">
+          <i class="fas fa-chalkboard-teacher"></i>
+        </div>
+        <div class="hub-card-content">
+          <h3 class="hub-card-title">Presentations & Talks</h3>
+          <p class="hub-card-desc">Slide decks and materials from conference talks, workshops, and invited seminars (2021–2026).</p>
+          <span class="hub-card-link">View Presentations <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="/courses/" class="hub-card">
+        <div class="hub-card-icon-wrap icon-courses">
+          <i class="fas fa-book-open"></i>
+        </div>
+        <div class="hub-card-content">
+          <h3 class="hub-card-title">Course Materials</h3>
+          <p class="hub-card-desc">Study guides and lecture notes for undergraduate and graduate courses in Data Science, Neural Networks, and Statistics.</p>
+          <span class="hub-card-link">Access Materials <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="/about/" class="hub-card">
+        <div class="hub-card-icon-wrap icon-about">
+          <i class="fas fa-user-graduate"></i>
+        </div>
+        <div class="hub-card-content">
+          <h3 class="hub-card-title">About & Research</h3>
+          <p class="hub-card-desc">Academic background, postdoctoral fellowship, research agenda in statistical learning & PolSAR, and AI leadership.</p>
+          <span class="hub-card-link">Read Bio <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="https://jodavid.github.io/cv/" target="_blank" rel="noopener" class="hub-card">
+        <div class="hub-card-icon-wrap icon-cv">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <div class="hub-card-content">
+          <h3 class="hub-card-title">Curriculum Vitae</h3>
+          <p class="hub-card-desc">Interactive curriculum vitae created with R + pagedown, along with downloadable PDF version.</p>
+          <span class="hub-card-link">Open CV (pt-BR) <i class="fas fa-external-link-alt"></i></span>
+        </div>
+      </a>
+
+      <a href="/extras/" class="hub-card hub-card-wide">
+        <div class="hub-card-icon-wrap icon-extras">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <div class="hub-card-content">
+          <h3 class="hub-card-title">Code Repositories & Useful Tools</h3>
+          <p class="hub-card-desc">Machine learning scripts in Python/R, Google Colab notebooks, Positron IDE, and computational resources.</p>
+          <span class="hub-card-link">Explore Extras <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-main-footer">
+  <div class="footer-inner container">
+    <div class="footer-info">
+      <p class="footer-copyright">
+        &copy; 2026 <strong>Jodavid Ferreira</strong>. Department of Statistics, Universidade Federal de Pernambuco (UFPE).
+      </p>
+      <p class="footer-attribution">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &amp; R blogdown · Academic 2026 Theme
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://jodavid.github.io" class="footer-link">Home</a>
+      <a href="/about/" class="footer-link">About</a>
+      <a href="/courses/" class="footer-link">Courses</a>
+      <a href="/presentations/" class="footer-link">Presentations</a>
+      <a href="https://jodavid.github.io/index.xml" class="footer-link" aria-label="RSS Feed"><i class="fas fa-rss"></i> RSS</a>
+    </div>
+  </div>
 </footer>
 
 </div>
@@ -214,30 +256,26 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
-
 <script>hljs.highlightAll();</script>
 
 
 
 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-      <script>
-        var doNotTrack = false;
-        if ( true ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-XXXXXXXXXX');
-        }
-      </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': false });
+}
+</script>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 <script src="https://jodavid.github.io/js/custom.js"></script>
 </body>
-
 </html>
