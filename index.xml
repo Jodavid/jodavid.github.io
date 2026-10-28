@@ -16,6 +16,17 @@ Academic Background  Postdoctoral Fellowship in Decision Models and Health (PPGM
     </item>
     
     <item>
+      <title>Books, Presentations &amp; Talks</title>
+      <link>https://jodavid.github.io/presentations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jodavid.github.io/presentations/</guid>
+      <description>Welcome to my Books, Presentations &amp;amp; Talks repository. Below are slides, interactive web presentations, and materials from keynote lectures, workshops, conference talks, and academic seminars delivered across statistics, machine learning, AI, and remote sensing.
+Books    Introdução à Ciência de Dados [Pt-BR] This is a textbook for the Introduction to Data Science course taught by Prof. Jodavid Ferreira within the bachelor’s degree program in Statistics.
+🎓 DISCOUNT COUPON for students in PDF version: ESTUDANTE35 (30% discount) View Book → 📄 PDF Version →      2026   Inteligência Artificial, Inovação e Transformação da Ciência [Pt-BR]</description>
+    </item>
+    
+    <item>
       <title>Course Materials &amp; Teaching</title>
       <link>https://jodavid.github.io/courses/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -35,16 +46,6 @@ Undergraduate Courses   Introduction to Data Science (Introdução à Ciência d
       <description>Welcome to the Extras &amp;amp; Resources repository. Here you will find quick links to academic CV formats, open repositories, IDEs, and setup instructions.
 Academic Curriculum Vitae (CV) My CV is built using R Markdown and the pagedown package, adapted from Nicholas Strayer&amp;rsquo;s template:
  Interactive Online CV (pt-BR): https://jodavid.github.io/cv/ Downloadable PDF Version: jodavid_cv.pdf (Direct Download) Source Code Repository: https://github.com/jodavid/cv  Scientific Computing &amp;amp; Tools  Course Code Repository: Machine Learning and Statistical Learning notebooks — https://github.</description>
-    </item>
-    
-    <item>
-      <title>Presentations &amp; Talks</title>
-      <link>https://jodavid.github.io/presentations/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jodavid.github.io/presentations/</guid>
-      <description>Welcome to my Books, Presentations &amp;amp; Talks repository. Below are slides, interactive web presentations, and materials from keynote lectures, workshops, conference talks, and academic seminars delivered across statistics, machine learning, AI, and remote sensing.
-Books  Introdução à Ciência de Dados [Pt-BR]  This is the course material for the Introduction to Data Science course.  View Book →    2026   Inteligência Artificial, Inovação e Transformação da Ciência [Pt-BR]</description>
     </item>
     
     <item>
